@@ -1,0 +1,274 @@
+.fullpage-banner-wrapper
+
+  ul.fullpage-banner-slider
+    li.img-background style="background-image: url(#{asset_path('photo/sample-1.jpg')})"
+    li.img-background style="background-image: url(#{asset_path('photo/sample-2.jpg')})"
+    li.img-background style="background-image: url(#{asset_path('photo/sample-3.jpg')})"
+    li.img-background style="background-image: url(#{asset_path('photo/sample-4.jpg')})"
+
+  .banner-text.visible
+    p.large.animated Вітаємо в
+    .line.animated
+    p.header.animated екран-вікносвіт
+    p.regular.animated Бездоганна якість та відмінний сервіс - кожному клієнту!
+    .button.animated Дізнатись про компанію
+  .banner-text
+    p.large.animated Вітаємо в
+    .line.animated
+    p.header.animated саламандер
+    p.regular.animated Бездоганна якість та відмінний сервіс - кожному клієнту!
+    .button.animated Дізнатись про компанію
+  .banner-text
+    p.large.animated Вітаємо в
+    .line.animated
+    p.header.animated карпатські вікна
+    p.regular.animated Бездоганна якість та відмінний сервіс - кожному клієнту!
+    .button.animated Дізнатись про компанію
+  .banner-text
+    p.large.animated Вітаємо в
+    .line.animated
+    p.header.animated альфабуд
+    p.regular.animated Бездоганна якість та відмінний сервіс - кожному клієнту!
+    .button.animated Дізнатись про компанію
+
+  .fullpage-banner-bottom
+    .row.inner
+      .columns
+        = render "slider_controls"
+        .go-down = inline_svg "svg/key-arrow-down.svg"
+        .contact-us
+          .line-separator.dib
+          .icon.dib = inline_svg "svg/phone.svg"
+          p.smaller.dib Зв'язатись з нами
+
+.about-us-wrapper.wrapper-inner-indent
+  .row
+    .columns
+      p.wrapper-small-title Хто ми
+      .row.indent
+        .columns.large-3
+          p.bold-underlined Компанія «Екран-Вікносвіт» &mdash; cучасна, потужна і авторитетна компанія у галузі виробництва світлопрозорих конструкцій України
+        .columns.large-3
+          p.main-text В 1999 році дочірнє підприємство «Екран-Вікносвіт» виготовило перше в Україні вікно з профілю SALAMANDER. Ми продовжуємо розвиватися і ставити перед собою амбітні цілі. Компанія «Екран-Вікносвіт» змогла побудувати сучасний виробничий комплекс, де інтегровано виготовлення трьох різновидів віконно-дверних конструкцій: ПВХ, дерев'яного брусу, алюмінію.
+          p.main-text В цьому наша унікальність, наша сила, наша гнучкість і найголовніше &mdash; наша можливість.
+        .columns.large-3
+          p.main-text Виробнича потужність підприємства складає 700 одиниць віконно-дверних конструкцій у день. Загальна кількість виготовлених на нашому підприємстві вікон вже сягнула більше  1 000 000.
+          p.main-text Завдяки нашій праці тисячі родин мешкають у затишних оселях. Вони радіють життю, виховують дітей, працюють, піклуються про своїх батьків. Усвідомлення, що ми допомагаємо людям бути щасливими, надихає нас на нові звершення.
+        .columns.large-3
+          = render "motto"
+
+.brands-wrapper
+  .bg-icon.visible = inline_svg "svg/brand-bg-logo-1.svg"
+  .bg-icon = inline_svg "svg/brand-bg-logo-1.svg"
+  ul.brands-slider
+    li
+      p.wrapper-small-title Наші бренди
+      p.brand-header карпатські вікна
+      .row
+        .columns.medium-6
+          .brand-img style="background-image: url(#{asset_path('photo/brand-img-1.png')})"
+        .columns.medium-6
+          .description-text
+            .brand-icon = inline_svg "svg/brand-logo-1.svg"
+            .line
+            p.brand-title З екологічно дерев'яного брусу
+            p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку. Нам добре вдається знаходити індивідуальні рішення, і тому «КАРПАТСЬКІ ВІКНА» ТМ є найкращим, а інколи і єдиним правильним рішенням під час будівництва нових чи реконструкції старих будівель.
+            a.text-link
+              | Дізнатись більше
+              = inline_svg "svg/ext-link.svg"
+    li
+      p.wrapper-small-title Наші бренди
+      p.brand-header карпатські вікна
+      .row
+        .columns.medium-6
+          .brand-img style="background-image: url(#{asset_path('photo/brand-img-1.png')})"
+        .columns.medium-6
+          .description-text
+            .brand-icon = inline_svg "svg/brand-logo-1.svg"
+            .line
+            p.brand-title З екологічно дерев'яного брусу
+            p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку. Нам добре вдається знаходити індивідуальні рішення, і тому «КАРПАТСЬКІ ВІКНА» ТМ є найкращим, а інколи і єдиним правильним рішенням під час будівництва нових чи реконструкції старих будівель.
+            a.text-link
+              | Дізнатись більше
+              = inline_svg "svg/ext-link.svg"
+  
+  .brands-bottom
+    .row  
+      .columns
+        = render "slider_controls"
+        a.text-link.floated-right
+          | Дізнатись більше
+          = inline_svg "svg/ext-link.svg"
+
+.projects-wrapper.wrapper-inner-indent
+  p.wrapper-small-title Наші проекти
+  .clearfix.projects
+    a.projects-all-link = inline_svg "svg/key-arrow-right.svg"
+    .project-block.floated
+      .img-background style="background-image: url(#{asset_path('photo/sample-1.jpg')})"
+      .text-block
+        p.project-performer salamander | 2016
+        p.bold-title
+          | котедж
+          br
+          | івано-франківськ
+        p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
+        a.text-link
+          | Подивитись проект
+          = inline_svg "svg/key-arrow-right.svg"
+    .project-block.floated
+      .img-background style="background-image: url(#{asset_path('photo/sample-2.jpg')})"
+      .text-block
+        p.project-performer карпатські вікна | 2016
+        p.bold-title
+          | ресторан
+          br
+          | «fabbrica»
+        p.main-text Створюючи «КАРПАТСЬКІ ВІКНА» ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
+        a.text-link
+          | Подивитись проект
+          = inline_svg "svg/key-arrow-right.svg"
+    .project-block.floated
+      .img-background style="background-image: url(#{asset_path('photo/sample-3.jpg')})"
+      .text-block
+        p.project-performer alfabud | 2015
+        p.bold-title
+          | готель
+          br
+          | «ibis»
+        p.main-text В цьому блоці найменше тетксту через його ширину.
+        a.text-link
+          | Подивитись проект
+          = inline_svg "svg/key-arrow-right.svg"
+
+.service-wrapper.wrapper-inner-indent
+  p.wrapper-small-title Сервіс
+  .row
+    .columns.medium-3.medium-push-2
+      p.bold-underlined
+        | Ми надаємо широкий спектр
+        br
+        | сервісних послуг
+    .columns.medium-6
+      p.main-text Створюючи «КАРПАТСЬКІ ВІКНА» ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку. Нам добре вдається знаходити індивідуальні рішення, і тому «КАРПАТСЬКІ ВІКНА» ТМ є найкращим, а інколи і єдиним правильним рішенням під час будівництва нових чи реконструкції старих будівель.
+      .smaller доставка
+      .smaller гарантія
+      .smaller обслуговування
+
+.partnership-wrapper.wrapper-inner-indent
+  .clearfix
+    .partner-block.floated.description
+      p.smaller Нашим партнерам
+      p.bold-title
+        | працюємо командою&nbsp;&mdash;
+        br
+        | заробляємо
+        br
+        | разом
+      p.main-text Запрошуємо до співпраці дилерів, архітекторів, будівельні організації. Також ми проводимо навчання.
+      .button Стати партнером
+    a.partner-block.floated
+      .img-background style="background-image: url(#{asset_path('photo/person-1.jpg')})"
+      .person-type
+        p.larger Ви диллер?
+    a.partner-block.floated
+      .img-background style="background-image: url(#{asset_path('photo/person-2.jpg')})"
+      .person-type
+        p.larger Ви архітектор?
+    a.partner-block.floated
+      .img-background style="background-image: url(#{asset_path('photo/person-3.jpg')})"
+      .person-type
+        p.larger Представник будівельної організації?
+    a.partner-block.floated
+      .img-background style="background-image: url(#{asset_path('photo/person-4.jpg')})"
+      .person-type
+        p.larger Цікавить навчання?
+
+.media-wrapper.wrapper-inner-indent
+  p.wrapper-small-title Медіа
+  .tab-buttons
+    .tab-button.active новини
+    .tab-button блог
+    .tab-button відео
+
+  .row.tab-content-wrapper
+    .columns.medium-5.large-4.float-right.tab-content.active
+      p.underlined-title Новини
+      a.new-block
+        p.larger Прагматический христианско демократический национализм: гипотеза и теории
+        p.date 16 січня, 2017
+        .hover-arrow = inline_svg "svg/key-arrow-right.svg"
+      a.new-block
+        p.larger Современный феномен толпы: предпосылки и развитие
+        p.date 16 січня, 2017
+        .hover-arrow = inline_svg "svg/key-arrow-right.svg"
+      a.new-block
+        p.larger Прагматический гуманизм — актуальная национальная задача
+        p.date 16 січня, 2017
+        .hover-arrow = inline_svg "svg/key-arrow-right.svg"
+      a.new-block
+        p.larger Онтологический механизм власти: предпосылки и развитие
+        p.date 16 січня, 2017
+        .hover-arrow = inline_svg "svg/key-arrow-right.svg"
+      a.new-block
+        p.larger Конструктивный либерализм глазами современников
+        p.date 16 січня, 2017
+        .hover-arrow = inline_svg "svg/key-arrow-right.svg"
+      a.new-block
+        p.larger Прагматический христианско демократический национализм: гипотеза и теории
+        p.date 16 січня, 2017
+        .hover-arrow = inline_svg "svg/key-arrow-right.svg"
+      .button Всі новини
+
+    .columns.medium-7.large-7.xxlarge-pull-1.float-left.tab-content
+      p.underlined-title Блог
+      a.blog-block
+        .img
+          .img-background style="background-image: url(#{asset_path('photo/sample-1.jpg')})"
+        .text
+          p.small соціальна відповідальність
+          p.blog-title назва теми в один рядок
+          p.date 16 січня, 2107
+      a.blog-block
+        .img
+          .img-background style="background-image: url(#{asset_path('photo/sample-2.jpg')})"
+        .text
+          p.small соціальна відповідальність
+          p.blog-title назва теми в один рядок
+          p.date 16 січня, 2107
+      a.blog-block
+        .img
+          .img-background style="background-image: url(#{asset_path('photo/sample-3.jpg')})"
+        .text
+          p.small соціальна відповідальність
+          p.blog-title назва теми в один рядок
+          p.date 16 січня, 2107
+
+    .columns.medium-7.large-7.xxlarge-pull-1.float-left.tab-content
+      p.underlined-title Відео
+      .img-container
+        .img-background style="background-image: url(#{asset_path('photo/sample-4.jpg')})"
+ 
+.contact-wrapper.wrapper-inner-indent
+  p.wrapper-small-title Як нас знайти
+  .clearfix
+    .contact-block.float-right
+      .line
+      a.info-block.dib href="tel:+380324539114"
+        p.small телефон
+        p.larger +38 (032) 453 91 14
+      a.info-block.dib href="tel:+380324539113"
+        p.small факс
+        p.larger +38 (032) 453 91 13
+      a.info-block href="mailto:info@ekran.ua"
+        p.small електронна скринька
+        p.larger info@ekran.ua
+      a.info-block
+        p.small наша адреса
+        p.larger
+          | вул. Сколівська 7/б, м. Стрий,
+          br
+          | Львівська обл., Україна, 82400
+      .button Зв'язатись
+    .contact-block
+      #googleMap

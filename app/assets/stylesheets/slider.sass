@@ -1,0 +1,44 @@
+.bx-wrapper, .bx-viewport
+  height: 100%
+  width: 100%
+  li
+    height: 100%
+ul
+  list-style: none
+
+.custom-controls
+  .line-separator
+    width: 1px
+    height: 28px
+  .prev-slide, .next-slide
+    cursor: pointer
+
+.custom-pager
+  .current-slide
+    +bold
+  @media #{$small-only}
+    display: none
+
+.fullpage-banner-wrapper
+  .custom-controls
+    .line-separator
+      background: $blueGrey400
+    .prev-slide, .next-slide
+      svg
+        fill: $blueGrey600
+  .custom-pager
+    color: $blueGrey400
+    .current-slide
+      color: $green
+
+.brands-wrapper
+  .custom-controls
+    .line-separator
+      background: white
+    .prev-slide, .next-slide
+      svg
+        fill: white
+  .custom-pager
+    color: white
+    .current-slide
+      color: white

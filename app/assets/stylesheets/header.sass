@@ -1,0 +1,49 @@
+.header-container
+  // position: fixed
+  position: absolute
+  padding: 0 3em
+  width: 100%
+  height: 110px
+  background: white
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  justify-content: space-between
+  z-index: 1
+  @media #{$small-only}
+    padding: 0 2em
+    height: 70px
+  .logo
+    width: 42px
+    height: 66px
+    margin-right: auto
+    @media #{$small-only}
+      width: 30px
+      height: 48px
+    svg
+      width: 100%
+      height: 100%
+  .logo, .right-part
+    align-self: center
+  .right-part
+    margin-left: auto
+    .icon
+      margin-right: 10px
+      @media #{$small-only}
+        display: none
+    .larger
+      +x-bold
+      color: $green
+      line-height: 1
+    .small
+      color: $blueGrey400
+  .menu-button
+    margin-left: 5em
+    .menu-button-lines
+      +burger(24px, 4px, 5px, $blueGrey400, 1px)
+    @media #{$small-only}
+      margin-left: 1em
+      .menu-button-lines
+        +burger(22px, 2px, 5px, $blueGrey400, 1px)

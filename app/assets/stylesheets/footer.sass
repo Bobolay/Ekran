@@ -1,0 +1,84 @@
+.footer-menu
+  background: $blueGrey800
+  padding: 1.5em
+  .footer-menu-link
+    font-size: 1.125em
+    color: white
+    +s-bold
+    margin-right: 2em
+  .icon
+    margin-right: 10px
+  .larger
+    +x-bold
+    color: $green
+    line-height: 1
+  .small
+    color: $blueGrey200
+.footer
+  background: $blueGrey900
+  .center-part
+    text-align: center
+    .logo
+      padding: 2em 0 1em
+    .larger
+      color: $green
+      +bold
+      text-transform: uppercase
+    .smaller
+      color: white
+      @media #{$small-only}
+        max-width: 250px
+        margin: 0 auto
+    .partner-link-container
+      margin: 5em 0 3em
+    .partner-link
+      color: $green
+      +s-bold
+      text-transform: uppercase
+      padding: 1em
+      font-size: 12px
+
+  .bottom-part
+    position: relative
+    border-top: 1px solid $blueGrey700
+    @media #{$small-only}
+      text-align: center
+      padding: 2em 0
+    .floated, .floated-right
+      @media #{$small-only}
+        float: none
+    .social-container
+      position: relative
+      @media #{$medium-up}
+        +xy-align
+      .social
+        width: 34px
+        height: 34px
+        border: 2px solid $blueGrey300
+    .studio-icon
+      width: 24px
+      height: 24px
+      margin-right: 10px
+      svg
+        width: 100%
+        height: 100%
+        fill: $blueGrey300
+      &:hover
+        svg
+          fill: $green
+    .smaller
+      color: $blueGrey300
+      @media #{$medium-up}
+        line-height: 60px
+    a.smaller
+      &:hover
+        color: $green
+        text-decoration: underline
+    .floated
+      @media #{$small-only}
+        .smaller
+          padding: 2em 0
+    .floated-right
+      @media #{$small-only}
+        .smaller
+          display: none

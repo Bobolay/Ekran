@@ -1,0 +1,49 @@
+#     S L I D E R     O P T I O N S
+
+    # nextSelector: '.slider-next'
+    # prevSelector: '.slider-prev'
+    # nextText: '>'
+    # prevText: '<'
+
+$document.ready ->
+
+  #     M A I N     B A N N E R     S L I D E R
+
+  banner_slider = $('.fullpage-banner-slider').bxSlider
+    controls: false
+    pager: false
+    speed: 1000
+    pause: 10000
+    auto: true
+    onSlideBefore: ($slideElement, oldIndex, newIndex)->
+      current = banner_slider.getCurrentSlide()
+      $('.fullpage-banner-wrapper .custom-pager .current-slide').text((current+1))
+      $('.banner-text').removeClass('visible')
+      $('.banner-text').eq(current).addClass('visible')
+  if banner_slider.getSlideCount
+    $('.fullpage-banner-wrapper .custom-pager .total-slide').text((banner_slider.getSlideCount()))
+  $('.fullpage-banner-wrapper .prev-slide').click ->
+    banner_slider.goToPrevSlide()
+  $('.fullpage-banner-wrapper .next-slide').click ->
+    banner_slider.goToNextSlide()
+
+  #     B R A N D S
+
+  brands_slider = $('.brands-slider').bxSlider
+    controls: false
+    pager: false
+    speed: 1000
+    pause: 10000
+    auto: true
+    onSlideBefore: ($slideElement, oldIndex, newIndex)->
+      current = brands_slider.getCurrentSlide()
+      $('.brands-wrapper .custom-pager .current-slide').text((current+1))
+      $('.brands-wrapper .bg-icon').removeClass('visible')
+      $('.brands-wrapper .bg-icon').eq(current).addClass('visible')
+  if brands_slider.getSlideCount
+    $('.brands-wrapper .custom-pager .total-slide').text((brands_slider.getSlideCount()))
+  $('.brands-wrapper .prev-slide').click ->
+    brands_slider.goToPrevSlide()
+  $('.brands-wrapper .next-slide').click ->
+    brands_slider.goToNextSlide()
+  
