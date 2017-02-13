@@ -52,3 +52,16 @@
       margin-left: 1em
       .menu-button-lines
         +burger(22px, 2px, 5px, $blueGrey400, 1px)
+
+  &.menu-opened
+    z-index: 3
+    background: transparent
+    a.dib
+      display: none
+    .menu-button
+      .menu-button-lines
+        +burger-to-cross
+        &:before
+          transform: translateY(10px) rotate(45deg)
+        &:after
+          // transform: translateY(-10px) rotate(-45deg)
