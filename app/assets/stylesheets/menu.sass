@@ -22,8 +22,8 @@
     position: absolute
     top: 2em
     right: 2em
-    width: 26px
-    height: 26px
+    width: 40px
+    height: 40px
     z-index: 2
     cursor: pointer
     svg
@@ -41,8 +41,73 @@
     +x-bold
     font-size: 3em
     text-transform: uppercase
+    cursor: pointer
+    max-width: 350px
+    +transition(color 0.2s)
     &:hover
       color: $green
+    ul
+      position: absolute
+      top: 20px
+      right: 0
+      padding-left: 100px
+      +translate(100%,0)
+      pointer-events: none
+      opacity: 0
+      +transition(opacity 0.5s)
+      &:before
+        content: ''
+        display: block
+        width: 60px
+        height: 1px
+        background: $blueGrey300
+        position: absolute
+        top: 20px
+        left: 20px
+        opacity: 0
+        +transition(0.2s)
+      li
+        font-size: 14px
+        color: $blueGrey600
+        text-transform: uppercase
+        font-weight: 400
+        padding: 10px 0
+        +transition(color 0.2s)
+        cursor: pointer
+        &:hover
+          color: $green
+      .animated
+        @for $i from 1 through 7
+          &:nth-child(#{$i})
+            transform: translate(0, #{$i*20px})
+            opacity: 0
+            transition: transform,opacity #{$i*0.1s} cubic-bezier(0.19, 1, 0.22, 1)
+    &:hover
+      ul
+        pointer-events: initial
+        opacity: 1
+        &:before
+          opacity: 1
+        .animated
+          @for $i from 1 through 7
+            &:nth-child(#{$i})
+              transform: translate(0,0)
+              opacity: 1
+              transition: transform #{$i*0.1s} cubic-bezier(0.645, 0.045, 0.355, 1)
+  
+  .menu-link.animated
+    @for $i from 1 through 7
+      &:nth-child(#{$i})
+        transform: translate(0, #{$i*20px})
+        opacity: 0
+        transition: transform,opacity #{$i*0.1s} cubic-bezier(0.19, 1, 0.22, 1)
+  &.opened
+    .menu-link.animated
+      @for $i from 1 through 7
+        &:nth-child(#{$i})
+          transform: translate(0,0)
+          opacity: 1
+          transition: transform #{$i*0.1s} cubic-bezier(0.645, 0.045, 0.355, 1)
 
   .menu-brands-container
     position: absolute
@@ -119,11 +184,13 @@
           +transition(fill 0.5s)
       .brand-name
         color: $blueGrey600
-        font-size: 2em
+        font-size: 1.5em
         text-transform: uppercase
         +x-bold
         line-height: 1.2
         +transition(color 0.5s)
+        @media #{$xxlarge-up}
+          font-size: 2em
       .text-link
         +transition(0.5s)
         opacity: 0
@@ -141,11 +208,26 @@
   .bottom-part
     position: absolute
     width: 100%
-    bottom: 0
+    bottom: 40px
     left: 0
-
-    .social-container
-      .social
+    color: $blueGrey600
+    font-size: 10px
+    text-transform: uppercase
+    .request
+      padding: 0 2em
+      cursor: pointer
+      +transition(color 0.2s)
+      svg
         width: 34px
         height: 34px
-        border: 2px solid $blueGrey300
+        fill: $blueGrey300
+        vertical-align: middle
+        +transition(fill 0.2s)
+      &:hover
+        color: $green
+        svg
+          fill: $green
+    .line
+      width: 1px
+      height: 26px
+      background: $blueGrey300
