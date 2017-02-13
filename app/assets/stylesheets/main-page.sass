@@ -119,20 +119,31 @@
   position: relative
   overflow: hidden
   color: white
+  background: black
   .brands-slider
     height: 100%
     li
       overflow: hidden
       padding: 5em 0
-      background: #B58F5C
       @media #{$small-only}
         padding: 4em 0 2em
+  .bg-color
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    opacity: 0
+    +transition(0.5s)
+    &.visible
+      opacity: 1
+      +transition(0.5s)
   .bg-icon
     position: absolute
     width: 50%
     right: 0
     top: 0
-    transform: translate(30%,-15%) rotate(-145deg)
+    transform: translate(35%,-25%) rotate(-150deg)
     opacity: 0
     z-index: 1
     +transition(0.2s)
@@ -193,15 +204,7 @@
     left: 0
     @media #{$small-only}
       bottom: 20px
-  a.text-link
-    font-size: 14px
-    opacity: 0.5
-    svg
-      width: 18px
-      height: 18px
-      fill: white
-      vertical-align: middle
-      margin-left: 1em
+  .text-link
     &.floated-right
       float: right
       @media #{$medium-up}
@@ -301,37 +304,52 @@
   .partner-block
     position: relative
     width: 20%
-    height: 500px
+    height: auto
     color: $blueGrey900
     line-height: 1.2
+    .img-background
+      display: none
+      @media #{$large-up}
+        display: block
     &.description
       padding: 2em
       background: $green
-      @media #{$small-only}
+      @media #{$medium-only}
+        width: 50%
         height: 400px
+    .person-type
+      position: relative
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 70px
+      .larger
+        +y-align
+        left: 2em
+    &:nth-child(n+2)
+      border-bottom: 1px solid rgba(black, 0.7)
     @media #{$small-only}
       width: 100%
+    @media #{$medium-only}
+      width: 50%
+      height: 100px
+      .person-type
+        height: 100%
+    @media #{$large-up}
+      height: 500px
       &:nth-child(n+2)
-        height: auto
-        border-bottom: 1px solid rgba(black, 0.7)
+        border-bottom: 0
         .person-type
-          position: relative
+          position: absolute
           .larger
-            position: relative
+            left: 10%
     .bold-title
       margin: 16px 0
     .button
       margin-top: 2em
     .person-type
-      position: absolute
-      bottom: 0
-      left: 0
-      width: 100%
-      height: 70px
       background: $blueGrey900
       .larger
-        +y-align
-        left: 10%
         color: $green
         +bold
 
@@ -378,7 +396,6 @@
     display: -ms-flex
     display: -o-flex
     display: flex
-    border-bottom: 1px solid rgba(0,0,0,0.7)
     .img, .text
       position: relative
     .img
@@ -408,6 +425,15 @@
       position: absolute
       bottom: 1em
       left: 1em
+    @media #{$small-only}
+      flex-direction: column
+      .img
+        width: 100%
+        height: 0
+        padding-bottom: 56.25%
+      .text
+        width: 100%
+        padding-bottom: 30%
 
   .tab-buttons
     position: relative

@@ -1,4 +1,6 @@
 .menu-wrapper
+  a.logo href=root_path = inline_svg "svg/header-logo.svg"
+  .close-menu title="Закрити меню" = inline_svg "svg/cross.svg"
   .row
     .columns
 
@@ -12,11 +14,51 @@
         a.menu-link контакти
 
   .menu-brands-container
-    p наші бренди
-    .menu-brand
+    .svg-text = inline_svg "svg/brands-text.svg"
+
+    a.menu-brand
+      .bg-color style="background: #B58F5C"
       .bg-icon = inline_svg "svg/brand-bg-logo-1.svg"
-    .menu-brand
-    .menu-brand
+      .brand-img style="background-image: url(#{asset_path('photo/brand-img-1.png')})"
+      .text
+        .brand-icon = inline_svg "svg/brand-bg-logo-1.svg"
+        p.brand-name
+          | карпатські
+          br
+          | вікна
+        .text-link
+          | Дізнатись більше
+          = inline_svg "svg/ext-link.svg"
+
+    a.menu-brand
+      .bg-color style="background: #A65630"
+      .bg-icon = inline_svg "svg/brand-bg-logo-2.svg"
+      .brand-img style="background-image: url(#{asset_path('photo/brand-img-2.png')})"
+      .text
+        .brand-icon = inline_svg "svg/brand-bg-logo-2.svg"
+        p.brand-name
+          | вікна
+          br
+          | salamander
+        .text-link
+          | Дізнатись більше
+          = inline_svg "svg/ext-link.svg"
+
+    a.menu-brand
+      .bg-color style="background: #3F517A"
+      .bg-icon = inline_svg "svg/brand-bg-logo-3.svg"
+      .brand-img style="background-image: url(#{asset_path('photo/brand-img-3.png')})"
+      .text
+        .brand-icon = inline_svg "svg/brand-bg-logo-3.svg"
+        p.brand-name
+          | алюмінієві
+          br
+          | фасади
+          br
+          | alfabud
+        .text-link
+          | Дізнатись більше
+          = inline_svg "svg/ext-link.svg"
 
   .bottom-part
     .row

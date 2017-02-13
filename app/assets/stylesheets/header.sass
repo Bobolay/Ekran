@@ -40,9 +40,14 @@
     .small
       color: $blueGrey400
   .menu-button
-    margin-left: 5em
+    padding: 1em
+    margin-left: 4em
+    cursor: pointer
     .menu-button-lines
       +burger(24px, 4px, 5px, $blueGrey400, 1px)
+    &:hover
+      .menu-button-lines
+        +burger(24px, 4px, 5px, $green, 1px)
     @media #{$small-only}
       margin-left: 1em
       .menu-button-lines

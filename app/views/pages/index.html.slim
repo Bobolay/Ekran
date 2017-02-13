@@ -59,14 +59,19 @@
 
 .brands-wrapper
   .bg-icon.visible = inline_svg "svg/brand-bg-logo-1.svg"
-  .bg-icon = inline_svg "svg/brand-bg-logo-1.svg"
+  .bg-icon = inline_svg "svg/brand-bg-logo-2.svg"
+  .bg-icon = inline_svg "svg/brand-bg-logo-3.svg"
+  .bg-color.visible style="background-color: #B58F5C"
+  .bg-color style="background-color: #A65630"
+  .bg-color style="background-color: #3F517A"
   ul.brands-slider
     li
       p.wrapper-small-title Наші бренди
       p.brand-header карпатські вікна
       .row
         .columns.medium-6
-          .brand-img style="background-image: url(#{asset_path('photo/brand-img-1.png')})"
+          .brand-img
+            .img-background style="background-image: url(#{asset_path('photo/brand-img-1.png')})"
         .columns.medium-6
           .description-text
             .brand-icon = inline_svg "svg/brand-logo-1.svg"
@@ -78,13 +83,28 @@
               = inline_svg "svg/ext-link.svg"
     li
       p.wrapper-small-title Наші бренди
-      p.brand-header карпатські вікна
+      p.brand-header вікна salamander
       .row
         .columns.medium-6
-          .brand-img style="background-image: url(#{asset_path('photo/brand-img-1.png')})"
+          .brand-img style="background-image: url(#{asset_path('photo/brand-img-2.png')})"
         .columns.medium-6
           .description-text
-            .brand-icon = inline_svg "svg/brand-logo-1.svg"
+            .brand-icon = inline_svg "svg/brand-logo-2.svg"
+            .line
+            p.brand-title З екологічно дерев'яного брусу
+            p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку. Нам добре вдається знаходити індивідуальні рішення, і тому «КАРПАТСЬКІ ВІКНА» ТМ є найкращим, а інколи і єдиним правильним рішенням під час будівництва нових чи реконструкції старих будівель.
+            a.text-link
+              | Дізнатись більше
+              = inline_svg "svg/ext-link.svg"
+    li
+      p.wrapper-small-title Наші бренди
+      p.brand-header алюмінієві фасади alfabud
+      .row
+        .columns.medium-6
+          .brand-img style="background-image: url(#{asset_path('photo/brand-img-3.png')})"
+        .columns.medium-6
+          .description-text
+            .brand-icon = inline_svg "svg/brand-logo-3.svg"
             .line
             p.brand-title З екологічно дерев'яного брусу
             p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку. Нам добре вдається знаходити індивідуальні рішення, і тому «КАРПАТСЬКІ ВІКНА» ТМ є найкращим, а інколи і єдиним правильним рішенням під час будівництва нових чи реконструкції старих будівель.
@@ -192,7 +212,7 @@
     .tab-button відео
 
   .row.tab-content-wrapper
-    .columns.medium-5.large-4.float-right.tab-content.active
+    .columns.medium-12.large-4.float-right.tab-content.active
       p.underlined-title Новини
       a.new-block
         p.larger Прагматический христианско демократический национализм: гипотеза и теории
@@ -220,7 +240,7 @@
         .hover-arrow = inline_svg "svg/key-arrow-right.svg"
       .button Всі новини
 
-    .columns.medium-7.large-7.xxlarge-pull-1.float-left.tab-content
+    .columns.medium-12.large-7.xxlarge-pull-1.float-left.tab-content
       p.underlined-title Блог
       a.blog-block
         .img
@@ -244,7 +264,7 @@
           p.blog-title назва теми в один рядок
           p.date 16 січня, 2107
 
-    .columns.medium-7.large-7.xxlarge-pull-1.float-left.tab-content
+    .columns.medium-12.large-7.xxlarge-pull-1.float-left.tab-content
       p.underlined-title Відео
       .img-container
         .img-background style="background-image: url(#{asset_path('photo/sample-4.jpg')})"

@@ -1,8 +1,12 @@
-# $document.on 'click', '.menu-button', ->
+$document.on 'click', '.menu-button, .close-menu', ->
 
-#   $(this).toggleClass("opened")
-#   $('.menu-wrapper').toggleClass('opened')
-#   $('.mask').toggleClass('visible')
+  # $(this).toggleClass("opened")
+  menu = $('.menu-wrapper')
+  if menu.hasClass('opened')
+    menu.removeClass('opened')
+  else
+    menu.addClass('opened')
+  # $('.mask').toggleClass('visible')
 
 # $.clickOut(".menu-wrapper",
 #   ()->

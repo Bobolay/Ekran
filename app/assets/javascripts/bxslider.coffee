@@ -40,6 +40,8 @@ $document.ready ->
       $('.brands-wrapper .custom-pager .current-slide').text((current+1))
       $('.brands-wrapper .bg-icon').removeClass('visible')
       $('.brands-wrapper .bg-icon').eq(current).addClass('visible')
+      $('.brands-wrapper .bg-color').removeClass('visible')
+      $('.brands-wrapper .bg-color').eq(current).addClass('visible')
   if brands_slider.getSlideCount
     $('.brands-wrapper .custom-pager .total-slide').text((brands_slider.getSlideCount()))
   $('.brands-wrapper .prev-slide').click ->
