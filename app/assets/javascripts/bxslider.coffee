@@ -33,7 +33,7 @@ $document.ready ->
     controls: false
     pager: false
     speed: 1000
-    pause: 10000
+    pause: 9000
     auto: true
     onSlideBefore: ($slideElement, oldIndex, newIndex)->
       current = brands_slider.getCurrentSlide()
@@ -49,3 +49,20 @@ $document.ready ->
   $('.brands-wrapper .next-slide').click ->
     brands_slider.goToNextSlide()
   
+  #     M A I N     S L I D E R
+
+  main_slider = $('.main-slider').bxSlider
+    controls: false
+    pager: false
+    speed: 1000
+    pause: 9000
+    auto: true
+    onSlideBefore: ($slideElement, oldIndex, newIndex)->
+      current = main_slider.getCurrentSlide()
+      $('.main-slider-wrapper .custom-pager .current-slide').text((current+1))
+  if main_slider.getSlideCount
+    $('.main-slider-wrapper .custom-pager .total-slide').text((main_slider.getSlideCount()))
+  $('.main-slider-wrapper .prev-slide').click ->
+    main_slider.goToPrevSlide()
+  $('.main-slider-wrapper .next-slide').click ->
+    main_slider.goToNextSlide()

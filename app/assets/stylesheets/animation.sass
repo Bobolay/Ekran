@@ -1,0 +1,14 @@
+=before-hover($x-translate: 30px, $transition: 0.1s, $transition-delay: 0s)
+  @for $i from 1 through 100
+    &:nth-child(#{$i})
+      transform: translate(0, #{$i*$x-translate})
+      opacity: 0
+      transition: all #{$i*$transition} cubic-bezier(0.19, 1, 0.22, 1)
+      transition-delay: $transition-delay
+=on-hover($transition: 0.25s, $transition-delay: 0s)
+  @for $i from 1 through 100
+    &:nth-child(#{$i})
+      transform: translate(0,0)
+      opacity: 1
+      transition: all #{$i*$transition} cubic-bezier(0.645, 0.045, 0.355, 1)
+      transition-delay: $transition-delay

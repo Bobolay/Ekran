@@ -1,0 +1,160 @@
+.about-us-wrapper
+  position: relative
+  overflow: hidden
+
+  // main page
+  .wrapper-small-title
+    color: $green
+  .indent
+    padding: 2em 0
+    .main-text
+      margin-bottom: 1em
+    .motto
+      @media #{$small-only}
+        margin-top: 1em
+
+  // about us page
+
+  .history-container
+    background: $grey100
+    margin-top: -50px
+    padding: 5em 0
+
+    .year-block
+      position: relative
+      z-index: 1
+      padding-top: 3em
+      border-bottom: 1px solid $green
+      @media #{$small-only}
+        padding-top: 5em
+      .bg-year
+        position: absolute
+        top: 0
+        left: 0
+        font-size: 135px
+        +bold
+        color: white
+        line-height: 1.2
+      .happening
+        margin: 2em 0
+      .accordion-button
+        position: relative
+        +bold
+        +transition(color 0.2s)
+        @media #{$medium-up}
+          float: left
+          width: 250px
+          cursor: initial
+        svg
+          position: absolute
+          width: 24px
+          height: 24px
+          fill: $grey400
+          top: 0
+          right: 0
+          +transition(transform 0.2s)
+          @media #{$medium-up}
+            display: none
+        &.opened
+          color: $green
+          svg
+            +rotate(180deg)
+            fill: $green
+      .accordion-inner
+        position: relative
+        padding-left: 1.25em
+        @media #{$medium-up}
+          display: block
+          float: left
+          width: calc(100% - 250px)
+        &:before
+          content: ''
+          display: block
+          position: absolute
+          top: 0.4em
+          left: 0
+          width: 1px
+          height: 60px
+          background: $grey500
+          @media #{$small-only}
+            top: 0
+            height: 100%
+        span
+          color: $green
+        @media #{$small-only}
+          margin-top: 2em
+
+    .showmore
+      display: inline-block
+      font-size: 14px
+      text-transform: uppercase
+      +s-bold
+      color: $green
+      padding: 1em
+      margin-left: -1em
+      margin-top: 50px
+      cursor: pointer
+
+  .stuff-container
+    position: relative
+    padding: 5em 0
+    .bold-underlined
+      width: 440px
+      max-width: 100%
+      margin-bottom: 2em
+    .clearfix
+      padding: 1px
+    .stuff-block
+      position: relative
+      float: left
+      width: calc(25% + 2px)
+      cursor: pointer
+      border: 1px solid white
+      margin: -1px
+      &:before
+        content: ''
+        display: block
+        padding-bottom: 134%
+      @media #{$small-only}
+        width: 50%
+        &:nth-child(n+6)
+          display: none
+      .hover-block
+        +fullsize
+        padding: 1em
+        background: $green
+        opacity: 0
+        +transition(opacity 0.2s)
+        overflow: hidden
+        .regular
+          color: white
+          text-transform: uppercase
+          +x-bold
+          line-height: 1.5
+        .line
+          display: block
+          width: 20px
+          height: 2px
+          background: white
+          margin: 6px 0
+        .smaller
+          color: white
+          +s-bold
+        .animate
+          +before-hover(20px,0.05s)
+        .social-container
+          position: absolute
+          bottom: 1em
+          left: 1em
+          svg
+            fill: white
+          .social
+            +before-hover(100%,0.05s)
+      &:hover
+        .hover-block
+          opacity: 1
+          .animate
+            +on-hover(0.15s)
+          .social-container
+            .social
+              +on-hover(0.1s, 0.3s)

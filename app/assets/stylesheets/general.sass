@@ -36,6 +36,16 @@ body
 .large
   font-size: 1.25em
 
+.text-align-center
+  text-align: center !important
+.text-align-left
+  text-align: left !important
+.text-align-right
+  text-align: right !important
+
+.italic
+  font-style: italic
+
 .bold-title
   font-size: 1.75em
   line-height: 1.2
@@ -195,3 +205,82 @@ a.text-link
     &:hover
       svg
         fill: $green
+
+.main-banner-wrapper
+  position: relative
+  height: 50vh
+  min-height: 400px
+  .text
+    position: relative
+    +y-align
+    @media #{$small-only}
+      text-align: center
+      max-width: 90%
+    @media #{$medium-up}
+      padding-left: 120px
+      max-width: 700px
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        top: 8px
+        left: 0
+        width: 100px
+        height: 1px
+        background: $blueGrey100
+    @media #{$xxlarge-up}
+      padding-left: 220px
+      max-width: 900px
+      &:before
+        width: 200px
+  .small
+    color: $blueGrey300
+    text-transform: uppercase
+  .banner-title
+    color: $green
+    text-transform: uppercase
+    line-height: 1
+    margin-top: 20px
+    +x-bold
+    @media #{$small-only}
+      font-size: 2em
+    @media #{$medium-up}
+      font-size: 2.5em
+    @media #{$xxlarge-up}
+      font-size: 3em
+
+.main-slider-wrapper
+  position: relative
+  &:before
+    content: ''
+    display: block
+    position: absolute
+    width: 100%
+    height: 80%
+    bottom: 0
+    left: 0
+    background: $grey100
+  .slider-set-dimension-container
+    position: relative
+    &:before
+      content: ''
+      display: block
+      padding-bottom: 56%
+    .slider-controls
+      position: absolute
+      top: 0
+      right: 0
+      +translate(0,-100%)
+      padding-bottom: 16px
+    .slider-inherit-dimension-container
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+    .main-slider
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0

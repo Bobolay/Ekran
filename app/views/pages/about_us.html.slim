@@ -1,0 +1,215 @@
+.main-banner-wrapper
+
+  .row
+    .columns
+      .text
+        p.small головна &nbsp;/&nbsp; про нас
+        p.banner-title ми розпочали з того, що стали першими.
+
+.main-slider-wrapper
+  .row
+    .columns
+      .slider-set-dimension-container
+        = render "slider_controls"
+        .slider-inherit-dimension-container
+          ul.main-slider
+            li.img-background style="background-image: url(#{asset_path('photo/sample-6.jpg')})"
+            li.img-background style="background-image: url(#{asset_path('photo/sample-7.jpg')})"
+            li.img-background style="background-image: url(#{asset_path('photo/sample-8.jpg')})"
+            li.img-background style="background-image: url(#{asset_path('photo/sample-9.jpg')})"
+
+.about-us-wrapper.wrapper-inner-indent
+
+  .row
+    .columns.large-10.large-push-2.xlarge-9.xlarge-push-3.xxlarge-8.xxlarge-push-4.end
+      p.wrapper-small-title.text-align-left Наша місія
+      p.bold-underlined Компанія «Екран-Вікносвіт» &mdash; cучасна, потужна і авторитетна компанія у галузі виробництва світлопрозорих конструкцій України
+      .indent
+        p.main-text Виробнича потужність підприємства складає 700 одиниць віконно-дверних конструкцій у день. Загальна кількість виготовлених на нашому підприємстві вікон вже сягнула більше  1 000 000.
+        p.main-text Завдяки нашій праці тисячі родин мешкають у затишних оселях. Вони радіють життю, виховують дітей, працюють, піклуються про своїх батьків. Усвідомлення, що ми допомагаємо людям бути щасливими, надихає нас на нові звершення.
+        p.main-text В 1999 році дочірнє підприємство «Екран-Вікносвіт» виготовило перше в Україні вікно з профілю SALAMANDER. Ми продовжуємо розвиватися і ставити перед собою амбітні цілі. Компанія «Екран-Вікносвіт» змогла побудувати сучасний виробничий комплекс, де інтегровано виготовлення трьох різновидів віконно-дверних конструкцій: ПВХ, дерев'яного брусу, алюмінію.
+        p.main-text.italic В цьому наша унікальність, наша сила, наша гнучкість і найголовніше &mdash; наша можливість гарантувати вам, нашим покупцям, клієнтам та партнерам, що саме з нами у вас є повноцінний та якісний вибір.
+
+    .columns.large-11.large-push-1.xlarge-10.xlarge-push-2.xxlarge-9.xxlarge-push-3.end
+      .img-container style="background-image: url(#{asset_path('photo/sample-2.jpg')})"
+
+  .history-container
+    .row
+      .columns.large-10.large-push-2.xlarge-9.xlarge-push-3.xxlarge-8.xxlarge-push-4
+
+        .wrapper-small-title.text-align-left Історія
+
+        .year-block
+          .bg-year 2016
+          .happening.clearfix
+            .accordion-button
+              p.regular Редизайн сайту
+              = inline_svg "svg/key-arrow-down.svg"
+            .accordion-inner
+              p.main-text Відбувся ребрендинг компанії та об'єднання торгових марок виробника "ЕКРАН-ВК" та продавця "ВІКНОСВІТ". Тепер ми працюємо під брендом «Екран-Вікносвіт». Впроваджено у виробництво нові профільні системи від Salamander: Brugmann та bluEvolution.
+          .happening.clearfix
+            .accordion-button
+              p.regular Новий асортимент
+              = inline_svg "svg/key-arrow-down.svg"
+            .accordion-inner
+              p.main-text Завдяки нашій праці тисячі родин мешкають у затишних оселях. Вони радіють життю, виховують дітей, працюють, піклуються про своїх батьків. Усвідомлення, що ми допомагаємо людям бути щасливими, надихає нас на нові звершення.
+          .happening.clearfix
+            .accordion-button
+              p.regular Відкриття шоуруму у м.Львові
+              = inline_svg "svg/key-arrow-down.svg"
+            .accordion-inner
+              p.main-text Ми продовжуємо розвиватися і ставити перед собою амбітні цілі.
+              p.main-text Компанія «Екран-Вікносвіт» змогла побудувати сучасний виробничий комплекс, де інтегровано виготовлення трьох різновидів віконно-дверних конструкцій: ПВХ, дерев'яного брусу, алюмінію.
+              p.main-text В цьому наша унікальність, наша сила, наша гнучкість і найголовніше &mdash; наша можливість гарантувати вам, нашим покупцям, клієнтам та партнерам, що саме з нами у вас є повноцінний та якісний вибір.
+        .year-block
+          .bg-year 2014
+          .happening.clearfix
+            .accordion-button
+              p.regular Ребрендинг
+              = inline_svg "svg/key-arrow-down.svg"
+            .accordion-inner
+              p.main-text
+                | Відбувся ребрендинг компанії та об'єднання торгових марок виробника "ЕКРАН-ВК" та продавця "ВІКНОСВІТ". Тепер ми працюємо під брендом «Екран-Вікносвіт». Впроваджено у виробництво нові профільні системи від 
+                span Salamander: Brugmann та bluEvolution.
+        .year-block
+          .bg-year 2013
+          .happening.clearfix
+            .accordion-button
+              p.regular Сертифікат СЕ
+              = inline_svg "svg/key-arrow-down.svg"
+            .accordion-inner
+              p.main-text
+                | «ЕКРАН-ВК», стала другою компанією серед виробників віконно-дверних конструкцій з дерева в Україні, яка отримала 
+                span сертифікат СЄ.
+        .year-block
+          .bg-year 2012
+          .happening.clearfix
+            .accordion-button
+              p.regular Розпочато виробництво дерево-алюмінієвих вікон
+              = inline_svg "svg/key-arrow-down.svg"
+            .accordion-inner
+              p.main-text
+                | Виробництво з дерева — одне із найпотужніших в Україні. Впроваджено у переробку брус шириною 78 і 92 мм. Розпочато виробництво дерево-алюмінієвих вікон. Компанія «ЕКРАН-ВК» &mdash; ексклюзивний переробник профілю «Salamander STREAMLINE» в Україні.
+        .year-block
+          .bg-year 2011
+          .happening.clearfix
+            .accordion-button
+              p.regular Євро - 2012
+              = inline_svg "svg/key-arrow-down.svg"
+            .accordion-inner
+              p.main-text
+                | Мережа «ВІКНОСВІТ» налічує 28 салонів у 22 містах семи областей Західної України. Отримано сертифікат гарантії якості лакофарбового покриття виробів з дерев'яного брусу «SIKKENS». «ЕКРАН-ВК» реалізував масштабний проект –  засклив новозбудований до чемпіонату з футболу «ЄВРО-2012» стадіон «АРЕНА Львів».
+
+        .showmore + показати ще
+
+  .stuff-container
+    .row
+      .columns.large-10.large-push-2.xlarge-9.xlarge-push-3.xxlarge-8.xxlarge-push-4
+        .wrapper-small-title.text-align-left Колектив
+        p.bold-underlined Успіх компанії «Екран-Вікносвіт» &mdash; це особистий успіх кожного нашого працівника.
+        p.main-text Ми переконані &mdash; лише взаєморозуміння, спільні зусилля, наполеглива праця і готовність підтримати один одного у скрутну хвилину приносять бажаний результат &mdash; добробут компанії і ваш особистий добробут.
+        .clearfix
+          .stuff-block
+            .img-background style="background-image: url(#{asset_path('photo/stuff-1.jpg')})"
+            .hover-block
+              p.regular.animate
+                | мирослав
+                br
+                | карпінський
+              .line.animate
+              p.smaller.animate Директор
+              .social-container
+                a.social.dib = inline_svg "svg/social-1.svg"
+                a.social.dib = inline_svg "svg/social-2.svg"
+                a.social.dib = inline_svg "svg/social-3.svg"
+          .stuff-block
+            .img-background style="background-image: url(#{asset_path('photo/stuff-2.jpg')})"
+            .hover-block
+              p.regular.animate
+                | мирослав
+                br
+                | карпінський
+              .line.animate
+              p.smaller.animate Директор
+              .social-container
+                a.social.dib = inline_svg "svg/social-1.svg"
+                a.social.dib = inline_svg "svg/social-2.svg"
+                a.social.dib = inline_svg "svg/social-3.svg"
+          .stuff-block
+            .img-background style="background-image: url(#{asset_path('photo/stuff-3.jpg')})"
+            .hover-block
+              p.regular.animate
+                | мирослав
+                br
+                | карпінський
+              .line.animate
+              p.smaller.animate Директор
+              .social-container
+                a.social.dib = inline_svg "svg/social-1.svg"
+                a.social.dib = inline_svg "svg/social-2.svg"
+                a.social.dib = inline_svg "svg/social-3.svg"
+          .stuff-block
+            .img-background style="background-image: url(#{asset_path('photo/stuff-4.jpg')})"
+            .hover-block
+              p.regular.animate
+                | мирослав
+                br
+                | карпінський
+              .line.animate
+              p.smaller.animate Директор
+              .social-container
+                a.social.dib = inline_svg "svg/social-1.svg"
+                a.social.dib = inline_svg "svg/social-2.svg"
+                a.social.dib = inline_svg "svg/social-3.svg"
+          .stuff-block
+            .img-background style="background-image: url(#{asset_path('photo/stuff-5.jpg')})"
+            .hover-block
+              p.regular.animate
+                | мирослав
+                br
+                | карпінський
+              .line.animate
+              p.smaller.animate Директор
+              .social-container
+                a.social.dib = inline_svg "svg/social-1.svg"
+                a.social.dib = inline_svg "svg/social-2.svg"
+                a.social.dib = inline_svg "svg/social-3.svg"
+          .stuff-block
+            .img-background style="background-image: url(#{asset_path('photo/stuff-6.jpg')})"
+            .hover-block
+              p.regular.animate
+                | мирослав
+                br
+                | карпінський
+              .line.animate
+              p.smaller.animate Директор
+              .social-container
+                a.social.dib = inline_svg "svg/social-1.svg"
+                a.social.dib = inline_svg "svg/social-2.svg"
+                a.social.dib = inline_svg "svg/social-3.svg"
+          .stuff-block
+            .img-background style="background-image: url(#{asset_path('photo/stuff-7.jpg')})"
+            .hover-block
+              p.regular.animate
+                | мирослав
+                br
+                | карпінський
+              .line.animate
+              p.smaller.animate Директор
+              .social-container
+                a.social.dib = inline_svg "svg/social-1.svg"
+                a.social.dib = inline_svg "svg/social-2.svg"
+                a.social.dib = inline_svg "svg/social-3.svg"
+          .stuff-block
+            .img-background style="background-image: url(#{asset_path('photo/stuff-8.jpg')})"
+            .hover-block
+              p.regular.animate
+                | мирослав
+                br
+                | карпінський
+              .line.animate
+              p.smaller.animate Директор
+              .social-container
+                a.social.dib = inline_svg "svg/social-1.svg"
+                a.social.dib = inline_svg "svg/social-2.svg"
+                a.social.dib = inline_svg "svg/social-3.svg"
