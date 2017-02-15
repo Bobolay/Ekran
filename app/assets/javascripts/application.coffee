@@ -14,9 +14,11 @@
 #= require plugins/jquery.bxslider.min
 #= require plugins/jquery.scrolldelta
 #= require plugins/lightgallery.min
+#= require plugins/lg-thumbnail.min
 # require plugins/scroll-banner
 #= require plugins/selectize.min
 #= require plugins/parallax.min
+#= require plugins/jquery.collagePlus.min
 
 #     I N I T I A L I Z E
 
@@ -33,3 +35,5 @@
 #= require tabs
 #= require navigation
 #= require links
+#= require lightgallery
+#= require collage

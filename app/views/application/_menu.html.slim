@@ -4,7 +4,7 @@
 
       .menu-link-container
         a.menu-link.animated href=about_us_path про нас
-        a.menu-link.animated проекти
+        a.menu-link.animated href=projects_all_path проекти
         .menu-link.animated
           a
             | партнерство
@@ -83,19 +83,19 @@
   .bottom-part
     .row
       .columns
-        .social-container.dib
+        .social-container.dib.animate
           a.social.dib = inline_svg "svg/social-1.svg"
           a.social.dib = inline_svg "svg/social-2.svg"
           a.social.dib = inline_svg "svg/social-3.svg"
 
-        .request.design-request-button.dib
+        .request.design-request-button.dib.animate
           = inline_svg "svg/menu-contact-icon-1.svg"
           | заявка на замір
-        .line.dib
-        .request.call-me-back-button.dib
+        .line.dib.animate
+        .request.call-me-back-button.dib.animate
           = inline_svg "svg/menu-contact-icon-2.svg"
           | перетелефонувати мені
-        .line.dib
-        .request.chat-online-button.dib
+        .line.dib.animate
+        .request.chat-online-button.dib.animate
           = inline_svg "svg/menu-contact-icon-3.svg"
           | онлайн консультація

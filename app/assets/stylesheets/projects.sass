@@ -1,0 +1,160 @@
+//     M a i n     p a g e
+
+.projects-wrapper
+  overflow: hidden
+
+  .projects
+    position: relative
+    .projects-all-link
+      width: 36px
+      height: 36px
+      +y-align
+      right: 2em
+      border: 2px solid white
+      z-index: 1
+      svg
+        fill: white
+        +centered-inside
+      @media #{$small-only}
+        display: none
+  .clearfix.projects
+    .project-block
+      @media #{$small-only}
+        width: 100%
+      @media #{$medium-up}
+        width: 50%
+      @media #{$xlarge-up}
+        width: 25%
+
+  .project-block
+    position: relative
+    width: 100%
+    overflow: hidden
+    &:before
+      +square
+    .text-block
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      max-height: 300px
+      color: white
+      padding: 1em 1em 3em
+      +translate(0,50%)
+      +transition(0.5s)
+      @media #{$small-only}
+        +translate(0,20%)
+    .project-performer
+      +s-bold
+      text-transform: uppercase
+    .bold-title
+      margin: 5px 0 20px
+    a.text-link
+      +bold
+      margin-top: 2em
+      svg
+        width: 24px
+        height: 24px
+        margin-left: 0
+    .main-text, .text-link
+      opacity: 0
+      +transition(opacity 0.5s)
+      @media #{$small-only}
+        display: none
+    &:hover
+      .text-block
+        background: $green
+        +translate(0,0)
+      .main-text, .text-link
+        opacity: 1
+
+  //     P r o j e c t s     a l l     p a g e
+
+  .filter-brands, .filter-years
+    .small
+      text-transform: uppercase
+      +s-bold
+      display: inline-block
+      margin-right: 10px
+    .filter
+      border: 2px solid $grey500
+      font-size: 12px
+      padding: 0 6px
+      margin: 6px 0
+      line-height: 30px
+      svg
+        vertical-align: middle
+        fill: $green
+
+  .year-block
+    position: relative
+    padding-top: 8em
+    padding-bottom: 4em
+    &:last-child
+      padding-bottom: 8em
+    .bg-year
+      position: absolute
+      top: 0
+      font-size: 8em
+      +x-bold
+      color: $grey300
+      line-height: 1.2
+      @media #{$small-only}
+        +x-align
+      @media #{$medium-up}
+        left: 10%
+
+.project-one-wrapper
+
+  .social-title
+    margin: 3em 0 1em
+    +bold
+    @media #{$small-only}
+      margin: 2em 0 1em
+  .social-container
+    .social
+      svg
+        fill: $blueGrey400
+
+  .description
+    padding: 5em 0 0
+    .project-one-title
+      font-size: 1.5em
+      text-transform: uppercase
+      +x-bold
+      margin-bottom: 20px
+    .project-one-subtitle
+      +bold
+      margin: 20px 0
+    .summary-info
+      border: 5px solid $green
+      padding: 1em
+      .small
+        text-transform: uppercase
+      .regular
+        color: $green
+        +x-bold
+        text-transform: uppercase
+        margin-bottom: 2em
+    .line
+      width: 100%
+      height: 1px
+      background: $grey400
+      margin-top: 5em
+
+  .project-photo-collage
+    .collage
+      padding: 0
+      img
+        vertical-align: bottom
+        opacity: 0
+        @media #{$small-only}
+          &:nth-child(n+5)
+            display: none !important
+    .manufacturer-field
+      margin-top: 3em
+      @media #{$small-only}
+        margin-top: 2em
+
+  .more-projects
+    

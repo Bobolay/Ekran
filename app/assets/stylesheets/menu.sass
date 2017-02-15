@@ -43,7 +43,6 @@
     text-transform: uppercase
     cursor: pointer
     max-width: 350px
-    +transition(color 0.2s)
     &:hover
       color: $green
     ul
@@ -77,11 +76,7 @@
         &:hover
           color: $green
       .animated
-        @for $i from 1 through 7
-          &:nth-child(#{$i})
-            transform: translate(0, #{$i*20px})
-            opacity: 0
-            transition: transform,opacity #{$i*0.1s} cubic-bezier(0.19, 1, 0.22, 1)
+        +before-hover(20px,0.1s)
     &:hover
       ul
         pointer-events: initial
@@ -89,25 +84,13 @@
         &:before
           opacity: 1
         .animated
-          @for $i from 1 through 7
-            &:nth-child(#{$i})
-              transform: translate(0,0)
-              opacity: 1
-              transition: transform #{$i*0.1s} cubic-bezier(0.645, 0.045, 0.355, 1)
+          +on-hover(0.15s)
   
   .menu-link.animated
-    @for $i from 1 through 7
-      &:nth-child(#{$i})
-        transform: translate(0, #{$i*20px})
-        opacity: 0
-        transition: transform,opacity #{$i*0.1s} cubic-bezier(0.19, 1, 0.22, 1)
+    +before-hover(20px,0.1s)
   &.opened
     .menu-link.animated
-      @for $i from 1 through 7
-        &:nth-child(#{$i})
-          transform: translate(0,0)
-          opacity: 1
-          transition: transform #{$i*0.1s} cubic-bezier(0.645, 0.045, 0.355, 1)
+      +on-hover(0.1s)
 
   .menu-brands-container
     position: absolute
@@ -214,6 +197,8 @@
     color: $blueGrey600
     font-size: 10px
     text-transform: uppercase
+    .animate
+      +before-hover(30px,0.1s)
     .request
       padding: 0 2em
       cursor: pointer
@@ -232,3 +217,7 @@
       width: 1px
       height: 26px
       background: $blueGrey300
+  &.opened
+    .bottom-part
+      .animate
+        +on-hover(0.1s,0.5s)

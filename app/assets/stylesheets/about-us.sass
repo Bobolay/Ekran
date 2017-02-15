@@ -7,16 +7,20 @@
     color: $green
   .indent
     padding: 2em 0
-    .main-text
-      margin-bottom: 1em
-    .motto
-      @media #{$small-only}
-        margin-top: 1em
+  .main-text
+    margin-bottom: 1em
+  .motto
+    @media #{$small-only}
+      margin-top: 1em
 
   // about us page
 
+  .bold-underlined
+    width: 440px
+    max-width: 100%
+    margin-bottom: 2em
+
   .history-container
-    background: $grey100
     margin-top: -50px
     padding: 5em 0
 
@@ -31,8 +35,8 @@
         position: absolute
         top: 0
         left: 0
-        font-size: 135px
-        +bold
+        font-size: 8em
+        +x-bold
         color: white
         line-height: 1.2
       .happening
@@ -98,12 +102,10 @@
   .stuff-container
     position: relative
     padding: 5em 0
-    .bold-underlined
-      width: 440px
-      max-width: 100%
-      margin-bottom: 2em
+
     .clearfix
       padding: 1px
+      margin-top: 3em
     .stuff-block
       position: relative
       float: left
@@ -158,3 +160,79 @@
           .social-container
             .social
               +on-hover(0.1s, 0.3s)
+
+  .vacancies-container
+    .clearfix
+      margin: -2px
+      padding: 3em 0 5em
+    .vacancie-block
+      position: relative
+      padding: 1em
+      height: 140px
+      background: $grey100
+      margin: 1px
+      @media #{$small-only}
+        &:nth-child(n+4)
+          display: none
+      @media #{$medium-up}
+        float: left
+        width: calc(50% - 2px)
+      .city
+        font-size: 0.875em
+        +light
+        text-transform: uppercase
+      .job-position
+        font-size: 21px
+        color: $green
+        text-transform: uppercase
+        +x-bold
+      .smaller
+        position: absolute
+        bottom: 1em
+        left: 1em
+        color: $grey500
+      svg
+        position: absolute
+        bottom: 1em
+        right: 1em
+        fill: $grey500
+
+  .sertificates-container
+    ul
+      margin-top: 2em
+      li
+        position: relative
+        margin: 1em 0
+        padding-left: 20px
+        font-size: 0.875em
+        +light
+        &:before
+          content: '\2014'
+          color: $green
+          position: absolute
+          top: 0
+          left: 0
+
+    .certificates
+      padding: 5em 0
+    .sertificate-block
+      position: relative
+      width: 100%
+      .sertificate-img
+        position: relative
+        padding-bottom: 140%
+        top: 0
+        left: 0
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+      .text
+        height: 100px
+        padding-top: 1em
+      .smaller
+        text-transform: uppercase 
+        color: $green
+        +x-bold
+      .small
+        text-transform: uppercase
+        color: $grey500

@@ -11,6 +11,14 @@ class PagesController < ApplicationController
 
   end
 
+  def projects_all
+
+  end
+
+  def project_one
+
+  end
+
   private
 
   def set_page_instance
