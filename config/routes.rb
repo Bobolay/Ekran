@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "about_us", action: "about_us"
     get "projects_all", action: "projects_all"
     get "project_one", action: "project_one"
+    get "partnership", action: "partnership"
   end
 
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

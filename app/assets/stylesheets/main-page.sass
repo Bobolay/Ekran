@@ -106,6 +106,7 @@
   overflow: hidden
   color: white
   background: black
+  max-height: 100vh
   .brands-slider
     height: 100%
     li
@@ -165,6 +166,10 @@
     padding-bottom: 100%
     @media #{$small-only}
       margin-top: -25%
+    @media #{$medium-up}
+      padding-bottom: 70%
+    @media #{$xxlarge-up}
+      padding-bottom: 100%
   
   .description-text
     margin-top: 5em
@@ -218,60 +223,6 @@
       width: 10px
       height: 1px
       background: $green
-
-.partnership-wrapper
-  overflow: hidden
-  .partner-block
-    position: relative
-    width: 20%
-    height: auto
-    color: $blueGrey900
-    line-height: 1.2
-    .img-background
-      display: none
-      @media #{$large-up}
-        display: block
-    &.description
-      padding: 2em
-      background: $green
-      @media #{$medium-only}
-        width: 50%
-        height: 400px
-    .person-type
-      position: relative
-      bottom: 0
-      left: 0
-      width: 100%
-      height: 70px
-      .larger
-        +y-align
-        left: 2em
-    &:nth-child(n+2)
-      border-bottom: 1px solid rgba(black, 0.7)
-    @media #{$small-only}
-      width: 100%
-    @media #{$medium-only}
-      width: 50%
-      height: 100px
-      .person-type
-        height: 100%
-    @media #{$large-up}
-      height: 500px
-      &:nth-child(n+2)
-        border-bottom: 0
-        .person-type
-          position: absolute
-          .larger
-            left: 10%
-    .bold-title
-      margin: 16px 0
-    .button
-      margin-top: 2em
-    .person-type
-      background: $blueGrey900
-      .larger
-        color: $green
-        +bold
 
 .media-wrapper
   .underlined-title

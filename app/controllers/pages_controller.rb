@@ -19,6 +19,10 @@ class PagesController < ApplicationController
 
   end
 
+  def partnership
+
+  end
+
   private
 
   def set_page_instance

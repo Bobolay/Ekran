@@ -1,3 +1,47 @@
+//     general style for project block
+
+.project-block
+  position: relative
+  width: 100%
+  overflow: hidden
+  &:before
+    +square
+  .text-block
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    max-height: 300px
+    color: white
+    padding: 1em 1em 3em
+    +translate(0,50%)
+    +transition(0.5s)
+    @media #{$small-only}
+      +translate(0,20%)
+  .project-performer
+    +s-bold
+    text-transform: uppercase
+  .bold-title
+    margin: 5px 0 20px
+  a.text-link
+    +bold
+    margin-top: 2em
+    svg
+      width: 24px
+      height: 24px
+      margin-left: 0
+  .main-text, .text-link
+    opacity: 0
+    +transition(opacity 0.5s)
+    @media #{$small-only}
+      display: none
+  &:hover
+    .text-block
+      background: $green
+      +translate(0,0)
+    .main-text, .text-link
+      opacity: 1
+
 //     M a i n     p a g e
 
 .projects-wrapper
@@ -25,48 +69,6 @@
         width: 50%
       @media #{$xlarge-up}
         width: 25%
-
-  .project-block
-    position: relative
-    width: 100%
-    overflow: hidden
-    &:before
-      +square
-    .text-block
-      position: absolute
-      bottom: 0
-      left: 0
-      width: 100%
-      max-height: 300px
-      color: white
-      padding: 1em 1em 3em
-      +translate(0,50%)
-      +transition(0.5s)
-      @media #{$small-only}
-        +translate(0,20%)
-    .project-performer
-      +s-bold
-      text-transform: uppercase
-    .bold-title
-      margin: 5px 0 20px
-    a.text-link
-      +bold
-      margin-top: 2em
-      svg
-        width: 24px
-        height: 24px
-        margin-left: 0
-    .main-text, .text-link
-      opacity: 0
-      +transition(opacity 0.5s)
-      @media #{$small-only}
-        display: none
-    &:hover
-      .text-block
-        background: $green
-        +translate(0,0)
-      .main-text, .text-link
-        opacity: 1
 
   //     P r o j e c t s     a l l     p a g e
 
@@ -156,5 +158,16 @@
       @media #{$small-only}
         margin-top: 2em
 
-  .more-projects
+.more-projects
+  position: relative
+  padding-bottom: 5em
+  &:before
+    content: ''
+    display: block
+    position: absolute
+    width: 100%
+    height: 80%
+    bottom: 0
+    left: 0
+    background: $grey100
     

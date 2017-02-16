@@ -1,0 +1,23 @@
+.row.columns-left
+  .columns
+    float: left !important
+
+.clearfix
+  position: relative
+  +clearfix
+  .floated
+    float: left
+  .floated-right
+    float: right
+    
+.dib
+  display: inline-block
+  vertical-align: middle
+  line-height: 1
+
+.float-right
+  @media #{$medium-up}
+    float: right !important
+.float-left
+  @media #{$medium-up}
+    float: left !important
