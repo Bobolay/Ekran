@@ -60,3 +60,146 @@
       .larger
         color: $green
         +bold
+
+.partner-one-wrapper
+
+  .partner-link-container
+    margin: 30px 0
+    border-top: 1px solid $grey400
+    border-bottom: 1px solid $grey400
+    @media #{$small-only}
+      margin: 20px 0
+    @media #{$large-up}
+      border-top: 0
+      border-bottom: 0
+      margin: 60px 0
+
+  .partner-link
+    display: none
+    position: relative
+    margin: 10px 0
+    font-size: 1.125em
+    color: $grey400
+    +x-bold
+    text-transform: uppercase
+    @media #{$xxlarge-up}
+      font-size: 1.25em
+    &:hover
+      color: $green
+    &.active
+      display: block
+      &:after
+        content: ''
+        width: 0
+        height: 0
+        border: 6px solid transparent
+        border-color: $grey400 transparent transparent transparent
+        position: absolute
+        top: 10px
+        right: 10px
+        @media #{$large-up}
+          display: none
+    &.opened
+      &:after
+        border-color: transparent transparent $grey400 transparent
+        top: 4px
+    &.visible
+      display: block
+    @media #{$large-up}
+      display: inline-block
+      vertical-align: middle
+      &.active
+        display: inline-block
+
+  .line-link-separator
+    width: 1px
+    height: 24px
+    background: $grey400
+    margin: 0 1em
+    display: none
+    vertical-align: middle
+    @media #{$large-up}
+      display: inline-block
+
+  .img-container
+    margin-bottom: 2em
+
+  .partner-title
+    font-size: 1.5em
+    +x-bold
+    text-transform: uppercase
+    margin-bottom: 20px
+    line-height: 1.2
+
+  .partner-main-text
+    +light
+    margin-bottom: 1em
+
+  .contact-block
+    padding: 1em 0
+    .info-block
+      margin-bottom: 2em
+      .small
+        text-transform: uppercase
+        margin-bottom: 1em
+      .larger
+        +bold
+        color: $green
+    .button
+      color: $green
+      border: 2px solid $green
+
+  .story-block
+    background: $blueGrey900
+    padding: 1em
+    .clearfix
+      .img
+        position: relative
+        width: 30%
+        background-size: cover
+        background-position: center
+        &:before
+          +square
+        @media #{$medium-up}
+          width: 60px
+      .person-info
+        width: 70%
+        padding-left: 10px
+        .larger
+          color: $green
+          text-transform: uppercase
+          +bold
+          line-height: 1.2
+        .smaller
+          margin-top: 10px
+          color: $blueGrey300
+          @media #{$medium-up}
+            margin-top: 20px
+    .line
+      margin: 1em 0
+      width: 100%
+      height: 1px
+      background: $blueGrey800
+    .main-text
+      color: $blueGrey100
+      margin-bottom: 1em
+
+  .partner-navigation
+    border-top: 4px solid $grey300
+    padding: 30px 0
+    margin: 5em 0
+    @media #{$small-only}
+      padding: 20px 0
+      margin: 3em 0
+    .icon
+      width: 24px
+      height: 24px
+      svg
+        fill: $green
+        width: 100%
+        height: 100%
+    .larger
+      color: $green
+      +s-bold
+      @media #{$small-only}
+        display: none

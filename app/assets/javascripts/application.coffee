@@ -37,3 +37,4 @@
 #= require links
 #= require lightgallery
 #= require collage
+#= require dropdown_list

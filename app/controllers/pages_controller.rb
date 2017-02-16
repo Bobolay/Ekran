@@ -23,6 +23,10 @@ class PagesController < ApplicationController
 
   end
 
+  def partner_training_center
+
+  end
+
   private
 
   def set_page_instance
