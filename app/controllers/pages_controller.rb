@@ -27,6 +27,10 @@ class PagesController < ApplicationController
 
   end
 
+  def brands
+
+  end
+
   private
 
   def set_page_instance

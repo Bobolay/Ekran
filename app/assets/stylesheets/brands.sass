@@ -1,0 +1,225 @@
+//     brands on main page
+
+.brands-wrapper
+  position: relative
+  overflow: hidden
+  color: white
+  background: black
+  max-height: 100vh
+  .brands-slider
+    height: 100%
+    li
+      overflow: hidden
+      padding: 5em 0
+      @media #{$small-only}
+        padding: 4em 0 2em
+  .bg-color
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    opacity: 0
+    +transition(0.5s)
+    &.visible
+      opacity: 1
+      +transition(0.5s)
+  .bg-icon
+    position: absolute
+    width: 50%
+    right: 0
+    top: 0
+    transform: translate(35%,-25%) rotate(-150deg)
+    opacity: 0
+    z-index: 1
+    +transition(0.2s)
+    &.visible
+      opacity: 1
+      +transition(opacity 1s cubic-bezier(0.47, 0, 0.745, 0.715))
+      +transition-delay(1s)
+    svg
+      fill: rgba(white, 0.2)
+      width: 100%
+      height: 100%
+    @media #{$small-only}
+      display: none
+  .wrapper-small-title, .brand-header
+    text-align: center
+  .brand-header
+    font-size: 5em
+    text-transform: uppercase
+    +x-bold
+    margin-top: 10px
+    line-height: 1
+    @media #{$small-only}
+      font-size: 3em
+    @media #{$medium-only}
+      font-size: 4em
+    @media only screen and (min-width: 1920px)
+      font-size: 8.75em
+  .brand-img
+    position: relative
+    padding-bottom: 100%
+    z-index: 1
+    .img-background
+      background-size: contain
+      background-repeat: no-repeat
+    @media #{$small-only}
+      margin-top: -25%
+    @media #{$medium-up}
+      padding-bottom: 70%
+    @media #{$xxlarge-up}
+      padding-bottom: 100%
+  
+  .description-text
+    margin-top: 5em
+    @media #{$small-only}
+      display: none
+  .brand-icon
+  .line
+    width: 100%
+    height: 3px
+    background: white
+    opacity: 0.3
+    margin: 1em 0
+  .brand-title
+    font-size: 1.3125em
+    +bold
+  .main-text
+    margin: 1em 0 2em
+  
+  .brands-bottom
+    position: absolute
+    width: 100%
+    bottom: 50px
+    left: 0
+    @media #{$small-only}
+      bottom: 20px
+  .text-link
+    &.floated-right
+      float: right
+      @media #{$medium-up}
+        display: none
+
+//     brands inner page
+
+.brands-fullpage-banner
+  position: relative
+  padding-top: 110px
+  
+  .brand
+    position: relative
+    width: 100%
+    height: calc(100vh - 110px)
+    text-align: center
+    overflow: hidden
+    @media #{$large-up}
+      float: left
+      width: calc(1 / 3 * 100%)
+    .bg-icon
+      position: absolute
+      width: 140%
+      right: 0
+      top: 0
+      transform: translate(35%,-25%) rotate(-150deg)
+      z-index: 1
+      +transition(0.2s)
+      svg
+        fill: rgba(white, 0.2)
+        width: 100%
+        height: 100%
+    .brand-icon
+      position: relative
+      padding-top: 3em
+    .brand-img
+      width: 80%
+      +xy-align
+      padding-bottom: 100%
+      z-index: 1
+      .img-background
+        background-size: contain
+        background-repeat: no-repeat
+      @media #{$xxlarge-up}
+        top: 46%
+        width: 100%
+    .text
+      position: absolute
+      width: 100%
+      bottom: 3em
+      left: 0
+    .brand-title
+      color: white
+      text-transform: uppercase
+      +x-bold
+      line-height: 1.2
+      @media #{$small-only}
+        font-size: 2em
+      @media #{$medium-up}
+        font-size: 2.5em
+      @media #{$xxlarge-up}
+        font-size: 3em
+    .text-link
+      margin-top: 1em
+      +transition(opacity 0.2s)
+    @media #{$large-up}
+      .bg-icon
+        opacity: 0
+      .text
+        +translate(0,10%)
+        +transition(transform 0.2s)
+      .text-link
+        opacity: 0
+      &:hover
+        .bg-icon
+          opacity: 1
+        .text
+          +translate(0,0)
+        .text-link
+          opacity: 1
+
+.another-brands-wrapper
+  .main-text
+    text-align: center
+    margin: 0 auto 3em
+    width: 500px
+    max-width: 90%
+
+  .icon-container
+    position: relative
+    padding-bottom: 56%
+    +transition(background 0.2s)
+    cursor: pointer
+    overflow: hidden
+    .icon
+      +centered-inside
+      width: 50%
+      height: 50%
+      +transition(transform 0.2s)
+      svg
+        fill: $green
+        width: 100%
+        height: 100%
+        +transition(0.2s)
+    .smaller
+      position: absolute
+      left: 50%
+      top: 60%
+      +translate(-50%,60%)
+      color: white
+      width: 80%
+      text-align: center
+      opacity: 0
+      +transition(opacity,transform 0.2s)
+    @media #{$large-up}
+      &:hover
+        +transition(background 0.5s)
+        background: $green
+        .icon
+          transform: scale(0.5) translate(0,-100%)
+          +transition(transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94))
+          svg
+            fill: white
+        .smaller
+          opacity: 1
+          +transition-delay(0.2s)
+          +translate(-50%,-50%)

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get "project_one", action: "project_one"
     get "partnership", action: "partnership"
     get "partner_training_center", action: "partner_training_center"
+    get "brands", action: "brands"
     
   end
 
