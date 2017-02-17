@@ -31,6 +31,14 @@ class PagesController < ApplicationController
 
   end
 
+  def services
+
+  end
+
+  def service_one
+
+  end
+
   private
 
   def set_page_instance

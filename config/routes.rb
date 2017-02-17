@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get "partnership", action: "partnership"
     get "partner_training_center", action: "partner_training_center"
     get "brands", action: "brands"
+    get "services", action: "services"
+    get "service_one", action: "service_one"
     
   end
 

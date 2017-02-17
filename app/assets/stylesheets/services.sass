@@ -1,0 +1,81 @@
+//     service on main page
+
+.service-wrapper
+  overflow: hidden
+  .main-text
+    margin-bottom: 3em
+  .smaller
+    position: relative
+    text-transform: uppercase
+    +s-bold
+    color: $green
+    padding-left: 1.5em
+    margin: 1em
+    @media #{$medium-up}
+      display: inline-block
+      margin-right: 3em
+    &:before
+      content: ''
+      position: absolute
+      bottom: 5px
+      left: 0
+      width: 10px
+      height: 1px
+      background: $green
+
+//     services all page
+
+.services-fullpage-banner
+  position: relative
+  padding-top: 110px
+  @media #{$small-only}
+    padding-top: 70px
+
+  .service
+    position: relative
+    width: 100%
+    height: calc(100vh - 110px)
+    text-align: center
+    overflow: hidden
+    @media #{$small-only}
+      height: calc(100vh - 70px)
+    @media #{$large-up}
+      float: left
+      width: calc(1 / 3 * 100%)
+    .img-background
+      +transition(transform 1s)
+    .text
+      position: absolute
+      width: 100%
+      bottom: 0
+      left: 0
+      text-align: center
+      color: white
+      padding-bottom: 3em
+      +transition(transform 1s)
+      .service-title
+        text-transform: uppercase
+        +x-bold
+        line-height: 1.2
+        margin-bottom: 20px
+        @media #{$small-only}
+          font-size: 2em
+        @media #{$medium-only}
+          font-size: 3em
+        @media #{$large-only}
+          font-size: 2.5em
+        @media #{$xlarge-up}
+          font-size: 3.5em
+    &:hover
+      .img-background
+        +scale(1.1)
+      .text
+        +translate(0,-10%)
+
+.service-one-wrapper
+
+  .service-subtitle
+    +bold
+  .standart-list
+    li
+      color: $green
