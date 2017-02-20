@@ -62,9 +62,25 @@ body
   padding-bottom: 5px
   border-bottom: 4px solid $green
 
+.text-link
+  font-size: 14px
+  opacity: 0.5
+  color: white
+  svg
+    width: 18px
+    height: 18px
+    fill: white
+    vertical-align: middle
+    margin-left: 1em
+
 .wrapper-small-title
   font-size: 14px
   margin-bottom: 2em
+
+.cutted
+  // white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
 
 .wrapper-inner-indent
   padding: 4em 0 2em
@@ -99,24 +115,6 @@ a
   cursor: pointer
   +transition(0.15s)
 
-.img-background
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
-  bottom: 0
-  background-position: center
-  background-size: cover
-  +transition(0.2s)
-
-.img-container
-  position: relative
-  width: 100%
-  height: 0
-  padding-bottom: 56.25%
-  background-position: center
-  background-size: cover
-
 .grey-bg
   background: $grey100
 
@@ -133,17 +131,6 @@ a
     position: absolute
     bottom: 1em
     left: 1em
-
-.text-link
-  font-size: 14px
-  opacity: 0.5
-  color: white
-  svg
-    width: 18px
-    height: 18px
-    fill: white
-    vertical-align: middle
-    margin-left: 1em
 
 .social-container
   position: relative
@@ -166,9 +153,13 @@ a
   position: relative
   height: 50vh
   min-height: 400px
+  .row, .columns
+    height: 100%
+    position: relative
   .text
     position: relative
     +y-align
+    z-index: 1
     @media #{$small-only}
       text-align: center
       max-width: 90%
@@ -189,9 +180,24 @@ a
       max-width: 900px
       &:before
         width: 200px
+    &.wide
+      width: 1000px
+      max-width: 90%
+    &.media
+      .banner-title
+        color: white
   .small
     color: $blueGrey300
     text-transform: uppercase
+    display: inline-block
+    &.green
+      color: $green
+  a.small
+    &:hover
+      color: $green
+  span.separator
+    color: $blueGrey300
+    font-size: 0.75em
   .banner-title
     color: $green
     text-transform: uppercase
@@ -205,6 +211,7 @@ a
     @media #{$xxlarge-up}
       font-size: 3em
       line-height: 1.2
+
   .button
     margin-top: 20px
     border: 2px solid $green
@@ -284,6 +291,31 @@ ul.standart-list
   padding-left: 20px
   border-left: 6px solid $green
 
+.filter-container
+  margin: 1em 0
+  .small
+    text-transform: uppercase
+    +s-bold
+    display: inline-block
+    margin-right: 10px
+  .filter
+    border: 2px solid $grey500
+    font-size: 12px
+    padding: 0 6px
+    margin: 6px 0
+    line-height: 26px
+    cursor: pointer
+    svg
+      vertical-align: middle
+      fill: $green
+    &:hover
+      border: 2px solid $green
+      color: $green
+    &.active
+      background: $blueGrey900
+      border: 2px solid $blueGrey900
+      color: $green
+
 .link-container
   margin: 30px 0
   border-top: 1px solid $grey400
@@ -309,6 +341,7 @@ ul.standart-list
       color: $green
     &.active
       display: block
+      color: $green
       &:after
         content: ''
         width: 0

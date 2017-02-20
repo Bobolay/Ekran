@@ -66,3 +66,23 @@ $document.ready ->
     main_slider.goToPrevSlide()
   $('.main-slider-wrapper .next-slide').click ->
     main_slider.goToNextSlide()
+
+  #     M E D I A     B A C K G R O U N D     S L I D E R
+
+  media_slider = $('.media-background-slider').bxSlider
+    controls: false
+    pager: false
+    speed: 1000
+    pause: 10000
+    auto: true
+    onSlideBefore: ($slideElement, oldIndex, newIndex)->
+      current = media_slider.getCurrentSlide()
+      $('.main-banner-wrapper .custom-pager .current-slide').text((current+1))
+      $('.related-to-slider-text').removeClass('visible')
+      $('.related-to-slider-text').eq(current).addClass('visible')
+  if media_slider.getSlideCount
+    $('.main-banner-wrapper .custom-pager .total-slide').text((media_slider.getSlideCount()))
+  $('.main-banner-wrapper .prev-slide').click ->
+    media_slider.goToPrevSlide()
+  $('.main-banner-wrapper .next-slide').click ->
+    media_slider.goToNextSlide()

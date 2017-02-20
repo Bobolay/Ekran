@@ -39,6 +39,30 @@ class PagesController < ApplicationController
 
   end
 
+  def media_all
+
+  end
+
+  def media_news
+
+  end
+
+  def media_new_one
+
+  end
+
+  def media_blog
+
+  end
+
+  def media_blog_one
+
+  end
+
+  def media_video
+
+  end
+
   private
 
   def set_page_instance

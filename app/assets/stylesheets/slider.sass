@@ -7,6 +7,8 @@ ul
   list-style: none
 
 .custom-controls
+  position: relative
+  z-index: 5
   .line-separator
     width: 1px
     height: 28px
@@ -31,7 +33,7 @@ ul
     .current-slide
       color: $green
 
-.brands-wrapper
+.brands-wrapper, .main-banner-wrapper
   .custom-controls
     .line-separator
       background: white
@@ -41,4 +43,4 @@ ul
   .custom-pager
     color: white
     .current-slide
-      color: white
+      color: $green

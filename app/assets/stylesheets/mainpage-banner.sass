@@ -1,0 +1,93 @@
+.fullpage-banner-wrapper
+  width: 100%
+  height: 100vh
+  overflow: hidden
+
+  .fullpage-banner-slider
+    position: relative
+    height: 100%
+
+  .banner-text
+    +x-align
+    bottom: 30%
+    color: white
+    text-align: center
+    +transition(opacity 0.3s)
+    opacity: 0
+    width: 600px
+    max-width: 100%
+    .line
+      width: 100%
+      height: 1px
+      background: white
+      margin: 10px 0
+      @media #{$small-only}
+        width: 40px
+        margin: 10px auto
+    .header
+      font-size: 60px
+      +x-bold
+      line-height: 1
+      text-transform: uppercase
+      margin: 10px 0 20px
+      @media #{$small-only}
+        font-size: 30px
+      @media #{$xxlarge-up}
+        font-size: 72px
+    .button
+      margin-top: 3em
+    .animated
+      +before-hover
+    &.visible
+      +transition-delay(0.5s)
+      opacity: 1
+      .animated
+        +on-hover
+
+
+
+  .fullpage-banner-bottom
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 90px
+    @media #{$small-only}
+      height: 70px
+    .inner
+      background: white
+      height: 100%
+      padding: 30px
+      @media #{$small-only}
+        padding: 20px
+      .columns
+        height: 100%
+
+    .custom-pager
+      margin-left: 1em
+
+    .go-down
+      +xy-align
+      background: $blueGrey50
+      width: 38px
+      height: 38px
+      border-radius: 50%
+      svg
+        fill: $blueGrey900
+        +centered-inside
+    .contact-us
+      float: right
+      .line-separator
+        width: 1px
+        height: 28px
+        background: $blueGrey400
+        @media #{$medium-up}
+          display: none
+      .icon
+        svg
+          fill: $blueGrey600
+      .smaller
+        color: $blueGrey600
+        margin-left: 10px
+        @media #{$small-only}
+          display: none

@@ -1,0 +1,42 @@
+.contact-wrapper
+  
+  &.wrapper-inner-indent
+    padding-bottom: 0
+  .wrapper-small-title
+    text-align: center
+  .contact-block
+    float: left
+    width: 50%
+    background: $grey100
+    &:first-child
+      padding: 3em
+    @media #{$small-only}
+      width: 100%
+    &:last-child
+      position: absolute
+      height: 100%
+      @media #{$small-only}
+        position: relative
+        height: 300px
+  .dib
+    @media #{$small-only}
+      display: block
+  .line
+    width: 100%
+    height: 1px
+    background: $blueGrey100
+    margin: 2em 0
+  .info-block
+    margin: 0 2em 3em 0
+    .small
+      margin-bottom: 1em
+      text-transform: uppercase
+    .larger
+      +bold
+      color: $green
+  .button
+    color: $blueGrey400
+    border: 2px solid $blueGrey400
+  
+  #googleMap
+    height: 100%
