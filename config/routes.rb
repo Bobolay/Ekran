@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     get "media_blog_one", action: "media_blog_one"
 
     get "media_video", action: "media_video"
+
+    get "media_press", action: "media_press"
     
   end
 

@@ -1,5 +1,10 @@
 function initialize() {
-  
+
+  var map_element = document.getElementById('googleMap')
+  if(!map_element){
+    return
+  }
+
   var styles = [
     {
       "featureType": "administrative",
@@ -156,7 +161,7 @@ function initialize() {
     }
   };
 
-  var map = new google.maps.Map(document.getElementById('googleMap'),
+  var map = new google.maps.Map(map_element,
     mapOptions);
 
   var image = '/assets/icons/map-marker.svg'

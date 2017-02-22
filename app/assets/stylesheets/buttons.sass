@@ -4,7 +4,28 @@
   color: white
   line-height: 40px
   padding: 0 1em
+  +transition(0.2s)
   +bold
+  cursor: pointer
+  z-index: 1
+  &:hover
+    border: 2px solid $green
+    background: $green
+    color: white
+  &.green
+    color: $green
+    border: 2px solid $green
+    margin-top: 2em
+    &:hover
+      color: white
+      background: $green
+  &.grey
+    color: $blueGrey400
+    border: 2px solid $blueGrey400
+    &:hover
+      color: white
+      background: $green
+      border: 2px solid $green
 
 .accordion-button
   cursor: pointer

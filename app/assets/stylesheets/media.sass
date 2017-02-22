@@ -2,14 +2,11 @@
 
 .media-wrapper
   position: relative
+  padding: 0 0 5em
   .underlined-title
     margin: 2em 0
     @media #{$small-only}
       display: none
-  .button
-    color: $green
-    border: 2px solid $green
-    margin-top: 2em
 
   .date
     font-size: 12px
@@ -92,6 +89,7 @@
     .blog-title
       font-size: 1.5em
       color: white
+      +x-bold
       margin: 10px 0
       text-transform: uppercase
       line-height: 1.2
@@ -121,8 +119,6 @@
         max-height: 5.1em
         @media #{$xlarge-up}
           max-height: 8.5em
-
-
       .date
         @media #{$large-up}
           bottom: 2rem
@@ -150,6 +146,48 @@
       margin: 10px 0
     .text
       height: 60px
+
+  &.press-wrapper
+    .press-block
+      border-bottom: 1px solid $blueGrey200
+      margin-bottom: 30px
+      padding-bottom: 20px
+      .new
+        display: inline-block
+        vertical-align: middle
+        line-height: 24px
+        padding: 0 6px
+        background: $green
+        font-size: 12px
+        text-transform: uppercase
+        color: white
+        margin-right: 10px
+      .date
+        font-size: 12px
+        color: $blueGrey400
+      .title
+        font-size: 1.5em
+        text-transform: uppercase
+        +x-bold
+        line-height: 1.2
+        margin: 10px 0 20px
+        @media #{$small-only}
+          font-size: 18px
+        @media #{$large-up}
+          display: inline-block
+          max-width: 1000px
+          width: 70%
+      .size
+        font-size: 12px
+        text-transform: uppercase
+        margin-right: 10px
+        span
+          +bold
+      .button
+        font-size: 14px
+        line-height: 30px
+        margin-top: 0
+
 
 
 
@@ -198,12 +236,18 @@
   .related-to-slider-text
     position: absolute
     opacity: 0
+    width: 100%
+    @media #{$medium-up}
+      width: calc(100% - 120px)
+    @media #{$xxlarge-up}
+      width: calc(100% - 220px)
     +transition(opacity 0.2s)
     .animated
       +before-hover(15px)
     &.visible
       +transition-delay(0.3s)
       opacity: 1
+      z-index: 1
       .animated
         +on-hover
 
@@ -224,13 +268,17 @@
     @media #{$large-up}
       float: left
       width: calc(1 / 4 * 100%)
+    .img-background
+      +transition(transform 1s)
+      &:before
+        +gradient
     .text
       position: absolute
       width: 100%
       bottom: 3em
       left: 0
       color: white
-    .media-title
+    .media-banner-title
       color: white
       text-transform: uppercase
       +x-bold
@@ -241,9 +289,17 @@
         font-size: 3em
       @media #{$xxlarge-up}
         font-size: 3.75em
+    .media-subtitle
+      font-size: 0.875em
+      @media #{$xxlarge-up}
+        font-size: 1em
     .text-link
       margin-top: 1em
       +transition(opacity 0.2s)
+      svg
+        margin-left: 10px
+        width: 24px
+        height: 24px
     @media #{$large-up}
       .text
         +translate(0,10%)
@@ -251,7 +307,63 @@
       .text-link
         opacity: 0
       &:hover
+        .img-background
+          +scale(1.1)
         .text
           +translate(0,0)
         .text-link
           opacity: 1
+
+.media-pager-container
+  text-align: center
+  color: $grey500
+  font-size: 14px
+  +bold
+  margin: 5em 0
+  .prev, .next
+    cursor: pointer
+    span, svg
+      vertical-align: middle
+    span
+      text-transform: uppercase
+      margin: 0 5px
+      @media #{$small-only}
+        display: none
+    svg
+      fill: $grey500
+      width: 20px
+      height: 20px
+  .pages
+    margin: 0 20px
+    .page
+      position: relative
+      display: inline-block
+      vertical-align: middle
+      text-align: center
+      width: 34px
+      line-height: 34px
+      cursor: pointer
+      &:after
+        content: ''
+        display: block
+        width: 1px
+        height: 20px
+        background: $grey500
+        position: absolute
+        right: 0
+        top: 7px
+      &:last-child
+        &:after
+          display: none
+      &.current
+        border: 2px solid $green
+        color: $green
+        &:after
+          display: none
+    .dots, .total-pages
+      position: relative
+      display: inline-block
+      vertical-align: middle
+      text-align: center
+      width: 34px
+      line-height: 34px

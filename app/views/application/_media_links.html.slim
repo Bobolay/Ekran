@@ -1,0 +1,4 @@
+.link-container
+  - t("components.media_links").each do |k, v|
+    a.link href=send("media_#{k}_path") class=("active" if @category == k.to_s) 
+      = v

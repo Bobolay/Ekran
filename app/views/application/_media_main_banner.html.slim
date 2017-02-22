@@ -1,0 +1,43 @@
+.main-banner-wrapper
+  .slider-container
+    ul.media-background-slider
+      li.img-background style="background-image: url(#{asset_path('photo/Ekran-main-banner-v1-1.jpg')})"
+      li.img-background style="background-image: url(#{asset_path('photo/sample-2.jpg')})"
+      li.img-background style="background-image: url(#{asset_path('photo/sample-3.jpg')})"
+  .overlay
+  .row
+    .columns
+      .text.wide.media
+        a.small href=root_path головна
+        span.separator &nbsp;/&nbsp;
+        a.small href=media_all_path медіа
+
+        .related-to-slider-text.visible
+          p.banner-title.animated ІДЕАЛЬНА КУХНЯ. МІСІЯ МОЖЛИВА
+          .animated
+            p.small.green соціальна відповідальність
+            span.separator &nbsp;|&nbsp;
+            p.small 16січня, 2017
+          br
+          .animated
+            .button.green Прочитати
+        .related-to-slider-text
+          p.banner-title.animated Стаття номер два
+          .animated
+            p.small.green соціальна відповідальність
+            span.separator &nbsp;|&nbsp;
+            p.small 16січня, 2017
+          br
+          .animated
+            .button.green Прочитати
+        .related-to-slider-text
+          p.banner-title.animated Третя стаття
+          .animated
+            p.small.green соціальна відповідальність
+            span.separator &nbsp;|&nbsp;
+            p.small 16січня, 2017
+          br
+          .animated
+            .button.green Прочитати
+
+      = render "slider_controls"

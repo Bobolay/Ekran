@@ -94,3 +94,5 @@ gem 'kaminari'
 gem 'thin'
 
 gem 'puma'
+
+gem 'figaro'

@@ -32,6 +32,7 @@ class PagesController < ApplicationController
   end
 
   def services
+    @render_footer = false
 
   end
 
@@ -40,11 +41,12 @@ class PagesController < ApplicationController
   end
 
   def media_all
+    @render_footer = false
 
   end
 
   def media_news
-
+    @category = "news"
   end
 
   def media_new_one
@@ -52,6 +54,7 @@ class PagesController < ApplicationController
   end
 
   def media_blog
+    @category = "blog"
 
   end
 
@@ -60,6 +63,12 @@ class PagesController < ApplicationController
   end
 
   def media_video
+    @category = "video"
+
+  end
+
+  def media_press
+    @category = "press"
 
   end
 

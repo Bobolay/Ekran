@@ -1,56 +1,11 @@
-.main-banner-wrapper
-  .slider-container
-    ul.media-background-slider
-      li.img-background style="background-image: url(#{asset_path('photo/Ekran-main-banner-v1-1.jpg')})"
-      li.img-background style="background-image: url(#{asset_path('photo/sample-2.jpg')})"
-      li.img-background style="background-image: url(#{asset_path('photo/sample-3.jpg')})"
-  .overlay
-  .row
-    .columns
-      .text.wide.media
-        a.small href=root_path головна
-        span.separator &nbsp;/&nbsp;
-        a.small href=media_all_path медіа
-
-        .related-to-slider-text.visible
-          p.banner-title.animated ІДЕАЛЬНА КУХНЯ. МІСІЯ МОЖЛИВА
-          .animated
-            p.small.green соціальна відповідальність
-            span.separator &nbsp;|&nbsp;
-            p.small 16січня, 2017
-          br
-          .button.animated Прочитати
-        .related-to-slider-text
-          p.banner-title.animated Стаття номер два
-          .animated
-            p.small.green соціальна відповідальність
-            span.separator &nbsp;|&nbsp;
-            p.small 16січня, 2017
-          br
-          .button.animated Прочитати
-        .related-to-slider-text
-          p.banner-title.animated Третя стаття
-          .animated
-            p.small.green соціальна відповідальність
-            span.separator &nbsp;|&nbsp;
-            p.small 16січня, 2017
-          br
-          .button.animated Прочитати
-
-      = render "slider_controls"
+= render "media_main_banner"
 
 .media-wrapper.video-wrapper
 
   .row
     .columns
-      .link-container
-        a.link href=media_news_path новини
-        .line-link-separator
-        a.link href=media_blog_path блог
-        .line-link-separator
-        a.link.active href=media_video_path відео
-        .line-link-separator
-        a.link для преси
+      = render "media_links"
+        
       .row
         .columns.medium-6
           .video-container
@@ -66,3 +21,5 @@
             .text
               p.video-title Внутрипочвенный гумус: основные моменты
               p.date 15 січня, 2017
+
+      = render "media_pager"

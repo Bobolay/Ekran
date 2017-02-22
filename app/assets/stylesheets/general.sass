@@ -152,7 +152,9 @@ a
 .main-banner-wrapper
   position: relative
   height: 50vh
-  min-height: 400px
+  min-height: 500px
+  @media #{$small-only}
+    min-height: 400px
   .row, .columns
     height: 100%
     position: relative
@@ -182,7 +184,8 @@ a
         width: 200px
     &.wide
       width: 1000px
-      max-width: 90%
+      max-width: calc(100% - 2*0.625em)
+      height: 200px
     &.media
       .banner-title
         color: white
@@ -214,8 +217,6 @@ a
 
   .button
     margin-top: 20px
-    border: 2px solid $green
-    color: $green
 
 .manufacturer-field
   .brand-name
@@ -331,12 +332,31 @@ ul.standart-list
     display: none
     position: relative
     margin: 10px 0
+    padding: 0 16px
     font-size: 1.125em
     color: $grey400
     +x-bold
     text-transform: uppercase
     @media #{$xxlarge-up}
       font-size: 1.25em
+    &:last-child
+      &:before
+        display: none
+    &:first-child
+      @media #{$large-up}
+        margin-left: -16px
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      width: 1px
+      height: 24px
+      background: $grey400
+      display: none
+      @media #{$large-up}
+        display: block
+
     &:hover
       color: $green
     &.active
