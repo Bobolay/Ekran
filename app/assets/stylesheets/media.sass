@@ -1,17 +1,21 @@
 //     media on main page
 
+.date
+  font-size: 12px
+  color: $blueGrey400
+
+.regular-bold
+  font-size: 1em
+  +bold
+
 .media-wrapper
   position: relative
-  padding: 0 0 5em
+  .wrapper-small-title
+    text-align: center
   .underlined-title
     margin: 2em 0
     @media #{$small-only}
       display: none
-
-  .date
-    font-size: 12px
-    color: $blueGrey400
-
   .new-block
     position: relative
     border-bottom: 1px solid $blueGrey200
@@ -221,7 +225,7 @@
         &.active
           display: block
 
-//     media one
+//     media all
 
 .main-banner-wrapper
   .slider-container, .media-background-slider
@@ -367,3 +371,118 @@
       text-align: center
       width: 34px
       line-height: 34px
+
+//     media one
+
+.media-one-wrapper
+  padding: 5em 0
+  @media #{$small-only}
+    padding: 5em 0 0
+  .title
+    font-size: 1.5em
+    +x-bold
+    text-transform: uppercase
+    line-height: 1.2
+  .main-text
+    margin: 20px 0
+
+  .media-short-info
+    .regular-bold
+      margin: 30px 0 10px
+      @media #{$small-only}
+        margin: 10px 0
+    .social-container
+      @media #{$small-only}
+        margin-bottom: 50px
+
+  .media-main-info
+    .regular-bold
+      margin: 40px 0 20px
+    .img-container
+      margin: 3em 0
+      .img-sign
+        position: absolute
+        right: 10px
+        bottom: 0
+        color: white
+        +s-bold
+        font-size: 12px
+        background: $green
+        padding: 5px 10px
+        +translate(0,50%)
+    .blockquote-block
+      position: relative
+      margin: 3em 0
+      @media #{$large-up}
+        padding: 0 3em
+      @media #{$xxlarge-up}
+        padding: 0 5em
+      .blockquote
+        font-size: 2em
+        color: $green
+        +x-bold
+        border-left: 10px solid $green
+        padding-left: 20px
+      .author
+        font-size: 12px
+        color: $blueGrey400
+        text-align: right
+        margin-top: 2em
+        span
+          text-transform: uppercase
+    .media-bottom
+      border-top: 4px solid $grey300
+      margin: 3em 0
+      padding: 30px 0
+      .regular-bold
+        margin: 0 10px 0 0
+      .tag
+        font-size: 12px
+        text-transform: uppercase
+        color: $green
+        padding-right: 10px
+        margin-right: 10px
+        position: relative
+        &:after
+          content: ''
+          display: block
+          width: 1px
+          height: 100%
+          position: absolute
+          top: 0
+          right: 0
+          background: $grey500
+          @media #{$small-only}
+            display: none
+      @media #{$small-only}
+        .date
+          display: block
+          margin: 10px 0
+        .regular-bold
+          display: block
+          margin: 30px 0 10px
+
+.media-wrapper
+  &.blog-navigation
+    .blog-block
+      width: 50%
+      float: left
+      @media #{$small-only}
+        width: 100%
+        float: none
+        border-bottom: 1px solid white
+      &.text-align-right
+        .date
+          right: 1em
+        @media #{$small-only}
+          text-align: left
+      .text
+        background: $grey100
+      .blog-title
+        color: $blueGrey700
+      .img
+        @media #{$small-only}
+          display: none
+      &:hover
+        .blog-title
+          color: $green

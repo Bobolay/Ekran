@@ -88,12 +88,18 @@ body
     padding: 3em 0 1em
   .wrapper-small-title
     text-align: center
-
 .top-inner-indent
   padding: 4em 0 0
-
+  .wrapper-small-title
+    text-align: center
+.bottom-inner-indent
+  padding: 0 0 4em
+  .wrapper-small-title
+    text-align: center
 .inner-indent
   padding: 5em 0
+  .wrapper-small-title
+    text-align: center
 
 .mask
   position: fixed
@@ -185,7 +191,7 @@ a
     &.wide
       width: 1000px
       max-width: calc(100% - 2*0.625em)
-      height: 200px
+      min-height: 200px
     &.media
       .banner-title
         color: white
@@ -232,7 +238,7 @@ a
     font-size: 12px
     color: $blueGrey200
 
-.main-slider-wrapper
+.main-slider-wrapper, .main-bg-img
   position: relative
   &:before
     content: ''
@@ -283,14 +289,6 @@ ul.standart-list
       position: absolute
       top: 0
       left: 0
-
-.blockquote
-  margin: 2em 0
-  font-size: 1.125em
-  color: $green
-  font-style: italic
-  padding-left: 20px
-  border-left: 6px solid $green
 
 .filter-container
   margin: 1em 0
@@ -384,13 +382,3 @@ ul.standart-list
       vertical-align: middle
       &.active
         display: inline-block
-
-  .line-link-separator
-    width: 1px
-    height: 24px
-    background: $grey400
-    margin: 0 1em
-    display: none
-    vertical-align: middle
-    @media #{$large-up}
-      display: inline-block
