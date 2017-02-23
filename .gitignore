@@ -22,3 +22,5 @@ vendor/assets/bower_components
 config/application.yml
 .idea
 tmp
+vendor/assets/bower.json
+Gemfile.lock
