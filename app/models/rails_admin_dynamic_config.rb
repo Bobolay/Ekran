@@ -64,7 +64,7 @@ module RailsAdminDynamicConfig
            site_data: "/file_editor/site_data.yml"
         }
 
-        #config.include_models Attachable::Asset
+        config.include_models Attachable::Asset
 
 
         #
