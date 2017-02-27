@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount Ckeditor::Engine => '/ckeditor'
+  mount Cms::Engine => '/'
+
+  devise_for :users, module: "users", path: "", path_names: {
+      sign_in: "login",
+      sign_out: 'logout',
+  }
+
+
   root to: "pages#index"
 
   controller :pages do

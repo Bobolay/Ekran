@@ -51,19 +51,19 @@ gem 'bower-rails'
 
 gem "protected_attributes"
 
-# gem 'rails_admin'
-# gem 'rails_admin_nestable'
+gem 'rails_admin'
+gem 'rails_admin_nestable'
 
-# gem 'devise'
+gem 'devise'
 
 gem 'enumerize'
 
-# gem 'ckeditor'
+gem 'ckeditor'
 
-# gem 'paperclip'
+gem 'paperclip'
 
 gem 'acts-as-taggable-on'
-#gem 'rails_admin_tag_list'
+gem 'rails_admin_tag_list'
 
 gem 'pluck_to_hash'
 
@@ -78,21 +78,65 @@ gem 'quiet_assets'
 
 gem 'kaminari'
 
-# gem "htmlcompressor"
-# gem 'rack-page_caching'
+gem "htmlcompressor"
+gem 'rack-page_caching'
 
 #gem 'paperclip-optimizer'
 
-#gem 'attachable', github: "VoroninNick/attachable"
+gem 'attachable', github: "VoroninNick/attachable"
 #gem 'attachable', path:"/media/data/pasha/gems/attachable"
-#gem 'cms', path: "/media/data/pasha/gems/cms"
+if File.exists?("/media/data/gems/cms")
+  gem 'cms', path: "/media/data/gems/cms"
+else
+  gem 'cms', github: 'pkorenev/cms'
+end
 
-# gem 'cms', github: "pkorenev/cms"
-
-# gem 'require_reloader'
-
-gem 'thin'
+gem 'require_reloader'
 
 gem 'puma'
 
+
+# =============================================
+# new gems
+# =============================================
+
+gem 'nprogress-rails'
+
+gem 'puma', group: [:development, :test]
+
+gem 'globalize'
+gem 'rails_admin_globalize_field'
+gem 'russian'
+
 gem 'figaro'
+
+gem 'pg'
+
+gem "cancancan"
+
+gem 'papercrop'
+gem 'yaml_db'
+gem 'db-backuper', github: "pkorenev/db-backuper"
+
+gem "devise-i18n"
+
+gem "html2slim"
+
+gem 'i18n-active_record',
+    github: 'svenfuchs/i18n-active_record',
+    require: 'i18n/active_record'
+
+gem 'rails-i18n'
+
+gem 'simple_form'
+
+gem 'sshkit'
+
+#gem "bcrypt",  platforms: [:x64_mingw]
+
+gem 'paperclip-tinify'
+
+gem 'will_paginate', '~> 3.0'
+
+# file_editor
+gem 'ace-rails-ap'
