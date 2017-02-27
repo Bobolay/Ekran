@@ -1,44 +1,50 @@
-# $document.ready ->
+$document.ready ->
 
-#   login_button = $('.login-button')
-#   login_popup = $('.login-popup-wrapper')
-#   close_button = $('.login-popup-wrapper .close')
+#     d e c l a r e     g e n e r a l s     v a r i a b l e s
 
-#   login_button.on 'click', ->
+  popup = $('.popup-container')
+  popup_button = $('.request-button')
+  close_popup = $('.close-popup')
 
-#     $('.mask-full ').addClass('visible ')
-#     login_popup.addClass('visible')
+#     s p e c i f i c     v a r i a b l e s
 
-#   $.clickOut('.login-popup-wrapper',
-#     ()->
-#       $('.login-popup-wrapper').removeClass('visible')
-#       $('.mask-full ').removeClass('visible')
-#     {except: '.login-popup-wrapper, .login-button'}
-#   )
+  design_request_button = $('.design-request-button')
+  design_request_popup = $('.design-request-popup')
 
-#   close_button.on 'click', ->
-#     login_popup.removeClass('visible')
-#     $('.mask-full ').removeClass('visible')
+  call_me_back_popup = $('.call-me-back-popup')
+  call_me_button = $('.call-me-back-button')
+  
+  chat_popup = $('.chat-popup')
+  chat_button = $('.chat-online-button')
 
 
+  design_request_button.on 'click', ->
+    popup.removeClass('visible')
+    $('.mask').addClass('visible ')
+    design_request_popup.addClass('visible')
 
-#   #     C A L L     U S     P O P U P
+  call_me_button.on 'click', ->
+    popup.removeClass('visible')
+    $('.mask').addClass('visible ')
+    call_me_back_popup.addClass('visible')
 
-#   $('.top-nav-contact-button').on "click", ->
-#     $('.call-us-popup').toggleClass("visible")
+  chat_button.on 'click', ->
+    popup.removeClass('visible')
+    $('.mask').addClass('visible ')
+    chat_popup.addClass('visible')
 
-#   $('.call-us-popup .button').on "click", ->
-#     $(this).css("color","#00A029")
-#     $('.success').addClass("visible")
-#     setTimeout (->
-#       $('.success').removeClass("visible")
-#     ), 3000
-#     setTimeout (->
-#       $('.call-us-popup .button').css("color","white")
-#     ), 3800
 
-#   $.clickOut(".call-us-popup",
-#     ()->
-#       $(".call-us-popup").removeClass('visible')
-#     {except: ".top-nav-contact-button, .call-us-popup"}
-#   )
+#     c l i c k     o u t s i d e
+
+  $.clickOut('.popup-container',
+    ()->
+      $('.popup-container').removeClass('visible')
+      $('.mask').removeClass('visible')
+    {except: '.popup-container, .request-button'}
+  )
+
+  #     c l o s e     p o p u p
+
+  close_popup.on 'click', ->
+    popup.removeClass('visible')
+    $('.mask').removeClass('visible')

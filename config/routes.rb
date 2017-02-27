@@ -32,6 +32,10 @@ Rails.application.routes.draw do
     get "media_video", action: "media_video"
 
     get "media_press", action: "media_press"
+
+    get "vacancy_one", action: "vacancy_one"
+
+    get "contacts", action: "contacts"
     
   end
 

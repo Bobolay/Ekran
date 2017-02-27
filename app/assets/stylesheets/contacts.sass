@@ -26,6 +26,8 @@
     height: 1px
     background: $blueGrey100
     margin: 2em 0
+  .bold-underlined
+    margin-bottom: 30px
   .info-block
     margin: 0 2em 3em 0
     .small
@@ -34,6 +36,114 @@
     .larger
       +bold
       color: $green
+      line-height: 1.2
   
-  #googleMap
+  #googleMap, #googleMapContacts
     height: 100%
+  #googleMapContacts
+    position: absolute
+    width: 100%
+    top: 0
+    left: 0
+  .map-container
+    position: relative
+    &:before
+      content: ''
+      display: block
+      padding-bottom: 56%
+
+  .main-office-info
+    border-bottom: 1px solid $grey300
+  .title
+    font-size: 1.5em
+    +bold
+  .main-text
+    margin: 20px 0
+  .region-title
+    font-size: 1.3125em
+    color: $green
+    text-transform: uppercase
+    +x-bold
+
+  .region-container
+    padding: 20px 0
+    .region-block
+      position: relative
+      background: white
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1)
+      width: calc(50% - 10px)
+      margin: 10px 0
+      padding: 10px 20px
+      cursor: pointer
+      .city
+        color: $blueGrey600
+        +bold
+        font-size: 0.875em
+        text-transform: uppercase
+      .line
+        width: 1px
+        height: 30px
+        background: $grey400
+        margin: 0 10px
+      .store-name
+        font-size: 0.875em
+        color: $blueGrey600
+      .label
+        font-size: 10px
+        color: white
+        background: $green
+        text-transform: uppercase
+        padding: 4px 6px
+        margin-left: 10px
+        vertical-align: middle
+        display: none
+      .arrow
+        position: absolute
+        top: 16px
+        right: 20px
+        width: 24px
+        height: 24px
+        +transition(transform 0.2s)
+        svg
+          fill: $green
+      &.active
+        .arrow
+          +rotate(180deg)
+      &:nth-child(even)
+        float: right
+      &.authorized-dealer
+        .label
+          display: inline-block
+      .hidden-content
+        position: absolute
+        width: 100%
+        background: white
+        left: 0
+        padding: 10px 20px
+        margin-top: 10px
+        border-top: 1px solid $grey200
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1)
+        display: none
+        overflow: hidden
+        z-index: 1
+        .info-block
+          display: block
+          margin: 2em 0
+        .regular
+          color: $grey400
+          +bold
+          svg
+            width: 30px
+            height: 30px
+            fill: $grey400
+            vertical-align: middle
+        .floated
+          width: 50%
+        .work-sheet
+          margin-bottom: 10px
+          .smaller
+            color: $blueGrey400
+            width: 70px
+          .larger
+            color: $green
+            +bold

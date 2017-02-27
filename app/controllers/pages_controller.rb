@@ -72,6 +72,14 @@ class PagesController < ApplicationController
 
   end
 
+  def vacancy_one
+
+  end
+
+  def contacts
+
+  end
+
   private
 
   def set_page_instance

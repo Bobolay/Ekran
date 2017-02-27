@@ -1,0 +1,51 @@
+form
+  .input-field
+    position: relative
+    margin: 30px 0
+    @media #{$small-only}
+      margin: 20px 0
+    input, textarea, select
+      font-size: 16px
+      display: block
+      padding: 20px
+      width: 100%
+      border: none
+      outline: none
+      background-color: transparent
+      background: $grey100
+      &:focus
+        outline: none
+    label.placeholder
+      font-size: 16px
+      position: absolute
+      pointer-events: none
+      top: 20px
+      left: 20px
+      transition: all 0.2s ease
+      span
+        color: $green
+    input:focus ~ label.placeholder, input.used ~ label.placeholder, textarea:focus ~ label.placeholder, textarea.used ~ label.placeholder
+      opacity: 0
+      pointer-events: none
+
+  label.error
+    display: block
+    padding: 5px 20px
+    color: red
+    font-size: 0.875em
+    line-height: 1.2
+  button.button.green
+    margin-top: 0
+
+.form-container
+  .title
+    font-size: 1.5em
+    +bold
+    margin: 2em 0 10px
+  .main-text
+    margin-bottom: 30px
+  .smaller
+    margin-bottom: -20px
+    text-align: right
+    span
+      color: $green

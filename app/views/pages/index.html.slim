@@ -129,8 +129,8 @@
 .projects-wrapper.wrapper-inner-indent
   p.wrapper-small-title Наші проекти
   .clearfix.projects
-    a.projects-all-link = inline_svg "svg/key-arrow-right.svg"
-    .project-block.floated
+    / a.projects-all-link = inline_svg "svg/key-arrow-right.svg"
+    a.project-block.floated href=project_one_path
       .img-background style="background-image: url(#{asset_path('photo/sample-1.jpg')})"
       .text-block
         p.project-performer salamander | 2016
@@ -139,10 +139,10 @@
           br
           | івано-франківськ
         p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
-        a.text-link
+        .text-link
           | Подивитись проект
           = inline_svg "svg/key-arrow-right.svg"
-    .project-block.floated
+    a.project-block.floated href=project_one_path
       .img-background style="background-image: url(#{asset_path('photo/sample-2.jpg')})"
       .text-block
         p.project-performer карпатські вікна | 2016
@@ -151,10 +151,10 @@
           br
           | «fabbrica»
         p.main-text Створюючи «КАРПАТСЬКІ ВІКНА» ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
-        a.text-link
+        .text-link
           | Подивитись проект
           = inline_svg "svg/key-arrow-right.svg"
-    .project-block.floated
+    a.project-block.floated href=project_one_path
       .img-background style="background-image: url(#{asset_path('photo/sample-3.jpg')})"
       .text-block
         p.project-performer alfabud | 2015
@@ -163,7 +163,7 @@
           br
           | «ibis»
         p.main-text В цьому блоці найменше тетксту через його ширину.
-        a.text-link
+        .text-link
           | Подивитись проект
           = inline_svg "svg/key-arrow-right.svg"
 
