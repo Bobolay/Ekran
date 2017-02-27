@@ -5,3 +5,7 @@ uk:
       blog: "Блог"
       video: "Відео"
       press: "Преса"
+    service_links:
+      services: "Сервісні послуги"
+      delivery: "Доставка"
+      warranty: "Гарантія"

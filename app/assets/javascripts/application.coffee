@@ -19,10 +19,13 @@
 #= require plugins/selectize.min
 #= require plugins/parallax.min
 #= require plugins/jquery.collagePlus.min
+#= require plugins/jquery.validate.min
+#= require plugins/jquery.validate.messages_uk
 
 #     I N I T I A L I Z E
 
 #= require google_map
+#= require google_map_contacts
 #= require appear-initialize
 #= require bxslider
 #= require fullpage_banner_height
@@ -38,3 +41,5 @@
 #= require lightgallery
 #= require collage
 #= require dropdown_list
+#= require validate_form
+#= require regions_dropdown

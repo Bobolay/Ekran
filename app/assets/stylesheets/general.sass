@@ -109,7 +109,7 @@ body
   background: rgba(0,0,0,0.75)
   opacity: 0
   pointer-events: none
-  z-index: 3
+  z-index: 9
   +transition(0.25s)
   &.visible
     opacity: 1
@@ -381,3 +381,14 @@ ul.standart-list
       vertical-align: middle
       &.active
         display: inline-block
+
+.summary-info
+  border: 5px solid $green
+  padding: 1em
+  .small
+    text-transform: uppercase
+  .regular
+    color: $green
+    +x-bold
+    text-transform: uppercase
+    margin-bottom: 2em

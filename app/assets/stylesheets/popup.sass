@@ -1,0 +1,70 @@
+.popup-container
+  +xy-align
+  position: fixed
+  background: white
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25)
+  width: 500px
+  max-width: 90%
+  padding: 2em 2em 7em
+  z-index: 10
+  pointer-events: none
+  opacity: 0
+  +transition(opacity 0.2s)
+  +transition-delay(0.1s)
+  &.visible
+    pointer-events: initial
+    opacity: 1
+    +transition-delay(0s)
+  .close-popup
+    position: absolute
+    top: 2em
+    right: 2em
+    width: 26px
+    height: 26px
+    cursor: pointer
+    svg
+      fill: $grey400
+      width: 100%
+      height: 100%
+  .title
+    font-size: 1.5em
+    text-transform: uppercase
+    color: $green
+    line-height: 1.2
+    margin-bottom: 10px
+    +bold
+  .small
+    +s-bold
+  .input-field
+    margin: 10px 0
+    input, label.placeholder
+      font-size: 14px
+    input
+      padding: 10px 20px
+    label.placeholder
+      top: 10px
+
+  .bottom
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 60px
+    background: $blueGrey900
+    padding: 0 2em
+    .request-button
+      cursor: pointer
+      +transition(color 0.2s)
+      font-size: 10px
+      color: $blueGrey300
+      line-height: 60px
+      svg
+        width: 34px
+        height: 34px
+        fill: $blueGrey300
+        vertical-align: middle
+        +transition(fill 0.2s)
+      &:hover
+        color: $green
+        svg
+          fill: $green

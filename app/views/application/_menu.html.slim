@@ -29,9 +29,29 @@
               a вікна salamander
             li.animated
               a алюмінієві фасади alfabud
-        a.menu-link.animated href=services_path сервіс
-        a.menu-link.animated href=media_all_path медіа
-        a.menu-link.animated контакти
+        .menu-link.animated
+          a href=services_path
+            | сервіс
+          ul
+            li.animated
+              a href=service_one_path сервісні послуги
+            li.animated
+              a href=service_one_path доставка
+            li.animated
+              a href=service_one_path гарантія
+        .menu-link.animated
+          a href=media_all_path
+            | медіа
+          ul
+            li.animated
+              a href=media_news_path новини
+            li.animated
+              a href=media_blog_path блог
+            li.animated
+              a href=media_video_path відео
+            li.animated
+              a href=media_press_path для преси
+        a.menu-link.animated href=contacts_path контакти
         .social-container.dib.animate
           a.social.dib = inline_svg "svg/social-1.svg"
           a.social.dib = inline_svg "svg/social-2.svg"
@@ -92,14 +112,14 @@
           a.social.dib = inline_svg "svg/social-2.svg"
           a.social.dib = inline_svg "svg/social-3.svg"
 
-        .request.design-request-button.dib.animate
+        .request-button.design-request-button.dib.animate
           = inline_svg "svg/menu-contact-icon-1.svg"
           | заявка на замір
         .line.dib.animate
-        .request.call-me-back-button.dib.animate
+        .request-button.call-me-back-button.dib.animate
           = inline_svg "svg/menu-contact-icon-2.svg"
           | перетелефонувати мені
         .line.dib.animate
-        .request.chat-online-button.dib.animate
+        .request-button.chat-online-button.dib.animate
           = inline_svg "svg/menu-contact-icon-3.svg"
           | онлайн консультація
