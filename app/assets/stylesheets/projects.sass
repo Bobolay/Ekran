@@ -13,18 +13,25 @@
     left: 0
     width: 100%
     max-height: 300px
+    min-height: 200px
     color: white
     padding: 1em 1em 3em
-    +translate(0,50%)
+    +translate(0,20%)
     +transition(0.5s)
-    @media #{$small-only}
-      +translate(0,20%)
+    @media #{$large-up}
+      +translate(0,50%)
   .project-performer
     +s-bold
     text-transform: uppercase
   .bold-title
     margin: 5px 0 20px
-  a.text-link
+    @media #{$medium-only}
+      font-size: 1.5em
+  .main-text
+    height: 5.1em
+    overflow: hidden
+    text-overflow: ellipsis
+  .text-link
     +bold
     margin-top: 2em
     svg
@@ -34,8 +41,9 @@
   .main-text, .text-link
     opacity: 0
     +transition(opacity 0.5s)
-    @media #{$small-only}
-      display: none
+    display: none
+    @media #{$large-up}
+      display: block
   &:hover
     .text-block
       background: $green
@@ -67,9 +75,9 @@
       @media #{$small-only}
         width: 100%
       @media #{$medium-up}
-        width: 50%
+        width: calc(100% / 3)
       @media #{$xlarge-up}
-        width: 25%
+        // width: 25%
 
   //     P r o j e c t s     a l l     p a g e
 

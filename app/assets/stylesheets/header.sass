@@ -39,27 +39,22 @@
       line-height: 1
     .small
       color: $blueGrey400
-  .menu-button
-    padding: 1em
-    margin-left: 4em
-    cursor: pointer
-    .menu-button-lines
-      +burger(24px, 4px, 5px, $blueGrey400, 1px)
-    &:hover
-      .menu-button-lines
-        +burger(24px, 4px, 5px, $green, 1px)
-    @media #{$small-only}
-      margin-left: 1em
-      .menu-button-lines
-        +burger(22px, 2px, 5px, $blueGrey400, 1px)
 
   &.menu-opened
     z-index: 7
     background: transparent
     a.dib
       display: none
-    .menu-button
-      .menu-button-lines
-        +burger-to-cross
-        &:before
-          transform: translateY(10px) rotate(45deg)
+
+  //     H a m b u r g e r
+  
+  .hamburger-box
+    width: 32px
+    margin-left: 4em
+    cursor: pointer
+  .hamburger-inner
+    width: 100%
+    background: $green
+    &:before, &:after
+      width: 100%
+      background: $green
