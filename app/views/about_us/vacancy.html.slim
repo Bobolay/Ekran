@@ -5,7 +5,7 @@
       .text.wide
         a.small href=root_path головна
         span.separator &nbsp;/&nbsp;
-        a.small href=media_all_path медіа
+        a.small href=media_path медіа
         span.separator &nbsp;/&nbsp;
         a.small href=media_news_path новини
         span.separator &nbsp;&mdash;&nbsp;
@@ -62,7 +62,7 @@
         p.smaller
           span * &nbsp;
           | обов'язкові поля
-        form
+        form.validate
           .input-field
             input#firstname type="text" name="firstname"
             label.placeholder for="firstname"

@@ -8,6 +8,12 @@ def host?(*hosts)
   hosts.include? REQUEST_HOST
 end
 
+def navigation_label_key(k)
+  navigation_label do
+    I18n.t("admin.navigation_labels.#{k}")
+  end
+end
+
 module RailsAdminDynamicConfig
   class << self
     def configure_rails_admin(initial = true)
@@ -69,100 +75,98 @@ module RailsAdminDynamicConfig
 
         #
         #
-        # config.include_models Cms::SitemapElement, Cms::MetaTags
-        #
-        # config.model Cms::MetaTags do
-        #   visible false
-        #   field :translations, :globalize_tabs
-        # end
-        #
-        # config.model_translation Cms::MetaTags do
-        #   field :locale, :hidden
-        #   field :title
-        #   field :keywords
-        #   field :description
-        # end
-        #
-        # config.model Cms::SitemapElement do
-        #   #visible false
-        #
-        #   field :display_on_sitemap
-        #   field :changefreq
-        #   field :priority
-        # end
-        #
-        # config.include_models Attachable::Asset
-        #
-        # config.model Attachable::Asset do
-        #   field :data
-        #   field :translations, :globalize_tabs
-        # end
-        #
-        # config.model_translation Attachable::Asset do
-        #   field :locale, :hidden
-        #   field :data_alt
-        # end
-        #
-        #
-        #
-        #
-        #
-        # config.include_models User
-        # config.model User do
-        #   field :email
-        #   field :password
-        #   field :password_confirmation
-        # end
-        #
-        # config.include_models Article, Cms::Tag, Cms::Tagging
-        #
-        # config.model Cms::Tag do
-        #   field :translations, :globalize_tabs
-        #   field :articles
-        #   field :products
-        # end
-        #
-        # config.model_translation Cms::Tag do
-        #   field :locale, :hidden
-        #   field :name
-        #   field :url_fragment do
-        #     help do
-        #       I18n.t("admin.help.#{name}")
-        #     end
-        #   end
-        # end
-        #
-        # config.model Cms::Tagging do
-        #   visible false
-        # end
-        #
-        # config.model Article do
-        #   field :published
-        #   field :article_type, :enum
-        #   field :translations, :globalize_tabs
-        #   field :avatar
-        #   field :banner
-        #   field :release_date do
-        #     date_format do
-        #       :default
-        #     end
-        #   end
-        #   field :tags
-        #   field :seo_tags
-        # end
-        #
-        # config.model_translation Article do
-        #   field :locale, :hidden
-        #   field :name
-        #   field :url_fragment do
-        #     help do
-        #       I18n.t("admin.help.#{name}")
-        #     end
-        #   end
-        #   field :short_description, :ck_editor do
-        #   end
-        #   field :content, :ck_editor
-        # end
+        config.include_models Cms::SitemapElement, Cms::MetaTags
+
+        config.model Cms::MetaTags do
+          visible false
+          field :translations, :globalize_tabs
+        end
+
+        config.model_translation Cms::MetaTags do
+          field :locale, :hidden
+          field :title
+          field :keywords
+          field :description
+        end
+
+        config.model Cms::SitemapElement do
+          #visible false
+
+          field :display_on_sitemap
+          field :changefreq
+          field :priority
+        end
+
+        config.include_models Attachable::Asset
+
+        config.model Attachable::Asset do
+          field :data
+          field :translations, :globalize_tabs
+        end
+
+        config.model_translation Attachable::Asset do
+          field :locale, :hidden
+          field :data_alt
+        end
+
+
+        config.include_models User
+        config.model User do
+          field :email
+          field :password
+          field :password_confirmation
+        end
+
+        config.include_models BlogArticle, Cms::Tag, Cms::Tagging
+
+        config.model Cms::Tag do
+          field :translations, :globalize_tabs
+          field :articles
+          field :products
+        end
+
+        config.model_translation Cms::Tag do
+          field :locale, :hidden
+          field :name
+          field :url_fragment do
+            help do
+              I18n.t("admin.help.#{name}")
+            end
+          end
+        end
+
+        config.model Cms::Tagging do
+          visible false
+        end
+
+        config.model BlogArticle do
+          navigation_label_key :media
+          field :published
+          field :media_featured
+          field :translations, :globalize_tabs
+          field :avatar
+          field :banner
+          field :release_date do
+            date_format do
+              :default
+            end
+          end
+          field :tags
+          field :seo_tags
+        end
+
+        config.model_translation BlogArticle do
+          field :locale, :hidden
+          field :name
+          field :url_fragment do
+            help do
+              I18n.t("admin.help.#{name}")
+            end
+          end
+          field :description do
+          end
+          field :content, :ck_editor
+        end
 
 
 

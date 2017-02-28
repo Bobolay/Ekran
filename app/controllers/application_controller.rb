@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
   # include Cms::Helpers::NavigationHelper
   # include Cms::Helpers::ActionView::UrlHelper
 
+  reload_rails_admin_config
+
   def render_not_found
     render template: "errors/not_found.html.slim"
   end
