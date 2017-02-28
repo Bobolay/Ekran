@@ -1,0 +1,1 @@
+Attachable.use_translations = true

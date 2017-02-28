@@ -24,5 +24,13 @@ module Ekran
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
+    Rails.application.config.action_mailer.default_url_options = {host: (ENV["#{Rails.env}.host_with_port"] || ENV["#{Rails.env}.host"])}
+
+    config.i18n.load_path += Dir[Rails.root.join("config/locales/**/*.yml").to_s]
+
+
+    # file_editor
+    config.assets.precompile += %w(fonts/octicons/octicons.woff cms/file_editor.css cms/file_editor.js)
+
   end
 end

@@ -1,6 +1,6 @@
 $().ready(function(){
 
-  $("form").validate({
+  $("form.validate").validate({
     rules: {
       firstname: "required",
       email: {
