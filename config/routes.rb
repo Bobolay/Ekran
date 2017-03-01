@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   root to: "pages#index"
 
   resources :brands, only: :index
+
   scope :media, controller: :media do
     root action: :index, as: :media
+
     scope :blog do
       root action: :blog_index, as: :media_blog
       get ":id", action: :blog_show, as: :media_blog_article
@@ -21,7 +23,7 @@ Rails.application.routes.draw do
 
     scope :news do
       root action: :news_index, as: :media_news
-      get ":id", action: :media_news_article
+      get ":id", action: :news_show, as: :media_news_article
     end
 
     get "video", action: :video_index, as: :media_video
@@ -38,7 +40,10 @@ Rails.application.routes.draw do
     get ":id", action: :show, as: :project
   end
 
-  resources :services, only: [:index, :show]
+  scope :services, controller: :services do
+    root action: :index, as: :services
+    get "service", action: :show, as: :service
+  end
 
   scope :about_us, controller: :about_us do
     root action: :about_us, as: :about_us

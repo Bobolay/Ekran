@@ -3,7 +3,7 @@ classes = {
   scroll_larger_than_header_height: "scroll-larger-than-header-height"
 }
 
-header_selector = ".top-nav-wrapper"
+header_selector = ".header-container"
 banner_selector = ""
 
 

@@ -13,14 +13,28 @@
         = render "slider_controls"
         .slider-inherit-dimension-container
           ul.main-slider
-            li.img-background style="background-image: url(#{asset_path('photo/sample-6.jpg')})"
-            li.img-background style="background-image: url(#{asset_path('photo/sample-7.jpg')})"
-            li.img-background style="background-image: url(#{asset_path('photo/sample-8.jpg')})"
-            li.img-background style="background-image: url(#{asset_path('photo/sample-9.jpg')})"
+            li.img-background style="background-image: url(#{asset_path('photo/Ekran-photo_banner-1.jpg')})"
+            li.img-background style="background-image: url(#{asset_path('photo/Ekran-photo_banner-2.jpg')})"
+            li.img-background style="background-image: url(#{asset_path('photo/Ekran-photo_banner-3.jpg')})"
+            li.img-background style="background-image: url(#{asset_path('photo/Ekran-photo-man.jpg')})"
 
 .about-us-wrapper.top-inner-indent
 
   .row
+    .columns.large-2.side-menu
+      ul
+        li
+          a href="#mission" наша місія
+        li
+          a href="#history" історія
+        li
+          a href="#stuff" колектив
+        li
+          a href="#vacancies" вакансії
+        li
+          a href="#certificates" сертифікати
+
+  .row#mission
     .columns.large-10.large-push-2.xlarge-9.xlarge-push-3.xxlarge-8.xxlarge-push-4.end
       p.wrapper-small-title.text-align-left Наша місія
       p.bold-underlined Компанія «Екран-Вікносвіт» &mdash; cучасна, потужна і авторитетна компанія у галузі виробництва світлопрозорих конструкцій України
@@ -31,9 +45,9 @@
         p.main-text.italic В цьому наша унікальність, наша сила, наша гнучкість і найголовніше &mdash; наша можливість гарантувати вам, нашим покупцям, клієнтам та партнерам, що саме з нами у вас є повноцінний та якісний вибір.
 
     .columns.large-11.large-push-1.xlarge-10.xlarge-push-2.xxlarge-9.xxlarge-push-3.end
-      .img-container style="background-image: url(#{asset_path('photo/sample-2.jpg')})"
+      .img-container style="background-image: url(#{asset_path('photo/Ekran-photo-man.jpg')})"
 
-  .history-container.grey-bg
+  .history-container.grey-bg#history
     .row
       .columns.large-10.large-push-2.xlarge-9.xlarge-push-3.xxlarge-8.xxlarge-push-4
 
@@ -102,7 +116,7 @@
 
         .showmore + показати ще
 
-  .stuff-container
+  .stuff-container#stuff
     .row
       .columns.large-10.large-push-2.xlarge-9.xlarge-push-3.xxlarge-8.xxlarge-push-4
         .wrapper-small-title.text-align-left Колектив
@@ -110,7 +124,7 @@
         p.main-text Ми переконані &mdash; лише взаєморозуміння, спільні зусилля, наполеглива праця і готовність підтримати один одного у скрутну хвилину приносять бажаний результат &mdash; добробут компанії і ваш особистий добробут.
         .clearfix
           .stuff-block
-            .img-background style="background-image: url(#{asset_path('photo/stuff-1.jpg')})"
+            .img-background style="background-image: url(#{asset_path('photo/leadership-board-colleen-calhoun--hover.jpg')})"
             .hover-block
               p.regular.animate
                 | мирослав
@@ -123,7 +137,7 @@
                 a.social.dib = inline_svg "svg/social-2.svg"
                 a.social.dib = inline_svg "svg/social-3.svg"
           .stuff-block
-            .img-background style="background-image: url(#{asset_path('photo/stuff-2.jpg')})"
+            .img-background style="background-image: url(#{asset_path('photo/leadership-board-deia-campanelli--hover.jpg')})"
             .hover-block
               p.regular.animate
                 | мирослав
@@ -136,7 +150,7 @@
                 a.social.dib = inline_svg "svg/social-2.svg"
                 a.social.dib = inline_svg "svg/social-3.svg"
           .stuff-block
-            .img-background style="background-image: url(#{asset_path('photo/stuff-3.jpg')})"
+            .img-background style="background-image: url(#{asset_path('photo/leadership-board-eric-gebhardt--hover.jpg')})"
             .hover-block
               p.regular.animate
                 | мирослав
@@ -149,7 +163,7 @@
                 a.social.dib = inline_svg "svg/social-2.svg"
                 a.social.dib = inline_svg "svg/social-3.svg"
           .stuff-block
-            .img-background style="background-image: url(#{asset_path('photo/stuff-4.jpg')})"
+            .img-background style="background-image: url(#{asset_path('photo/leadership-board-jeff-wyatt--hover.jpg')})"
             .hover-block
               p.regular.animate
                 | мирослав
@@ -162,7 +176,7 @@
                 a.social.dib = inline_svg "svg/social-2.svg"
                 a.social.dib = inline_svg "svg/social-3.svg"
           .stuff-block
-            .img-background style="background-image: url(#{asset_path('photo/stuff-5.jpg')})"
+            .img-background style="background-image: url(#{asset_path('photo/leadership-board-john-gordon--hover.jpg')})"
             .hover-block
               p.regular.animate
                 | мирослав
@@ -175,7 +189,7 @@
                 a.social.dib = inline_svg "svg/social-2.svg"
                 a.social.dib = inline_svg "svg/social-3.svg"
           .stuff-block
-            .img-background style="background-image: url(#{asset_path('photo/stuff-6.jpg')})"
+            .img-background style="background-image: url(#{asset_path('photo/leadership-board-maryrose-silvester--hover.jpg')})"
             .hover-block
               p.regular.animate
                 | мирослав
@@ -188,7 +202,7 @@
                 a.social.dib = inline_svg "svg/social-2.svg"
                 a.social.dib = inline_svg "svg/social-3.svg"
           .stuff-block
-            .img-background style="background-image: url(#{asset_path('photo/stuff-7.jpg')})"
+            .img-background style="background-image: url(#{asset_path('photo/leadership-board-nick-perugini--hover.jpg')})"
             .hover-block
               p.regular.animate
                 | мирослав
@@ -201,7 +215,7 @@
                 a.social.dib = inline_svg "svg/social-2.svg"
                 a.social.dib = inline_svg "svg/social-3.svg"
           .stuff-block
-            .img-background style="background-image: url(#{asset_path('photo/stuff-8.jpg')})"
+            .img-background style="background-image: url(#{asset_path('photo/leadership-board-colleen-calhoun--hover.jpg')})"
             .hover-block
               p.regular.animate
                 | мирослав
@@ -214,7 +228,7 @@
                 a.social.dib = inline_svg "svg/social-2.svg"
                 a.social.dib = inline_svg "svg/social-3.svg"
 
-  .vacancies-container
+  .vacancies-container#vacancies
     .row
       .columns.large-10.large-push-2.xlarge-9.xlarge-push-3.xxlarge-8.xxlarge-push-4
         .wrapper-small-title.text-align-left Вакансії
@@ -224,38 +238,38 @@
           | частиною колективу?
         p.main-text Успіх компанії «Екран-Вікносвіт» &mdash; це особистий успіх кожного нашого працівника. Ми переконані &mdash; лише взаєморозуміння, спільні зусилля, наполеглива праця і готовність підтримати один одного у скрутну хвилину приносять бажаний результат &mdash; добробут компанії і ваш особистий добробут.
         .clearfix
-          a.vacancie-block href=vacancy_one_path
+          a.vacancie-block href=vacancy_path(1)
             p.city рівне
             p.job-position керівник відділу збуту
             p.smaller Повна зайнятість
             = inline_svg "svg/key-arrow-right.svg"
-          a.vacancie-block href=vacancy_one_path
+          a.vacancie-block href=vacancy_path(1)
             p.city львів
             p.job-position інженер
             p.smaller Часткова зайнятість
             = inline_svg "svg/key-arrow-right.svg"
-          a.vacancie-block href=vacancy_one_path
+          a.vacancie-block href=vacancy_path(1)
             p.city івано-франківськ
             p.job-position спеціаліст колл-центра
             p.smaller Повна зайнятість
             = inline_svg "svg/key-arrow-right.svg"
-          a.vacancie-block href=vacancy_one_path
+          a.vacancie-block href=vacancy_path(1)
             p.city львів
             p.job-position продавець-консультант
             p.smaller Повна зайнятість
             = inline_svg "svg/key-arrow-right.svg"
-          a.vacancie-block href=vacancy_one_path
+          a.vacancie-block href=vacancy_path(1)
             p.city рівне
             p.job-position управлінець складом
             p.smaller Часткова зайнятість
             = inline_svg "svg/key-arrow-right.svg"
-          a.vacancie-block href=vacancy_one_path
+          a.vacancie-block href=vacancy_path(1)
             p.city львів
             p.job-position охоронець
             p.smaller Повна зайнятість
             = inline_svg "svg/key-arrow-right.svg"
 
-  .sertificates-container.wrapper-inner-indent.grey-bg
+  .sertificates-container.wrapper-inner-indent.grey-bg#certificates
     .row
       .columns.large-10.large-push-2.xlarge-9.xlarge-push-3.xxlarge-8.xxlarge-push-4
         .wrapper-small-title.text-align-left Сертифікати

@@ -1,6 +1,34 @@
-GEM
-  remote: https://rubygems.org/
+GIT
+  remote: git://github.com/VoroninNick/attachable.git
+  revision: 49686828bd9d8ac0864099f71dd72f392da76bf0
   specs:
+    attachable (0.0.1)
+      paperclip
+      rails (>= 4)
+
+GIT
+  remote: git://github.com/pkorenev/cms.git
+  revision: 47c3213d3f8525f37954c17b4217501dd553a901
+  specs:
+    cms (0.1.2)
+
+GIT
+  remote: git://github.com/pkorenev/db-backuper.git
+  revision: db18d1e6d79f81d059f3a03b8ebc9313e4e78daa
+  specs:
+    db-backuper (0.1.0)
+
+GIT
+  remote: git://github.com/svenfuchs/i18n-active_record.git
+  revision: 35abff38bae09c65ab9404a8292bcda9f0f49d34
+  specs:
+    i18n-active_record (0.1.2)
+      i18n (>= 0.5.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    ace-rails-ap (4.1.2)
     actionmailer (4.2.6)
       actionpack (= 4.2.6)
       actionview (= 4.2.6)
@@ -39,11 +67,19 @@ GEM
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
     arel (6.0.3)
+    bcrypt (3.1.11-x64-mingw32)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bower-rails (0.10.0)
     builder (3.2.2)
     byebug (8.2.2)
+    cancancan (1.16.0)
+    ckeditor (4.2.2)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.1.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -52,20 +88,48 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
-    daemons (1.2.3)
     debug_inspector (0.0.2)
+    devise (4.2.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.1)
+      responders
+      warden (~> 1.2.3)
+    devise-i18n (1.1.1)
     enumerize (1.1.1)
       activesupport (>= 3.2)
     erubis (2.7.0)
-    eventmachine (1.2.0.1-x64-mingw32)
     execjs (2.6.0)
     faker (1.4.3)
       i18n (~> 0.5)
     ffaker (2.1.0)
     figaro (1.1.1)
       thor (~> 0.14)
+    font-awesome-rails (4.7.0.1)
+      railties (>= 3.2, < 5.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    globalize (5.0.1)
+      activemodel (>= 4.2.0, < 4.3)
+      activerecord (>= 4.2.0, < 4.3)
+    haml (4.0.7)
+      tilt
+    haml-rails (0.9.0)
+      actionpack (>= 4.0.1)
+      activesupport (>= 4.0.1)
+      haml (>= 4.0.6, < 5.0)
+      html2haml (>= 1.0.1)
+      railties (>= 4.0.1)
+    hpricot (0.8.6)
+    html2haml (2.1.0)
+      erubis (~> 2.7.0)
+      haml (~> 4.0)
+      nokogiri (>= 1.6.0)
+      ruby_parser (~> 3.5)
+    html2slim (0.2.0)
+      hpricot
+    htmlcompressor (0.3.1)
+    httpclient (2.8.3)
     i18n (0.7.0)
     inline_svg (0.6.2)
       activesupport (>= 4.0.4)
@@ -78,6 +142,8 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
     json (1.8.3)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
@@ -89,11 +155,31 @@ GEM
     mime-types (3.0)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0221)
+    mimemagic (0.3.2)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
+    nested_form (0.3.2)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (4.1.0)
     nokogiri (1.6.7.2-x64-mingw32)
       mini_portile2 (~> 2.0.0.rc2)
+    nprogress-rails (0.2.0.2)
+    orm_adapter (0.5.0)
+    paperclip (5.1.0)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (~> 0.3.0)
+    paperclip-tinify (0.0.2)
+      tinify (~> 1.3)
+    papercrop (0.3.0)
+      jquery-rails
+      paperclip (>= 3.4)
+      rails (>= 3.1)
+    pg (0.19.0-x64-mingw32)
     placeholdit (0.0.5)
     pluck_to_hash (0.1.3)
       activerecord (>= 4.0.2)
@@ -104,6 +190,11 @@ GEM
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
+    rack-page_caching (0.0.3)
+      rack
+    rack-pjax (1.0.0)
+      nokogiri (~> 1.5)
+      rack (>= 1.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.6)
@@ -125,6 +216,33 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (4.0.9)
+      i18n (~> 0.7)
+      railties (~> 4.0)
+    rails_admin (1.1.1)
+      builder (~> 3.1)
+      coffee-rails (~> 4.0)
+      font-awesome-rails (>= 3.0, < 5)
+      haml (~> 4.0)
+      jquery-rails (>= 3.0, < 5)
+      jquery-ui-rails (~> 5.0)
+      kaminari (~> 0.14)
+      nested_form (~> 0.3)
+      rack-pjax (>= 0.7)
+      rails (>= 4.0, < 6)
+      remotipart (~> 1.3)
+      sass-rails (>= 4.0, < 6)
+    rails_admin_globalize_field (0.4.0)
+      globalize (>= 5.0)
+      rails (>= 4.2)
+      rails_admin (>= 0.6.2)
+    rails_admin_nestable (0.3.2)
+      coffee-rails
+      haml-rails
+      rails_admin (>= 0.6.6)
+      sass-rails
+    rails_admin_tag_list (0.2.0)
+      rails_admin (>= 0.6)
     railties (4.2.6)
       actionpack (= 4.2.6)
       activesupport (= 4.2.6)
@@ -133,6 +251,14 @@ GEM
     rake (11.1.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    remotipart (1.3.1)
+    require_reloader (0.2.0)
+    responders (2.3.0)
+      railties (>= 4.2.0, < 5.1)
+    ruby_parser (3.8.4)
+      sexp_processor (~> 4.1)
+    russian (0.6.0)
+      i18n (>= 0.5.0)
     sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -143,6 +269,10 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sexp_processor (4.8.0)
+    simple_form (3.4.0)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     slim (3.0.6)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -160,14 +290,15 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.11-x64-mingw32)
+    sshkit (1.12.0)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     temple (0.7.6)
-    thin (1.6.4)
-      daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0, >= 1.0.4)
-      rack (~> 1.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    tinify (1.5.0)
+      httpclient (~> 2.6)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -176,43 +307,77 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
+    warden (1.2.7)
+      rack (>= 1.0)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    will_paginate (3.1.5)
+    yaml_db (0.4.2)
+      rails (>= 3.0, < 5.1)
+      rake (>= 0.8.7)
 
 PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  ace-rails-ap
   acts-as-taggable-on
+  attachable!
   bower-rails
   byebug
+  cancancan
+  ckeditor
+  cms!
   coffee-rails (~> 4.1.0)
+  db-backuper!
+  devise
+  devise-i18n
   enumerize
   faker
   ffaker
   figaro
+  globalize
+  html2slim
+  htmlcompressor
+  i18n-active_record!
   inline_svg
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  nprogress-rails
+  paperclip
+  paperclip-tinify
+  papercrop
+  pg
   placeholdit
   pluck_to_hash
   protected_attributes
   puma
   quiet_assets
+  rack-page_caching
   rails (= 4.2.6)
+  rails-i18n
+  rails_admin
+  rails_admin_globalize_field
+  rails_admin_nestable
+  rails_admin_tag_list
+  require_reloader
+  russian
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  simple_form
   slim-rails
   sqlite3
-  thin
+  sshkit
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  will_paginate (~> 3.0)
+  yaml_db
 
 BUNDLED WITH
    1.11.2
