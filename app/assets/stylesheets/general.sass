@@ -289,6 +289,13 @@ ul.standart-list
       top: 0
       left: 0
 
+ul.numbered-list
+  counter-reset: list
+  li
+    &:before
+      counter-increment: list
+      content: counter(list) "."
+
 .filter-container
   margin: 1em 0
   .small

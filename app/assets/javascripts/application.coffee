@@ -44,3 +44,4 @@
 #= require validate_form
 #= require regions_dropdown
 #= require smooth_anchor_link
+#= require sticky

@@ -70,6 +70,22 @@
     padding-left: 20px
     border-left: 6px solid $green
 
+  .numbered-list
+    li
+      position: relative
+      margin: 3em 0
+      padding-left: 20px
+      &:before
+        position: absolute
+        top: 0
+        left: 0
+        +bold
+    .regular
+      +bold
+      margin-bottom: 20px
+    .smaller
+      +light
+
   .img-container
     margin-bottom: 2em
 
