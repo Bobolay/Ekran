@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/pkorenev/cms.git
-  revision: 47c3213d3f8525f37954c17b4217501dd553a901
+  revision: a97adcb5e7936ab2a29cebeafa54781d4bb0e10d
   specs:
     cms (0.1.2)
 

@@ -1,26 +1,27 @@
-.login-wrapper
-  .row.form-and-title-row
-    .columns.large-2.form-title-column
-      h2.section-title
-        = raw t("pages.sign_in.title")
-    .columns.large-6.form-column
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .form-content
-          .inputs
-            .row
-              .columns.large-6
-                .input
-                  input#user_email type="text" name="user[email]"
-                  label.placeholder for="user_email"
-                    = t("pages.sign_in.email")
-              .columns.large-6
-                .input
-                  input#user_password type="password" name="user[password]"
-                  label.placeholder for="user_password"
-                    = t("pages.sign_in.password")
+.login-wrapper.form-container
+
+  h2.section-title
+    = raw t("pages.sign_in.title")
+
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-content
+      .inputs
+        .row
+          .columns.large-6
+            .input-field
+              input#user_email type="text" name="user[email]"
+              label.placeholder for="user_email"
+                = t("pages.sign_in.email")
+          .columns.large-6
+            .input-field
+              input#user_password type="password" name="user[password]"
+              label.placeholder for="user_password"
+                = t("pages.sign_in.password")
 
 
-          .actions
-            button.btn.btn-dark type="submit"
+      .actions
+        .row
+          .columns
+            button.button.green type="submit"
               span
                 = t("pages.sign_in.submit")
