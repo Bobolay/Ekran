@@ -12,38 +12,38 @@
     p.header.animated екран-вікносвіт
     p.regular.animated Бездоганна якість та відмінний сервіс - кожному клієнту!
     .animated
-      .button Дізнатись про компанію
+      a.button title="Дізнайтесь більше про нас" href=about_us_path Дізнатись про компанію
   .banner-text
     p.large.animated Вітаємо в
     .line.animated
     p.header.animated саламандер
     p.regular.animated Бездоганна якість та відмінний сервіс - кожному клієнту!
     .animated
-      .button Дізнатись про компанію
+      a.button target="_blank" title="Перехід на веб-сторінку партнера" Дізнатись про компанію
   .banner-text
     p.large.animated Вітаємо в
     .line.animated
     p.header.animated карпатські вікна
     p.regular.animated Бездоганна якість та відмінний сервіс - кожному клієнту!
     .animated
-      .button Дізнатись про компанію
+      a.button target="_blank" title="Перехід на веб-сторінку партнера" Дізнатись про компанію
   .banner-text
     p.large.animated Вітаємо в
     .line.animated
     p.header.animated альфабуд
     p.regular.animated Бездоганна якість та відмінний сервіс - кожному клієнту!
     .animated
-      .button Дізнатись про компанію
+      a.button target="_blank" title="Перехід на веб-сторінку партнера" Дізнатись про компанію
 
   .fullpage-banner-bottom
     .row.inner
       .columns
         = render "slider_controls"
         .go-down = inline_svg "svg/key-arrow-down.svg"
-        .contact-us
+        .contact-us title="Зв'яжіться з нами"
           .line-separator.dib
           .icon.dib = inline_svg "svg/phone.svg"
-          p.smaller.dib Зв'язатись з нами
+          p.smaller.dib.request-button.call-me-back-button Зв'язатись з нами
 
 .about-us-wrapper.wrapper-inner-indent
   .row
@@ -82,7 +82,7 @@
             .line
             p.brand-title З екологічно дерев'яного брусу
             p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку. Нам добре вдається знаходити індивідуальні рішення, і тому «КАРПАТСЬКІ ВІКНА» ТМ є найкращим, а інколи і єдиним правильним рішенням під час будівництва нових чи реконструкції старих будівель.
-            a.text-link
+            a.text-link title="Перейти на веб-сторінку партнера"
               | Дізнатись більше
               = inline_svg "svg/ext-link.svg"
     li
@@ -98,7 +98,7 @@
             .line
             p.brand-title З екологічно дерев'яного брусу
             p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку. Нам добре вдається знаходити індивідуальні рішення, і тому «КАРПАТСЬКІ ВІКНА» ТМ є найкращим, а інколи і єдиним правильним рішенням під час будівництва нових чи реконструкції старих будівель.
-            a.text-link
+            a.text-link title="Перейти на веб-сторінку партнера"
               | Дізнатись більше
               = inline_svg "svg/ext-link.svg"
     li
@@ -114,7 +114,7 @@
             .line
             p.brand-title З екологічно дерев'яного брусу
             p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку. Нам добре вдається знаходити індивідуальні рішення, і тому «КАРПАТСЬКІ ВІКНА» ТМ є найкращим, а інколи і єдиним правильним рішенням під час будівництва нових чи реконструкції старих будівель.
-            a.text-link
+            a.text-link title="Перейти на веб-сторінку партнера"
               | Дізнатись більше
               = inline_svg "svg/ext-link.svg"
   
@@ -129,7 +129,7 @@
 .projects-wrapper.wrapper-inner-indent
   p.wrapper-small-title Наші проекти
   .clearfix.projects
-    a.project-block.floated href=project_path(1)
+    a.project-block.floated href=project_path(1) title="Перейти на сторінку з даним проектом"
       .img-background style="background-image: url(#{asset_path('photo/Erkan-projects-cottage-1.jpg')})"
       .text-block
         p.project-performer salamander | 2016
@@ -141,7 +141,7 @@
         .text-link
           | Подивитись проект
           = inline_svg "svg/key-arrow-right.svg"
-    a.project-block.floated href=project_path(1)
+    a.project-block.floated href=project_path(1) title="Перейти на сторінку з даним проектом"
       .img-background style="background-image: url(#{asset_path('photo/Erkan-projects-fabbrica-1.jpg')})"
       .text-block
         p.project-performer карпатські вікна | 2016
@@ -153,7 +153,7 @@
         .text-link
           | Подивитись проект
           = inline_svg "svg/key-arrow-right.svg"
-    a.project-block.floated href=project_path(1)
+    a.project-block.floated href=project_path(1) title="Перейти на сторінку з даним проектом"
       .img-background style="background-image: url(#{asset_path('photo/Erkan-projects-ibiz-1.jpg')})"
       .text-block
         p.project-performer alfabud | 2015
@@ -191,20 +191,20 @@
         br
         | разом
       p.main-text Запрошуємо до співпраці дилерів, архітекторів, будівельні організації. Також ми проводимо навчання.
-      .button Стати партнером
-    a.partner-block.floated
+      a.button title="Стати нашим партнером" Стати партнером
+    a.partner-block.floated title="Дізнайтесь детальніше про переваги партнерства"
       .img-background style="background-image: url(#{asset_path('photo/person-1.jpg')})"
       .person-type
         p.larger Ви диллер?
-    a.partner-block.floated
+    a.partner-block.floated title="Дізнайтесь детальніше про переваги партнерства"
       .img-background style="background-image: url(#{asset_path('photo/person-2.jpg')})"
       .person-type
         p.larger Ви архітектор?
-    a.partner-block.floated
+    a.partner-block.floated title="Дізнайтесь детальніше про переваги партнерства"
       .img-background style="background-image: url(#{asset_path('photo/person-3.jpg')})"
       .person-type
         p.larger Представник будівельної організації?
-    a.partner-block.floated
+    a.partner-block.floated title="Дізнайтесь детальніше про переваги партнерства"
       .img-background style="background-image: url(#{asset_path('photo/person-4.jpg')})"
       .person-type
         p.larger Цікавить навчання?
@@ -219,49 +219,49 @@
   .row.tab-content-wrapper
     .columns.medium-12.large-4.float-right.tab-content.active
       p.underlined-title Новини
-      a.new-block
+      a.new-block title="Перейти на сторінку новини"
         p.larger Прагматический христианско демократический национализм: гипотеза и теории
         p.date 16 січня, 2017
         .hover-arrow = inline_svg "svg/key-arrow-right.svg"
-      a.new-block
+      a.new-block title="Перейти на сторінку новини"
         p.larger Современный феномен толпы: предпосылки и развитие
         p.date 16 січня, 2017
         .hover-arrow = inline_svg "svg/key-arrow-right.svg"
-      a.new-block
+      a.new-block title="Перейти на сторінку новини"
         p.larger Прагматический гуманизм — актуальная национальная задача
         p.date 16 січня, 2017
         .hover-arrow = inline_svg "svg/key-arrow-right.svg"
-      a.new-block
+      a.new-block title="Перейти на сторінку новини"
         p.larger Онтологический механизм власти: предпосылки и развитие
         p.date 16 січня, 2017
         .hover-arrow = inline_svg "svg/key-arrow-right.svg"
-      a.new-block
+      a.new-block title="Перейти на сторінку новини"
         p.larger Конструктивный либерализм глазами современников
         p.date 16 січня, 2017
         .hover-arrow = inline_svg "svg/key-arrow-right.svg"
-      a.new-block
+      a.new-block title="Перейти на сторінку новини"
         p.larger Прагматический христианско демократический национализм: гипотеза и теории
         p.date 16 січня, 2017
         .hover-arrow = inline_svg "svg/key-arrow-right.svg"
-      .button.green Всі новини
+      a.button.green href=media_news_path title="Перейти на сторінку всіх новин" Всі новини
 
     .columns.medium-12.large-7.xxlarge-pull-1.float-left.tab-content
       p.underlined-title Блог
-      a.blog-block
+      a.blog-block title="Перейти на сторінку блогу"
         .img
           .img-background style="background-image: url(#{asset_path('photo/img_0282.jpg')})"
         .text
           p.small соціальна відповідальність
           p.blog-title назва теми в один рядок
           p.date 16 січня, 2107
-      a.blog-block
+      a.blog-block title="Перейти на сторінку блогу"
         .img
           .img-background style="background-image: url(#{asset_path('photo/57a602ddd6f2e.jpg')})"
         .text
           p.small соціальна відповідальність
           p.blog-title назва теми в один рядок
           p.date 16 січня, 2107
-      a.blog-block
+      a.blog-block title="Перейти на сторінку блогу"
         .img
           .img-background style="background-image: url(#{asset_path('photo/asdwevee.jpg')})"
         .text
@@ -294,6 +294,6 @@
           | вул. Сколівська 7/б, м. Стрий,
           br
           | Львівська обл., Україна, 82400
-      .button.grey Зв'язатись
+      .button.grey title="Зв'язатись з нами" Зв'язатись
     .contact-block
       #googleMap

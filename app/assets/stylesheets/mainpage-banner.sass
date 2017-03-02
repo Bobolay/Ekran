@@ -78,6 +78,7 @@
         +centered-inside
     .contact-us
       float: right
+      cursor: pointer
       .line-separator
         width: 1px
         height: 28px
@@ -92,3 +93,9 @@
         margin-left: 10px
         @media #{$small-only}
           display: none
+      &:hover
+        .smaller
+          color: $green
+        .icon
+          svg
+            fill: $green
