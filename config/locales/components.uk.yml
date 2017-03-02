@@ -9,3 +9,18 @@ uk:
       services: "Сервісні послуги"
       delivery: "Доставка"
       warranty: "Гарантія"
+    sharing_block:
+      html_title:
+        facebook: "Поділиися на Фейсбуці"
+        vk: "Поділитися ВКонтакті"
+        twitter: "Поділитися в Твіттері"
+    tags:
+      all: "Всі"
+    breadcrumbs:
+      home: "Головна"
+      media: "Медіа"
+      media_blog: "Блог"
+      media_news: "Новини"
+      media_video: "Відео"
+      media_press: "Преса"
+      services: "Сервіс"

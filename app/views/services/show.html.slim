@@ -3,42 +3,36 @@
   .row
     .columns
       .text
-        p.small головна &nbsp;/&nbsp; сервіс &mdash; сервісні послуги
-        p.banner-title ми гарантуємо повноцінний та якісний вибір
+        = render_breadcrumbs
+        p.banner-title
+          = @service.banner_title
 
 .service-one-wrapper.grey-bg
 
   .row
     .columns
       .link-container
-        a.link.active сервісні послуги
-        a.link доставка
-        a.link гарантія
+        - @services.each do |service|
+          - active = service.id == @service.id
+          a.link class=("active" if active) href=(service.url if !active)
+            = service.name
 
     .columns.large-4
-      .img-container style="background-image: url(#{asset_path('photo/person-3.jpg')})"
+      .img-container style="background-image: url(#{@service.avatar.url(:article)})"
     .columns.large-8
-      p.service-title Сервісні послуги та адреси сервісних центрів
-      p.service-subtitle Элементарный пульсар в XXI веке
-      p.service-main-text При погружении в жидкий кислород резонатор синхронизует кристалл. В литературе неоднократно описано, как экситон перманентно расщепляет ультрафиолетовый квазар. Плазма заряжает фотон. Частица, как того требуют законы термодинамики, искажает кварк. Кварк возбудим. Сингулярность, как бы это ни казалось парадоксальным, отклоняет осциллятор.
-      p.service-main-text Колебание испускает фронт. Линза возбуждает пульсар. Суспензия излучает кристалл только в отсутствие тепло- и массообмена с окружающей средой. Турбулентность испускает разрыв.
-      p.service-main-text Зеркало противоречиво притягивает межатомный фронт. В ряде недавних экспериментов возмущение плотности противоречиво индуцирует тангенциальный резонатор только в отсутствие тепло- и массообмена с окружающей средой. Квантовое состояние тормозит квант. Течение среды, на первый взгляд, асферично поглощает вращательный экситон.
-      p.service-subtitle Адреси сервісних центрів:
-      ul.standart-list
-        li м. Івано-Франківськ. вул. Коновальця, 146 Г.
-        li м. Чернівці, вул. Руська 126.
-        li м. Сколе, вул. Д. Галицького, 5
-        li м. Чернівці, вул. Руська 126.
-        li м. Сколе, вул. Д. Галицького, 5.
-        li м. Чернівці, вул. Руська 126.
-        li м. Сколе, вул. Д. Галицького, 5.
+      .article-content
+        = raw @service.content
 
 
     .columns
       .clearfix.partner-navigation
-        .floated.prev-button
-          .dib.icon = inline_svg "svg/key-arrow-left.svg"
-          p.larger.dib Попередня
-        .floated-right.next-button
-          p.larger.dib Наступна
-          .dib.icon = inline_svg "svg/key-arrow-right.svg"
+        - if @prev
+          a.floated.prev-button href=@prev.url
+            .dib.icon = inline_svg "svg/key-arrow-left.svg"
+            p.larger.dib
+              = @prev.name
+        - if @next
+          a.floated-right.next-button href=@next.url
+            p.larger.dib
+              = @next.name
+            .dib.icon = inline_svg "svg/key-arrow-right.svg"

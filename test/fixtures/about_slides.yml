@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: 
+  published: false
+  sorting_position: false
+
+two:
+  image: 
+  published: false
+  sorting_position: false

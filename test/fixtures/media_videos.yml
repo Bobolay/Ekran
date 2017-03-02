@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  release_date: 2017-03-02 05:56:56
+  video_id: MyString
+
+two:
+  name: MyString
+  release_date: 2017-03-02 05:56:56
+  video_id: MyString

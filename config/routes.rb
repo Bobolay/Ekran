@@ -13,21 +13,28 @@ Rails.application.routes.draw do
 
   resources :brands, only: :index
 
-  scope :media, controller: :media do
-    root action: :index, as: :media
+  controller :media do
+    tags_and_pagination_routes("media/blog", :media_blog, :blog_index)
+    tags_and_pagination_routes("media/news", :media_news, :news_index)
+    tags_and_pagination_routes("media/video", :media_video, :video_index)
 
-    scope :blog do
-      root action: :blog_index, as: :media_blog
-      get ":id", action: :blog_show, as: :media_blog_article
+    scope :media do
+      root action: :index, as: :media
+
+      scope :blog do
+        root action: :blog_index, as: :media_blog
+
+        get ":id", action: :blog_show, as: :media_blog_article
+      end
+
+      scope :news do
+        root action: :news_index, as: :media_news
+        get ":id", action: :news_show, as: :media_news_article
+      end
+
+      get "video", action: :video_index, as: :media_video
+      get "press", action: :press_index, as: :media_press
     end
-
-    scope :news do
-      root action: :news_index, as: :media_news
-      get ":id", action: :news_show, as: :media_news_article
-    end
-
-    get "video", action: :video_index, as: :media_video
-    get "press", action: :press_index, as: :media_press
   end
 
   scope :partnership, controller: :partnership do
@@ -42,7 +49,7 @@ Rails.application.routes.draw do
 
   scope :services, controller: :services do
     root action: :index, as: :services
-    get "service", action: :show, as: :service
+    get ":id", action: :show, as: :service
   end
 
   scope :about_us, controller: :about_us do

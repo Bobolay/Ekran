@@ -11,8 +11,11 @@ class ApplicationController < ActionController::Base
   include Cms::Helpers::MetaDataHelper
   include Cms::Helpers::NavigationHelper
   include Cms::Helpers::ActionView::UrlHelper
+  include Cms::Helpers::Breadcrumbs
 
   reload_rails_admin_config
+
+  before_action :initialize_breadcrumbs, unless: :admin_panel?
 
   def render_not_found
     render template: "errors/not_found.html.slim"
@@ -21,4 +24,13 @@ class ApplicationController < ActionController::Base
   def admin_panel?
     request.path.start_with?("/admin")
   end
+
+  def initialize_breadcrumbs
+    if (controller_name != 'pages' || action_name != 'index') || !params[:controller].start_with?("rails_admin") || !params[:controller].start_with?("devise")
+      @_breadcrumbs = []
+      add_home_breadcrumb
+    end
+  end
+
+
 end

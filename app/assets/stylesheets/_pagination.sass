@@ -1,0 +1,55 @@
+.media-pager-container
+  text-align: center
+  color: $grey500
+  font-size: 14px
+  +bold
+  margin: 5em 0
+  .prev, .next
+    cursor: pointer
+    span, svg
+      vertical-align: middle
+    span
+      text-transform: uppercase
+      margin: 0 5px
+      @media #{$small-only}
+        display: none
+    svg
+      fill: $grey500
+      width: 20px
+      height: 20px
+    &.disabled
+      cursor: default
+  .pages
+    margin: 0 20px
+    .page
+      position: relative
+      display: inline-block
+      vertical-align: middle
+      text-align: center
+      width: 34px
+      line-height: 34px
+      cursor: pointer
+      &:before
+        content: ''
+        display: block
+        width: 1px
+        height: 20px
+        background: $grey500
+        position: absolute
+        left: 0
+        top: 7px
+      &:first-child
+        &:before
+          display: none
+      &.current
+        border: 2px solid $green
+        color: $green
+        &:before, & + .page:before
+          display: none
+    .dots, .total-pages
+      position: relative
+      display: inline-block
+      vertical-align: middle
+      text-align: center
+      width: 34px
+      line-height: 34px

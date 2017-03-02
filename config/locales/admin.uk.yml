@@ -2,3 +2,5 @@ uk:
   admin:
     navigation_labels:
       media: "Медіа"
+      services: "Сервіс"
+      about_us: "Про нас"

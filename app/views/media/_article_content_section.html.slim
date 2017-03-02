@@ -1,0 +1,23 @@
+- if !defined?(wrap_class)
+  - wrap_class = nil
+.media-one-wrapper class=wrap_class
+  .row
+    .columns.medium-3.media-short-info
+      p.date
+        = @article.formatted_release_date
+      = render "sharing_block"
+    .columns.medium-9.media-main-info
+      .article-content
+        = raw @article.content
+
+      .clearfix.media-bottom
+        .float-right
+          - if @article.tags.any?
+            .tags
+              - @article.tags.each do |tag|
+                a.tag.dib href=@article.class.tag_url(tag)
+                  = tag.name
+          p.date.dib
+            = @article.formatted_release_date
+        .float-left
+          = render "sharing_block", orientation: :horizontal

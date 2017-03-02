@@ -7,29 +7,8 @@
       = render "media_links"
       
       .row
-        .columns.medium-6
-          a.new-block href=media_news_article_path(1)
-            p.title Прагматический христианско демократический национализм: гипотеза и теории
-            p.main-text ВІКНОСВІТ &mdash; мережа салонів продажу віконно-дверних конструкцій з металопластику, алюмінію та дерева від фірми-виробника ДП “Екран-Вікносвіт”, що покриває всю Західну Україну
-            p.date 16 січня, 2017
-            .hover-arrow = inline_svg "svg/key-arrow-right.svg"
-        .columns.medium-6
-          a.new-block href=media_news_article_path(1)
-            p.title Тестовий заголовок в один рядок
-            p.main-text ВІКНОСВІТ &mdash; мережа салонів продажу віконно-дверних конструкцій з металопластику, алюмінію та дерева від фірми-виробника ДП “Екран-Вікносвіт”, що покриває всю Західну Україну
-            p.date 16 січня, 2017
-            .hover-arrow = inline_svg "svg/key-arrow-right.svg"
-        .columns.medium-6
-          a.new-block href=media_news_article_path(1)
-            p.title Прагматический христианско демократический национализм: гипотеза и теории
-            p.main-text ВІКНОСВІТ &mdash; мережа салонів продажу віконно-дверних конструкцій з металопластику, алюмінію та дерева від фірми-виробника ДП “Екран-Вікносвіт”, що покриває всю Західну Україну
-            p.date 16 січня, 2017
-            .hover-arrow = inline_svg "svg/key-arrow-right.svg"
-        .columns.medium-6
-          a.new-block href=media_news_article_path(1)
-            p.title Цей заголовок має 3 рядки, але повинен обрізатись як і всі. Цей заголовок має 3 рядки, але повинен обрізатись як і всі
-            p.main-text ВІКНОСВІТ &mdash; мережа салонів продажу віконно-дверних конструкцій з металопластику, алюмінію та дерева від фірми-виробника ДП “Екран-Вікносвіт”, що покриває всю Західну Україну
-            p.date 16 січня, 2017
-            .hover-arrow = inline_svg "svg/key-arrow-right.svg"
+        - @paginated_entries.each do |entry|
+          = render "news_article", article: entry
+
       
-      = render "media_pager"
+      = render "media_pager", collection: @paginated_entries

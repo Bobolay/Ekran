@@ -1,0 +1,19 @@
+- align_left = !defined?(align) || align.to_sym == :left
+- align_right = !align_left
+a.blog-block href=article.url class=("text-align-right" if align_right)
+  - if align_left
+    .img
+      .img-background style="background-image: url(#{article.avatar.url(:list)})"
+  .text
+    p.small
+      = article.tags.map(&:name).join(", ")
+    p.blog-title
+      = article.name
+    - if !defined?(short_description) || short_description == true
+      p.main-text
+        = raw article.short_description
+    p.date
+      = article.formatted_release_date
+  - if align_right
+    .img
+      .img-background style="background-image: url(#{article.avatar.url(:list)})"
