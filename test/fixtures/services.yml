@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  published: false
+  sorting_position: 1
+  name: MyString
+  short_description: MyText
+  large_image: 
+  avatar: 
+  banner_title: MyString
+  content: MyText
+
+two:
+  published: false
+  sorting_position: 1
+  name: MyString
+  short_description: MyText
+  large_image: 
+  avatar: 
+  banner_title: MyString
+  content: MyText

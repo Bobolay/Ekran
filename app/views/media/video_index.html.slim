@@ -7,19 +7,17 @@
       = render "media_links"
         
       .row
-        .columns.medium-6
-          .video-container
-            .img-container
-              .img-background style="background-image: url(#{asset_path('photo/0_1577ff_dfa38c9d_XXL.jpg')})"
-            .text
-              p.video-title максимальна довжина заголовка &mdash; дві стрічки, якщо більше &mdash; стрічку обрізає
-              p.date 16 січня, 2017
-        .columns.medium-6
-          .video-container
-            .img-container
-              .img-background style="background-image: url(#{asset_path('photo/asdwevee.jpg')})"
-            .text
-              p.video-title Внутрипочвенный гумус: основные моменты
-              p.date 15 січня, 2017
+        - @paginated_entries.each do |video|
+          .columns.medium-6
+            .video-container
+              .img-container
+                /.img-background style="background-image: url(#{asset_path('photo/0_1577ff_dfa38c9d_XXL.jpg')})"
+                /iframe width="560" height="315" src="https://www.youtube.com/embed/TYl8GRJGnBY" frameborder="0" allowfullscreen=""
+                = youtube_video_iframe(video.youtube_video_id)
+              .text
+                p.video-title
+                  = video.name
+                p.date
+                  = video.formatted_release_date
 
-      /= render "media_pager"
+        = render "media_pager", collection: @paginated_entries

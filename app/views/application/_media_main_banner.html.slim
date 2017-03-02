@@ -1,43 +1,29 @@
 .main-banner-wrapper
   .slider-container
     ul.media-background-slider
-      li.img-background style="background-image: url(#{asset_path('photo/Ekran-main-banner-v1-1.jpg')})"
-      li.img-background style="background-image: url(#{asset_path('photo/Ekran-main-banner-v1-2.jpg')})"
-      li.img-background style="background-image: url(#{asset_path('photo/Ekran-main-banner-v1-3.jpg')})"
+      - @featured_articles.each do |article|
+        li.img-background style="background-image: url(#{article.banner.url(:media_featured_banner)})"
+
   .overlay
   .row
     .columns
       .text.wide.media
-        a.small href=root_path головна
-        span.separator &nbsp;/&nbsp;
-        a.small href=media_path медіа
+        = render_breadcrumbs
 
-        .related-to-slider-text.visible
-          p.banner-title.animated ІДЕАЛЬНА КУХНЯ. МІСІЯ МОЖЛИВА
-          .animated
-            p.small.green соціальна відповідальність
-            span.separator &nbsp;|&nbsp;
-            p.small 16січня, 2017
-          br
-          .animated
-            .button.green Прочитати
-        .related-to-slider-text
-          p.banner-title.animated Стаття номер два
-          .animated
-            p.small.green соціальна відповідальність
-            span.separator &nbsp;|&nbsp;
-            p.small 16січня, 2017
-          br
-          .animated
-            .button.green Прочитати
-        .related-to-slider-text
-          p.banner-title.animated Третя стаття
-          .animated
-            p.small.green соціальна відповідальність
-            span.separator &nbsp;|&nbsp;
-            p.small 16січня, 2017
-          br
-          .animated
-            .button.green Прочитати
+        - @featured_articles.each_with_index do |article, i|
+          .related-to-slider-text class=("visible" if i == 0)
+            p.banner-title.animated
+              = article.name
+            .animated
+              p.small.green
+                = article.tags.map(&:name).join(", ")
+              span.separator &nbsp;|&nbsp;
+              p.small
+                = article.formatted_release_date
+            br
+            .animated
+              a.button.green href=article.url
+                |Прочитати
+
 
       = render "slider_controls"

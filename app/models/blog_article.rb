@@ -1,7 +1,7 @@
 class BlogArticle < ActiveRecord::Base
   attr_accessible *attribute_names
 
-  globalize :name, :url_fragment, :description, :content
+  globalize :name, :url_fragment, :short_description, :content
 
   image :banner, styles: {media_featured_banner: "1920x540#", thumb: "192x54#", article: "1370x770#"}, processors: [:thumbnail, :tinify]
   image :avatar, styles: { list: "350x350#", thumb: "100x100#" }, processors: [:thumbnail, :tinify]
@@ -9,7 +9,7 @@ class BlogArticle < ActiveRecord::Base
   boolean_scope :published
   scope :order_by_release_date, -> { order("release_date desc") }
   scope :home_featured, -> { published.limit(3) }
-  scope :media_featured, -> { published.where(media_featured: 't') }
+  scope :media_featured, -> { published.where(media_featured: 't').limit(3) }
 
   default_scope do
     order_by_release_date
@@ -18,11 +18,11 @@ class BlogArticle < ActiveRecord::Base
   has_seo_tags
   has_sitemap_record
   has_cache do
-    pages :home, :articles, self, Article.published
+    pages :home, :media_blog, self, BlogArticle.published
   end
 
   def url(locale = I18n.locale)
-    "/blog/#{translations_by_locale[locale].url_fragment}"
+    "/media/blog/#{translations_by_locale[locale].url_fragment}"
   end
 
   has_tags
@@ -48,13 +48,21 @@ class BlogArticle < ActiveRecord::Base
   end
 
   def self.tag_url(tag, selected_tags = [])
-    base_url = self.url
+    base_url = self.base_url
 
-    tags_part_str = PaginationHelper.tags_url_fragment(tag, selected_tags)
+    tags_part_str = Cms::Helpers::PaginationHelper.tags_url_fragment(tag, selected_tags)
     if tags_part_str.blank?
       return base_url
     end
 
     base_url + "/" + tags_part_str
+  end
+
+  def self.base_url
+    "/media/blog"
+  end
+
+  def formatted_release_date
+    ApplicationHelper.formatted_date(release_date)
   end
 end

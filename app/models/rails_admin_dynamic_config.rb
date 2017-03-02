@@ -56,7 +56,7 @@ module RailsAdminDynamicConfig
             end
             #edit_model
             nestable do
-              #only [HomeSlide, AboutPageSlide, Category]
+              only [Service]
             end
 
             ## With an audit adapter, you can add:
@@ -117,12 +117,12 @@ module RailsAdminDynamicConfig
           field :password_confirmation
         end
 
-        config.include_models BlogArticle, Cms::Tag, Cms::Tagging
+        config.include_models BlogArticle, NewsArticle, MediaVideo, MediaPressEntry, Cms::Tag, Cms::Tagging
 
         config.model Cms::Tag do
           field :translations, :globalize_tabs
-          field :articles
-          field :products
+          field :blog_articles
+
         end
 
         config.model_translation Cms::Tag do
@@ -145,7 +145,11 @@ module RailsAdminDynamicConfig
           field :media_featured
           field :translations, :globalize_tabs
           field :avatar
-          field :banner
+          field :banner do
+            help do
+              "Необов'язкове. media_featured_banner: 1920x540#; article: 1370x770#"
+            end
+          end
           field :release_date do
             date_format do
               :default
@@ -163,10 +167,182 @@ module RailsAdminDynamicConfig
               I18n.t("admin.help.#{name}")
             end
           end
-          field :description do
+          field :short_description, :ck_editor do
           end
           field :content, :ck_editor
         end
+
+        config.model NewsArticle do
+          navigation_label_key :media
+          field :published
+          field :translations, :globalize_tabs
+          field :release_date do
+            date_format do
+              :default
+            end
+          end
+          field :tags
+          field :seo_tags
+        end
+
+        config.model_translation NewsArticle do
+          field :locale, :hidden
+          field :name
+          field :url_fragment do
+            help do
+              I18n.t("admin.help.#{name}")
+            end
+          end
+          field :short_description, :ck_editor do
+          end
+          field :content, :ck_editor
+        end
+
+        config.model MediaVideo do
+          navigation_label_key :media
+          field :published
+          field :translations, :globalize_tabs
+          field :release_date do
+            date_format do
+              :default
+            end
+          end
+        end
+
+        config.model_translation MediaVideo do
+          field :locale, :hidden
+          field :name
+          field :youtube_video_id do
+            label "Youtube video ID"
+          end
+        end
+
+        config.model MediaPressEntry do
+          navigation_label_key :media
+          field :published
+          field :featured
+          field :translations, :globalize_tabs
+          field :data
+          field :release_date do
+            date_format do
+              :default
+            end
+          end
+        end
+
+        config.model_translation MediaPressEntry do
+          field :locale, :hidden
+          field :name
+        end
+
+        config.include_models Service
+        config.model Service do
+          nestable_list({position_field: :sorting_position})
+          navigation_label_key :services
+          field :published
+          field :translations, :globalize_tabs
+          field :large_image
+          field :avatar
+          field :seo_tags
+        end
+
+        config.model_translation Service do
+          field :locale, :hidden
+          field :name
+          field :url_fragment
+          field :short_description
+          field :banner_title
+          field :content, :ck_editor
+        end
+
+        config.include_models AboutSlide, AboutIntro, HistoryEvent, TeamIntro, TeamMember, AboutVacanciesIntro, Vacancy, AboutCertificateIntro, AboutCertificate
+        config.model AboutSlide do
+          nestable_list({position_field: :sorting_position})
+          navigation_label_key(:about_us)
+          field :published
+          field :image
+          field :translations, :globalize_tabs
+        end
+
+        config.model_translation AboutSlide do
+          field :locale, :hidden
+          field :image_alt
+        end
+
+        [AboutIntro, TeamIntro, AboutVacanciesIntro, AboutCertificateIntro].each do |m|
+          config.model m do
+            navigation_label_key(:about_us)
+            field :translations, :globalize_tabs
+          end
+
+          config.model_translation m do
+            field :locale, :hidden
+            field :content, :ck_editor
+          end
+        end
+
+
+        config.model HistoryEvent do
+          navigation_label_key(:about_us)
+          field :published
+          field :translations, :globalize_tabs
+          field :date do
+            date_format do
+              :default
+            end
+          end
+        end
+
+        config.model_translation HistoryEvent do
+          field :locale, :hidden
+          field :name
+          field :short_description
+        end
+
+        config.model TeamMember do
+          navigation_label_key(:about_us)
+          nestable_list({position_field: :sorting_position})
+          field :published
+          field :translations, :globalize_tabs
+          field :image
+        end
+
+        config.model_translation TeamMember do
+          field :locale, :hidden
+          field :name
+          field :position
+        end
+
+        config.model Vacancy do
+          nestable_list({position_field: :sorting_position})
+          field :contract_type
+          field :translations, :globalize_tabs
+        end
+
+        config.model_translation Vacancy do
+          field :locale, :hidden
+          field :position
+          field :salary
+          field :content, :ck_editor
+
+        end
+
+        config.model AboutCertificate do
+          field :translations, :globalize_tabs
+          field :image
+          field :date do
+            date_format do
+              :default
+            end
+          end
+        end
+
+        config.model_translation AboutCertificate do
+          field :locale, :hidden
+          field :name
+        end
+
+
 
 
 

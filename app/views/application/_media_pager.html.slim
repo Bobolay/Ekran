@@ -1,13 +1,21 @@
-.media-pager-container
-  .prev.dib
-    = inline_svg "svg/key-arrow-left.svg"
-    span попр
-  .pages.dib
-    .page.current 1
-    .page 2
-    .page 3
-    .dots ...
-    .total-pages 12
-  .next.dib
-    span наст
-    = inline_svg "svg/key-arrow-right.svg"
+- if @filtered_pages > 1
+  - prev_url = collection.previous_page ? url_for_collection_page(collection, collection.previous_page) : nil
+  - next_url = collection.next_page ? url_for_collection_page(collection, collection.next_page) : nil
+  - current_page = collection.current_page
+  - start_number = current_page
+  - end_page = @filtered_pages
+  - arr = end_page.times.map{|i| n = i + 1; {number: n, url: url_for_collection_page(collection, n)}  }
+  .media-pager-container
+    a.prev.dib class=("disabled" if !prev_url) href=prev_url
+      = inline_svg "svg/key-arrow-left.svg"
+      span попр
+    .pages.dib
+      - arr.each do |page|
+        a.page class=("current" if page[:number] == current_page) href=page[:url]
+          = page[:number]
+
+      /.dots ...
+      /.total-pages 12
+    a.next.dib class=("disabled" if !next_url) href=next_url
+      span наст
+      = inline_svg "svg/key-arrow-right.svg"

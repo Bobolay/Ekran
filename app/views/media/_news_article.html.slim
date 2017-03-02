@@ -1,0 +1,9 @@
+.columns.medium-6
+  a.new-block href=article.url
+    p.title
+      = article.name
+    .main-text
+      = raw article.short_description
+    p.date
+      = article.formatted_release_date
+    .hover-arrow = inline_svg "svg/key-arrow-right.svg"

@@ -6,7 +6,7 @@ class CreateBlogArticles < ActiveRecord::Migration
       t.datetime :release_date
       t.string :name
       t.string :url_fragment
-      t.string :description
+      t.text :short_description
       t.attachment :avatar
       t.text :content
       t.attachment :banner
@@ -14,7 +14,7 @@ class CreateBlogArticles < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-    BlogArticle.create_translation_table(:name, :url_fragment, :description, :content)
+    BlogArticle.create_translation_table(:name, :url_fragment, :short_description, :content)
   end
 
   def down

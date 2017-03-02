@@ -1,0 +1,8 @@
+- if @tags.try(:any?)
+  .filter-container.dib
+    p.small категорії:
+    a.filter.dib class=("active" if @selected_tags_url_fragments.blank?)  href=@paginated_entries.model.base_url
+      = t("components.tags.all")
+    - @tags.each do |tag|
+      a.filter.dib class=('active' if tag.url_fragment.in?(@selected_tags_url_fragments)) href=@paginated_entries.model.tag_url(tag, @selected_tags_url_fragments)
+        = tag.name

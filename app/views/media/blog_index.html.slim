@@ -6,22 +6,9 @@
     .columns
       = render "media_links"
 
-      .filter-container.dib
-        p.small категорії:
-        .filter.dib Думки
-        .filter.dib Соціальна відповідальність
-        .filter.dib Навчання
-        .filter.dib Поради
-        .filter.dib Інше
+      = render "tags"
 
-      a.blog-block href=media_blog_article_path(1)
-        .img
-          .img-background style="background-image: url(#{asset_path('photo/strojka1.jpg')})"
-        .text
-          p.small соціальна відповідальність
-          p.blog-title назва теми в один рядок
-          p.main-text Итак, ясно, что привлечение аудитории программирует стратегический рекламный клаттер. Традиционный канал, согласно Ф.Котлеру, уравновешивает формирование имиджа, учитывая современные тенденции. Ассортиментная политика предприятия решительно отталкивает коллективный маркетинг Итак, ясно, что привлечение аудитории программирует стратегический рекламный клаттер. Традиционный канал, согласно учитывая современные тенденции. Ассортиментная политика предприятия решительно отталкивает коллективный маркетинг Итак, ясно, что привлечение аудитории программирует стратегический рекламный клаттер. Традиционный канал, согласно
-          p.date 16 січня, 2107
+      - @paginated_articles.each do |article|
+        = render "blog_article", article: article
 
-
-      = render "media_pager"
+      = render "media_pager", collection: @paginated_entries
