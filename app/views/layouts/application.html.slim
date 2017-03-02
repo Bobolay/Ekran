@@ -17,7 +17,8 @@ html
     = render "chat_popup"
 
     = render "header"
-    = yield
+    .main-content-wrapper
+        = yield
     - if @render_footer != false
         = render "footer"
     script src="//maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}"

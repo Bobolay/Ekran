@@ -39,7 +39,6 @@
 #= require navigation
 #= require links
 #= require lightgallery
-#= require collage
 #= require dropdown_list
 #= require validate_form
 #= require regions_dropdown

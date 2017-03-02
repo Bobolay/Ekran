@@ -132,13 +132,21 @@
 
   .project-photo-collage
     .collage
-      padding: 0
+      position: relative
       img
-        vertical-align: bottom
-        opacity: 0
-        @media #{$small-only}
-          &:nth-child(n+5)
-            display: none !important
+        display: none
+      .floated
+        position: relative
+      .width33
+        width: calc(100% / 3)
+        height: calc(100vh / 3)
+      .width50
+        width: 50%
+        height: calc(100vh / 3)
+      .width100
+        width: 100%
+        height: calc(100vh)
+
     .manufacturer-field
       margin-top: 3em
       @media #{$small-only}

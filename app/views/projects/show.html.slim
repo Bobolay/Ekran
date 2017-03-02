@@ -16,9 +16,9 @@
         = render "slider_controls"
         .slider-inherit-dimension-container
           ul.main-slider
-            li.img-background style="background-image: url(#{asset_path('photo/sample-6.jpg')})"
-            li.img-background style="background-image: url(#{asset_path('photo/sample-7.jpg')})"
-            li.img-background style="background-image: url(#{asset_path('photo/sample-8.jpg')})"
+            li.img-background style="background-image: url(#{asset_path('photo/0_1577ff_dfa38c9d_XXL.jpg')})"
+            li.img-background style="background-image: url(#{asset_path('photo/57a602ddd6f2e.jpg')})"
+            li.img-background style="background-image: url(#{asset_path('photo/asdwevee.jpg')})"
 
 .project-one-wrapper
 
@@ -52,21 +52,27 @@
 
   .project-photo-collage.wrapper-inner-indent
     p.wrapper-small-title Фотографії з проекту
-    .collage
-      img.img src=asset_path("photo/brand-img-3.png")
-      img.img src=asset_path("photo/sample-1.jpg")
-      img.img src=asset_path("photo/brand-img-2.png")
-      img.img src=asset_path("photo/sample-3.jpg")
-      img.img src=asset_path("photo/sample-4.jpg")
-      img.img src=asset_path("photo/stuff-1.jpg")
-      img.img src=asset_path("photo/sample-6.jpg")
-      img.img src=asset_path("photo/sample-7.jpg")
-      img.img src=asset_path("photo/person-2.jpg")
-      img.img src=asset_path("photo/sample-9.jpg")
-      img.img src=asset_path("photo/stuff-6.jpg")
-      img.img src=asset_path("photo/sample-4.jpg")
-      img.img src=asset_path("photo/sample-7.jpg")
-    
+    .collage.clearfix#animated-thumbnails-project
+      a.floated.width33 href=asset_path("photo/Photo-0.jpg")
+        .img-background style="background-image: url(#{asset_path('photo/Photo-0.jpg')})"
+        img src=asset_path("photo/Photo-0.jpg")
+      a.floated.width33 href=asset_path("photo/Photo-1.jpg")
+        .img-background style="background-image: url(#{asset_path('photo/Photo-1.jpg')})"
+        img src=asset_path("photo/Photo-1.jpg")
+      a.floated.width33 href=asset_path("photo/Photo-2.jpg")
+        .img-background style="background-image: url(#{asset_path('photo/Photo-2.jpg')})"
+        img src=asset_path("photo/Photo-2.jpg")
+      a.floated.width50 href=asset_path("photo/Photo-3.jpg")
+        .img-background style="background-image: url(#{asset_path('photo/Photo-3.jpg')})"
+        img src=asset_path("photo/Photo-3.jpg")
+      a.floated.width50 href=asset_path("photo/Photo-4.jpg")
+        .img-background style="background-image: url(#{asset_path('photo/Photo-4.jpg')})"
+        img src=asset_path("photo/Photo-4.jpg")
+      a.floated.width100 href=asset_path("photo/Photo-5.jpg")
+        .img-background style="background-image: url(#{asset_path('photo/Photo-5.jpg')})"
+        img src=asset_path("photo/Photo-5.jpg")
+
+
     .row
       .columns
 
@@ -88,7 +94,7 @@
   .row.collapse
     .columns.medium-6
       .project-block
-        .img-background style="background-image: url(#{asset_path('photo/sample-3.jpg')})"
+        .img-background style="background-image: url(#{asset_path('photo/asdwevee.jpg')})"
         .text-block
           p.project-performer salamander | 2016
           p.bold-title
@@ -101,7 +107,7 @@
             = inline_svg "svg/key-arrow-right.svg"
     .columns.medium-6
       .project-block
-        .img-background style="background-image: url(#{asset_path('photo/sample-4.jpg')})"
+        .img-background style="background-image: url(#{asset_path('photo/strojka1.jpg')})"
         .text-block
           p.project-performer карпатські вікна | 2016
           p.bold-title

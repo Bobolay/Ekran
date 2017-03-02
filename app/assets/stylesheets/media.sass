@@ -378,13 +378,13 @@
   padding: 5em 0
   @media #{$small-only}
     padding: 5em 0 0
-  .title
-    font-size: 1.5em
-    +x-bold
-    text-transform: uppercase
-    line-height: 1.2
-  .main-text
-    margin: 20px 0
+
+  @each $header, $font-size in (h1: 28px, h2: 24px, h3: 20px, h4: 16px)
+    #{$header}
+      font-size: $font-size
+      +x-bold
+      text-transform: uppercase
+      line-height: 1.2
 
   .media-short-info
     .regular-bold
@@ -396,9 +396,17 @@
         margin-bottom: 50px
 
   .media-main-info
-    .regular-bold
+
+    p
+      font-size: 0.875em
+      margin: 20px 0
+      +light
+      line-height: 1.7
+
+    h3,h4
       margin: 40px 0 20px
-    .img-container
+    .img-block
+      position: relative
       margin: 3em 0
       .img-sign
         position: absolute
@@ -410,26 +418,37 @@
         background: $green
         padding: 5px 10px
         +translate(0,50%)
-    .blockquote-block
+    blockquote
       position: relative
-      margin: 3em 0
-      @media #{$large-up}
-        padding: 0 3em
-      @media #{$xxlarge-up}
-        padding: 0 5em
-      .blockquote
-        font-size: 2em
-        color: $green
-        +x-bold
-        border-left: 10px solid $green
+      margin: 3em 5em 1em
+      font-size: 2em
+      color: $green
+      +x-bold
+      border-left: 10px solid $green
+      padding-left: 20px
+    .author
+      font-size: 12px
+      color: $blueGrey400
+      text-align: right
+      margin-top: 2em
+      margin-bottom: 3em
+      span
+        text-transform: uppercase
+    ul
+      margin-top: 2em
+      margin-bottom: 2em
+      li
+        position: relative
+        margin: 1em 0
         padding-left: 20px
-      .author
-        font-size: 12px
-        color: $blueGrey400
-        text-align: right
-        margin-top: 2em
-        span
-          text-transform: uppercase
+        font-size: 0.875em
+        +light
+        &:before
+          content: '\2014'
+          color: $green
+          position: absolute
+          top: 0
+          left: 0
     .media-bottom
       border-top: 4px solid $grey300
       margin: 3em 0

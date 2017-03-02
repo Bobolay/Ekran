@@ -3,3 +3,8 @@ $document.on("ready", function() {
     selector: '.sertificate-img a'
   });
 });
+
+$document.on("ready", function() {
+  $('#animated-thumbnails-project').lightGallery({
+  });
+});

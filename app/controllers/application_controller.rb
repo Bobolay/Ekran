@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   reload_rails_admin_config
 
   def render_not_found
+    @render_footer = false
     render template: "errors/not_found.html.slim"
   end
 

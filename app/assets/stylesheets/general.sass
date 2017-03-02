@@ -1,8 +1,19 @@
+html
+  height: 100%
 body
   +open-sans
   color: $blueGrey700
+  min-height: 100%
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  flex-direction: column
   @media #{$small-only}
     font-size: 14px
+  .main-content-wrapper
+    flex: 1
 
 .small
   font-size: 0.75em
@@ -399,3 +410,43 @@ ul.numbered-list
     +x-bold
     text-transform: uppercase
     margin-bottom: 2em
+
+.not-found-container
+  height: 100%
+  .text
+    position: absolute
+    top: 50%
+    +translate(0,-50%)
+    @media #{$small-only}
+      text-align: center
+    @media #{$medium-up}
+      padding-left: 5em
+  .larger
+    text-transform: uppercase
+    +light
+    color: $blueGrey600
+  .title
+    font-size: 6em
+    +x-bold
+    line-height: 1.2
+    color: $green
+  .subtitle
+    +bold
+  .smaller
+    margin: 20px 0
+    color: $grey500
+
+  .brand-links
+    position: absolute
+    width: 100%
+    bottom: 3em
+    left: 0
+    text-align: center
+    @media #{$small-only}
+      display: none
+    .brand-link
+      text-transform: uppercase
+      color: $green
+      font-size: 12px
+      +s-bold
+      padding: 10px
