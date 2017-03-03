@@ -1,0 +1,55 @@
+.region-block.authorized-dealer.floated
+  p.city.dib
+    = office.formatted_city
+  .line.dib
+  p.store-name.dib
+    = office.name
+  - office.tags.each do |tag|
+    p.label
+      = tag.name
+  .arrow = inline_svg "svg/arrow-triangle.svg"
+  .hidden-content.clearfix
+    .floated
+      - if office.phones.any?
+        .info-block.dib
+          p.small телефон
+          - office.phones.each do |phone|
+            p
+              a.larger href=phone_url(phone)
+                = phone
+      - if office.fax_phones.any?
+        .info-block.dib
+          p.small факс
+          - office.fax_phones.each do |phone|
+            p
+              a.larger href=phone_url(phone)
+                = phone
+      - if office.emails.any?
+        .info-block
+          p.small електронна скринька
+          - office.emails.each do |email|
+            p
+              a.larger href=email_url(email)
+                = email
+
+      - if office.address.present?
+        .info-block
+          p.small наша адреса
+          p.larger
+            = raw office.address
+      - if office.google_map_url.present?
+        .info-block
+          p
+            a.regular href=office.google_map_url target="_blank"
+              = inline_svg "svg/Ekran-location-icon-v1.svg"
+              | Подивитись на карті
+    - if office.working_hours.present?
+      .floated
+        .info-block.dib
+          p.small графік роботи
+          - office.working_hours.each do |k, v|
+            .work-sheet
+              .smaller.dib
+                = "#{k}:"
+              .larger.dib
+                = raw v

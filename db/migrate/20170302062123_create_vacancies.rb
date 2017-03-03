@@ -1,6 +1,7 @@
 class CreateVacancies < ActiveRecord::Migration
   def up
     create_table :vacancies do |t|
+      t.boolean :published
       t.integer :office_id
       t.string :contract_type
       t.string :position

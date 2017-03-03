@@ -56,7 +56,7 @@ module RailsAdminDynamicConfig
             end
             #edit_model
             nestable do
-              only [Service]
+              only [Service, AboutSlide, TeamMember, Vacancy, Office]
             end
 
             ## With an audit adapter, you can add:
@@ -314,20 +314,27 @@ module RailsAdminDynamicConfig
         end
 
         config.model Vacancy do
+          navigation_label_key(:about_us)
           nestable_list({position_field: :sorting_position})
+          field :published
+          field :office
           field :contract_type
           field :translations, :globalize_tabs
+          field :seo_tags
         end
 
         config.model_translation Vacancy do
           field :locale, :hidden
           field :position
+          field :url_fragment
           field :salary
           field :content, :ck_editor
 
         end
 
         config.model AboutCertificate do
+          navigation_label_key(:about_us)
+          field :published
           field :translations, :globalize_tabs
           field :image
           field :date do
@@ -340,6 +347,36 @@ module RailsAdminDynamicConfig
         config.model_translation AboutCertificate do
           field :locale, :hidden
           field :name
+        end
+
+        config.include_models Office
+        config.model Office do
+          nestable_list({position_field: :sorting_position})
+          navigation_label_key(:contacts)
+          field :published
+          field :translations, :globalize_tabs
+          field :phones
+          field :fax_phones
+          field :emails
+          field :lat_lng
+          field :tags do
+            associated_collection_scope do
+              ->(scope) { scope.joins(:taggings).where(cms_taggings: {taggable_type: "Office"}) }
+            end
+          end
+          field :vacancies
+        end
+
+        config.model_translation Office do
+          field :locale, :hidden
+          field :name
+          field :region
+          field :city
+          field :address
+          field :working_hours do
+            help "Пишіть як ключ-значення, розділяючи двокрапкою. Кожна пара з нового рядка. Наприклад: Пн-Пт: 16:00 &mdash; 18:00"
+          end
+          field :google_map_url
         end
 
 

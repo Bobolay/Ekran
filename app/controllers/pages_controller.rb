@@ -6,7 +6,8 @@ class PagesController < ApplicationController
   end
 
   def contacts
-
+    @offices = Office.published
+    @office_groups = @offices.group_by{|o| o.region }
   end
 
   private
