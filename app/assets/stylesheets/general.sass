@@ -86,14 +86,14 @@ body
 
 .wrapper-small-title
   font-size: 14px
-  margin-bottom: 2em
+  margin-bottom: 3em
 
 .cutted
   overflow: hidden
   text-overflow: ellipsis
 
 .wrapper-inner-indent
-  padding: 4em 0 2em
+  padding: 5em 0 3em
   @media #{$small-only}
     padding: 3em 0 1em
   .wrapper-small-title
@@ -140,6 +140,7 @@ a
   border: 5px solid $green
   padding: 1em 1em 8em
   max-width: 270px
+  margin-top: 30px
   .bold-title
     font-size: 1.75em
     color: $green
@@ -147,7 +148,10 @@ a
     position: absolute
     bottom: 1em
     left: 1em
-
+  @media #{$small-only}
+    max-width: 100%
+  @media #{$large-up}
+    margin-top: 0
 .social-container
   position: relative
   .social
