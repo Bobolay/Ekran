@@ -55,13 +55,27 @@
 
   //     H a m b u r g e r
   
-  .hamburger-box
-    width: 32px
+  .hamburger
     margin-left: 4em
-    cursor: pointer
-  .hamburger-inner
-    width: 100%
-    background: $green
-    &:before, &:after
-      width: 100%
-      background: $green
+    .hamburger-box
+      width: 32px
+      cursor: pointer
+      .hamburger-inner
+        width: 100%
+        background: $blueGrey300
+        border-radius: 0
+        &:before, &:after
+          width: 100%
+          background: $blueGrey300
+          border-radius: 0
+    &:hover
+      opacity: 1
+      .hamburger-inner
+        background: $green
+        &:before, &:after
+          background: $green
+    &.is-active
+      .hamburger-inner
+        background: transparent
+        &:before, &:after
+          background: $blueGrey400

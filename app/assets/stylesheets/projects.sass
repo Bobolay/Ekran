@@ -20,11 +20,16 @@
     padding: 1em 1em 3em
     +translate(0,20%)
     +transition(0.5s)
+    @media #{$small-only}
+      min-height: 150px
     @media #{$large-up}
       +translate(0,50%)
   .project-performer
     +s-bold
     text-transform: uppercase
+    letter-spacing: 2px
+    span
+      +light
   .bold-title
     margin: 5px 0 20px
     @media #{$medium-only}

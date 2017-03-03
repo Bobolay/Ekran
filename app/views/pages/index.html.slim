@@ -41,11 +41,10 @@
         = render "slider_controls"
         .go-down = inline_svg "svg/key-arrow-down.svg"
         .contact-us title="Зв'яжіться з нами"
-          .line-separator.dib
           .icon.dib = inline_svg "svg/phone.svg"
           p.smaller.dib.request-button.call-me-back-button Зв'язатись з нами
 
-.about-us-wrapper.wrapper-inner-indent
+.about-us-wrapper
   .row
     .columns
       p.wrapper-small-title Хто ми
@@ -132,7 +131,9 @@
     a.project-block.floated href=project_path(1) title="Перейти на сторінку з даним проектом"
       .img-background style="background-image: url(#{asset_path('photo/Erkan-projects-cottage-1.jpg')})"
       .text-block
-        p.project-performer salamander | 2016
+        p.project-performer
+          | salamander 
+          span | 2016
         p.bold-title
           | котедж
           br
@@ -144,7 +145,9 @@
     a.project-block.floated href=project_path(1) title="Перейти на сторінку з даним проектом"
       .img-background style="background-image: url(#{asset_path('photo/Erkan-projects-fabbrica-1.jpg')})"
       .text-block
-        p.project-performer карпатські вікна | 2016
+        p.project-performer
+          | карпатські вікна 
+          span | 2016
         p.bold-title
           | ресторан
           br
@@ -156,7 +159,9 @@
     a.project-block.floated href=project_path(1) title="Перейти на сторінку з даним проектом"
       .img-background style="background-image: url(#{asset_path('photo/Erkan-projects-ibiz-1.jpg')})"
       .text-block
-        p.project-performer alfabud | 2015
+        p.project-performer
+          | alfabud
+          span | 2015
         p.bold-title
           | готель
           br
@@ -278,6 +283,7 @@
   p.wrapper-small-title Як нас знайти
   .clearfix
     .contact-block.float-right
+      p.bold-title головний офіс
       .line
       a.info-block.dib href="tel:+380324539114"
         p.small телефон
