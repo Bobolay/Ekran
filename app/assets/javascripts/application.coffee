@@ -26,7 +26,6 @@
 
 #= require google_map
 #= require google_map_contacts
-#= require appear-initialize
 #= require bxslider
 #= require fullpage_banner_height
 #= require header
@@ -36,12 +35,10 @@
 #= require selectize-initialize
 #= require popups
 #= require tabs
-#= require navigation
-#= require links
 #= require lightgallery
 #= require dropdown_list
 #= require validate_form
 #= require regions_dropdown
 #= require smooth_anchor_link
-#= require sticky
 #= require sharing
+#= require filter-tag
