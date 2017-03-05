@@ -23,22 +23,26 @@
 
       .filter-container.filter-brands.dib
         p.small бренди:
-        .filter.dib Вікна «Саламандер»
-        .filter.dib Карпатські вікна
-        .filter.dib Alfabud
+        .filter.dib data-tag-id="1" Вікна «Саламандер»
+        .filter.dib data-tag-id="2" Карпатські вікна
+        .filter.dib data-tag-id="3" Alfabud
 
       .filter-container.filter-years.float-right
         p.small рік проекту:
-        .filter.dib
-          | Всі роки
-          = inline_svg "svg/arrow-triangle.svg"
+        select#selectize-field-1.dib data-prop-name="data-name" data-placeholder="Вкажіть рік"
+          option value=""
+          option 2017
+          option 2016
+          option 2015
+          / | Всі роки
+          / = inline_svg "svg/arrow-triangle.svg"
       
       .year-block
         p.bg-year 2017
 
-        .row.collapse
+        .row.collapse.columns-left
           .columns.medium-6
-            a.project-block href=project_path(1)
+            a.project-block data-tag-ids="1" href=project_path(1)
               .img-background style="background-image: url(#{asset_path('photo/0_1577ff_dfa38c9d_XXL.jpg')})"
               .text-block
                 p.project-performer salamander | 2016
@@ -51,7 +55,7 @@
                   | Подивитись проект
                   = inline_svg "svg/key-arrow-right.svg"
           .columns.medium-6
-            a.project-block href=project_path(1)
+            a.project-block data-tag-ids="2" href=project_path(1)
               .img-background style="background-image: url(#{asset_path('photo/asdwevee.jpg')})"
               .text-block
                 p.project-performer карпатські вікна | 2016
@@ -69,7 +73,7 @@
 
         .row.collapse
           .columns.medium-6
-            a.project-block href=project_path(1)
+            a.project-block data-tag-ids="3" href=project_path(1)
               .img-background style="background-image: url(#{asset_path('photo/57a602ddd6f2e.jpg')})"
               .text-block
                 p.project-performer salamander | 2016
@@ -82,7 +86,7 @@
                   | Подивитись проект
                   = inline_svg "svg/key-arrow-right.svg"
           .columns.medium-6
-            a.project-block href=project_path(1)
+            a.project-block data-tag-ids="2" href=project_path(1)
               .img-background style="background-image: url(#{asset_path('photo/strojka1.jpg')})"
               .text-block
                 p.project-performer карпатські вікна | 2016
@@ -95,7 +99,7 @@
                   | Подивитись проект
                   = inline_svg "svg/key-arrow-right.svg"
           .columns.medium-6
-            a.project-block href=project_path(1)
+            a.project-block data-tag-ids="1" href=project_path(1)
               .img-background style="background-image: url(#{asset_path('photo/Ekran-main-banner-v1-1.jpg')})"
               .text-block
                 p.project-performer salamander | 2016
@@ -108,7 +112,7 @@
                   | Подивитись проект
                   = inline_svg "svg/key-arrow-right.svg"
           .columns.medium-6
-            a.project-block href=project_path(1)
+            a.project-block data-tag-ids="2" href=project_path(1)
               .img-background style="background-image: url(#{asset_path('photo/img_0282.jpg')})"
               .text-block
                 p.project-performer карпатські вікна | 2016
