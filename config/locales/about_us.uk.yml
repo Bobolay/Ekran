@@ -1,0 +1,11 @@
+uk:
+  vacancy:
+    contract_type:
+      short_values:
+        part_time: "Неповна"
+        full_time: "Повна"
+        remote: "Віддалено"
+      full_values:
+        part_time: "Неповна зайнятість"
+        full_time: "Повна зайнятість"
+        remote: "Віддалено"

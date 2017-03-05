@@ -12,6 +12,6 @@
 
     - content_tag_options = {class: "small"}
     - content_tag_options[:href] = breadcrumb[:url] if !last
-    - content_tag_args = [last ? :p : :a, breadcrumb[:name], content_tag_options]
-    = content_tag *content_tag_args
+    - content_tag_args = [last ? :p : :a, raw(breadcrumb[:name]), content_tag_options]
+    = (content_tag(*content_tag_args))
 

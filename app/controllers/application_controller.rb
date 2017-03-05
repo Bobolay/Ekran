@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   include ActionView::Helpers::AssetUrlHelper
   include ActionView::Helpers::TagHelper
   include ActionView::Helpers::UrlHelper
+  include Cms::Helpers::UrlHelper
   include Cms::Helpers::PagesHelper
   include Cms::Helpers::MetaDataHelper
   include Cms::Helpers::NavigationHelper

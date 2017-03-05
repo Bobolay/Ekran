@@ -1,0 +1,33 @@
+.form-container.inner-indent
+  .row
+    .columns.medium-8.large-6.medium-push-2.large-push-3
+      p.title Залишились питання?
+      p.main-text Якщо під час перегляду інформації на нашому сайті у вас виникли певні питання  чи сумніви і вам необхідна консультація спеціаліста, ми з радістю її надамо!
+      p.smaller
+        span * &nbsp;
+        | обов'язкові поля
+      form.validate
+        .input-field
+          input#firstname type="text" name="firstname"
+          label.placeholder for="firstname"
+            | Ваше ім'я
+            span &nbsp;*
+
+        .input-field
+          input#email type="email" name="email"
+          label.placeholder for="email"
+            | Емейл
+            span &nbsp;*
+
+        .input-field
+          input#phone type="text" name="phone"
+          label.placeholder for="phone"
+            | Номер телефону
+            span &nbsp;*
+
+        .input-field
+          textarea#comment name="comment" rows="5"
+          label.placeholder
+            | Додаткові побажання...
+
+        button.button.green type="submit" value="Submit" Надіслати
