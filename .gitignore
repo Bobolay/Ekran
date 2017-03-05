@@ -18,10 +18,11 @@
 
 public
 db/schema.rb
+db/data.yml
 vendor/assets/bower_components
+vendor/assets/bower.json
 config/application.yml
 Gemfile.lock
 .idea
 tmp
-vendor/assets/bower.json
 Gemfile.lock
