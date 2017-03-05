@@ -20,6 +20,6 @@ class ServicesController < ApplicationController
 
   private
   def add_services_breadcrumb
-    add_breadcrumb(:services, :services_path)
+    add_breadcrumb(:services, services_path)
   end
 end

@@ -30,24 +30,26 @@ class Vacancy < ActiveRecord::Base
     self.published.joins(:translations).where(vacancy_translations: { url_fragment: url_fragment, locale: I18n.locale }).first
   end
 
-  class Translation
-    def initialize_url_fragment
-      return if self.url_fragment.present? || self.vacancy.blank? || self.vacancy.office.blank? || self.vacancy.office.name.blank? || self.position.blank?
-      str = "вакансія".parameterize + "-" + vacancy.office.name.parameterize + "-" + self.position.parameterize
-      found = self.class.where(url_fragment: str, locale: I18n.locale).count > 0
-      if found
-        i = 2
-        while true
-          if self.class.where(url_fragment: str + i.to_s, locale: I18n.locale).count == 0
-            break
+  if self.table_exists?
+    Translation.class_eval do
+      def initialize_url_fragment
+        return if self.url_fragment.present? || self.vacancy.blank? || self.vacancy.office.blank? || self.vacancy.office.name.blank? || self.position.blank?
+        str = "вакансія".parameterize + "-" + vacancy.office.name.parameterize + "-" + self.position.parameterize
+        found = self.class.where(url_fragment: str, locale: I18n.locale).count > 0
+        if found
+          i = 2
+          while true
+            if self.class.where(url_fragment: str + "-" + i.to_s, locale: I18n.locale).count == 0
+              break
+            end
+            i += 1
           end
-          i += 1
+
+          str = str + "-" + i.to_s
         end
 
-        str = str + i.to_s
+        self.url_fragment = str
       end
-
-      self.url_fragment = str
     end
   end
 end

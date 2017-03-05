@@ -1,5 +1,6 @@
 class Office < ActiveRecord::Base
   attr_accessible *attribute_names
+  include TextFields
 
   globalize :name, :city, :region, :address, :working_hours, :google_map_url
 
@@ -43,30 +44,6 @@ class Office < ActiveRecord::Base
 
   def formatted_city(locale = I18n.locale)
     "м. #{city}"
-  end
-
-  def line_separated_field=(key, val)
-    key = key.to_s
-    if val.is_a?(Array)
-      val = val.join("\r\n")
-    end
-
-    self[key] = val
-
-    true
-  end
-
-  def line_separated_field(key, parse = true)
-    key = key.to_s
-    val = self[key]
-    if parse
-      if val.blank?
-        return []
-      end
-      return val.split("\r\n")
-    else
-      return val
-    end
   end
 
   def phones=(val)

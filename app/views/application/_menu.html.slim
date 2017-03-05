@@ -3,9 +3,22 @@
     .columns
 
       .menu-link-container
-        a.menu-link.animated href=about_us_path про нас
-        a.menu-link.animated href=projects_path проекти
-        .menu-link.animated
+        - main_menu.each do |item|
+          - if item[:children].blank?
+            a.menu-link.animated href=item[:url] class=("active" if item[:active]) class=("has-active" if item[:has_active])
+              = item[:name]
+          - else
+            .menu-link.animated class=("active" if item[:active]) class=("has-active" if item[:has_active])
+              a href=item[:url] class=("active" if item[:active])
+                = item[:name]
+              ul
+                - item[:children].each do |child|
+                  li.animated class=("active" if child[:active])
+                    a href=child[:url]
+                      = child[:name]
+        /a.menu-link.animated href=about_us_path про нас
+        /a.menu-link.animated href=projects_path проекти
+        /.menu-link.animated
           a href=partnership_path
             | партнерство
           ul
@@ -19,7 +32,7 @@
               a акції
             li.animated
               a href=partnership_case_path(1) навчальний центр
-        .menu-link.animated
+        /.menu-link.animated
           a href=brands_path
             | бренди
           ul
@@ -29,7 +42,7 @@
               a вікна salamander
             li.animated
               a алюмінієві фасади alfabud
-        .menu-link.animated
+        /.menu-link.animated
           a href=services_path
             | сервіс
           ul
@@ -39,7 +52,7 @@
               a href=service_path(1) доставка
             li.animated
               a href=service_path(1) гарантія
-        .menu-link.animated
+        /.menu-link.animated
           a href=media_path
             | медіа
           ul
@@ -51,7 +64,7 @@
               a href=media_video_path відео
             li.animated
               a href=media_press_path для преси
-        a.menu-link.animated href=contacts_path контакти
+        /a.menu-link.animated href=contacts_path контакти
         .social-container.dib.animate
           a.social.dib = inline_svg "svg/social/facebook.svg"
           a.social.dib = inline_svg "svg/social/vk.svg"

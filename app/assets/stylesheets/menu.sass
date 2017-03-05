@@ -52,7 +52,7 @@
         font-size: 24px
       @media #{$xxlarge-up}
         font-size: 3em
-      &:hover
+      &:hover, &.active, &.has-active
         color: $green
       ul
         position: absolute
@@ -82,7 +82,7 @@
           padding: 10px 0
           +transition(color 0.2s)
           cursor: pointer
-          &:hover
+          &:hover, &.active
             color: $green
         .animated
           +before-hover(20px,0.1s)

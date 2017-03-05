@@ -13,10 +13,12 @@ class ApplicationController < ActionController::Base
   include Cms::Helpers::NavigationHelper
   include Cms::Helpers::ActionView::UrlHelper
   include Cms::Helpers::Breadcrumbs
+  include ApplicationHelper
 
   reload_rails_admin_config
 
   before_action :initialize_breadcrumbs, unless: :admin_panel?
+  before_action :initialize_menu_resources
 
   def render_not_found
     @render_footer = false
@@ -32,6 +34,10 @@ class ApplicationController < ActionController::Base
       @_breadcrumbs = []
       add_home_breadcrumb
     end
+  end
+
+  def initialize_menu_resources
+    @partnership_articles = PartnershipArticle.published
   end
 
 

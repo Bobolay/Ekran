@@ -3,86 +3,56 @@
   .row
     .columns
       .text
-        p.small головна &nbsp;/&nbsp; партнерам &mdash; навчальний центр
+        = render_breadcrumbs
         p.banner-title
-          | розпочніть вигідну співпрацю з компанією «екран-вікносвіт»
+          = raw @article.banner_title
 
 .partner-one-wrapper.grey-bg
   
   .row
     .columns
       .link-container
-        a.link.active дилерам
-        a.link архітекторам
-        a.link будівельним організаціям
-        a.link акції
-        a.link навчальний центр
+        - @articles.each do |article|
+          - active = @article.id == article.id
+          - if active
+            span.link.active
+              = article.name
+          - else
+            a.link href=article.url
+              = article.name
 
     .columns.large-4
-      .img-container style="background-image: url(#{asset_path('photo/person-4.jpg')})"
+      .img-container style="background-image: url(#{@article.avatar.url(:article)})"
       .contact-block
-        a.info-block.dib href="tel:+380324539114"
-          p.small телефон
-          p.larger +38 (032) 453 91 14
-        a.info-block href="mailto:info@ekran.ua"
-          p.small електронна скринька
-          p.larger info@ekran.ua
-        .button.green Напишіть нам!
+        - if @article.phones.any?
+          .info-block.dib
+            p.small телефон
+            - @article.phones.each do |phone|
+              p
+                a.larger href=phone_url(phone)
+                  = phone
+        - if @article.emails.any?
+          .info-block
+            p.small електронна скринька
+            - @article.emails.each do |email|
+              p
+                a.larger href=email_url(email)
+                  = email
+          a.button.green href=email_url(@article.emails.first)
+            |Напишіть нам!
     .columns.large-8
-      p.partner-title Тільки високі результати атестації стають «перепусткою» до щоденної праці в компанії
-      p.partner-main-text Компанія «Екран-Вікносвіт» завжди приділяла пильну увагу якості роботи власного персоналу, а у 2010 році піднялася на новий рівень підготовки працівників &mdash; було створено навчальний центр.
-      p.partner-main-text Найперше тут протягом декі лькох тижнів навчають та атестують претендентів на роботу в компанії.
-      p.partner-main-text Після прийому на роботу навчання продовжується. Щороку складається програма вузькоспеціалізованої підготовки персоналу, яка враховує індивідуальні потреби та побажання кожного працівника компанії.
-      p.smaller.italic Навчальний центр &mdash; важливий підрозділ компанії «Екран-Вікносвіт». Тут плекають найцінніше &mdash; любов до своєї професії, відданість компанії і повагу до вас, наших покупців, клієнтів, партнерів, колег та друзів.
-
-      .contact-block
-        .info-block
-          p.small телефон
-          a.larger href="tel:+380324539114"
-            | +38 (032) 453 91 65
-          a.larger href="tel:+380324539161"
-            | +38 (032) 453 91 61
-        .info-block
-          p.small електронна скринька
-          a.larger href="mailto:info@ekran.ua"
-            | info@ekran.ua
-        .button.green Напишіть нам!
-
-      ul.standart-list
-        li Досконалу якість продукції, що забезпечує високий кредит довіри покупців;
-        li Широкий асортимент виробів із популярних матеріалів: ПВХ, євробрус, алюміній;
-        li Добротний, сучасний і привабливий зовнішній вигляд продукції;
-        li Рекламні матеріали та цікаві промоційні акції з цінними подарунками.
-
-      ul.numbered-list
-        li
-          p.regular Є з чим працювати
-          p.smaller Обирайте якісні матеріали: ПВХ, алюміній, євробрус. Підбирайте ціну: від «оптимальне співвідношення ціна/якість» до розкішних пропозицій.
-        li
-          p.regular Повна свобода у творчості.
-          p.smaller Компанія «Екран-Вікносвіт» готова до скління будь-якого рівня складності. Тому сміливо прикрашайте ваші проекти вишуканими візерунками та хвилястими лініями.
-        li
-          p.regular Якісна реалізація проектів.
-          p.smaller Ми допоможемо втілити ваш задум у життя. Кваліфіковані і досвідчені технічні фахівці компанії «Екран-Вікносвіт» здійснять складний монтаж. І буде так, як хочете ви.
-
-      p.blockquote Цей перевірений на практиці комплексний підхід спонукає відвідувачів вашого магазину чи салону охоче зробити першу покупку. А згодом вони залюбки рекомендуватимуть ваш магазин своїм друзям, колегам, родичам.
-
-      .story-block
-        .clearfix
-          .floated.img style="background-image: url(#{asset_path('photo/leadership-board-deia-campanelli--hover.jpg')})"
-          .floated.person-info
-            p.larger кирил володимирович
-            p.smaller «Екран-Вікносвіт»
-        .line
-        p.main-text В связи с этим нужно подчеркнуть, что репрезентативная система отражает психоанализ. Самонаблюдение прочно отталкивает филогенез. Онтогенез речи существенно вызывает потребительский эскапизм. По их почти единодушному мнению, лидерство параллельно.
-        p.main-text Все это побудило нас обратить внимание на то, что автоматизм начинает латентный автоматизм. Воспитание активно. Мышление фундаментально отталкивает феноменологический стресс, что отмечают такие крупнейшие ученые как Фрейд, Адлер, Юнг, Эриксон, Фромм. Действие потенциально.
-
+      .article-content
+        = raw @article.content
 
     .columns
       .clearfix.partner-navigation
-        .floated.prev-button
-          .dib.icon = inline_svg "svg/key-arrow-left.svg"
-          p.larger.dib Попередня
-        .floated-right.next-button
-          p.larger.dib Наступна
-          .dib.icon = inline_svg "svg/key-arrow-right.svg"
+        - if @prev
+          a.floated.prev-button href=@prev.url
+            .dib.icon = inline_svg "svg/key-arrow-left.svg"
+            p.larger.dib
+              = @prev.name
+        - if @next
+          a.floated-right.next-button href=@next.url
+            p.larger.dib
+              = @next.name
+            .dib.icon = inline_svg "svg/key-arrow-right.svg"

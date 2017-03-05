@@ -6,11 +6,13 @@ class MediaController < ApplicationController
   before_action :set_featured_articles, only: [:blog_index, :news_index, :video_index, :press_index]
   def index
     @render_footer = false
+    set_page_metadata(:media)
   end
 
   def blog_index
     @category = "blog"
     init_articles(BlogArticle)
+    set_page_metadata(:media_blog)
   end
 
   def blog_show
@@ -32,6 +34,7 @@ class MediaController < ApplicationController
   def news_index
     @category = "news"
     init_articles(NewsArticle)
+    set_page_metadata(:media_news)
   end
 
   def news_show
@@ -51,6 +54,7 @@ class MediaController < ApplicationController
 
   def video_index
     @category = "video"
+    set_page_metadata(:media_video)
     add_breadcrumb(:media_video, media_video_path)
     @videos = MediaVideo.published
     @items_per_page = 10
@@ -65,6 +69,7 @@ class MediaController < ApplicationController
   def press_index
     @category = "press"
     add_breadcrumb(:media_press, media_press_path)
+    set_page_metadata(:media_press)
 
     @press_entries = MediaPressEntry.published
     @items_per_page = 10

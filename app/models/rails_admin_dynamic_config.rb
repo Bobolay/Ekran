@@ -56,7 +56,7 @@ module RailsAdminDynamicConfig
             end
             #edit_model
             nestable do
-              only [Service, AboutSlide, TeamMember, Vacancy, Office]
+              only [Service, AboutSlide, TeamMember, Vacancy, Office, PartnershipArticle]
             end
 
             ## With an audit adapter, you can add:
@@ -379,7 +379,38 @@ module RailsAdminDynamicConfig
           field :google_map_url
         end
 
+        config.include_models PartnershipText
+        config.model PartnershipText do
+          navigation_label_key(:partnership)
+          field :translations, :globalize_tabs
+        end
 
+        config.model_translation PartnershipText do
+          field :locale, :hidden
+          field :content, :ck_editor
+        end
+
+        config.include_models PartnershipArticle
+        config.model PartnershipArticle do
+          nestable_list({position_field: :sorting_position})
+          navigation_label_key(:partnership)
+          field :published
+          field :translations, :globalize_tabs
+          field :list_item_image
+          field :avatar
+          field :emails
+          field :phones
+          field :seo_tags
+        end
+
+        config.model_translation PartnershipArticle do
+          field :locale, :hidden
+          field :name
+          field :url_fragment
+          field :list_item_title
+          field :banner_title
+          field :content, :ck_editor
+        end
 
 
 

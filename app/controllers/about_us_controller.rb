@@ -11,6 +11,7 @@ class AboutUsController < ApplicationController
     @about_certificate_intro = AboutCertificateIntro.first.try(:content)
     @certificates = AboutCertificate.published
     @vacancies = Vacancy.published
+    set_page_metadata(:about_us)
   end
 
   def vacancy
@@ -29,6 +30,6 @@ class AboutUsController < ApplicationController
 
   private
   def add_about_us_breadcrumb
-    add_breadcrumb(:about_us, :about_us_path)
+    add_breadcrumb(:about_us, about_us_path)
   end
 end

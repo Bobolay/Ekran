@@ -3,7 +3,7 @@
   .row
     .columns
       .text
-        p.small головна &nbsp;/&nbsp; партнерство
+        = render_breadcrumbs
         p.banner-title
           | партнерство
 
@@ -13,33 +13,11 @@
     .columns
 
       .clearfix.partner-block-container
-        a.partner-block.floated
-          .img-background style="background-image: url(#{asset_path('photo/person-1.jpg')})"
-          .person-type
-            p.larger Ви диллер?
-        a.partner-block.floated
-          .img-background style="background-image: url(#{asset_path('photo/person-2.jpg')})"
-          .person-type
-            p.larger Ви архітектор?
-        a.partner-block.floated
-          .img-background style="background-image: url(#{asset_path('photo/person-3.jpg')})"
-          .person-type
-            p.larger Представник будівельної організації?
-        a.partner-block.floated
-          .img-background style="background-image: url(#{asset_path('photo/person-5.jpg')})"
-          .person-type
-            p.larger Акції?
-        a.partner-block.floated
-          .img-background style="background-image: url(#{asset_path('photo/person-4.jpg')})"
-          .person-type
-            p.larger Цікавить навчання?
+        - @articles.each do |article|
+          a.partner-block.floated href=article.url
+            .img-background style="background-image: url(#{article.list_item_image.url(:large)})"
+            .person-type
+              p.larger
+                = article.list_item_title
 
-      .row.inner-indent
-        .columns.medium-12.large-4
-          p.bold-underlined Компанія «Екран-Вікносвіт» з радістю допоможе вам реалізувати таланти підприємця та підтримає бажання стати заможною людиною.
-        .columns.medium-12.large-4
-          p.main-text Виробнича потужність підприємства складає 700 одиниць віконно-дверних конструкцій у день. Загальна кількість виготовлених на нашому підприємстві вікон вже сягнула більше  1 000 000.
-          p.main-text Завдяки нашій праці тисячі родин мешкають у затишних оселях. Вони радіють життю, виховують дітей, працюють, піклуються про своїх батьків.
-        .columns.medium-12.large-4
-          p.main-text В 1999 році дочірнє підприємство «Екран-Вікносвіт» виготовило перше в Україні вікно з профілю SALAMANDER. Ми продовжуємо розвиватися і ставити перед собою амбітні цілі. Компанія «Екран-Вікносвіт» змогла побудувати сучасний виробничий комплекс, де інтегровано виготовлення трьох різновидів віконно-дверних конструкцій: ПВХ, дерев'яного брусу, алюмінію.
-          p.main-text В цьому наша унікальність, наша сила, наша гнучкість і найголовніше &mdash; наша можливість гарантувати вам, нашим покупцям, клієнтам та партнерам, що саме з нами у вас є повноцінний та якісний вибір.
+      = raw @partnership_text
