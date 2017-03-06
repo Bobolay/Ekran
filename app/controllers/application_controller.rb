@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   include ActionView::Helpers::OutputSafetyHelper
+  include Cms::Helpers::ImageHelper
   include ActionView::Helpers::AssetUrlHelper
   include ActionView::Helpers::TagHelper
   include ActionView::Helpers::UrlHelper
@@ -38,6 +39,7 @@ class ApplicationController < ActionController::Base
 
   def initialize_menu_resources
     @partnership_articles = PartnershipArticle.published
+    @menu_featured_brands = Brand.published.featured.joins(:translations).where("brand_translations.brand_url IS NOT NULL AND brand_translations.brand_url <> ''")
   end
 
 

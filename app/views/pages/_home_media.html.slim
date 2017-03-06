@@ -1,0 +1,41 @@
+.media-wrapper.wrapper-inner-indent
+  p.wrapper-small-title Медіа
+  .tab-buttons
+    .tab-button.active новини
+    .tab-button блог
+    .tab-button відео
+
+  .row.tab-content-wrapper
+    .columns.medium-12.large-4.float-right.tab-content.active
+      p.underlined-title Новини
+      - @news.each do |news_article|
+        a.new-block title="Перейти на сторінку новини" href=news_article.url
+          p.larger
+            = news_article.name
+          p.date
+            = news_article.formatted_release_date
+          .hover-arrow = inline_svg "svg/key-arrow-right.svg"
+
+      a.button.green href=media_news_path title="Перейти на сторінку всіх новин" Всі новини
+
+    .columns.medium-12.large-7.xxlarge-pull-1.float-left.tab-content
+      p.underlined-title Блог
+      - @blog_articles.each do |article|
+        a.blog-block title="Перейти на сторінку блогу" href=article.url
+          .img
+            .img-background style="background-image: url(#{article.avatar.url(:list)})"
+          .text
+            p.small
+              = article.tags.map(&:name).join(", ")
+            p.blog-title
+              = article.name
+            p.date
+              = article.formatted_release_date
+
+
+  - if @featured_video
+    .columns.medium-12.large-7.xxlarge-pull-1.float-left.tab-content
+      p.underlined-title Відео
+      .img-container
+        /.img-background style="background-image: url(#{asset_path('photo/strojka1.jpg')})"
+        = youtube_video_iframe(@featured_video.youtube_video_id)
