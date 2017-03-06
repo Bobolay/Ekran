@@ -21,6 +21,7 @@ db/schema.rb
 db/data.yml
 vendor/assets/bower_components
 vendor/assets/bower.json
+vendor/assets/.bowerrc
 config/application.yml
 Gemfile.lock
 .idea
