@@ -5,7 +5,7 @@ class MediaVideo < ActiveRecord::Base
 
   boolean_scope :published
   scope :order_by_release_date, -> { order("release_date desc") }
-  scope :home_featured, -> { published.limit(3) }
+  scope :home_featured, -> { published.limit(1) }
 
   default_scope do
     order_by_release_date

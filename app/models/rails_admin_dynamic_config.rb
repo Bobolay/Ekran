@@ -56,7 +56,7 @@ module RailsAdminDynamicConfig
             end
             #edit_model
             nestable do
-              only [Service, AboutSlide, TeamMember, Vacancy, Office, PartnershipArticle]
+              only [Service, AboutSlide, TeamMember, Vacancy, Office, PartnershipArticle, Brand, HomeSlide]
             end
 
             ## With an audit adapter, you can add:
@@ -395,6 +395,7 @@ module RailsAdminDynamicConfig
           nestable_list({position_field: :sorting_position})
           navigation_label_key(:partnership)
           field :published
+          field :featured
           field :translations, :globalize_tabs
           field :list_item_image
           field :avatar
@@ -410,6 +411,44 @@ module RailsAdminDynamicConfig
           field :list_item_title
           field :banner_title
           field :content, :ck_editor
+        end
+
+        config.include_models Brand
+        config.model Brand do
+          navigation_label_key(:brands)
+          nestable_list({position_field: :sorting_position})
+          field :published
+          field :featured
+          field :code_name
+          field :svg_icon
+          field :image
+          field :bg_svg_icon
+          field :translations, :globalize_tabs
+        end
+
+        config.model_translation Brand do
+          field :locale, :hidden
+          field :name
+          field :multiline_name
+          field :home_slide_name
+          field :short_description
+          field :brand_url
+        end
+
+        config.include_models HomeSlide
+        config.model HomeSlide do
+          navigation_label_key(:home)
+          nestable_list({position_field: :sorting_position})
+
+          field :published
+          field :image
+          field :translations, :globalize_tabs
+        end
+
+        config.model_translation HomeSlide do
+          field :locale, :hidden
+          field :image_alt
+          field :description
         end
 
 

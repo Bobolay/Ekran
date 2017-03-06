@@ -1,0 +1,37 @@
+.brands-wrapper
+  - @featured_brands.each_with_index do |brand, i|
+    .bg-icon class=("visible" if i == 0)
+      = embedded_svg_from_absolute_path(brand.bg_svg_icon.path)
+
+    - @featured_brands.each_with_index do |brand, i|
+      .bg-color class=("visible" if i == 0) class=("bg-color-#{brand.code_name}" if brand.code_name.present?)
+
+  ul.brands-slider
+    - @featured_brands.each do |brand|
+      li
+        p.wrapper-small-title Наші бренди
+        p.brand-header
+          = brand.home_slide_name
+        .row
+          .columns.medium-6
+            .brand-img
+              .img-background style="background-image: url(#{brand.image.url(:large)})"
+          .columns.medium-6
+            .description-text
+              .brand-icon
+                = embedded_svg_from_absolute_path(brand.svg_icon.path)
+              .line
+              = raw brand.short_description
+              - if brand.brand_url.present?
+                a.text-link title="Перейти на веб-сторінку партнера" href=brand.brand_url
+                  | Дізнатись більше
+                  = inline_svg "svg/ext-link.svg"
+
+
+  .brands-bottom
+    .row
+      .columns
+        = render "slider_controls"
+        a.text-link.floated-right
+          | Дізнатись більше
+          = inline_svg "svg/ext-link.svg"

@@ -8,6 +8,7 @@ class PartnershipArticle < ActiveRecord::Base
   image :avatar, styles: { article: "400x230#" }, processors: [:thumbnail, :tinify]
 
   boolean_scope :published
+  boolean_scope :featured
   scope :order_by_sorting_position, -> { order("sorting_position asc") }
 
   default_scope do
