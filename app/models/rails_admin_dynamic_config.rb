@@ -193,7 +193,7 @@ module RailsAdminDynamicConfig
               I18n.t("admin.help.#{name}")
             end
           end
-          field :short_description, :ck_editor do
+          field :short_description do
           end
           field :content, :ck_editor
         end

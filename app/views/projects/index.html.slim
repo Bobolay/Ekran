@@ -1,9 +1,9 @@
-.main-banner-wrapper
-
+.main-banner-wrapper.featured-banner
+  .img-background style="background-image: url(#{asset_path('photo/Ekran-main-banner-v1-3.jpg')})"
   .row
     .columns
-      .text
-        p.small головна &nbsp;/&nbsp; проекти
+      .text.wide
+        = render_breadcrumbs
         p.banner-title
           | верхній вал
           br
@@ -14,7 +14,7 @@
           .line.dib
           p.year.dib 2017
         br
-        a.button Подивитись проект
+        a.button.green Подивитись проект
 
 .projects-wrapper.top-inner-indent.grey-bg
 
@@ -23,14 +23,16 @@
 
       .filter-container.filter-brands.dib
         p.small бренди:
-        .filter.dib data-tag-id="1" Вікна «Саламандер»
-        .filter.dib data-tag-id="2" Карпатські вікна
-        .filter.dib data-tag-id="3" Alfabud
+        - arr = [{id: 1, name: "Вікна «Саламандер»"}, {id: 2, name: " Карпатські вікна"}, {id: 3, name: "Alfabud"}]
+        = raw arr.map { |tag| content_tag(:div, tag[:name], class: "filter dib", :"data-tag-id" => tag[:id]) }.join("")
+
+      
 
       .filter-container.filter-years.float-right
         p.small рік проекту:
-        select#selectize-field-1.dib data-prop-name="data-name" data-placeholder="Вкажіть рік"
-          option value=""
+        select#selectize-field-1.dib data-prop-name="data-name"
+          option value="" Всі роки
+          option Всі роки
           option 2017
           option 2016
           option 2015

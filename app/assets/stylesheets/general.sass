@@ -52,13 +52,13 @@ body
 .bold-underlined
   position: relative
   +bold
-  padding-bottom: 1em
+  padding-bottom: 2em
   &:after
     content: ''
     display: block
     position: absolute
     width: 50px
-    height: 2px
+    height: 3px
     background: $blueGrey700
     bottom: 0
     left: 0
@@ -87,6 +87,7 @@ body
 .wrapper-small-title
   font-size: 14px
   margin-bottom: 3em
+  letter-spacing: 1px
 
 .cutted
   overflow: hidden
@@ -175,6 +176,10 @@ a
   min-height: 500px
   @media #{$small-only}
     min-height: 400px
+  .img-background
+    +grayscale(50%)
+    background-color: rgba($grey900,0.8)
+    background-blend-mode: multiply
   .row, .columns
     height: 100%
     position: relative
@@ -209,24 +214,32 @@ a
     &.media
       .banner-title
         color: white
+    .main-text
+      color: $blueGrey400
+      margin-top: -10px
+  .breadcrumbs
+    letter-spacing: 1px
   .small
     color: $blueGrey300
     text-transform: uppercase
     display: inline-block
-    &.green
-      color: $green
+    line-height: 18px
   a.small
+    color: $blueGrey600
     &:hover
       color: $green
   span.separator
     color: $blueGrey300
     font-size: 0.75em
+  span.coma
+    color: $blueGrey200
   .banner-title
     color: $green
     text-transform: uppercase
     line-height: 1
     margin: 20px 0
     +x-bold
+    letter-spacing: -1px
     @media #{$small-only}
       font-size: 2em
     @media #{$medium-up}
@@ -238,15 +251,36 @@ a
   .button
     margin-top: 20px
 
+  &.featured-banner
+    min-height: 600px
+    .text
+      top: 55%
+      &:before
+        background: $grey400
+      .small
+        color: $grey400
+      a.small
+        color: $grey200
+        letter-spacing: 1px
+        &.green
+          color: $green
+          &:hover
+            color: white
+        &:hover
+          color: $green
+      .banner-title
+        color: white
+
 .manufacturer-field
   .brand-name
     font-size: 12px
     color: $green
     text-transform: uppercase
+    letter-spacing: 1px
   .line
     width: 1px
     height: 18px
-    background: $blueGrey600
+    background: $grey300
     margin: 0 6px
   .year
     font-size: 12px
@@ -304,7 +338,8 @@ ul.standart-list
       top: 0
       left: 0
 
-ul.numbered-list
+ol.numbered-list
+  list-style: none
   counter-reset: list
   li
     &:before
@@ -333,7 +368,7 @@ ul.numbered-list
     +x-bold
     text-transform: uppercase
     @media #{$xxlarge-up}
-      font-size: 1.25em
+      font-size: 1.5em
     &:last-child
       &:before
         display: none
@@ -351,6 +386,8 @@ ul.numbered-list
       display: none
       @media #{$large-up}
         display: block
+      @media #{$xxlarge-up}
+        top: 7px
 
     &:hover
       color: $green

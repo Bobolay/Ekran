@@ -3,7 +3,7 @@
   .row
     .columns
       .text
-        p.small головна &nbsp;/&nbsp; проекти &nbsp;/&nbsp; ресторан «fabbrica»
+        = render_breadcrumbs
         p.banner-title
           | ресторан
           br
@@ -65,12 +65,12 @@
       a.floated.width50 href=asset_path("photo/Photo-3.jpg")
         .img-background style="background-image: url(#{asset_path('photo/Photo-3.jpg')})"
         img src=asset_path("photo/Photo-3.jpg")
-      a.floated.width50 href=asset_path("photo/Photo-4.jpg")
+      a.floated.width50 href=asset_path("photo/Photo-2.jpg")
+        .img-background style="background-image: url(#{asset_path('photo/Photo-2.jpg')})"
+        img src=asset_path("photo/Photo-2.jpg")
+      a.floated.width100 href=asset_path("photo/Photo-4.jpg")
         .img-background style="background-image: url(#{asset_path('photo/Photo-4.jpg')})"
         img src=asset_path("photo/Photo-4.jpg")
-      a.floated.width100 href=asset_path("photo/Photo-5.jpg")
-        .img-background style="background-image: url(#{asset_path('photo/Photo-5.jpg')})"
-        img src=asset_path("photo/Photo-5.jpg")
 
 
     .row

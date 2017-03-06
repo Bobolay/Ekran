@@ -103,7 +103,7 @@
       font-size: 8em
       +x-bold
       color: $grey300
-      line-height: 1.2
+      line-height: 1.4
       @media #{$small-only}
         +x-align
       @media #{$medium-up}
@@ -144,15 +144,20 @@
         display: none
       .floated
         position: relative
+        &:before
+          content: ''
+          display: block
+          padding-bottom: 56%
+        @media #{$small-only}
+          width: 100% !important
       .width33
         width: calc(100% / 3)
-        height: calc(100vh / 3)
+        @media #{$xxlarge-up}
+          min-height: 500px
       .width50
         width: 50%
-        height: calc(100vh / 3)
       .width100
         width: 100%
-        height: calc(100vh)
 
     .manufacturer-field
       margin-top: 3em
@@ -161,7 +166,7 @@
 
 .more-projects
   position: relative
-  padding-bottom: 5em
+  padding-bottom: 8em
   &:before
     content: ''
     display: block

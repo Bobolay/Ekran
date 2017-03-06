@@ -9,13 +9,19 @@ ul
 .custom-controls
   position: relative
   z-index: 5
+  margin-right: 20px
   .line-separator
     width: 1px
     height: 28px
   .prev-slide, .next-slide
     cursor: pointer
+    height: 24px
+    &:hover
+      svg
+        fill: $green !important
 
 .custom-pager
+  font-size: 14px
   .current-slide
     +bold
   @media #{$small-only}
@@ -24,10 +30,10 @@ ul
 .fullpage-banner-wrapper, .main-slider-wrapper
   .custom-controls
     .line-separator
-      background: $blueGrey400
+      background: $blueGrey200
     .prev-slide, .next-slide
       svg
-        fill: $blueGrey600
+        fill: $blueGrey400
   .custom-pager
     color: $blueGrey400
     .current-slide
@@ -36,11 +42,11 @@ ul
 .brands-wrapper, .main-banner-wrapper
   .custom-controls
     .line-separator
-      background: white
+      background: $blueGrey400
     .prev-slide, .next-slide
       svg
         fill: white
   .custom-pager
     color: white
     .current-slide
-      // color: $green
+      color: $green

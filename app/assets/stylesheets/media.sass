@@ -168,9 +168,10 @@
         display: inline-block
         vertical-align: middle
         line-height: 24px
-        padding: 0 6px
+        padding: 0 10px
         background: $green
-        font-size: 12px
+        font-size: 10px
+        letter-spacing: 1px
         text-transform: uppercase
         color: white
         margin-right: 10px
@@ -373,7 +374,7 @@
         background: $green
         padding: 5px 10px
         +translate(0,50%)
-    blockquote
+    blockquote, .blockquote
       position: relative
       margin: 3em 5em 1em
       font-size: 2em
@@ -404,6 +405,9 @@
           position: absolute
           top: 0
           left: 0
+    a
+      color: $green
+      +s-bold
     .media-bottom
       border-top: 4px solid $grey300
       margin: 3em 0

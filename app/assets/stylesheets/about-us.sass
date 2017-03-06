@@ -1,7 +1,7 @@
 .about-us-wrapper
   position: relative
   overflow: hidden
-  padding: 5em 0 8em
+  padding: 5em 0 0 
 
   // main page
   .wrapper-small-title
@@ -9,7 +9,7 @@
     @media #{$small-only}
       margin-bottom: 0
   .indent
-    padding: 2em 0
+    margin: 2em 0 6em
   .main-text
     margin-bottom: 1em
   .motto
@@ -55,6 +55,7 @@
         a
           +translate(0,0)
           color: $green
+          +bold
 
   .bold-underlined
     width: 440px
@@ -62,8 +63,8 @@
     margin-bottom: 2em
 
   .history-container
-    margin-top: -50px
-    padding: 5em 0
+    margin-top: -100px
+    padding: 10em 0
 
     .year-block
       position: relative
@@ -172,7 +173,7 @@
           color: white
           text-transform: uppercase
           +x-bold
-          line-height: 1.5
+          line-height: 1.3
         .line
           display: block
           width: 20px
@@ -181,7 +182,7 @@
           margin: 6px 0
         .smaller
           color: white
-          +s-bold
+          letter-spacing: 1px
         .animate
           +before-hover(20px,0.05s)
         .social-container
@@ -219,13 +220,14 @@
         width: calc(50% - 2px)
       .city
         font-size: 0.875em
-        +light
+        color: $blueGrey900
         text-transform: uppercase
       .job-position
         font-size: 21px
         color: $green
         text-transform: uppercase
         +x-bold
+        letter-spacing: -1px
       .smaller
         position: absolute
         bottom: 1em
@@ -236,11 +238,16 @@
         bottom: 1em
         right: 1em
         fill: $grey500
+        +transition(0.2s)
+      &:hover
+        svg
+          fill: $green
+          +translate(6px,0)
 
   .sertificates-container
 
     .certificates
-      padding: 5em 0
+      padding: 2em 0
     .sertificate-block
       position: relative
       width: 100%
@@ -252,10 +259,14 @@
         background-size: contain
         background-repeat: no-repeat
         background-position: center
+        border: 2px solid
+        +transition(0.2s)
         a
           +fullsize
         img
           display: none
+        &:hover
+          border: 2px solid $green
       .text
         height: 100px
         padding-top: 1em

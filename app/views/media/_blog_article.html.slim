@@ -10,7 +10,7 @@ a.blog-block href=article.url class=("text-align-right" if align_right)
     p.blog-title
       = article.name
     - if !defined?(short_description) || short_description == true
-      p.main-text
+      .main-text
         = raw article.short_description
     p.date
       = article.formatted_release_date

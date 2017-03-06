@@ -1,10 +1,9 @@
-.main-banner-wrapper
+.main-banner-wrapper.featured-banner
   .slider-container
     ul.media-background-slider
       - @featured_articles.each do |article|
         li.img-background style="background-image: url(#{article.banner.url(:media_featured_banner)})"
 
-  .overlay
   .row
     .columns
       .text.wide.media
@@ -15,9 +14,14 @@
             p.banner-title.animated
               = article.name
             .animated
-              p.small.green
-                = article.tags.map(&:name).join(", ")
-              span.separator &nbsp;|&nbsp;
+              p.dib
+                - article.tags.limit(3).each_with_index do |tag, i|
+                  - if i > 0
+                    span.coma
+                      |,&nbsp;
+                  a.small.green href=BlogArticle.tag_url(tag)
+                    = tag.name
+              span.separator.dib &nbsp;|&nbsp;
               p.small
                 = article.formatted_release_date
             br
