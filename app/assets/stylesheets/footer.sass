@@ -25,12 +25,15 @@
   .small
     color: $blueGrey200
     text-align: left
+  .infoline
+    @media #{$medium-up}
+      text-align: right
 .footer
   background: $blueGrey900
   .center-part
     text-align: center
     .logo
-      padding: 2em 0 1em
+      padding: 3em 0 1em
     .larger
       color: $green
       +bold

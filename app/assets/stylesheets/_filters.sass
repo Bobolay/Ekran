@@ -13,6 +13,8 @@
     line-height: 26px
     cursor: pointer
     +s-bold
+    @media #{$small-only}
+      margin: 2px
     svg
       vertical-align: middle
       fill: $green
@@ -23,6 +25,11 @@
       background: $blueGrey900
       border: 2px solid $blueGrey900
       color: $green
+
+  &.filter-years
+    @media #{$small-only}
+      display: none
+
 
   #selectize-field-1
     position: relative

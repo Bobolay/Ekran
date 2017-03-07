@@ -280,7 +280,7 @@
     text-align: center
     overflow: hidden
     @media #{$small-only}
-      height: calc(100vh - 70px)
+      height: calc(100vh/4 - 70px/4)
     @media #{$large-up}
       float: left
       width: calc(1 / 4 * 100%)
@@ -294,6 +294,8 @@
       bottom: 3em
       left: 0
       color: white
+      @media #{$small-only}
+        bottom: 1em
     .media-banner-title
       color: white
       text-transform: uppercase
@@ -316,6 +318,8 @@
         margin-left: 10px
         width: 24px
         height: 24px
+      @media #{$small-only}
+        display: none
     @media #{$large-up}
       .text
         +translate(0,10%)

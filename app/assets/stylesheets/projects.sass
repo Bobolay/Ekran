@@ -7,6 +7,8 @@
   cursor: pointer
   &:before
     +square
+  &:after
+    +gradient
   &.hide
     display: none
   .text-block
@@ -20,6 +22,7 @@
     padding: 1em 1em 3em
     +translate(0,20%)
     +transition(0.5s)
+    z-index: 1
     @media #{$small-only}
       min-height: 150px
     @media #{$large-up}
@@ -167,6 +170,9 @@
 .more-projects
   position: relative
   padding-bottom: 8em
+  @media #{$small-only}
+    padding-top: 2em
+    padding-bottom: 0
   &:before
     content: ''
     display: block

@@ -1,4 +1,5 @@
 .contact-wrapper
+  padding: 5em 0
   
   &.wrapper-inner-indent
     padding-bottom: 0
@@ -135,16 +136,23 @@
         .info-block
           display: block
           margin: 2em 0
+          @media #{$small-only}
+            margin: 1em 0 2em
         .regular
           color: $grey400
           +bold
+          @media #{$small-only}
+            margin-top: -20px
           svg
             width: 30px
             height: 30px
             fill: $grey400
             vertical-align: middle
+            margin-left: -10px
         .floated
           width: 50%
+          @media #{$small-only}
+            width: 100%
         .work-sheet
           margin-bottom: 10px
           .smaller
@@ -153,3 +161,7 @@
           .larger
             color: $green
             +bold
+
+.form-container
+  @media #{$small-only}
+    padding-top: 0
