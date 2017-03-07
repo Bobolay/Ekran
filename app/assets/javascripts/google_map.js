@@ -1,4 +1,4 @@
-function initialize() {
+function initialize_home_google_map() {
 
   var map_element = document.getElementById('googleMap')
   if(!map_element){
@@ -176,5 +176,5 @@ function initialize() {
   map.mapTypes.set('map_style', styledMap);
   map.setMapTypeId('map_style');
 }
-google.maps.event.addDomListener(window, 'resize', initialize);
-google.maps.event.addDomListener(window, 'load', initialize)
+google.maps.event.addDomListener(window, 'resize', initialize_home_google_map);
+google.maps.event.addDomListener(window, 'load', initialize_home_google_map)
