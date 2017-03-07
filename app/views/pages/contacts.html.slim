@@ -3,8 +3,20 @@
   .row
     .columns
       .text
-        p.small головна &nbsp;/&nbsp; контакти
+        = render_breadcrumbs
         p.banner-title будьте з нами на зв'язку
+      .request-buttons-container
+        .request-button.design-request-button.dib.animate
+          = inline_svg "svg/menu-contact-icon-1.svg"
+          p Заявка на замір
+        .line.dib.animate
+        .request-button.call-me-back-button.dib.animate
+          = inline_svg "svg/menu-contact-icon-2.svg"
+          p Перетелефонувати мені
+        .line.dib.animate
+        .request-button.chat-online-button.dib.animate
+          = inline_svg "svg/menu-contact-icon-3.svg"
+          p Онлайн консультація
 
 .contact-wrapper.grey-bg.inner-indent
 
@@ -41,7 +53,7 @@
       p.title Адреси салонів:
       p.main-text ВІКНОСВІТ — мережа салонів продажу віконно-дверних конструкцій з металопластику, алюмінію та дерева від фірми-виробника ДП “Екран-Вікносвіт”, що покриває всю Західну Україну.
       p.main-text Ми динамічно розвиваємося та якісно зростаємо. З кожним днем все більше клієнтів мають змогу замовити, побачити чи власноруч випробувати нашу продукцію та отримати кваліфіковану вичерпну консультацію менеджерів наших салонів ВІКНОСВІТ або в авторизованих дилерів ДП "Екран-Вікносвіт" у своєму місті.
-    .columns
+    .columns.office-container
       - @office_groups.each do |region, offices|
         p.region-title
           = region

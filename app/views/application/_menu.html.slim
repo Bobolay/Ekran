@@ -16,55 +16,7 @@
                   li.animated class=("active" if child[:active])
                     a href=child[:url]
                       = child[:name]
-        /a.menu-link.animated href=about_us_path про нас
-        /a.menu-link.animated href=projects_path проекти
-        /.menu-link.animated
-          a href=partnership_path
-            | партнерство
-          ul
-            li.animated
-              a дилерам
-            li.animated
-              a архітекторам
-            li.animated
-              a будівельним організаціям
-            li.animated
-              a акції
-            li.animated
-              a href=partnership_case_path(1) навчальний центр
-        /.menu-link.animated
-          a href=brands_path
-            | бренди
-          ul
-            li.animated
-              a карпатські вікна
-            li.animated
-              a вікна salamander
-            li.animated
-              a алюмінієві фасади alfabud
-        /.menu-link.animated
-          a href=services_path
-            | сервіс
-          ul
-            li.animated
-              a href=service_path(1) сервісні послуги
-            li.animated
-              a href=service_path(1) доставка
-            li.animated
-              a href=service_path(1) гарантія
-        /.menu-link.animated
-          a href=media_path
-            | медіа
-          ul
-            li.animated
-              a href=media_news_path новини
-            li.animated
-              a href=media_blog_path блог
-            li.animated
-              a href=media_video_path відео
-            li.animated
-              a href=media_press_path для преси
-        /a.menu-link.animated href=contacts_path контакти
+
         .social-container.dib.animate
           a.social.dib = inline_svg "svg/social/facebook.svg"
           a.social.dib = inline_svg "svg/social/vk.svg"
@@ -119,7 +71,7 @@
 
   .bottom-part
     .row
-      .columns
+      .columns.request-buttons-container
         .social-container.dib.animate
           a.social.dib = inline_svg "svg/social/facebook.svg"
           a.social.dib = inline_svg "svg/social/vk.svg"
@@ -127,12 +79,12 @@
 
         .request-button.design-request-button.dib.animate
           = inline_svg "svg/menu-contact-icon-1.svg"
-          | заявка на замір
+          p Заявка на замір
         .line.dib.animate
         .request-button.call-me-back-button.dib.animate
           = inline_svg "svg/menu-contact-icon-2.svg"
-          | перетелефонувати мені
+          p Перетелефонувати мені
         .line.dib.animate
         .request-button.chat-online-button.dib.animate
           = inline_svg "svg/menu-contact-icon-3.svg"
-          | онлайн консультація
+          p Онлайн консультація

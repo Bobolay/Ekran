@@ -217,6 +217,31 @@ a
     .main-text
       color: $blueGrey400
       margin-top: -10px
+
+  .request-buttons-container
+    position: absolute
+    bottom: 30px
+    right: 0
+    color: $green
+    .request-button
+      p
+        +bold
+        @media #{$small-only}
+          display: none
+      svg
+        fill: $green
+    @media #{$small-only}
+      text-align: center
+      right: initial
+      width: calc(100% - 2*0.625em)
+      .request-button
+        padding: 0 2px
+      .line
+        @media #{$small-only}
+          display: none
+      svg
+        border: 2px solid $green
+
   .breadcrumbs
     letter-spacing: 1px
   .small
@@ -244,9 +269,8 @@ a
       font-size: 2em
     @media #{$medium-up}
       font-size: 2.5em
-    @media #{$xxlarge-up}
+    @media #{$large-up}
       font-size: 3em
-      line-height: 1.2
 
   .button
     margin-top: 20px
@@ -270,6 +294,12 @@ a
           color: $green
       .banner-title
         color: white
+        @media #{$medium-up}
+          font-size: 2.5em
+        @media #{$xxlarge-up}
+          font-size: 3em
+          line-height: 1.2
+
 
 .manufacturer-field
   .brand-name
@@ -427,6 +457,8 @@ ol.numbered-list
     +x-bold
     text-transform: uppercase
     margin-bottom: 2em
+  @media #{$small-only}
+    margin-top: 30px
 
 .not-found-container
   height: 100%
@@ -467,3 +499,25 @@ ol.numbered-list
       font-size: 12px
       +s-bold
       padding: 10px
+
+.request-buttons-container
+  .request-button
+    padding: 0 2em
+    cursor: pointer
+    +transition(color 0.2s)
+    p
+      display: inline-block
+    svg
+      width: 34px
+      height: 34px
+      fill: $blueGrey300
+      vertical-align: middle
+      +transition(fill 0.2s)
+    &:hover
+      color: $green
+      svg
+        fill: $green
+  .line
+    width: 1px
+    height: 26px
+    background: $blueGrey300

@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   def contacts
     @offices = Office.published
     @office_groups = @offices.group_by{|o| o.region }
+    add_breadcrumb(:contacts, contacts_path)
   end
 
   private

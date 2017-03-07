@@ -33,9 +33,8 @@
               = article.formatted_release_date
 
 
-  - if @featured_video
-    .columns.medium-12.large-7.xxlarge-pull-1.float-left.tab-content
-      p.underlined-title Відео
-      .img-container
-        /.img-background style="background-image: url(#{asset_path('photo/strojka1.jpg')})"
-        = youtube_video_iframe(@featured_video.youtube_video_id)
+    - if @featured_video
+      .columns.medium-12.large-7.xxlarge-pull-1.float-left.tab-content.media-wrapper.video-wrapper
+        p.underlined-title Відео
+        .img-container
+          = youtube_video_iframe(@featured_video.youtube_video_id)
