@@ -66,6 +66,11 @@ $document.ready ->
         phone: "required"
         address: "required"
       submitHandler: (form)->
-        # $(form).ajaxSubmit()
-        alert('submited')
+        url = $(form).attr("action")
+        data = $(form).serializeArray()
+        $.ajax(
+          url: ""
+          type: "post"
+          data: data
+        )
         return show_alert_success()
