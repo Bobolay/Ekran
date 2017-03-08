@@ -26,6 +26,10 @@
       fill: $grey400
       width: 100%
       height: 100%
+      +transition(.2s)
+    &:hover
+      svg
+        fill: $green
   .title
     font-size: 1.5em
     text-transform: uppercase
@@ -70,3 +74,14 @@
         color: $green
         svg
           fill: $green
+
+  &.success-popup
+    text-align: center
+    .done
+      width: 100px
+      height: 100px
+      margin: 0 auto
+      svg
+        fill: $green
+        width: 100%
+        height: 100%

@@ -17,6 +17,8 @@ $document.ready ->
   chat_popup = $('.chat-popup')
   chat_button = $('.chat-online-button')
 
+  success_popup = $('.success-popup')
+
 
   design_request_button.on 'click', ->
     popup.removeClass('visible')
@@ -48,3 +50,22 @@ $document.ready ->
   close_popup.on 'click', ->
     popup.removeClass('visible')
     $('.mask').removeClass('visible')
+
+  show_alert_success = ()->
+    popup.removeClass('visible')
+    success_popup.addClass('visible')
+
+
+  $("form.validate").each ->
+    $(this).validate
+      rules:
+        firstname: "required"
+        email:
+          required: true
+          email: true
+        phone: "required"
+        address: "required"
+      submitHandler: (form)->
+        # $(form).ajaxSubmit()
+        alert('submited')
+        return show_alert_success()
