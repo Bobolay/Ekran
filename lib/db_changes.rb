@@ -29,6 +29,16 @@ module DbChanges
     table_top_separator = 10.times.map{"="}.join("")
     table_header_separator = 10.times.map{"-"}.join("")
     table_bottom_separator = 10.times.map{"="}.join("") + "\n\n\n"
+
+    no_changes = changed_tables.blank?
+    if no_changes
+      puts table_top_separator
+      puts "NO CHANGES"
+      puts table_top_separator
+      return nil
+    end
+
+
     changed_tables.each do |t|
       puts table_top_separator
       puts t[:table]
