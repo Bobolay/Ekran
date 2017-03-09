@@ -1,5 +1,6 @@
 module CmsPageExtension
   def self.included(base)
+    base.attr_accessible *base.attribute_names
     base.scope :order_by_sorting_position, -> do
       base.current_scope.order("sorting_position asc")
     end
@@ -9,11 +10,15 @@ module CmsPageExtension
       }
 
     end
+  end
 
-    def name
-      k = type.underscore.split("/").last
-      I18n.t("activerecord.models.pages.#{k}", raise: true) rescue k.humanize
-    end
+  def name
+    custom_name
+  end
+
+  def custom_name
+    k = type.underscore.split("/").last
+    I18n.t("activerecord.models.pages.#{k}", raise: true) rescue k.humanize
   end
 end
 
