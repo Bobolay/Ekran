@@ -395,7 +395,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff008fd8', endColorstr='#ff0075cf', GradientType=0);
 }
 .selectize-control.single .selectize-input {
-  height: 42px;
+  /*height: 42px;*/
   /*-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.8);*/
   /*box-shadow: 0 1px 0 rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.8);*/
   /*background-color: #f9f9f9;*/
@@ -409,7 +409,7 @@
 }
 .selectize-control.single .selectize-input,
 .selectize-dropdown.single {
-  border-color: #b8b8b8;
+  /*border-color: #b8b8b8;*/
 }
 .selectize-dropdown .optgroup-header {
   padding-top: 7px;

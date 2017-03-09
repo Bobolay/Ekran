@@ -41,3 +41,5 @@
 #= require smooth_anchor_link
 #= require sharing
 #= require filter-tag
+#= require filter-years
+#= require sticky-menu

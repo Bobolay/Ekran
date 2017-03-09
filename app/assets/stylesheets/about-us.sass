@@ -20,6 +20,10 @@
 
   .side-menu
     position: absolute
+    &.fixed
+      position: fixed
+      top: 110px
+      z-index: 12
     ul
       position: relative
       padding: 2em 2em 2em 0
@@ -27,9 +31,6 @@
       border-right: 1px solid $green
       @media #{$small-only}
         display: none
-      &.fixed
-        position: fixed
-        top: 40%
       &:before, &:after
         content: ''
         display: block

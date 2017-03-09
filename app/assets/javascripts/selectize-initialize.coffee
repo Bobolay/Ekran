@@ -1,3 +1,3 @@
-$('#selectize-field-1').selectize({
+$('#selectize-field').selectize({
   persist: false
   })

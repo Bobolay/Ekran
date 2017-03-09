@@ -30,8 +30,7 @@
 
       .filter-container.filter-years.float-right
         p.small рік проекту:
-        select#selectize-field-1.dib data-prop-name="data-name"
-          option value="" Всі роки
+        select#selectize-field.dib data-prop-name="data-prop-name"
           option Всі роки
           option 2017
           option 2016
@@ -39,7 +38,7 @@
           / | Всі роки
           / = inline_svg "svg/arrow-triangle.svg"
       
-      .year-block
+      .year-block data-attr="2017"
         p.bg-year 2017
 
         .row.collapse.columns-left
@@ -70,7 +69,7 @@
                   | Подивитись проект
                   = inline_svg "svg/key-arrow-right.svg"
 
-      .year-block
+      .year-block data-attr="2016"
         p.bg-year 2016
 
         .row.collapse
