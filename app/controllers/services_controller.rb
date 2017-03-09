@@ -4,6 +4,7 @@ class ServicesController < ApplicationController
   def index
     @render_footer = false
     @services = Service.published
+    set_page_metadata(:services)
   end
 
   def show

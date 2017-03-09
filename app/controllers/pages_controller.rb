@@ -8,6 +8,7 @@ class PagesController < ApplicationController
     @featured_video = MediaVideo.home_featured.first
     @home_slides = HomeSlide.published
     @featured_partnership_articles = PartnershipArticle.featured
+    set_page_metadata(:home)
   end
 
   def contacts
