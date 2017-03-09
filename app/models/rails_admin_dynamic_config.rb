@@ -137,6 +137,10 @@ module RailsAdminDynamicConfig
 
         end
 
+        config.model_translation Cms::Page do
+
+        end
+
 
         config.model Cms::MetaTags do
           visible false
