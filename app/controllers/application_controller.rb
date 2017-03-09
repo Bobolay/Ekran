@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   include Cms::Helpers::Breadcrumbs
   include ApplicationHelper
 
-  reload_rails_admin_config
+  #reload_rails_admin_config
 
   before_action :initialize_breadcrumbs, if: :breadcrumbs_enabled?
   before_action :initialize_menu_resources

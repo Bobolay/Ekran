@@ -8,10 +8,33 @@ def host?(*hosts)
   hosts.include? REQUEST_HOST
 end
 
-def navigation_label_key(k)
+def navigation_label_key(k, weight = nil)
   navigation_label do
     I18n.t("admin.navigation_labels.#{k}")
   end
+  if weight
+    model_weight(weight, k)
+  end
+end
+
+def model_weight(rel_weight, navigation_label)
+  weights = {
+      home: 0,
+      about_us: 100,
+      projects: 200,
+      partnership: 300,
+      brands: 400,
+      services: 500,
+      media: 600,
+      contacts: 700,
+      tags: 800,
+      users: 900,
+      pages: 1000,
+      assets: 1100
+  }
+  navigation_label_weight = weights[navigation_label.to_sym]
+  computed_weight = navigation_label_weight + rel_weight
+  weight computed_weight
 end
 
 module RailsAdminDynamicConfig
@@ -56,7 +79,7 @@ module RailsAdminDynamicConfig
             end
             #edit_model
             nestable do
-              only [Service, AboutSlide, TeamMember, Vacancy, Office, PartnershipArticle, Brand, HomeSlide]
+              only [Cms::Page, Service, AboutSlide, TeamMember, Vacancy, Office, PartnershipArticle, Brand, HomeSlide]
             end
 
             ## With an audit adapter, you can add:
@@ -73,9 +96,38 @@ module RailsAdminDynamicConfig
         config.include_models Attachable::Asset
 
 
-        #
-        #
+
         config.include_models Cms::SitemapElement, Cms::MetaTags
+        config.include_models Cms::Page
+        config.model Cms::Page do
+          navigation_label_key(:pages, 1)
+          nestable_list({position_field: :sorting_position})
+          list do
+
+            scopes do
+              [:order_by_sorting_position]
+            end
+
+            sort_by do
+              "sorting_position"
+            end
+
+            sort_reverse? do
+              false
+            end
+
+
+            field :name
+          end
+
+          edit do
+            field :name do
+              read_only true
+            end
+            field :seo_tags
+          end
+        end
+
 
         config.model Cms::MetaTags do
           visible false
@@ -89,8 +141,9 @@ module RailsAdminDynamicConfig
           field :description
         end
 
+
         config.model Cms::SitemapElement do
-          #visible false
+          visible false
 
           field :display_on_sitemap
           field :changefreq
@@ -100,6 +153,7 @@ module RailsAdminDynamicConfig
         config.include_models Attachable::Asset
 
         config.model Attachable::Asset do
+          navigation_label_key(:assets, 1)
           field :data
           field :translations, :globalize_tabs
         end
@@ -112,6 +166,7 @@ module RailsAdminDynamicConfig
 
         config.include_models User
         config.model User do
+          navigation_label_key(:users, 1)
           field :email
           field :password
           field :password_confirmation
@@ -120,6 +175,7 @@ module RailsAdminDynamicConfig
         config.include_models BlogArticle, NewsArticle, MediaVideo, MediaPressEntry, Cms::Tag, Cms::Tagging
 
         config.model Cms::Tag do
+          navigation_label_key(:tags, 1)
           field :translations, :globalize_tabs
           field :blog_articles
 
@@ -140,7 +196,7 @@ module RailsAdminDynamicConfig
         end
 
         config.model BlogArticle do
-          navigation_label_key :media
+          navigation_label_key :media, 2
           field :published
           field :media_featured
           field :translations, :globalize_tabs
@@ -173,7 +229,8 @@ module RailsAdminDynamicConfig
         end
 
         config.model NewsArticle do
-          navigation_label_key :media
+          navigation_label_key :media, 1
+
           field :published
           field :translations, :globalize_tabs
           field :release_date do
@@ -199,7 +256,7 @@ module RailsAdminDynamicConfig
         end
 
         config.model MediaVideo do
-          navigation_label_key :media
+          navigation_label_key :media, 3
           field :published
           field :translations, :globalize_tabs
           field :release_date do
@@ -218,7 +275,7 @@ module RailsAdminDynamicConfig
         end
 
         config.model MediaPressEntry do
-          navigation_label_key :media
+          navigation_label_key :media, 4
           field :published
           field :featured
           field :translations, :globalize_tabs
@@ -238,7 +295,7 @@ module RailsAdminDynamicConfig
         config.include_models Service
         config.model Service do
           nestable_list({position_field: :sorting_position})
-          navigation_label_key :services
+          navigation_label_key :services, 1
           field :published
           field :translations, :globalize_tabs
           field :large_image
@@ -258,7 +315,7 @@ module RailsAdminDynamicConfig
         config.include_models AboutSlide, AboutIntro, HistoryEvent, TeamIntro, TeamMember, AboutVacanciesIntro, Vacancy, AboutCertificateIntro, AboutCertificate
         config.model AboutSlide do
           nestable_list({position_field: :sorting_position})
-          navigation_label_key(:about_us)
+          navigation_label_key(:about_us, 1)
           field :published
           field :image
           field :translations, :globalize_tabs
@@ -269,13 +326,14 @@ module RailsAdminDynamicConfig
           field :image_alt
         end
 
-        [AboutIntro, TeamIntro, AboutVacanciesIntro, AboutCertificateIntro].each do |m|
-          config.model m do
+        [{model: AboutIntro, model_weight: 102}, {model: TeamIntro, model_weight: 104}, {model: AboutVacanciesIntro, model_weight: 106}, {model:AboutCertificateIntro, model_weight: 108}].each do |item|
+          config.model item[:model] do
             navigation_label_key(:about_us)
+            model_weight item[:model_weight], :about_us if item[:model_weight]
             field :translations, :globalize_tabs
           end
 
-          config.model_translation m do
+          config.model_translation item[:model] do
             field :locale, :hidden
             field :content, :ck_editor
           end
@@ -283,7 +341,7 @@ module RailsAdminDynamicConfig
 
 
         config.model HistoryEvent do
-          navigation_label_key(:about_us)
+          navigation_label_key(:about_us, 3)
           field :published
           field :translations, :globalize_tabs
           field :date do
@@ -300,7 +358,7 @@ module RailsAdminDynamicConfig
         end
 
         config.model TeamMember do
-          navigation_label_key(:about_us)
+          navigation_label_key(:about_us, 5)
           nestable_list({position_field: :sorting_position})
           field :published
           field :translations, :globalize_tabs
@@ -314,7 +372,7 @@ module RailsAdminDynamicConfig
         end
 
         config.model Vacancy do
-          navigation_label_key(:about_us)
+          navigation_label_key(:about_us, 7)
           nestable_list({position_field: :sorting_position})
           field :published
           field :office
@@ -333,7 +391,7 @@ module RailsAdminDynamicConfig
         end
 
         config.model AboutCertificate do
-          navigation_label_key(:about_us)
+          navigation_label_key(:about_us, 9)
           field :published
           field :translations, :globalize_tabs
           field :image
@@ -352,7 +410,8 @@ module RailsAdminDynamicConfig
         config.include_models Office
         config.model Office do
           nestable_list({position_field: :sorting_position})
-          navigation_label_key(:contacts)
+          navigation_label_key(:contacts, 1)
+
           field :published
           field :translations, :globalize_tabs
           field :phones
@@ -381,7 +440,8 @@ module RailsAdminDynamicConfig
 
         config.include_models PartnershipText
         config.model PartnershipText do
-          navigation_label_key(:partnership)
+          navigation_label_key(:partnership, 1)
+
           field :translations, :globalize_tabs
         end
 
@@ -393,7 +453,8 @@ module RailsAdminDynamicConfig
         config.include_models PartnershipArticle
         config.model PartnershipArticle do
           nestable_list({position_field: :sorting_position})
-          navigation_label_key(:partnership)
+          navigation_label_key(:partnership, 2)
+
           field :published
           field :featured
           field :translations, :globalize_tabs
@@ -415,7 +476,7 @@ module RailsAdminDynamicConfig
 
         config.include_models Brand
         config.model Brand do
-          navigation_label_key(:brands)
+          navigation_label_key(:brands, 1)
           nestable_list({position_field: :sorting_position})
           field :published
           field :featured
@@ -437,7 +498,7 @@ module RailsAdminDynamicConfig
 
         config.include_models HomeSlide
         config.model HomeSlide do
-          navigation_label_key(:home)
+          navigation_label_key(:home, 1)
           nestable_list({position_field: :sorting_position})
 
           field :published
