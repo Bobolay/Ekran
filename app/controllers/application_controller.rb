@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   reload_rails_admin_config
 
-  before_action :initialize_breadcrumbs, unless: :admin_panel?
+  before_action :initialize_breadcrumbs, if: :breadcrumbs_enabled?
   before_action :initialize_menu_resources
 
   def render_not_found
@@ -30,8 +30,17 @@ class ApplicationController < ActionController::Base
     request.path.start_with?("/admin")
   end
 
+  def breadcrumbs_enabled?
+    is_rails_admin = params[:controller].start_with?("rails_admin")
+    is_devise = params[:controller].start_with?("devise")
+    is_ckeditor = params[:controller].start_with?("ckeditor")
+    is_home_page = (controller_name == 'pages' && action_name == 'index')
+    is_cms = params[:controller].start_with?("cms/")
+    !admin_panel? && !is_home_page && !is_rails_admin && !is_devise && !is_ckeditor && !is_cms
+  end
+
   def initialize_breadcrumbs
-    if (controller_name != 'pages' || action_name != 'index') || !params[:controller].start_with?("rails_admin") || !params[:controller].start_with?("devise")
+    if !params[:controller].start_with?("rails_admin") || !params[:controller].start_with?("devise")
       @_breadcrumbs = []
       add_home_breadcrumb
     end
