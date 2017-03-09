@@ -2,7 +2,7 @@
 
   .row
     .columns
-      .text.wide
+      .text
         = render_breadcrumbs
         p.banner-title
           = @vacancy.position
@@ -74,6 +74,12 @@
             input#email type="email" name="email"
             label.placeholder for="email"
               | Емейл
+              span &nbsp;*
+
+          .input-field
+            input#phone type="text" name="phone"
+            label.placeholder for="phone"
+              | Номер телефону
               span &nbsp;*
             
           .attach-file-field

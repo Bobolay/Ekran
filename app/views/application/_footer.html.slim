@@ -24,9 +24,9 @@
       | «екран-вікносвіт»
     p.smaller Бездоганна якість та відмінний сервіс &mdash; кожному клієнту!
     .partner-link-container
-      a.partner-link.dib title="Перейти на веб-сторінку партнера" саламандер
-      a.partner-link.dib title="Перейти на веб-сторінку партнера" карпатські вікна
-      a.partner-link.dib title="Перейти на веб-сторінку партнера" альфабуд
+      - @menu_featured_brands.each do |b|
+        a.partner-link.dib title="Перейти на веб-сторінку партнера" href=b.brand_url target="_blank"
+          = b.name
 
   .row.bottom-part
     .columns
