@@ -96,36 +96,45 @@ module RailsAdminDynamicConfig
         config.include_models Attachable::Asset
 
 
-
+        #
+        #
         config.include_models Cms::SitemapElement, Cms::MetaTags
         config.include_models Cms::Page
         config.model Cms::Page do
           navigation_label_key(:pages, 1)
-          nestable_list({position_field: :sorting_position})
+          nestable_list({position_field: :sorting_position, scope: :order_by_sorting_position})
+          object_label_method do
+            :custom_name
+            #{
+            #k = @bindings[:object].type.underscore.split("/").last
+            #I18n.t("activerecord.models.pages.#{k}", raise: true) rescue k.humanize
+            #}
+          end
           list do
-
-            scopes do
-              [:order_by_sorting_position]
-            end
-
             sort_by do
               "sorting_position"
             end
 
-            sort_reverse? do
-              false
+            field :name do
+              def value
+                k = @bindings[:object].type.underscore.split("/").last
+                I18n.t("activerecord.models.pages.#{k}", raise: true) rescue k.humanize
+              end
             end
-
-
-            field :name
           end
 
           edit do
             field :name do
               read_only true
+              def value
+                k = @bindings[:object].type.underscore.split("/").last
+                I18n.t("activerecord.models.pages.#{k}", raise: true) rescue k.humanize
+              end
             end
             field :seo_tags
+
           end
+
         end
 
 
