@@ -26,6 +26,7 @@
 
 #= require google_map
 #= require google_map_contacts
+#= require functions
 #= require bxslider
 #= require fullpage_banner_height
 #= require header

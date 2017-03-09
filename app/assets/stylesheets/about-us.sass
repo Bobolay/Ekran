@@ -20,6 +20,9 @@
 
   .side-menu
     position: absolute
+    display: none
+    @media #{$xlarge-up}
+      display: block
     &.fixed
       position: fixed
       top: 110px
@@ -29,8 +32,6 @@
       padding: 2em 2em 2em 0
       width: 200px
       border-right: 1px solid $green
-      @media #{$small-only}
-        display: none
       &:before, &:after
         content: ''
         display: block

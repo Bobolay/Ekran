@@ -14,5 +14,5 @@ menu = $('.side-menu')
 menu_offset_top = menu.offset()
 menu_top = menu_offset_top.top
 
-if menu.length
+if menu.length > 0
   $(window).on "scrolldelta", scroll
