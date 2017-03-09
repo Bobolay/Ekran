@@ -8,3 +8,121 @@ uk:
       partnership: "Партнерство"
       brands: "Бренди"
       home: "Головна"
+      tags: "Теги"
+      assets: "Файли"
+      users: "Користувачі"
+      pages: "Сторінки"
+
+  activerecord:
+    models:
+      # ----------
+      # home
+      # ----------
+      home_slide:
+        one: "Слайд"
+        other: "Слайди"
+
+      # ----------
+      # about
+      # ----------
+      about_certificate:
+        one: "Сертифікат"
+        other: "Сертифікати"
+      about_certificate_intro: "Сертифікати - опис"
+      about_intro: "Місія - опис"
+      about_slide:
+        one: "Слайд"
+        other: "Слайди"
+      about_vacancies_intro: "Вакансії - опис"
+      history_event:
+        one: "Історична подія"
+        other: "Історичні події"
+      team_intro: "Колектив - опис"
+      team_member:
+        one: "Член колективу"
+        other: "Члени колективу"
+      vacancy:
+        one: "Вакансія"
+        other: "Вакансії"
+
+      # ----------
+      # projects
+      # ----------
+      project:
+        one: "Проект"
+        other: "Проекти"
+
+      # ----------
+      # partnership
+      # ----------
+      partnership_article:
+        one: "Стаття"
+        other: "Статті"
+
+      partnership_text: "Опис"
+
+      # ----------
+      # brands
+      # ----------
+      brand:
+        one: "Бренд"
+        other: "Бренди"
+
+      # ----------
+      # services
+      # ----------
+      service:
+        one: "Послуга"
+        other: "Послуги"
+
+      # ----------
+      # media
+      # ----------
+      blog_article:
+        one: "Блогова стаття"
+        other: "Блогові статті"
+      news_article:
+        one: "Новина"
+        other: "Новини"
+      media_video:
+        one: "Відеоролик"
+        other: "Відеоролики"
+      media_press_entry:
+        one: "Одиниця преси"
+        other: "Преса"
+
+      # ----------
+      # contacts
+      # ----------
+      office:
+        one: "Офіс"
+        other: "Офіси"
+
+      # ----------
+      # users
+      # ----------
+      user:
+        one: "Користувач"
+        other: "Користувачі"
+
+      # ----------
+      # pages
+      # ----------
+      cms/page:
+        one: "Сторінка"
+        other: "Сторінки"
+
+      pages:
+        home: "Головна"
+        about_us: "Про нас"
+        projects: "Проекти"
+        partnership: "Партнерство"
+        brands: "Бренди"
+        services: "Сервіс"
+        media: "Медіа"
+        media_news: "Медіа -> Новини"
+        media_blog: "Медіа -> Блог"
+        media_video: "Медіа -> Відео"
+        media_press: "Медіа -> Преса"
+        contacts: "Контакти"
+
