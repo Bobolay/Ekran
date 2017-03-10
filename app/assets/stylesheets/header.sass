@@ -52,8 +52,11 @@
   &.menu-opened
     z-index: 7
     background: transparent
+    pointer-events: none
     a.dib
       display: none
+    .logo, .hamburger
+      pointer-events: initial
 
   //     H a m b u r g e r
   
@@ -83,3 +86,7 @@
         background: transparent
         &:before, &:after
           background: $blueGrey400
+      &:hover
+        .hamburger-inner
+          &:before, &:after
+            background: $green

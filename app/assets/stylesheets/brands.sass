@@ -13,7 +13,7 @@
       padding: 3em 0
       @media #{$small-only}
         padding: 4em 0 2em
-      @media #{$xxlarge-up}
+      @media screen and (min-width: 1920px)
         padding: 5em 0
   .bg-color
     position: absolute
@@ -68,11 +68,14 @@
     .img-background
       background-size: contain
       background-repeat: no-repeat
-    @media #{$small-only}
-      // margin-top: -25%
-    @media #{$medium-up}
+    @media #{$medium-only}
+      padding-bottom: 100%
+      margin-top: 5em
+    @media #{$large-only} and (orientation: landscape)
+      margin-top: 3em
+    @media #{$large-up}
       padding-bottom: 70%
-    @media #{$xxlarge-up}
+    @media only screen and (min-width: 1920px)
       padding-bottom: 100%
   
   .description-text
