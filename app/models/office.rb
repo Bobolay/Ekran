@@ -47,7 +47,7 @@ class Office < ActiveRecord::Base
   end
 
   def phones=(val)
-    send(:line_separated_field, :phones, val)
+    send(:line_separated_field=, :phones, val)
   end
 
   def phones(parse = true)
@@ -55,7 +55,7 @@ class Office < ActiveRecord::Base
   end
 
   def emails=(val)
-    send(:line_separated_field, :emails, val)
+    send(:line_separated_field=, :emails, val)
   end
 
   def emails(parse = true)
@@ -63,7 +63,7 @@ class Office < ActiveRecord::Base
   end
 
   def fax_phones=(val)
-    send(:line_separated_field, :fax_phones, val)
+    send(:line_separated_field=, :fax_phones, val)
   end
 
   def fax_phones(parse = true)

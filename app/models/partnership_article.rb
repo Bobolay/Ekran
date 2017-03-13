@@ -30,7 +30,7 @@ class PartnershipArticle < ActiveRecord::Base
   end
 
   def phones=(val)
-    send(:line_separated_field, :phones, val)
+    send(:line_separated_field=, :phones, val)
   end
 
   def phones(parse = true)
@@ -38,7 +38,7 @@ class PartnershipArticle < ActiveRecord::Base
   end
 
   def emails=(val)
-    send(:line_separated_field, :emails, val)
+    send(:line_separated_field=, :emails, val)
   end
 
   def emails(parse = true)
