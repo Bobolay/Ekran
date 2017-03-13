@@ -23,7 +23,7 @@ class MediaController < ApplicationController
 
     @og_image = @article.avatar.url(:list)
 
-    @shareable_resource = true
+    @shareable_resource = @article
     set_page_metadata(@article)
     add_breadcrumb(@article.name, @article.url, nil, true, "components.breadcrumbs", "-")
 
@@ -43,7 +43,7 @@ class MediaController < ApplicationController
       return render_not_found
     end
 
-    @shareable_resource = true
+    @shareable_resource = @article
     set_page_metadata(@article)
     add_breadcrumb(@article.name, @article.url, nil, true, "components.breadcrumbs", "-")
 

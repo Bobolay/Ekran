@@ -1,0 +1,17 @@
+.projects-wrapper.wrapper-inner-indent
+  p.wrapper-small-title Наші проекти
+  .clearfix.projects
+    - @home_projects.each do |project|
+      a.project-block.floated href=project.url title="Перейти на сторінку з даним проектом"
+        .img-background style="background-image: url(#{project.image.url(:large)})"
+        .text-block
+          p.project-performer
+            = project.brand.short_name.present? ? project.brand.short_name : project.brand.name
+            span | #{project.year}
+          p.bold-title
+            = project.multiline_name.present? ? raw(project.multiline_name) : project.name
+          p.main-text
+            = raw project.short_description
+          .text-link
+            | Подивитись проект
+            = inline_svg "svg/key-arrow-right.svg"

@@ -1,127 +1,60 @@
 .main-banner-wrapper.featured-banner
-  .img-background style="background-image: url(#{asset_path('photo/Ekran-main-banner-v1-3.jpg')})"
+  .img-background style=("background-image: url(#{@featured_project.featured_banner.url(:large)})" if @featured_project)
   .row
     .columns
       .text.wide
         = render_breadcrumbs
-        p.banner-title
-          | верхній вал
+        - if @featured_project
+          p.banner-title
+            = @featured_project.multiline_name.present? ? raw(@featured_project.multiline_name) : @featured_project.name
+          .manufacturer-field
+            p.brand-name.dib
+              = @featured_project.brand.short_name.present? ? @featured_project.brand.short_name : @featured_project.brand.name
+            .line.dib
+            p.year.dib
+              = @featured_project.year
           br
-          | київ
-        .manufacturer-field
-          p.brand-name.dib
-            | карпатські вікна
-          .line.dib
-          p.year.dib 2017
-        br
-        a.button.green Подивитись проект
+          a.button.green href=@featured_project.url Подивитись проект
 
 .projects-wrapper.top-inner-indent.grey-bg
 
   .row
     .columns
 
-      .filter-container.filter-brands.dib
-        p.small бренди:
-        - arr = [{id: 1, name: "Вікна «Саламандер»"}, {id: 2, name: " Карпатські вікна"}, {id: 3, name: "Alfabud"}]
-        = raw arr.map { |tag| content_tag(:div, tag[:name], class: "filter dib", :"data-tag-id" => tag[:id]) }.join("")
+      - if @brands.count > 1
+        .filter-container.filter-brands.dib
+          p.small бренди:
+          - arr = @brands
+          = raw arr.map { |tag| content_tag(:div, tag[:name], class: "filter dib", :"data-tag-id" => tag[:id]) }.join("")
 
       
+      - if @years.count > 1
+        .filter-container.filter-years.float-right
+          p.small рік проекту:
+          select#selectize-field.dib data-prop-name="data-prop-name"
+            option value="all" Всі роки
+            - @years.each do |year|
+              option value=year
+                = year
 
-      .filter-container.filter-years.float-right
-        p.small рік проекту:
-        select#selectize-field.dib data-prop-name="data-prop-name"
-          option value="all" Всі роки
-          option value="2017" 2017
-          option value="2016" 2016
-          option value="2015" 2015
-      
-      .year-block data-attr="2017"
-        p.bg-year 2017
 
-        .row.collapse.columns-left
-          .columns.medium-6
-            a.project-block data-tag-ids="1" href=project_path(1)
-              .img-background style="background-image: url(#{asset_path('photo/0_1577ff_dfa38c9d_XXL.jpg')})"
-              .text-block
-                p.project-performer salamander | 2016
-                p.bold-title
-                  | котедж
-                  br
-                  | івано-франківськ
-                p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
-                .text-link
-                  | Подивитись проект
-                  = inline_svg "svg/key-arrow-right.svg"
-          .columns.medium-6
-            a.project-block data-tag-ids="2" href=project_path(1)
-              .img-background style="background-image: url(#{asset_path('photo/asdwevee.jpg')})"
-              .text-block
-                p.project-performer карпатські вікна | 2016
-                p.bold-title
-                  | ресторан
-                  br
-                  | «fabbrica»
-                p.main-text Створюючи «КАРПАТСЬКІ ВІКНА» ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
-                .text-link
-                  | Подивитись проект
-                  = inline_svg "svg/key-arrow-right.svg"
+      - @projects_groups.each do |year, group|
+        .year-block data-attr=year
+          p.bg-year
+            = year
 
-      .year-block data-attr="2016"
-        p.bg-year 2016
-
-        .row.collapse
-          .columns.medium-6
-            a.project-block data-tag-ids="3" href=project_path(1)
-              .img-background style="background-image: url(#{asset_path('photo/57a602ddd6f2e.jpg')})"
-              .text-block
-                p.project-performer salamander | 2016
-                p.bold-title
-                  | котедж
-                  br
-                  | івано-франківськ
-                p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
-                .text-link
-                  | Подивитись проект
-                  = inline_svg "svg/key-arrow-right.svg"
-          .columns.medium-6
-            a.project-block data-tag-ids="2" href=project_path(1)
-              .img-background style="background-image: url(#{asset_path('photo/strojka1.jpg')})"
-              .text-block
-                p.project-performer карпатські вікна | 2016
-                p.bold-title
-                  | ресторан
-                  br
-                  | «fabbrica»
-                p.main-text Створюючи «КАРПАТСЬКІ ВІКНА» ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
-                .text-link
-                  | Подивитись проект
-                  = inline_svg "svg/key-arrow-right.svg"
-          .columns.medium-6
-            a.project-block data-tag-ids="1" href=project_path(1)
-              .img-background style="background-image: url(#{asset_path('photo/Ekran-main-banner-v1-1.jpg')})"
-              .text-block
-                p.project-performer salamander | 2016
-                p.bold-title
-                  | котедж
-                  br
-                  | івано-франківськ
-                p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
-                .text-link
-                  | Подивитись проект
-                  = inline_svg "svg/key-arrow-right.svg"
-          .columns.medium-6
-            a.project-block data-tag-ids="2" href=project_path(1)
-              .img-background style="background-image: url(#{asset_path('photo/img_0282.jpg')})"
-              .text-block
-                p.project-performer карпатські вікна | 2016
-                p.bold-title
-                  | ресторан
-                  br
-                  | «fabbrica»
-                p.main-text Створюючи «КАРПАТСЬКІ ВІКНА» ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
-                .text-link
-                  | Подивитись проект
-                  = inline_svg "svg/key-arrow-right.svg"
-
-  
+          .row.collapse.columns-left
+            - group.each_with_index do |project, i|
+              .columns.medium-6
+                a.project-block data-tag-ids=project.brand_id href=project.url
+                  .img-background style="background-image: url(#{project.image.url(:large)})"
+                  .text-block
+                    p.project-performer
+                      |#{project.brand.short_name.present? ? project.brand.short_name : project.brand.name} | #{project.year}
+                    p.bold-title
+                      = project.multiline_name.present? ? raw(project.multiline_name) : project.name
+                    p.main-text
+                      = project.short_description
+                    .text-link
+                      | Подивитись проект
+                      = inline_svg "svg/key-arrow-right.svg"

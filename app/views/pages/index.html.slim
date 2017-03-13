@@ -1,67 +1,10 @@
 = render "home_slider"
 = render "home_about"
 = render "home_brands"
-
-.projects-wrapper.wrapper-inner-indent
-  p.wrapper-small-title Наші проекти
-  .clearfix.projects
-    a.project-block.floated href=project_path(1) title="Перейти на сторінку з даним проектом"
-      .img-background style="background-image: url(#{asset_path('photo/Erkan-projects-cottage-1.jpg')})"
-      .text-block
-        p.project-performer
-          | salamander 
-          span | 2016
-        p.bold-title
-          | котедж
-          br
-          | івано-франківськ
-        p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
-        .text-link
-          | Подивитись проект
-          = inline_svg "svg/key-arrow-right.svg"
-    a.project-block.floated href=project_path(1) title="Перейти на сторінку з даним проектом"
-      .img-background style="background-image: url(#{asset_path('photo/Erkan-projects-fabbrica-1.jpg')})"
-      .text-block
-        p.project-performer
-          | карпатські вікна 
-          span | 2016
-        p.bold-title
-          | ресторан
-          br
-          | «fabbrica»
-        p.main-text Створюючи «КАРПАТСЬКІ ВІКНА» ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
-        .text-link
-          | Подивитись проект
-          = inline_svg "svg/key-arrow-right.svg"
-    a.project-block.floated href=project_path(1) title="Перейти на сторінку з даним проектом"
-      .img-background style="background-image: url(#{asset_path('photo/Erkan-projects-ibiz-1.jpg')})"
-      .text-block
-        p.project-performer
-          | alfabud
-          span | 2015
-        p.bold-title
-          | готель
-          br
-          | «ibis»
-        p.main-text В цьому блоці найменше тетксту через його ширину.
-        .text-link
-          | Подивитись проект
-          = inline_svg "svg/key-arrow-right.svg"
+= render "home_projects"
 
 .service-wrapper.wrapper-inner-indent
-  p.wrapper-small-title Сервіс
-  .row
-    .columns.medium-3.medium-push-2
-      p.bold-underlined
-        | Ми надаємо широкий спектр
-        br
-        | сервісних послуг
-    .columns.medium-5
-      p.main-text Створюючи «КАРПАТСЬКІ ВІКНА» ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку. Нам добре вдається знаходити індивідуальні рішення, і тому «КАРПАТСЬКІ ВІКНА» ТМ є найкращим, а інколи і єдиним правильним рішенням під час будівництва нових чи реконструкції старих будівель.
-      .smaller доставка
-      .smaller гарантія
-      .smaller обслуговування
-
+  = raw t("home.services")
 .partnership-wrapper.wrapper-inner-indent
   .clearfix
     .partner-block.floated.description

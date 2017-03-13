@@ -3,14 +3,44 @@ class ProjectsController < ApplicationController
 
   def index
     set_page_metadata(:projects)
+    projects_collection
+    @projects_groups = @projects.group_by(&:year)
+    @brands = Brand.published.joins(:projects, :translations).where(projects: { published: 't' }).uniq.map{|b| {name: b.name, id: b.id} }
+    @years = @projects.map(&:year).uniq.sort{|a, b| b <=> a }
+    @featured_project = Project.published.featured.first
   end
 
   def show
+    @project = Project.get(params[:id])
+    if @project.nil?
+      return render_not_found
+    end
 
+    @slider_images = @project.slider_images
+    @gallery_images = @project.gallery_images
+
+    @og_image = @project.image.url(:large)
+
+    @shareable_resource = @project
+
+    set_page_metadata(@project)
+    add_breadcrumb(@project.name, @project.url, nil, true, "components.breadcrumbs", "-")
+
+    @prev = @project.prev(projects_collection)
+    @next = @project.next(projects_collection)
+
+    @prev = nil if @prev.id == @project.id
+    @next = nil if @next.id == @project.id
+
+    @related_projects = [@prev, @next].select(&:present?)
   end
 
   private
   def add_projects_breadcrumb
     add_breadcrumb(:projects, projects_path)
+  end
+
+  def projects_collection
+    @projects ||= Project.published
   end
 end

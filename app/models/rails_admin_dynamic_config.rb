@@ -8,7 +8,7 @@ def host?(*hosts)
   hosts.include? REQUEST_HOST
 end
 
-def navigation_label_key(k, weight = nil)
+def navigation_label_key(k, weight = 0)
   navigation_label do
     I18n.t("admin.navigation_labels.#{k}")
   end
@@ -19,18 +19,18 @@ end
 
 def model_weight(rel_weight, navigation_label)
   weights = {
-      home: 0,
-      about_us: 100,
-      projects: 200,
-      partnership: 300,
-      brands: 400,
-      services: 500,
-      media: 600,
-      contacts: 700,
-      tags: 800,
-      users: 900,
-      pages: 1000,
-      assets: 1100
+      home: 100,
+      about_us: 200,
+      projects: 300,
+      partnership: 400,
+      brands: 500,
+      services: 600,
+      media: 700,
+      contacts: 800,
+      tags: 900,
+      users: 1000,
+      pages: 1100,
+      assets: 1200
   }
   navigation_label_weight = weights[navigation_label.to_sym]
   computed_weight = navigation_label_weight + rel_weight
@@ -339,7 +339,7 @@ module RailsAdminDynamicConfig
           field :image_alt
         end
 
-        [{model: AboutIntro, model_weight: 102}, {model: TeamIntro, model_weight: 104}, {model: AboutVacanciesIntro, model_weight: 106}, {model:AboutCertificateIntro, model_weight: 108}].each do |item|
+        [{model: AboutIntro, model_weight: 2}, {model: TeamIntro, model_weight: 4}, {model: AboutVacanciesIntro, model_weight: 6}, {model:AboutCertificateIntro, model_weight: 8}].each do |item|
           config.model item[:model] do
             navigation_label_key(:about_us)
             model_weight item[:model_weight], :about_us if item[:model_weight]
@@ -503,6 +503,7 @@ module RailsAdminDynamicConfig
         config.model_translation Brand do
           field :locale, :hidden
           field :name
+          field :short_name
           field :multiline_name
           field :home_slide_name
           field :short_description
@@ -525,6 +526,54 @@ module RailsAdminDynamicConfig
           field :description
         end
 
+
+
+        # ====================================
+        # Projects
+        # ====================================
+        config.include_models Project
+        config.model Project do
+          navigation_label_key(:projects, 1)
+          field :published
+          field :featured
+          field :brand
+          field :translations, :globalize_tabs
+          field :image
+          field :featured_banner
+          field :slider_images
+          field :gallery_images
+          field :date do
+            date_format do
+              :default
+            end
+          end
+        end
+
+        config.model_translation Project do
+          field :locale, :hidden
+          field :name
+          field :multiline_name
+          field :url_fragment
+          field :short_description
+          field :content, :ck_editor
+          field :client
+          field :address
+        end
+
+        config.include_models ProjectGalleryImage, ProjectSliderImage
+
+        [ProjectSliderImage, ProjectGalleryImage].each_with_index do |m, i|
+          config.model m do
+            navigation_label_key(:projects, i+2)
+            parent false
+            field :data
+            field :translations, :globalize_tabs
+          end
+
+          config.model_translation m do
+
+          end
+        end
 
 
         # config.include_models Pages::About, Pages::Articles, Pages::Catalog, Pages::Contacts, Pages::Home, Pages::Services, Pages::SignIn
