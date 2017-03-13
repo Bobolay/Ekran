@@ -1,5 +1,5 @@
 $( ".filter-years select" ).change(->
-  selected = this.options[this.selectedIndex].value
+  selected = $(this).val()
   if selected == "all"
     $('.year-block').removeClass('hide')
   else
