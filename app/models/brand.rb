@@ -1,7 +1,7 @@
 class Brand < ActiveRecord::Base
   attr_accessible *attribute_names
 
-  globalize :name, :multiline_name, :home_slide_name, :short_description, :brand_url
+  globalize :name, :short_name, :multiline_name, :home_slide_name, :short_description, :brand_url
 
   image :bg_svg_icon
   image :image, styles: { large: "1050x1050#" }
@@ -15,6 +15,9 @@ class Brand < ActiveRecord::Base
   default_scope do
     order_by_sorting_position
   end
+
+  has_many :projects
+  attr_accessible :projects, :project_ids
 
   has_cache do
     pages :brands

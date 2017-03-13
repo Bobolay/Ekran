@@ -1,6 +1,7 @@
 uk:
   admin:
     navigation_labels:
+      projects: "Проекти"
       media: "Медіа"
       services: "Сервіс"
       about_us: "Про нас"
@@ -51,6 +52,12 @@ uk:
       project:
         one: "Проект"
         other: "Проекти"
+      project_slider_image:
+        one: "Слайд проекту"
+        other: "Слайди проектів"
+      project_gallery_image:
+        one: "Картинка галереї проекту"
+        other: "Картинки галерей проектів"
 
       # ----------
       # partnership

@@ -5,9 +5,7 @@
       .text
         = render_breadcrumbs
         p.banner-title
-          | ресторан
-          br
-          | «fabbrica»
+          = @project.multiline_name.present? ? raw(@project.multiline_name) : @project.name
 
 .main-slider-wrapper
   .row
@@ -16,9 +14,8 @@
         = render "slider_controls"
         .slider-inherit-dimension-container
           ul.main-slider
-            li.img-background style="background-image: url(#{asset_path('photo/0_1577ff_dfa38c9d_XXL.jpg')})"
-            li.img-background style="background-image: url(#{asset_path('photo/57a602ddd6f2e.jpg')})"
-            li.img-background style="background-image: url(#{asset_path('photo/asdwevee.jpg')})"
+            - @slider_images.each do |slider_image|
+              li.img-background style="background-image: url(#{slider_image.url(:large)})"
 
 .project-one-wrapper
 
@@ -26,51 +23,46 @@
     .row
       .columns.large-8
         p.project-one-title опис проекту
-        p.main-text Адже сучасна кухня &mdash; це і гаряча плита для приготування страв; і столик для суто сімейних трапез чи святкувань; і затишне насиджене місце для чаювання, для «по 50» з кумом, або для читання газет; і дитячий куточок для уроків чи креативного розмальовування холодильника…
-        p.project-one-subtitle І чого тільки нема на нашій кухні?
-        p.main-text Однак, якщо добре поміркувати, то, виявляється, справа не у кількості квадратних метрів. Пишатися можна і маленькою, компактною та симпатичною кухонькою.
-        p.project-one-subtitle Адже головне &mdash; атмосфера. І створити її допоможе правильно дібране вікно від компанії «Екран-Вікносвіт».
-        p.main-text Фабульный каркас готично выстраивает цвет, подобный исследовательский подход к проблемам художественной типологии можно обнаружить у К.Фосслера. Флобер, описывая нервный припадок Эммы Бовари, переживает его сам: герменевтика готично иллюстрирует неизменный холерик. Выявляя устойчивые архетипы на примере художественного творчества, можно сказать, что диахронический подход вызывает общекультурный цикл, таким образом, все перечисленные признаки архетипа и мифа подтверждают, что действие механизмов мифотворчества сродни механизмам художественно-продуктивного мышления. Герменевтика использует композиционный фабульный каркас. Возрождение представляет собой невротический мимезис.
-        p.main-text Художественное переживание дисгармонично. Выразительное, как бы это ни казалось парадоксальным, однократно. Анимус, так или иначе, монотонно имеет неизменный миракль. Очевидно, что эмпирическая история искусств имеет классический реализм. Семиотика искусства образует определенный драматизм.
+        .article-content.project-content
+          = raw @project.content
       .columns.large-3.large-push-1.end
         .summary-info
-          p.small клієнт
-          p.regular ресторан «fabbrica»
-          p.small розташування
-          p.regular вірменська, 1 м.Івано-Франківськ
-          p.small бренд
-          p.regular карпатські вікна
+          - if @project.client.present?
+            p.small клієнт
+            p.regular
+              = raw @project.client
+          - if @project.address.present?
+            p.small розташування
+            p.regular
+              = raw @project.address
+          - if @project.brand
+            p.small бренд
+            p.regular
+              = @project.brand.name
           p.small рік
-          p.regular 2017
-        p.social-title Поділитись:
-        .social-container.dib
-          a.social.dib = inline_svg "svg/social/facebook.svg"
-          a.social.dib = inline_svg "svg/social/vk.svg"
-          a.social.dib = inline_svg "svg/social/twitter.svg"
+          p.regular
+            = @project.year
+
+        = render "sharing_block"
       .columns
         .line
 
+
   .project-photo-collage.wrapper-inner-indent
-    p.wrapper-small-title Фотографії з проекту
-    .collage.clearfix#animated-thumbnails-project
-      a.floated.width33 href=asset_path("photo/Photo-0.jpg")
-        .img-background style="background-image: url(#{asset_path('photo/Photo-0.jpg')})"
-        img src=asset_path("photo/Photo-0.jpg")
-      a.floated.width33 href=asset_path("photo/Photo-1.jpg")
-        .img-background style="background-image: url(#{asset_path('photo/Photo-1.jpg')})"
-        img src=asset_path("photo/Photo-1.jpg")
-      a.floated.width33 href=asset_path("photo/Photo-2.jpg")
-        .img-background style="background-image: url(#{asset_path('photo/Photo-2.jpg')})"
-        img src=asset_path("photo/Photo-2.jpg")
-      a.floated.width50 href=asset_path("photo/Photo-3.jpg")
-        .img-background style="background-image: url(#{asset_path('photo/Photo-3.jpg')})"
-        img src=asset_path("photo/Photo-3.jpg")
-      a.floated.width50 href=asset_path("photo/Photo-2.jpg")
-        .img-background style="background-image: url(#{asset_path('photo/Photo-2.jpg')})"
-        img src=asset_path("photo/Photo-2.jpg")
-      a.floated.width100 href=asset_path("photo/Photo-4.jpg")
-        .img-background style="background-image: url(#{asset_path('photo/Photo-4.jpg')})"
-        img src=asset_path("photo/Photo-4.jpg")
+    - if @gallery_images.any?
+      p.wrapper-small-title Фотографії з проекту
+      .collage.clearfix#animated-thumbnails-project
+        - @gallery_images.in_groups_of(6, false).each do |group|
+          - group.each_with_index do |image, i|
+            - size = 33
+            - size = 50 if i == 3 || i == 4
+            - size = 100 if i == 5
+            - style = "width#{size}"
+            a.floated href=image.url(:width100) class=style
+              .img-background style="background-image: url(#{image.url(style)})"
+              img alt=(image.data_alt if image.data_alt.present?) src=image.url(style)
+
+
 
 
     .row
@@ -78,43 +70,28 @@
 
         .manufacturer-field.float-right
           p.brand-name.dib
-            | карпатські вікна
+            = @project.brand.short_name.present? ? @project.brand.short_name : @project.brand.name
           .line.dib
-          p.year.dib 2017
+          p.year.dib
+            = @project.year
 
-        p.social-title Поділитись:
-        .social-container.dib
-          a.social.dib = inline_svg "svg/social/facebook.svg"
-          a.social.dib = inline_svg "svg/social/vk.svg"
-          a.social.dib = inline_svg "svg/social/twitter.svg"
+        = render "sharing_block"
+- if @related_projects.try(:any?)
+  .more-projects
 
-.more-projects
-
-  p.wrapper-small-title.text-align-center Інші проекти
-  .row.collapse
-    .columns.medium-6
-      .project-block
-        .img-background style="background-image: url(#{asset_path('photo/asdwevee.jpg')})"
-        .text-block
-          p.project-performer salamander | 2016
-          p.bold-title
-            | котедж
-            br
-            | івано-франківськ
-          p.main-text Створюючи «КАРПАТСЬКІ ВІКНА»ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
-          a.text-link
-            | Подивитись проект
-            = inline_svg "svg/key-arrow-right.svg"
-    .columns.medium-6
-      .project-block
-        .img-background style="background-image: url(#{asset_path('photo/strojka1.jpg')})"
-        .text-block
-          p.project-performer карпатські вікна | 2016
-          p.bold-title
-            | ресторан
-            br
-            | «fabbrica»
-          p.main-text Створюючи «КАРПАТСЬКІ ВІКНА» ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку.
-          a.text-link
-            | Подивитись проект
-            = inline_svg "svg/key-arrow-right.svg"
+    p.wrapper-small-title.text-align-center Інші проекти
+    .row.collapse
+      - @related_projects.each do |project|
+        .columns.medium-6
+          a.project-block href=project.url
+            .img-background style="background-image: url(#{project.image.url(:large)})"
+            .text-block
+              p.project-performer
+                |#{project.brand.short_name.present? ? project.brand.short_name : project.brand.name} | #{project.year}
+              p.bold-title
+                = project.multiline_name.present? ? raw(project.multiline_name) : project.name
+              p.main-text
+                = raw project.short_description
+              .text-link
+                | Подивитись проект
+                = inline_svg "svg/key-arrow-right.svg"
