@@ -29,7 +29,7 @@
       .columns.large-3.large-push-1.end
         .summary-info
           - if @project.client.present?
-            p.small клієнт
+            /p.small клієнт
             p.regular
               = raw @project.client
           - if @project.address.present?
