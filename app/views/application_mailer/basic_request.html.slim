@@ -15,7 +15,7 @@ h4
     = label_text
   p
     - if v.is_a?(Paperclip::Attachment)
-      a href=v.url
+      a href=(@host+v.url)
         = label_text
     - else
       = v
