@@ -19,18 +19,20 @@ end
 
 def model_weight(rel_weight, navigation_label)
   weights = {
-      home: 100,
-      about_us: 200,
-      projects: 300,
-      partnership: 400,
-      brands: 500,
-      services: 600,
-      media: 700,
-      contacts: 800,
-      tags: 900,
-      users: 1000,
-      pages: 1100,
-      assets: 1200
+      feedbacks: 100,
+      home: 200,
+      about_us: 300,
+      projects: 400,
+      partnership: 500,
+      brands: 600,
+      services: 700,
+      media: 800,
+      contacts: 900,
+      tags: 1000,
+      users: 1100,
+      settings: 1200,
+      pages: 1300,
+      assets: 1400
   }
   navigation_label_weight = weights[navigation_label.to_sym]
   computed_weight = navigation_label_weight + rel_weight
@@ -67,7 +69,9 @@ module RailsAdminDynamicConfig
           config.actions do
             dashboard                     # mandatory
             index                         # mandatory
-            new
+            new do
+              except [CallRequest, ConsultationRequest, MeterRequest]
+            end
             export
             bulk_delete
             show
@@ -588,24 +592,33 @@ module RailsAdminDynamicConfig
         # end
 
 
-        # form_configs = [FormConfigs::Order, FormConfigs::Message]
-        #
-        # config.include_models *form_configs
-        # form_configs.each do |m|
-        #   config.model m do
-        #     navigation_label "Налаштуваня"
-        #     field :email_receivers, :text
-        #   end
-        # end
-        #
-        # config.include_models Order, Message
-        # config.model Order do
-        #   field :product
-        #   field :name
-        #   field :phone
-        # end
-        #
+        form_configs = [FormConfigs::CallRequest, FormConfigs::ConsultationRequest, FormConfigs::MeterRequest]
 
+        config.include_models *form_configs
+        form_configs.each do |m|
+          config.model m do
+            navigation_label_key(:settings)
+            field :email_receivers, :text
+          end
+        end
+
+        forms = [CallRequest, ConsultationRequest, MeterRequest]
+        config.include_models *forms
+        forms.each do |m|
+          config.model m do
+            navigation_label_key(:feedbacks)
+            field :name
+            field :email
+            field :phone
+            field :address
+            field :comment
+            field :created_at
+            field :referer
+            field :session_id
+
+          end
+
+        end
 
 
       end

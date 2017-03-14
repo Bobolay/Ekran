@@ -1,6 +1,8 @@
 uk:
   admin:
     navigation_labels:
+      feedbacks: "Зворотній зв'язок"
+      settings: "Налаштуваня"
       projects: "Проекти"
       media: "Медіа"
       services: "Сервіс"
