@@ -135,3 +135,42 @@ uk:
         media_press: "Медіа -> Преса"
         contacts: "Контакти"
 
+
+
+      # ----------
+      # feedbacks
+      # ----------
+      call_request:
+        one: "Запит передзвонити"
+        other: "Запити передзвонити"
+      consultation_request:
+        one: "Запит на консультацію"
+        other: "Запити на консультацію"
+      meter_request:
+        one: "Запит на замір"
+        other: "Запити на замір"
+      contactacts_request:
+        one: "Запит з форми контактів"
+        other: "Запити з форми контактів"
+      vacancy_request:
+        one: "Відповідь на вакансію"
+        other: "Відповіді на вакансії"
+
+      # ----------
+      # form_configs
+      # ----------
+      form_configs/call_request:
+        one: "Запит передзвонити"
+        other: "Запити передзвонити"
+      form_configs/consultation_request:
+        one: "Запит на консультацію"
+        other: "Запити на консультацію"
+      form_configs/meter_request:
+        one: "Запит на замір"
+        other: "Запити на замір"
+      form_configs/contactacts_request:
+        one: "Запит з форми контактів"
+        other: "Запити з форми контактів"
+      form_configs/vacancy_request:
+        one: "Відповідь на вакансію"
+        other: "Відповіді на вакансії"

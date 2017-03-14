@@ -31,3 +31,6 @@ uk:
       title: "Запит на консультацію"
     contacts_request:
       title: "Запит з форми на сторінці контакти"
+    vacancy_request:
+      title: "Відповідь на вакансію"
+
