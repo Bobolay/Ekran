@@ -7,3 +7,5 @@ asset "jquery-ui"
 asset "sass-burger"
 
 asset "jquery.maskedinput"
+
+asset "jquery-form"

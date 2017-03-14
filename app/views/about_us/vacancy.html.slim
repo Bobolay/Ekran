@@ -63,35 +63,23 @@
         p.smaller
           span * &nbsp;
           | обов'язкові поля
-        form.validate
-          .input-field
-            input#firstname type="text" name="firstname"
-            label.placeholder for="firstname"
-              | Ваше ім'я
-              span &nbsp;*
-            
-          .input-field
-            input#email type="email" name="email"
-            label.placeholder for="email"
-              | Емейл
-              span &nbsp;*
+        form.validate method="post" action=@vacancy.url
+          = input(:vacancy_request, :name, required: true)
+          = input(:vacancy_request, :email, required: true)
+          = input(:vacancy_request, :phone, required: true)
 
-          .input-field
-            input#phone type="text" name="phone"
-            label.placeholder for="phone"
-              | Номер телефону
-              span &nbsp;*
+
+
             
-          .attach-file-field
+          label.attach-file-field for="vacancy_request__attachment"
             = inline_svg "svg/add_file.svg"
             | Прикріпити резюме
             br
             span doc, docx, txt, pdf, zip
+            input#vacancy_request__attachment type="file" name="vacancy_request[attachment]"
 
-          .input-field
-            textarea#comment name="comment" rows="5"
-            label.placeholder
-              | Додаткові побажання...
+
+          = input(:vacancy_request, :comment, type: :text, input_html: {rows: 5})
             
           button.button.green type="submit" value="Submit" Надіслати
 

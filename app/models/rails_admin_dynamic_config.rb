@@ -592,7 +592,7 @@ module RailsAdminDynamicConfig
         # end
 
 
-        form_configs = [FormConfigs::CallRequest, FormConfigs::ConsultationRequest, FormConfigs::MeterRequest, FormConfigs::ContactsRequest]
+        form_configs = [FormConfigs::CallRequest, FormConfigs::ConsultationRequest, FormConfigs::MeterRequest, FormConfigs::ContactsRequest, FormConfigs::VacancyRequest]
 
         config.include_models *form_configs
         form_configs.each do |m|
@@ -627,6 +627,21 @@ module RailsAdminDynamicConfig
           field :name
           field :email
           field :phone
+          field :comment
+          field :created_at
+          field :referer
+          field :session_id
+        end
+
+        config.include_models VacancyRequest
+
+        config.model VacancyRequest do
+          navigation_label_key(:feedbacks, 5)
+          field :vacancy
+          field :name
+          field :email
+          field :phone
+          field :attachment
           field :comment
           field :created_at
           field :referer

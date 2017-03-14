@@ -76,9 +76,5 @@ $document.ready ->
         url = $(form).attr("action")
         data = $(form).serializeArray()
         method = $(form).attr("method")
-        $.ajax(
-          url: url
-          type: method
-          data: data
-        )
+        $(form).ajaxSubmit()
         return show_alert_success()
