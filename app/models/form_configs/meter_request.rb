@@ -1,5 +1,5 @@
 module FormConfigs
-  class CallRequest < Cms::FormConfig
+  class MeterRequest < Cms::FormConfig
 
   end
 end
