@@ -13,7 +13,8 @@
 #= require plugins/form
 #= require plugins/jquery.bxslider.min
 #= require plugins/jquery.scrolldelta
-#= require plugins/lightgallery.min
+# require plugins/lightgallery.min
+#= require plugins/lightgallery-1.3.8
 #= require plugins/lg-thumbnail.min
 # require plugins/scroll-banner
 #= require plugins/selectize.min
