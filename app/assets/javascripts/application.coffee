@@ -21,6 +21,7 @@
 #= require plugins/jquery.collagePlus.min
 #= require plugins/jquery.validate.min
 #= require plugins/jquery.validate.messages_uk
+#= require plugins/masked_input.min
 
 #     I N I T I A L I Z E
 
@@ -44,3 +45,4 @@
 #= require filter-tag
 #= require filter-years
 #= require sticky-menu
+#= require masked_input_initialize

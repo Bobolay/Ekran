@@ -7,7 +7,9 @@ $document.on 'click', '.hamburger, .close-menu', ->
     menu.removeClass('opened')
     header.removeClass('menu-opened')
     hamburger.removeClass('is-active')
+    $('body').removeClass('menu-opened')
   else
     menu.addClass('opened')
     header.addClass('menu-opened')
     hamburger.addClass('is-active')
+    $('body').addClass('menu-opened')

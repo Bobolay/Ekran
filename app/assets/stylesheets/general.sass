@@ -14,6 +14,8 @@ body
     font-size: 14px
   .main-content-wrapper
     flex: 1
+  &.menu-opened
+    overflow: hidden
 
 .small
   font-size: 0.75em
@@ -121,7 +123,7 @@ body
   background: rgba(0,0,0,0.75)
   opacity: 0
   pointer-events: none
-  z-index: 9
+  z-index: 12
   +transition(0.25s)
   &.visible
     opacity: 1
