@@ -25,7 +25,6 @@
 #= require jquery.maskedinput/dist/jquery.maskedinput.min
 #= require jquery-form/dist/jquery.form.min
 
-
 #     I N I T I A L I Z E
 
 #= require google_map
