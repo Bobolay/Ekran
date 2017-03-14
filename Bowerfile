@@ -5,3 +5,5 @@ asset "sass-css3-mixins"
 asset "jquery-ui"
 
 asset "sass-burger"
+
+asset "jquery.maskedinput"

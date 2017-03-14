@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   include Cms::Helpers::ActionView::UrlHelper
   include Cms::Helpers::Breadcrumbs
   include ApplicationHelper
+  include FormsHelper
 
   #reload_rails_admin_config
 

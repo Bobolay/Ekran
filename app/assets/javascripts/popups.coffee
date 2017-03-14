@@ -56,21 +56,29 @@ $document.ready ->
     success_popup.addClass('visible')
 
 
+
+  $("input[type=tel]").each ()->
+    $(".input-tel:not(.mask-initialized)").each(
+      ()->
+        $input_wrap = $(this)
+        $input_wrap.addClass("mask-initialized")
+        $input_wrap.find("input").mask("+99 (999) 999 99 99")
+    )
+
   $("form.validate").each ->
+
+
     $(this).validate
-      rules:
-        firstname: "required"
-        email:
-          required: true
-          email: true
-        phone: "required"
-        address: "required"
-      submitHandler: (form)->
+
+      submitHandler: (form, e)->
+        e.preventDefault()
+        console.log "args: ", arguments
         url = $(form).attr("action")
         data = $(form).serializeArray()
+        method = $(form).attr("method")
         $.ajax(
-          url: ""
-          type: "post"
+          url: url
+          type: method
           data: data
         )
         return show_alert_success()

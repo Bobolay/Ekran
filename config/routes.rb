@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  controller "forms" do
+    post "call_request"
+    post "consultation_request"
+    post "meter_request"
+  end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Ckeditor::Engine => '/ckeditor'
   mount Cms::Engine => '/'

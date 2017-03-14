@@ -21,6 +21,7 @@
 #= require plugins/jquery.collagePlus.min
 #= require plugins/jquery.validate.min
 #= require plugins/jquery.validate.messages_uk
+#= require jquery.maskedinput/dist/jquery.maskedinput.min
 
 #     I N I T I A L I Z E
 
