@@ -70,7 +70,7 @@ module RailsAdminDynamicConfig
             dashboard                     # mandatory
             index                         # mandatory
             new do
-              except [CallRequest, ConsultationRequest, MeterRequest]
+              except [CallRequest, ConsultationRequest, MeterRequest, ContactsRequest]
             end
             export
             bulk_delete
@@ -592,7 +592,7 @@ module RailsAdminDynamicConfig
         # end
 
 
-        form_configs = [FormConfigs::CallRequest, FormConfigs::ConsultationRequest, FormConfigs::MeterRequest]
+        form_configs = [FormConfigs::CallRequest, FormConfigs::ConsultationRequest, FormConfigs::MeterRequest, FormConfigs::ContactsRequest]
 
         config.include_models *form_configs
         form_configs.each do |m|
@@ -618,6 +618,19 @@ module RailsAdminDynamicConfig
 
           end
 
+        end
+
+        config.include_models ContactsRequest
+
+        config.model ContactsRequest do
+          navigation_label_key(:feedbacks, 4)
+          field :name
+          field :email
+          field :phone
+          field :comment
+          field :created_at
+          field :referer
+          field :session_id
         end
 
 

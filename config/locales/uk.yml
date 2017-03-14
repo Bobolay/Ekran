@@ -29,3 +29,5 @@ uk:
       title: "Передзвоніть мені"
     consulation_request:
       title: "Запит на консультацію"
+    contacts_request:
+      title: "Запит з форми на сторінці контакти"

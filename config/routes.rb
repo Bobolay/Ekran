@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     post "call_request"
     post "consultation_request"
     post "meter_request"
+    post "contacts_request"
   end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Ckeditor::Engine => '/ckeditor'

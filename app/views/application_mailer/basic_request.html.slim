@@ -5,6 +5,7 @@ h4
   = @email_title
 - keys = [:name, :email, :phone, :address, :comment]
 - keys.each do |k|
+  - next if !@request.respond_to?(k) || @request.send(k).blank?
   - label_text = I18n.t("forms.#{@request.class.name.underscore}.#{k}", raise: true) rescue I18n.t("forms.#{k}", raise: true) rescue k.to_s.humanize
   - label_text = k.to_s.humanize if label_text.blank?
   - label_text += ":"
