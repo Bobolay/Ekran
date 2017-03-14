@@ -13,3 +13,24 @@ uk:
     - Листопада
     - Грудня
 
+
+  forms:
+    name: "Ваше ім'я"
+    email: "Електронна скринька"
+    phone: "Номер телефону"
+    address: "Контактна адреса"
+    comment: "Додаткові побажання"
+
+  mailer:
+    link_to_request_in_admin: "перейти в адмін-панель на цей запит"
+    meter_request:
+      title: "Заявка на замір"
+    call_request:
+      title: "Передзвоніть мені"
+    consulation_request:
+      title: "Запит на консультацію"
+    contacts_request:
+      title: "Запит з форми на сторінці контакти"
+    vacancy_request:
+      title: "Відповідь на вакансію"
+

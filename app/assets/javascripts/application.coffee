@@ -13,7 +13,8 @@
 #= require plugins/form
 #= require plugins/jquery.bxslider.min
 #= require plugins/jquery.scrolldelta
-#= require plugins/lightgallery.min
+# require plugins/lightgallery.min
+#= require plugins/lightgallery-1.3.8
 #= require plugins/lg-thumbnail.min
 # require plugins/scroll-banner
 #= require plugins/selectize.min
@@ -21,7 +22,9 @@
 #= require plugins/jquery.collagePlus.min
 #= require plugins/jquery.validate.min
 #= require plugins/jquery.validate.messages_uk
-#= require plugins/masked_input.min
+#= require jquery.maskedinput/dist/jquery.maskedinput.min
+#= require jquery-form/dist/jquery.form.min
+
 
 #     I N I T I A L I Z E
 

@@ -6,28 +6,11 @@
       p.smaller
         span * &nbsp;
         | обов'язкові поля
-      form.validate
-        .input-field
-          input#firstname type="text" name="firstname"
-          label.placeholder for="firstname"
-            | Ваше ім'я
-            span &nbsp;*
-
-        .input-field
-          input#email type="email" name="email"
-          label.placeholder for="email"
-            | Емейл
-            span &nbsp;*
-
-        .input-field
-          input#phone.phone type="text" name="phone"
-          label.placeholder for="phone"
-            | Номер телефону
-            span &nbsp;*
-
-        .input-field
-          textarea#comment name="comment" rows="5"
-          label.placeholder
-            | Додаткові побажання...
+        
+      form.validate method="post" action=contacts_request_path
+        = input(:contacts_request, :name, required: true)
+        = input(:contacts_request, :email, required: true)
+        = input(:contacts_request, :phone, required: true)
+        = input(:contacts_request, :comment, type: :text, input_html: {rows: 5})
 
         button.button.green type="submit" value="Submit" Надіслати

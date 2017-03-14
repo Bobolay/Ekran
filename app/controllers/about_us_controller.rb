@@ -1,5 +1,6 @@
 class AboutUsController < ApplicationController
   before_action :add_about_us_breadcrumb
+  before_action :set_vacancy, only: [:vacancy, :vacancy_request]
   def about_us
     @about_slides = AboutSlide.published
     @about_intro = AboutIntro.first.try(:content)
@@ -15,21 +16,32 @@ class AboutUsController < ApplicationController
   end
 
   def vacancy
-    @vacancy = Vacancy.get(params[:id])
-    if @vacancy.nil?
-      return render_not_found
-    end
-
     set_page_metadata(@vacancy)
     add_breadcrumb("Вакансії &mdash; #{@vacancy.position}", @vacancy.url)
   end
 
   def vacancy_request
+    request_class = VacancyRequest
+    request_params = params.require(request_class.name.underscore.to_sym).permit(:name, :phone, :email, :attachment, :comment)
+    r = request_class.new(request_params)
+    r.vacancy_id = @vacancy.id
+    r.referer = request.referer
+    r.session_id = session.id
+    r.save
+    r.notify_admin
 
+    render json: {}
   end
 
   private
   def add_about_us_breadcrumb
     add_breadcrumb(:about_us, about_us_path)
+  end
+
+  def set_vacancy
+    @vacancy = Vacancy.get(params[:id])
+    if @vacancy.nil?
+      return render_not_found
+    end
   end
 end

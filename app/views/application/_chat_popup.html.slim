@@ -3,32 +3,13 @@
   p.title чат
   p.small Пропонуємо скористатися безкоштовною послугою виклику майстра по замірах, що професійно здійснить замір, дасть поради і консультації щодо вибору оптимального для вас варіанту по ціні та якості.
   
-  form.validate
-    .input-field
-      input#firstname type="text" name="firstname"
-      label.placeholder for="firstname"
-        | Ваше ім'я
-        span &nbsp;*
-    .input-field
-      input#email type="email" name="email"
-      label.placeholder for="email"
-        | Емейл
-        span &nbsp;*
-    .input-field
-      input#phone type="text" name="phone"
-      label.placeholder for="phone"
-        | Номер телефону
-        span &nbsp;*
-    .input-field
-      input#address name="address"
-      label.placeholder for="address"
-        | Контактна адреса
-        span &nbsp;*   
-    .input-field
-      textarea#comment name="comment" rows="4"
-      label.placeholder
-        | Додаткові побажання...
-      
+  form.validate method="post" action=consultation_request_path
+    = input(:consultation_request, :name, required: true)
+    = input(:consultation_request, :email, required: true)
+    = input(:consultation_request, :phone, required: true)
+    = input(:consultation_request, :address, required: true)
+    = input(:consultation_request, :comment, type: :text, input_html: {rows: 4})
+
     button.button.green type="submit" value="Submit" Надіслати
 
   .bottom.clearfix
