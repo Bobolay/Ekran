@@ -5,7 +5,9 @@
     # nextText: '>'
     # prevText: '<'
 
-$document.ready ->
+
+# $document.on "ready page:load", ->
+$document.on "ready", ->
 
   #     M A I N     B A N N E R     S L I D E R
 

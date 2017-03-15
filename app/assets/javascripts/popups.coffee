@@ -1,4 +1,4 @@
-$document.ready ->
+$document.on "ready", ->
 
 #     d e c l a r e     g e n e r a l s     v a r i a b l e s
 

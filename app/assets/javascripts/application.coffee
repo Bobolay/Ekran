@@ -4,6 +4,12 @@
 
 #= require global
 
+# require turbolinks
+# require ga-turbolinks
+
+# require nprogress
+# require nprogress-turbolinks
+
 #     P L U G I N S
 
 #= require plugins/jquery-easing
@@ -47,4 +53,3 @@
 #= require filter-tag
 #= require filter-years
 #= require sticky-menu
-#= require masked_input_initialize

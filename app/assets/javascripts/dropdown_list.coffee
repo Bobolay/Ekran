@@ -1,5 +1,5 @@
-$document.ready ->
-
+$document.on "ready", ->
+  
   #     FOR MOBILE DEVICES SET ACTIVE PAGE ON HEAD OF LIST
 
   if width < 1024
