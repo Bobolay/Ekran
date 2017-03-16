@@ -24,6 +24,10 @@ class ApplicationMailer < ActionMailer::Base
     new_request(vacancy_request)
   end
 
+  def new_contacts_request(contacts_request)
+    new_request(contacts_request)
+  end
+
   def new_request(obj)
     init_host
     set_admin_root
