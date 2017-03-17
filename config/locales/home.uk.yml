@@ -42,13 +42,13 @@ uk:
           <p class="main-text">
             Досконалий сервіс розпочинається щойно Ви до нас зателефонуєте чи напишете листа, і триває допоки Ви матимете в ньому потребу. Або ж завітайте у найближчий фірмовий салон мережі «ВІКНОСВІТ». Тут Ви відчуєте доброзичливе ставлення, зможете оглянути зразки нашої продукції і отримати відповіді на всі ваші запитання.
           </p>
-          <a class="smaller" href="http://ekran.voroninstudio.eu/services/dostavka">
+          <a class="smaller" href="/services/dostavka">
             доставка
           </a>
-          <a class="smaller" href="http://ekran.voroninstudio.eu/services/garantiya">
+          <a class="smaller" href="/services/garantiya">
             гарантія
           </a>
-          <a class="smaller" href="http://ekran.voroninstudio.eu/services/servisni-poslugi">
+          <a class="smaller" href="/services/servisni-poslugi">
             обслуговування
           </a>
         </div>
