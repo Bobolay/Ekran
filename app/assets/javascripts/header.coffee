@@ -14,9 +14,8 @@ setClosingTimeout = ()->
   visibility_duration = 3000
   window.top_nav_timeout =  setTimeout(
     ()->
-      #alert("setClosingTimeout")
       window.top_nav_timeout = false
-      if !window.top_nav_locked
+      if !window.top_nav_locked  && !$top_nav.hasClass('menu-opened')
 
         $top_nav.removeClass(classes.scrolled)
 
@@ -60,9 +59,10 @@ handle_scroll = (e)->
 
   if scroll_top <= banner_height
     $top_nav.addClass(visible_class)
+  else if scroll_top > banner_height && $top_nav.hasClass('menu-opened')
+    console.log("no, no, no, header, please don't dissapear")
   else
     $top_nav.removeClass(visible_class)
-
 
 
 
