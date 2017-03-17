@@ -23,7 +23,7 @@
               .line
               = raw brand.short_description
               - if brand.brand_url.present?
-                a.text-link title="Перейти на веб-сторінку партнера" href=brand.brand_url
+                a.text-link title="Перейти на веб-сторінку партнера" href=brand.brand_url target="_blank"
                   | Дізнатись більше
                   = inline_svg "svg/ext-link.svg"
 

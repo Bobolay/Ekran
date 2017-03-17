@@ -40,7 +40,7 @@ function initialize_contacts_google_map() {
   var map = new google.maps.Map(map_element,
     mapOptions);
 
-  var image = '/assets/photo/map-marker-white.png'
+  var image = images.marker_white
 
   var marker = new google.maps.Marker({
     map: map,
