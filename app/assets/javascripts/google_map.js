@@ -164,7 +164,7 @@ function initialize_home_google_map() {
   var map = new google.maps.Map(map_element,
     mapOptions);
 
-  var image = '/assets/photo/map-marker-green.png'
+  var image = images.marker_green
 
   var marker = new google.maps.Marker({
     map: map,

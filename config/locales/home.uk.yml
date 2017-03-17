@@ -42,14 +42,14 @@ uk:
           <p class="main-text">
             Створюючи «КАРПАТСЬКІ ВІКНА» ТМ, ми навчилися робити найголовніше. Ми навчилися бачити в однаковій на перший погляд деревині унікальні вироби саме для вашого помешкання, дому,особняку. Нам добре вдається знаходити індивідуальні рішення, і тому «КАРПАТСЬКІ ВІКНА» ТМ є найкращим, а інколи і єдиним правильним рішенням під час будівництва нових чи реконструкції старих будівель.
           </p>
-          <div class="smaller">
+          <a class="smaller" href="http://ekran.voroninstudio.eu/services/dostavka">
             доставка
-          </div>
-          <div class="smaller">
+          </a>
+          <a class="smaller" href="http://ekran.voroninstudio.eu/services/garantiya">
             гарантія
-          </div>
-          <div class="smaller">
+          </a>
+          <a class="smaller" href="http://ekran.voroninstudio.eu/services/servisni-poslugi">
             обслуговування
-          </div>
+          </a>
         </div>
       </div>

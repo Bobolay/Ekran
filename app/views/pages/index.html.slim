@@ -15,24 +15,15 @@
         | заробляємо
         br
         | разом
-      p.main-text Запрошуємо до співпраці дилерів, архітекторів, будівельні організації. Також ми проводимо навчання.
-      a.button title="Стати нашим партнером" Стати партнером
-    a.partner-block.floated title="Дізнайтесь детальніше про переваги партнерства"
-      .img-background style="background-image: url(#{asset_path('photo/person-1.jpg')})"
-      .person-type
-        p.larger Ви диллер?
-    a.partner-block.floated title="Дізнайтесь детальніше про переваги партнерства"
-      .img-background style="background-image: url(#{asset_path('photo/person-2.jpg')})"
-      .person-type
-        p.larger Ви архітектор?
-    a.partner-block.floated title="Дізнайтесь детальніше про переваги партнерства"
-      .img-background style="background-image: url(#{asset_path('photo/person-3.jpg')})"
-      .person-type
-        p.larger Представник будівельної організації?
-    a.partner-block.floated title="Дізнайтесь детальніше про переваги партнерства"
-      .img-background style="background-image: url(#{asset_path('photo/person-4.jpg')})"
-      .person-type
-        p.larger Цікавить навчання?
+      p.main-text Запрошуємо до співпраці дилерів, архітекторів, будівельні організації та зацікавлених в навчанні осіб.
+      a.button href=partnership_path title="Стати нашим партнером" Стати партнером
+
+    - @partnership_articles.select(&:featured).each do |article|
+      a.partner-block.floated href=article.url
+        .img-background style="background-image: url(#{article.list_item_image.url(:large)})"
+        .person-type
+          p.larger
+            = article.list_item_title
 
 = render "home_media"
 .contact-wrapper.wrapper-inner-indent
