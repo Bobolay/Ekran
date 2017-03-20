@@ -14,7 +14,7 @@
               ul
                 - item[:children].each do |child|
                   li.animated class=("active" if child[:active])
-                    a href=child[:url] target="_blank"
+                    a href=child[:url]
                       = child[:name]
 
         .social-container.dib.animate

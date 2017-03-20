@@ -6,14 +6,14 @@
       p.date
         = @article.formatted_release_date
       = render "sharing_block"
-    .columns.medium-9.media-main-info
+    .columns.medium-9
       .article-content
         = raw @article.content
 
       .clearfix.media-bottom
         .float-right
           - if @article.tags.any?
-            .tags
+            .tags.dib
               - @article.tags.each do |tag|
                 a.tag.dib href=@article.class.tag_url(tag)
                   = tag.name
