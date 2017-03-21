@@ -429,18 +429,29 @@ module RailsAdminDynamicConfig
           nestable_list({position_field: :sorting_position})
           navigation_label_key(:contacts, 1)
 
-          field :published
-          field :translations, :globalize_tabs
-          field :phones
-          field :fax_phones
-          field :emails
-          field :lat_lng
-          field :tags do
-            associated_collection_scope do
-              ->(scope) { scope.joins(:taggings).where(cms_taggings: {taggable_type: "Office"}) }
-            end
+          list do
+            field :published
+            field :region
+            field :city
+            field :name
+            field :tags
+            field :address
           end
-          field :vacancies
+
+          edit do
+            field :published
+            field :translations, :globalize_tabs
+            field :phones
+            field :fax_phones
+            field :emails
+            field :lat_lng
+            field :tags do
+              associated_collection_scope do
+                ->(scope) { scope.joins(:taggings).where(cms_taggings: {taggable_type: "Office"}) }
+              end
+            end
+            field :vacancies
+          end
         end
 
         config.model_translation Office do
