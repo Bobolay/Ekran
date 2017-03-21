@@ -62,7 +62,7 @@
         .clearfix
           - @team_members.each do |member|
             .stuff-block
-              .img-background style="background-image: url(#{asset_path('photo/leadership-board-colleen-calhoun--hover.jpg')})"
+              .img-background style="background-image: url(#{member.image.url(:medium)})"
               .hover-block
                 p.regular.animate
                   = raw(member.name)
