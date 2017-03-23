@@ -514,6 +514,7 @@ module RailsAdminDynamicConfig
           field :bg_svg_icon
           field :article_image
           field :translations, :globalize_tabs
+          field :seo_tags
         end
 
         config.model_translation Brand do
