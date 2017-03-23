@@ -20,6 +20,10 @@ class Office < ActiveRecord::Base
 
   has_tags
 
+  def tags
+    super.uniq
+  end
+
   def properties_text_field(field, locale = I18n.locale)
     properties_str = self.translations_by_locale[locale].try(field)
     if properties_str.blank?
