@@ -17,6 +17,9 @@ $document.on "ready", ->
   chat_popup = $('.chat-popup')
   chat_button = $('.chat-online-button')
 
+  dealer_popup = $('.dealer-popup')
+  dealer_button = $('.dealer-popup-button')
+
   success_popup = $('.success-popup')
 
 
@@ -34,6 +37,11 @@ $document.on "ready", ->
     popup.removeClass('visible')
     $('.mask').addClass('visible ')
     chat_popup.addClass('visible')
+
+  dealer_button.on 'click', ->
+    popup.removeClass('visible')
+    $('.mask').addClass('visible ')
+    dealer_popup.addClass('visible')
 
 
 #     c l i c k     o u t s i d e

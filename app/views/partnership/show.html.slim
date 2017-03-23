@@ -38,8 +38,9 @@
               p
                 a.larger href=email_url(email)
                   = email
-          a.button.green href=email_url(@article.emails.first)
-            |Напишіть нам!
+          .button.green.button.request-button.dealer-popup-button
+            | Напишіть нам
+            
     .columns.large-8
       .article-content
         = raw @article.content

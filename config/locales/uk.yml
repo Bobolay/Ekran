@@ -21,6 +21,13 @@ uk:
     address: "Контактна адреса"
     comment: "Додаткові побажання"
 
+    meter_request:
+      comment: "Додаткова інформація" 
+    call_request:
+      comment: "Коментар"
+    consultation_request:
+      comment: "Запитання"
+
   mailer:
     link_to_request_in_admin: "перейти в адмін-панель на цей запит"
     meter_request:

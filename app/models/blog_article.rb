@@ -58,6 +58,10 @@ class BlogArticle < ActiveRecord::Base
     base_url + "/" + tags_part_str
   end
 
+  def tags
+    super.limit(1)
+  end
+
   def self.base_url
     "/media/blog"
   end

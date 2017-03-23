@@ -16,7 +16,7 @@
         br
         | разом
       p.main-text Запрошуємо до співпраці дилерів, архітекторів, будівельні організації та зацікавлених в навчанні осіб.
-      a.button href=partnership_path title="Стати нашим партнером" Стати партнером
+      .button.request-button.dealer-popup-button Стати партнером
 
     - @partnership_articles.select(&:featured).each do |article|
       a.partner-block.floated href=article.url

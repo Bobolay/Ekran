@@ -5,9 +5,9 @@
   
   form.validate method="post" action=meter_request_path
     = input(:meter_request, :name, required: true)
-    = input(:meter_request, :email, required: true)
     = input(:meter_request, :phone, required: true)
     = input(:meter_request, :address, required: true)
+    = input(:meter_request, :email, required: false)
     = input(:meter_request, :comment, type: :text, input_html: {rows: 4})
 
 
