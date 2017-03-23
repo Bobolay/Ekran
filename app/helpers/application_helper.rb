@@ -65,7 +65,7 @@ module ApplicationHelper
   end
 
   def main_menu
-    brands_children = @menu_featured_brands.map{|b| {name: raw(b.name), active: false, url: b.brand_url, resource: b } }
+    brands_children = @menu_featured_brands.map{|b| {name: raw(b.name), active: false, url: b.url, resource: b } }
     recursive_menu([
         {key: :about_us, has_active: @page_instance.is_a?(Vacancy)},
         "projects", 
