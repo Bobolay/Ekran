@@ -16,6 +16,10 @@ class ApplicationMailer < ActionMailer::Base
     new_request(consultation_request)
   end
 
+  def new_partnership_request(partnership_request)
+    new_request(partnership_request)
+  end
+
   def new_meter_request(meter_request)
     new_request(meter_request)
   end
