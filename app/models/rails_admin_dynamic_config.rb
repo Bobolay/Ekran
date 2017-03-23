@@ -447,7 +447,7 @@ module RailsAdminDynamicConfig
             field :lat_lng
             field :tags do
               associated_collection_scope do
-                ->(scope) { scope.joins(:taggings).where(cms_taggings: {taggable_type: "Office"}) }
+                ->(scope) { scope.joins(:taggings).where(cms_taggings: {taggable_type: "Office"}).uniq }
               end
             end
             field :vacancies
