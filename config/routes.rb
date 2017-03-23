@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   root to: "pages#index"
 
-  resources :brands, only: :index
+  resources :brands, only: [:index, :show]
 
   controller :media do
     tags_and_pagination_routes("media/blog", :media_blog, :blog_index)

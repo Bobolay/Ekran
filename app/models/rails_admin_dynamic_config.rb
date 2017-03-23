@@ -512,6 +512,7 @@ module RailsAdminDynamicConfig
           field :svg_icon
           field :image
           field :bg_svg_icon
+          field :article_image
           field :translations, :globalize_tabs
         end
 
@@ -523,6 +524,8 @@ module RailsAdminDynamicConfig
           field :home_slide_name
           field :short_description
           field :brand_url
+          field :url_fragment
+          field :content, :ck_editor
         end
 
         config.include_models HomeSlide

@@ -1,6 +1,6 @@
 .brands-fullpage-banner.clearfix
   - @featured_brands.each do |brand|
-    a.brand class=("brand-#{brand.code_name}" if brand.code_name.present?) href=brand.brand_url target="_blank"
+    a.brand class=("brand-#{brand.code_name}" if brand.code_name.present?) href=brand.url 
       .bg-icon
         = embedded_svg_from_absolute_path(brand.bg_svg_icon.path)
       .brand-icon
@@ -10,8 +10,8 @@
       .text
         p.brand-title
           = raw brand.name
-        - if brand.brand_url.present?
-          p.text-link href=brand.brand_url
+        - if brand.url.present?
+          p.text-link href=brand.url
             | Дізнатись більше
             = inline_svg "svg/ext-link.svg"
 
