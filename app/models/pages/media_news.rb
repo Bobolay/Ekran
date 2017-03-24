@@ -1,5 +1,5 @@
 class Pages::MediaNews < Cms::Page
-  def url
+  def url(*args)
     "/media/news"
   end
 end

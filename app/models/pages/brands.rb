@@ -1,5 +1,5 @@
 class Pages::Brands < Cms::Page
-  def url
+  def url(*args)
     "/brands"
   end
 end

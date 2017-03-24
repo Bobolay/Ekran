@@ -1,5 +1,5 @@
 class Pages::Services < Cms::Page
-  def url
+  def url(*args)
     "/services"
   end
 end

@@ -1,5 +1,5 @@
 class Pages::MediaVideo < Cms::Page
-  def url
+  def url(*args)
     "/media/video"
   end
 end
