@@ -1,6 +1,7 @@
 doctype html
 html
   head
+    meta http-equiv="Content-Type" content="text/html; charset=utf-8"
     = seo_tags
     meta name="description" content="some text goes here"
     meta name="keywords" keywords="few words"
@@ -15,13 +16,13 @@ html
     = render "call_me_back_popup"
     = render "chat_popup"
     - if @partnership_roles
-        = render "dealer_popup"
+      = render "dealer_popup"
     = render "success_popup"
 
     = render "header"
     .main-content-wrapper
-        = yield
+      = yield
     - if @render_footer != false
-        = render "footer"
+      = render "footer"
     script src="//maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}"
     = javascript_include_tag "application", 'data-turbolinks-track' => true
