@@ -1,6 +1,8 @@
 $document.on 'click', '.region-block', ->
 
-  $(this).toggleClass('active')
 
-  hidden_content = $(this).find('.hidden-content')
-  hidden_content.slideToggle(350)
+  if $(this).hasClass('active')
+    $(this).removeClass('active')
+  else
+    $(this).closest('.office-container').find('.region-block').removeClass('active')
+    $(this).addClass('active')

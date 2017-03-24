@@ -515,6 +515,7 @@ module RailsAdminDynamicConfig
           field :list_item_title
           field :banner_title
           field :content, :ck_editor
+          field :role_name
         end
 
         config.include_models Brand

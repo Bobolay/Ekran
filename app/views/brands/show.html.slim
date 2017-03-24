@@ -1,4 +1,4 @@
-.main-banner-wrapper
+.main-banner-wrapper.brand-one-banner
 
   .row
     .columns
@@ -7,13 +7,16 @@
         p.banner-title
           = raw @article.name
         p.link-title Відвідайте:
-        a.brand-link href="" target="_blank"
-          | Karpatski-vikna.com.ua
+
+        a.brand-link href=@article.brand_url
+          = @article.name
           = inline_svg "svg/ext-link.svg"
-        .brand-img
-          / .img-background style="background-image: url(#{brand.image.url(:large)})"
 
+      
+  .bg-icon
+    = embedded_svg_from_absolute_path(@article.bg_svg_icon.path)
 
+  .bg-color class=("bg-color-#{@article.code_name}" if @article.code_name.present?)
 
 .partner-one-wrapper.grey-bg
   
