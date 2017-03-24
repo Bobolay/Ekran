@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_page_instance, except: [:index]
+  caches_page :index, :contacts
 
   def index
     @featured_brands = Brand.published.featured

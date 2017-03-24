@@ -521,15 +521,31 @@ module RailsAdminDynamicConfig
         config.model Brand do
           navigation_label_key(:brands, 1)
           nestable_list({position_field: :sorting_position})
-          field :published
-          field :featured
-          field :code_name
-          field :svg_icon
-          field :image
-          field :bg_svg_icon
-          field :article_image
-          field :translations, :globalize_tabs
-          field :seo_tags
+
+          list do
+            field :published
+            field :featured
+            field :svg_icon do
+              pretty_value do
+                "<img src='#{value}' style='max-width: 100px' />".html_safe
+              end
+            end
+            field :name
+            field :short_description
+            field :brand_url
+          end
+
+          edit do
+            field :published
+            field :featured
+            field :code_name
+            field :svg_icon
+            field :image
+            field :bg_svg_icon
+            field :article_image
+            field :translations, :globalize_tabs
+            field :seo_tags
+          end
         end
 
         config.model_translation Brand do
