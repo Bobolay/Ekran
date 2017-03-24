@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
     end
 
     @slider_images = @project.slider_images
-    @gallery_images = @project.gallery_images
+    @gallery_images = @project.gallery_images.select{|i| i.data.exists?}
 
     @og_image = @project.image.url(:large)
 

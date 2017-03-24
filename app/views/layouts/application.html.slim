@@ -14,7 +14,8 @@ html
     = render "design_request_popup"
     = render "call_me_back_popup"
     = render "chat_popup"
-    = render "dealer_popup"
+    - if @partnership_roles
+        = render "dealer_popup"
     = render "success_popup"
 
     = render "header"

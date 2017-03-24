@@ -11,7 +11,7 @@ class PagesController < ApplicationController
     @home_projects = Project.published.limit(3)
     set_page_metadata(:home)
 
-    @partnership_roles = PartnershipArticle.published
+    @partnership_roles = PartnershipArticle.published.map{|a| [a.role_name, a.id]}
 
   end
 

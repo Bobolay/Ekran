@@ -1,14 +1,14 @@
 .popup-container.dealer-popup
   .close-popup = inline_svg "svg/cross.svg"
   p.title Стати партнером
-  / p.small Пропонуємо скористатися безкоштовною послугою виклику майстра по замірах, що професійно здійснить замір, дасть поради і консультації щодо вибору оптимального для вас варіанту по ціні та якості.
+  p.small Оберіть на яких умовах Ви хочете працювати з нами.
   
   form.validate method="post" action=consultation_request_path
     .input.input-select
       select#partnership_request_role.dib
-        - @partnership_roles.each do |year|
-          option value=year selected="selected"
-            = year
+        - @partnership_roles.each do |role|
+          option value=role[1] selected="selected"
+            = role[0]
     = input(:partnership_request, :name, required: true)
     = input(:partnership_request, :email, required: true)
     = input(:partnership_request, :phone, required: true)
