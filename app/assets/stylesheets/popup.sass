@@ -49,6 +49,23 @@
     label.placeholder
       top: 10px
 
+  .selectize-control
+    width: 100%
+    .selectize-input
+      padding-left: 18px
+      border-bottom: 0
+      border: 2px solid $grey500
+      font-size: 14px
+      color: $blueGrey700
+      &.focus, &.input-active, &.dropdown-active
+        color: $green
+        border: 2px solid $green
+  .selectize-dropdown [data-selectable], .selectize-dropdown .optgroup-header
+    padding: 10px 18px
+  .selectize-dropdown-content
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2)
+
+
   .bottom
     position: absolute
     bottom: 0

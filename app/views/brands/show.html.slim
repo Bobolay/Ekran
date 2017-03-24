@@ -6,15 +6,20 @@
         = render_breadcrumbs
         p.banner-title
           = raw @article.name
-        p.link-title Відвідайте:
 
-        a.brand-link href=@article.brand_url
-          = @article.name
+        .brand-icon
+          = embedded_svg_from_absolute_path(@article.svg_icon.path)
+
+        p.brand-link-title Відвідайте:
+        a.brand-link href=@article.brand_url target="_blank"
+          = @article.brand_url
           = inline_svg "svg/ext-link.svg"
-
       
   .bg-icon
     = embedded_svg_from_absolute_path(@article.bg_svg_icon.path)
+
+  .brand-img
+    .img-background style="background-image: url(#{@article.image.url(:large)})"
 
   .bg-color class=("bg-color-#{@article.code_name}" if @article.code_name.present?)
 
@@ -38,9 +43,9 @@
     .columns.large-8
       .article-content
         = raw @article.content
-        p.link-title Відвідайте:
-        a href="" target="_blank"
-          | Karpatski-vikna.com.ua
+        p.brand-link-title Відвідайте:
+        a.brand-link href=@article.brand_url target="_blank"
+          = @article.brand_url
           = inline_svg "svg/ext-link.svg"
 
     .columns
