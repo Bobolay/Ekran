@@ -7,9 +7,12 @@ class PagesController < ApplicationController
     @blog_articles = BlogArticle.home_featured
     @featured_video = MediaVideo.home_featured.first
     @home_slides = HomeSlide.published
-    @featured_partnership_articles = PartnershipArticle.featured
+    @featured_partnership_articles = PartnershipArticle.published.featured
     @home_projects = Project.published.limit(3)
     set_page_metadata(:home)
+
+    @partnership_roles = PartnershipArticle.published
+
   end
 
   def contacts

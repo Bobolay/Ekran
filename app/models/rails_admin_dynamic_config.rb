@@ -70,7 +70,7 @@ module RailsAdminDynamicConfig
             dashboard                     # mandatory
             index                         # mandatory
             new do
-              except [CallRequest, ConsultationRequest, MeterRequest, ContactsRequest]
+              except [CallRequest, ConsultationRequest, MeterRequest, ContactsRequest, PartnershipRequest]
             end
             export
             bulk_delete
@@ -391,11 +391,26 @@ module RailsAdminDynamicConfig
         config.model Vacancy do
           navigation_label_key(:about_us, 7)
           nestable_list({position_field: :sorting_position})
-          field :published
-          field :office
-          field :contract_type
-          field :translations, :globalize_tabs
-          field :seo_tags
+
+          list do
+            field :published
+            field :office
+            field :contract_type
+            field :name do
+              def value
+                @bindings[:object].name
+              end
+            end
+
+          end
+
+          edit do
+            field :published
+            field :office
+            field :contract_type
+            field :translations, :globalize_tabs
+            field :seo_tags
+          end
         end
 
         config.model_translation Vacancy do
@@ -447,7 +462,7 @@ module RailsAdminDynamicConfig
             field :lat_lng
             field :tags do
               associated_collection_scope do
-                ->(scope) { scope.joins(:taggings).where(cms_taggings: {taggable_type: "Office"}) }
+                ->(scope) { scope.joins(:taggings).where(cms_taggings: {taggable_type: "Office"}).uniq }
               end
             end
             field :vacancies
@@ -607,7 +622,7 @@ module RailsAdminDynamicConfig
         # end
 
 
-        form_configs = [FormConfigs::CallRequest, FormConfigs::ConsultationRequest, FormConfigs::MeterRequest, FormConfigs::ContactsRequest, FormConfigs::VacancyRequest]
+        form_configs = [FormConfigs::CallRequest, FormConfigs::ConsultationRequest, FormConfigs::PartnershipRequest, FormConfigs::MeterRequest, FormConfigs::ContactsRequest, FormConfigs::VacancyRequest]
 
         config.include_models *form_configs
         form_configs.each do |m|
@@ -632,8 +647,9 @@ module RailsAdminDynamicConfig
             field :session_id
 
           end
-
         end
+
+
 
         config.include_models ContactsRequest
 
@@ -662,6 +678,18 @@ module RailsAdminDynamicConfig
           field :referer
           field :session_id
         end
+
+        config.model PartnershipRequest do
+          field :role
+          field :name
+          field :email
+          field :phone
+          field :comment
+          field :created_at
+          field :referer
+          field :session_id
+        end
+
 
 
       end

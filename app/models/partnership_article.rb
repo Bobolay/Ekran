@@ -2,7 +2,7 @@ class PartnershipArticle < ActiveRecord::Base
   attr_accessible *attribute_names
   include TextFields
 
-  globalize :list_item_title, :name, :url_fragment, :banner_title, :content
+  globalize :list_item_title, :role_name, :name, :url_fragment, :banner_title, :content
 
   image :list_item_image, styles: { large: "275x500#" }, processors: [:thumbnail, :tinify]
   image :avatar, styles: { article: "400x230#" }, processors: [:thumbnail, :tinify]
