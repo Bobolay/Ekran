@@ -20,6 +20,10 @@ class Office < ActiveRecord::Base
 
   has_tags
 
+  def custom_name
+    "#{name} - #{city}"
+  end
+
   def tags
     super.uniq
   end

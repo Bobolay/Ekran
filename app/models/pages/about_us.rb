@@ -1,5 +1,5 @@
 class Pages::AboutUs < Cms::Page
-  def url
+  def url(*args)
     "/about_us"
   end
 end

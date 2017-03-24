@@ -1,5 +1,5 @@
 class Pages::Contacts < Cms::Page
-  def url
+  def url(*args)
     "/contacts"
   end
 end

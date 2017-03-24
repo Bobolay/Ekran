@@ -1,5 +1,5 @@
 class Pages::Home < Cms::Page
-  def url
+  def url(*args)
     "/"
   end
 end
