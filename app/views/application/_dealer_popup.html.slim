@@ -4,6 +4,11 @@
   / p.small Пропонуємо скористатися безкоштовною послугою виклику майстра по замірах, що професійно здійснить замір, дасть поради і консультації щодо вибору оптимального для вас варіанту по ціні та якості.
   
   form.validate method="post" action=consultation_request_path
+    / select#selectize-field.dib data-prop-name="data-prop-name"
+    /   option value="all" Всі роки
+    /   - @years.each do |year|
+    /     option value=year
+    /       = year
     = input(:consultation_request, :name, required: true)
     = input(:consultation_request, :email, required: true)
     = input(:consultation_request, :phone, required: true)

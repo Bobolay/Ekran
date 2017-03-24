@@ -116,6 +116,8 @@
       &.active
         .arrow
           +rotate(180deg)
+        .hidden-content
+          transform: scaleY(1)
       &:nth-child(even)
         float: right
       &.authorized-dealer
@@ -130,9 +132,11 @@
         margin-top: 10px
         border-top: 1px solid $grey200
         box-shadow: 0 1px 2px rgba(0,0,0,0.1)
-        display: none
         overflow: hidden
         z-index: 1
+        transform: scaleY(0)
+        transform-origin: top
+        +transition(transform 0.25s ease)
         .info-block
           display: block
           margin: 2em 0
@@ -149,6 +153,10 @@
             fill: $grey400
             vertical-align: middle
             margin-left: -10px
+          &:hover
+            color: $green
+            svg
+              fill: $green
         .floated
           width: 50%
           @media #{$small-only}
