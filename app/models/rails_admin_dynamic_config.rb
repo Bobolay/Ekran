@@ -395,13 +395,10 @@ module RailsAdminDynamicConfig
           list do
             field :published
             field :office
+            field :position
             field :contract_type
-            field :name do
-              def value
-                @bindings[:object].name
-              end
-            end
-
+            field :salary
+            field :url_fragment
           end
 
           edit do
@@ -443,6 +440,9 @@ module RailsAdminDynamicConfig
         config.model Office do
           nestable_list({position_field: :sorting_position})
           navigation_label_key(:contacts, 1)
+          object_label_method do
+            :custom_name
+          end
 
           list do
             field :published
@@ -539,8 +539,24 @@ module RailsAdminDynamicConfig
           edit do
             field :published
             field :featured
-            field :code_name
-            field :svg_icon
+            field :code_name do
+              help "можете пропустити"
+            end
+            field :svg_icon do
+              pretty_value do
+                if value.presence
+                  v = bindings[:view]
+                  url = resource_url
+                  if image
+                    thumb_url = resource_url(thumb_method)
+                    image_html = v.image_tag(thumb_url, class: 'img-thumbnail', style: "max-width: 100px")
+                    url != thumb_url ? v.link_to(image_html, url, target: '_blank') : image_html
+                  else
+                    v.link_to(nil, url, target: '_blank')
+                  end
+                end
+              end
+            end
             field :image
             field :bg_svg_icon
             field :article_image
@@ -551,14 +567,29 @@ module RailsAdminDynamicConfig
 
         config.model_translation Brand do
           field :locale, :hidden
-          field :name
-          field :short_name
-          field :multiline_name
-          field :home_slide_name
-          field :short_description
-          field :brand_url
-          field :url_fragment
-          field :content, :ck_editor
+          field :name do
+            help "назва не виводиться для другорядних брендів"
+          end
+          field :short_name do
+            help "Використовується в брендах проектів. Аьо береться name, якщо це поле пусте"
+          end
+          #field :multiline_name
+          field :home_slide_name do
+            help "Використовується на головній на слайдері featured бренів"
+          end
+          field :short_description do
+            help "Виводиться на сторінці брендів, а також на головній сторінці в слайдері featured брендів"
+          end
+
+          field :brand_url do
+            help "Лінк на зовнішній сайт"
+          end
+          field :url_fragment do
+            help "Використовується для сторінки бренду"
+          end
+          field :content, :ck_editor do
+            help "Використовується на сторінці бренду"
+          end
         end
 
         config.include_models HomeSlide
