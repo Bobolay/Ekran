@@ -3,5 +3,7 @@ class TeamIntro < ActiveRecord::Base
 
   globalize :content
 
-
+  has_cache do
+    pages :about_us
+  end
 end

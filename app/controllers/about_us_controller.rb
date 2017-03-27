@@ -1,6 +1,9 @@
 class AboutUsController < ApplicationController
   before_action :add_about_us_breadcrumb
   before_action :set_vacancy, only: [:vacancy, :vacancy_request]
+
+  caches_page :about_us, :vacancy
+
   def about_us
     @about_slides = AboutSlide.published
     @about_intro = AboutIntro.first.try(:content)
