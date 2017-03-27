@@ -194,7 +194,7 @@
         position: absolute
         width: 100%
         left: 0
-        bottom: -1px
+        bottom: -2px
         color: $green
         font-size: 1.5em
         padding: 10px 20px 20px
@@ -219,3 +219,12 @@
       &:hover
         .img-background
           +scale(1.05)
+
+      &.past
+        .title
+          color: $grey400
+        .label
+          color: $grey700
+          background: $grey400
+        .img-container
+          +grayscale

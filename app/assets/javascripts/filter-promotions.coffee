@@ -5,5 +5,4 @@ $document.on 'click', '.promotion-filter-field', ()->
     $('.promotion-block').removeClass('hidden')
   else
     $(this).addClass('active')
-    $('.promotion-block').addClass('hidden')
-    $('.promotion-block.current').removeClass('hidden')
+    $('.promotion-block.past').addClass('hidden')
