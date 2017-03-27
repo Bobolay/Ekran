@@ -236,10 +236,11 @@
       height: 50%
       +transition(transform 0.2s)
       svg
-        fill: $green
         width: 100%
         height: 100%
         +transition(0.2s)
+        rect, path, polygon
+          fill: $green
     .smaller
       position: absolute
       left: 50%
@@ -258,7 +259,8 @@
           transform: scale(0.5) translate(0,-100%)
           +transition(transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94))
           svg
-            fill: white
+            rect, path, polygon
+              fill: white
         .smaller
           opacity: 1
           +transition-delay(0.2s)

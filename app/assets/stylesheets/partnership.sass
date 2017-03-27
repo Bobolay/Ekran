@@ -138,3 +138,84 @@
       +s-bold
       @media #{$small-only}
         display: none
+
+  .promotion-wrapper
+    position: relative
+    .promotion-filter-field
+      padding-left: 26px
+      position: relative
+      text-transform: uppercase
+      color: $grey500
+      +light
+      letter-spacing: 2px
+      font-size: 14px
+      cursor: pointer
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        top: 5px
+        left: 0
+        width: 14px
+        height: 14px
+        border: 2px solid $grey500
+      &:hover, &.active
+        color: $green
+        &:before
+          border: 2px solid $green
+      &.active
+        &:before
+          background: $green
+    .promotion-container
+      margin: -10px
+    .promotion-block
+      position: relative
+      width: calc(50% - 20px)
+      float: left
+      margin: 10px
+      cursor: pointer
+      &.hidden
+        display: none
+      @media #{$small-only}
+        width: calc(100% - 20px)
+      &:before
+        content: ''
+        display: block
+        padding-bottom: 56%
+      .img-container
+        height: 100%
+        overflow: hidden
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+      .title
+        position: absolute
+        width: 100%
+        left: 0
+        bottom: -1px
+        color: $green
+        font-size: 1.5em
+        padding: 10px 20px 20px
+        +bold
+        background: $blueGrey900
+        margin: 0
+      .label
+        position: absolute
+        top: 0
+        left: -2px
+        background: $green
+        color: white
+        letter-spacing: 2px
+        +light
+        padding: 5px 10px
+        text-transform: uppercase
+        span
+          letter-spacing: 0
+          +bold
+          font-size: 0.875em
+
+      &:hover
+        .img-background
+          +scale(1.05)

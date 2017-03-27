@@ -53,4 +53,5 @@
 #= require sharing
 #= require filter-tag
 #= require filter-years
+#= require filter-promotions
 #= require sticky-menu

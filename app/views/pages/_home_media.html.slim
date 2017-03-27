@@ -31,6 +31,7 @@
               = article.name
             p.date
               = article.formatted_release_date
+      a.button.green.button-top-indent href=media_blog_path title="Перейти на сторінку всіх публікацій" Всі публікації
 
 
     - if @featured_video
@@ -38,3 +39,4 @@
         p.underlined-title Відео
         .img-container
           = youtube_video_iframe(@featured_video.youtube_video_id)
+        a.button.green.button-top-indent href=media_video_path title="Перейти на сторінку всіх відео" Всі відео

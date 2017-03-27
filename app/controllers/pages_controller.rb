@@ -12,7 +12,7 @@ class PagesController < ApplicationController
     @home_projects = Project.published.limit(3)
     set_page_metadata(:home)
 
-    @partnership_roles = PartnershipArticle.published.map{|a| next nil if a.role_name.blank?; [a.role_name, a.id]}.select(&:present?)
+    @partnership_roles = PartnershipArticle.roles
 
   end
 

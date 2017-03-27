@@ -44,4 +44,9 @@ class PartnershipArticle < ActiveRecord::Base
   def emails(parse = true)
     line_separated_field(:emails, parse)
   end
+
+  def self.roles
+    published.map{|a| next nil if a.role_name.blank?; [a.role_name, a.id]}.select(&:present?)
+  end
+
 end

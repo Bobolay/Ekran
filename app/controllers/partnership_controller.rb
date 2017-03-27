@@ -18,6 +18,8 @@ class PartnershipController < ApplicationController
     @articles = PartnershipArticle.published
     @prev = @article.prev(@articles)
     @next = @article.next(@articles)
+
+    @partnership_roles = PartnershipArticle.roles
   end
 
   private
