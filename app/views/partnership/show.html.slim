@@ -22,7 +22,7 @@
               = article.name
 
     .columns.large-4
-      .img-container style="background-image: url(#{@article.avatar.url(:article)})"
+      .img-container.article-img style="background-image: url(#{@article.avatar.url(:article)})"
       .contact-block
         - if @article.phones.any?
           .info-block.dib

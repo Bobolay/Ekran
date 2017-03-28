@@ -91,6 +91,11 @@
         color: $green
         svg
           fill: $green
+      p
+        display: inline-block
+      @media #{$small-only}
+        p
+          display: none
 
   &.success-popup
     text-align: center

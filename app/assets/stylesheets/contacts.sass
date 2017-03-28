@@ -82,6 +82,8 @@
       cursor: pointer
       @media #{$small-only}
         width: 100%
+      @media #{$medium-up}
+        margin-right: 20px
       .city
         color: $blueGrey600
         +bold
@@ -104,6 +106,8 @@
         margin-left: 10px
         vertical-align: middle
         display: none
+        @media #{$small-only}
+          margin-top: 10px
       .arrow
         position: absolute
         top: 16px
@@ -120,6 +124,7 @@
           transform: scaleY(1)
       &:nth-child(even)
         float: right
+        margin-right: 0
       &.authorized-dealer
         .label
           display: inline-block
