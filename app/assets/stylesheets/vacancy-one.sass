@@ -8,11 +8,14 @@
 
   .attach-file-field
     position: relative
+    display: block
     padding-left: 30px
     color: $green
     +bold
     line-height: 1.2
-    margin-bottom: 3em
+    cursor: pointer
+    &.hidden
+      display: none
     svg
       position: absolute
       top: 0
@@ -25,3 +28,22 @@
       font-size: 13px
     label
       cursor: pointer
+
+  .added-file-field
+    font-size: 14px
+    +s-bold
+    display: inline-block
+    width: calc(100% - 70px)
+  .remove-file
+    display: none
+    margin-left: 30px
+    width: 30px
+    height: 30px
+    vertical-align: middle
+    cursor: pointer
+    svg
+      width: 100%
+      height: 100%
+      fill: $green
+    &.visible
+      display: inline-block

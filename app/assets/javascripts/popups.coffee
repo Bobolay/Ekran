@@ -85,4 +85,5 @@ $document.on "ready", ->
         data = $(form).serializeArray()
         method = $(form).attr("method")
         $(form).ajaxSubmit()
+        $(form)[0].reset()
         return show_alert_success()
