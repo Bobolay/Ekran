@@ -22,16 +22,13 @@
                 = embedded_svg_from_absolute_path(brand.svg_icon.path)
               .line
               = raw brand.short_description
-              - if brand.brand_url.present?
-                a.text-link title="Перейти на веб-сторінку партнера" href=brand.url
-                  | Дізнатись більше
-                  = inline_svg "svg/ext-link.svg"
+            - if brand.brand_url.present?
+              a.text-link title="Перейти на веб-сторінку партнера" href=brand.url
+                | Дізнатись більше
+                = inline_svg "svg/ext-link.svg"
 
 
   .brands-bottom
     .row
       .columns
         = render "slider_controls"
-        a.text-link.floated-right
-          | Дізнатись більше
-          = inline_svg "svg/ext-link.svg"
