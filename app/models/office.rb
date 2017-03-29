@@ -1,6 +1,6 @@
 class Office < ActiveRecord::Base
   attr_accessible *attribute_names
-  include TextFields
+  include Cms::TextFields
 
   globalize :name, :city, :region, :address, :working_hours, :google_map_url
 
