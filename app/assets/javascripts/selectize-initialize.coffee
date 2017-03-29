@@ -1,3 +1,4 @@
 $('#selectize-field, #partnership_request_role').selectize({
-  persist: false
+  persist: false,
+  create: false
   })

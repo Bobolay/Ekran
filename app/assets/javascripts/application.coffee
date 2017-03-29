@@ -55,3 +55,4 @@
 #= require filter-years
 #= require filter-promotions
 #= require sticky-menu
+#= require input-file-add

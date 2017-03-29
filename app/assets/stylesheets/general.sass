@@ -302,9 +302,11 @@ a
         color: white
         @media #{$medium-up}
           font-size: 2.5em
-        @media #{$xxlarge-up}
+        @media screen and (min-width: 1920px)
           font-size: 3em
           line-height: 1.2
+          max-height: 2.4em
+          overflow: hidden
 
   .bg-icon
     position: absolute
@@ -596,6 +598,10 @@ ol.numbered-list
     height: 26px
     background: $blueGrey300
 
+.article-img
+  @media #{$small-only}
+    margin-bottom: 20px
+
 .article-content
 
   @each $header, $font-size in (h1: 28px, h2: 24px, h3: 20px, h4: 18px, h5: 16px)
@@ -613,6 +619,22 @@ ol.numbered-list
     +light
     line-height: 1.7
 
+  .bold-underlined
+    position: relative
+    +bold
+    padding-bottom: 2em
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      width: 50px
+      height: 3px
+      background: $blueGrey700
+      bottom: 0
+      left: 0
+    @media #{$small-only}
+      margin-bottom: 1em
+      
   .blockquote, blockquote
     margin: 2em 0
     font-size: 1.125em

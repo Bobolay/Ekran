@@ -9,7 +9,7 @@
         p.regular
           = @vacancy.office.city
 
-.vacancy-one-wrapper.inner-indent.grey-bg
+.vacancy-one-wrapper.inner-indent.grey-bg.article-content
   
   .row
 
@@ -18,7 +18,7 @@
         p.small посада
         p.regular
           = @vacancy.position
-        p.small заробітня плата
+        p.small заробітна плата
         p.regular
           = @vacancy.salary
         p.small місто
@@ -57,6 +57,8 @@
             br
             span doc, docx, txt, pdf, zip
             input#vacancy_request__attachment type="file" name="vacancy_request[attachment]"
+          .added-file-field
+          .remove-file = inline_svg "svg/cross.svg"
 
           = input(:vacancy_request, :comment, type: :text, input_html: {rows: 5})
             
