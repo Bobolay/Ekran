@@ -1,6 +1,6 @@
 class PartnershipArticle < ActiveRecord::Base
   attr_accessible *attribute_names
-  include TextFields
+  include Cms::TextFields
 
   globalize :list_item_title, :role_name, :name, :url_fragment, :banner_title, :content
 
