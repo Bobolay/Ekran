@@ -53,4 +53,8 @@ class PartnershipArticle < ActiveRecord::Base
     self.id == 4
   end
 
+  def self.promotions
+    find(4) rescue nil
+  end
+
 end

@@ -4,16 +4,16 @@
       | показувати тільки діючі акції
     .promotion-container.clearfix
       - @promotions.each do |promotion|
-      .promotion-block.floated.past
-        .img-container
-          .img-background style="background-image: url(#{promotion.avatar.url(:list)})"
-        p.title
-          = promotion.name
-        p.label
-          - if promotion.expired?
-            |Акція завершена
-          - elsif promotion.has_end?
-            | залишилось&nbsp;
-            span #{promotion.days_remaining} днів
-          - else
-            |Термін необмежений
+        a.promotion-block.floated class=("past" if promotion.expired?) href=promotion.url
+          .img-container
+            .img-background style="background-image: url(#{promotion.avatar.url(:list)})"
+          p.title
+            = promotion.name
+          p.label
+            - if promotion.expired?
+              |Акція завершена
+            - elsif promotion.has_end?
+              | залишилось&nbsp;
+              span #{promotion.days_remaining} днів
+            - else
+              |Термін необмежений

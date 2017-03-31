@@ -13,6 +13,9 @@ uk:
     - Листопада
     - Грудня
 
+  time:
+    formats:
+      short: "%d.%m.%Y %H:%M"
 
   forms:
     name: "Ваше ім'я"

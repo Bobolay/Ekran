@@ -26,8 +26,19 @@ class PartnershipController < ApplicationController
     end
   end
 
-  def promotions
+  def promotion
+    @partnership_article = PartnershipArticle.get(params[:partnership_article_id])
+    return render_not_found if @partnership_article.nil? || !@partnership_article.promotions?
 
+
+    @promotion = Promotion.get(params[:id])
+    return render_not_found if @promotion.blank?
+
+    set_page_metadata(@promotion)
+    add_breadcrumb(@partnership_article.name, @partnership_article.url)
+    add_breadcrumb(@promotion.name, @promotion.url)
+
+    @shareable_resource = @promotion
   end
 
   private

@@ -1,0 +1,42 @@
+.main-banner-wrapper
+
+  .row
+    .columns
+      .text
+        = render_breadcrumbs
+
+        p.banner-title
+          = @promotion.name
+
+.main-bg-img
+  .row
+    .columns
+      .img-container style="background-image: url(#{@promotion.banner.url(:banner)})"
+
+.partner-one-wrapper.grey-bg
+  
+  .row
+         
+    .columns.large-9
+      .article-content
+        = raw @promotion.content
+
+    .columns.large-3
+      .promotion-counter-container class=("expired" if @promotion.expired?) class=("infinite" if @promotion.infinite?)
+        - if @promotion.expired?
+          p.title
+            |Акція завершена
+        - elsif @promotion.has_end?
+          p.title До кінця акції залишилось:
+          #counter data-end-date-time=@promotion.end_date_time
+            span.days
+            span
+              | :
+            span.hours
+            span
+              | :
+            span.minutes
+        - else
+          p.title
+            |Термін необмежений
+      = render "sharing_block"

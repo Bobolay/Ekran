@@ -2,9 +2,10 @@ class CreatePromotions < ActiveRecord::Migration
   def up
     create_table :promotions do |t|
       t.boolean :published
-      t.date :start_date
-      t.date :end_date
+      t.datetime :start_date_time
+      t.datetime :end_date_time
       t.attachment :avatar
+      t.attachment :banner
       t.string :name
       t.string :url_fragment
       t.text :content

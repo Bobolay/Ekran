@@ -502,17 +502,35 @@ module RailsAdminDynamicConfig
           navigation_label_key(:partnership, 3)
           list do
             field :published
-            field :start_date
-            field :end_date
+            field :start_date_time do
+              date_format do
+                :short
+              end
+            end
+            field :end_date_time do
+              date_format do
+                :short
+              end
+            end
             field :avatar
+            field :banner
             field :name
           end
 
           edit do
             field :published
-            field :start_date
-            field :end_date
+            field :start_date_time do
+              date_format do
+                :short
+              end
+            end
+            field :end_date_time do
+              date_format do
+                :short
+              end
+            end
             field :avatar
+            field :banner
             field :translations, :globalize_tabs
             field :seo_tags
           end
