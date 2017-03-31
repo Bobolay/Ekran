@@ -20,6 +20,14 @@ class PartnershipController < ApplicationController
     @next = @article.next(@articles)
 
     @partnership_roles = PartnershipArticle.roles
+
+    if @article.promotions?
+      @promotions = Promotion.published
+    end
+  end
+
+  def promotions
+
   end
 
   private

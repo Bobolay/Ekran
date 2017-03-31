@@ -29,7 +29,8 @@
 #= require plugins/jquery.validate.min
 #= require plugins/jquery.validate.messages_uk
 #= require jquery-form/dist/jquery.form.min
-#= require plugins/jquery.mask.min
+# require plugins/jquery.mask.min
+#= require jquery.maskedinput/dist/jquery.maskedinput.min
 
 #     I N I T I A L I Z E
 

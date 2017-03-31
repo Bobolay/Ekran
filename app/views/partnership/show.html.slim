@@ -45,24 +45,7 @@
       .article-content
         = raw @article.content
 
-        .promotion-wrapper
-          p.promotion-filter-field
-            | показувати тільки діючі акції
-          .promotion-container.clearfix
-            .promotion-block.floated.past
-              .img-container
-                .img-background style="background-image: url(#{@article.avatar.url(:article)})"
-              p.title Cвяткові знижки
-              p.label
-                | залишилось&nbsp;
-                span 20 днів
-            .promotion-block.floated
-              .img-container
-                .img-background style="background-image: url(#{@article.avatar.url(:article)})"
-              p.title Cвяткові знижки
-              p.label
-                | залишилось&nbsp;
-                span 20 днів
+      = render "promotions"
 
     .columns
       .clearfix.partner-navigation

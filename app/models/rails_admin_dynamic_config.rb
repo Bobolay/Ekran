@@ -52,6 +52,25 @@ module RailsAdminDynamicConfig
           end
         end
 
+        config.navigation_labels do
+          {
+            feedbacks: 100,
+            home: 200,
+            about_us: 300,
+            projects: 400,
+            partnership: 500,
+            brands: 600,
+            services: 700,
+            media: 800,
+            contacts: 900,
+            tags: 1000,
+            users: 1100,
+            settings: 1200,
+            pages: 1300,
+            assets: 1400
+          }
+        end
+
         config.navigation_static_links = {
            locales: "/file_editor/locales",
            site_data: "/file_editor/site_data.yml"
@@ -476,6 +495,34 @@ module RailsAdminDynamicConfig
           field :banner_title
           field :content, :ck_editor
           field :role_name
+        end
+
+        config.include_models Promotion
+        config.model Promotion do
+          navigation_label_key(:partnership, 3)
+          list do
+            field :published
+            field :start_date
+            field :end_date
+            field :avatar
+            field :name
+          end
+
+          edit do
+            field :published
+            field :start_date
+            field :end_date
+            field :avatar
+            field :translations, :globalize_tabs
+            field :seo_tags
+          end
+        end
+
+        config.model_translation Promotion do
+          field :locale, :hidden
+          field :name
+          field :url_fragment
+          field :content, :ck_editor
         end
 
         config.include_models Brand

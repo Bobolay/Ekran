@@ -49,4 +49,8 @@ class PartnershipArticle < ActiveRecord::Base
     published.map{|a| next nil if a.role_name.blank?; [a.role_name, a.id]}.select(&:present?)
   end
 
+  def promotions?
+    self.id == 4
+  end
+
 end

@@ -45,7 +45,11 @@ Rails.application.routes.draw do
 
   scope :partnership, controller: :partnership do
     root action: :index, as: :partnership
+    scope "promotions" do
+      get ":id", action: :promotion, as: :promotion
+    end
     get ":id", action: :show, as: :partnership_case
+
   end
 
   scope :projects, controller: :projects do
