@@ -158,6 +158,9 @@ uk:
       vacancy_request:
         one: "Відповідь на вакансію"
         other: "Відповіді на вакансії"
+      partnership_request:
+        one: "Запит на партнерство"
+        other: "Запити на партнерство"
 
       # ----------
       # form_configs
@@ -177,3 +180,6 @@ uk:
       form_configs/vacancy_request:
         one: "Відповідь на вакансію"
         other: "Відповіді на вакансії"
+      form_configs/partnership_request:
+        one: "Запит на партнерство"
+        other: "Запити на партнерство"

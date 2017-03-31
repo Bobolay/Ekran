@@ -753,6 +753,7 @@ module RailsAdminDynamicConfig
 
         config.include_models PartnershipRequest
         config.model PartnershipRequest do
+          navigation_label_key(:feedbacks, 6)
           field :role
           field :name
           field :email
