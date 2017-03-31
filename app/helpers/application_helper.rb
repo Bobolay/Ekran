@@ -27,7 +27,7 @@ module ApplicationHelper
   def youtube_video_iframe(video_key, iframe_id = nil, options = {}, html_safe = true)
     defaults = {
         modestbranding: 1,
-        controls: 0,
+        controls: 1,
         showinfo: 0,
         wmode: "transparent",
         enablejsapi: 1,
