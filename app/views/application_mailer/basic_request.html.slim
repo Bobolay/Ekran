@@ -18,7 +18,7 @@ h4
       a href=(@host+v.url)
         = label_text
     - if k == :role
-      = PartnershipArticle.find(v).role_name rescue v
+      = (role_name = @request.role_name).present? ? role_name : "-"
     - else
       = v
 
