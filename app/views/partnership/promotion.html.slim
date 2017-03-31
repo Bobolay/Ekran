@@ -1,0 +1,67 @@
+.main-banner-wrapper
+
+  .row
+    .columns
+      .text
+        / = render_breadcrumbs
+        p breadcrumbs
+        p.banner-title
+          / = raw @article.banner_title
+          p promotion one
+
+.main-bg-img
+  .row
+    .columns
+      .img-container style="background-image: url(#{asset_path('photo/asdwevee.jpg')})"
+
+.partner-one-wrapper.grey-bg
+  
+  .row
+    / .columns
+      .link-container
+        - @articles.each do |article|
+          - active = @article.id == article.id
+          - if active
+            span.link.active
+              = article.name
+          - else
+            a.link href=article.url
+              = article.name
+         
+    .columns.large-9
+      .article-content
+        / = raw @article.content
+        h2 promotion header
+        p Some random text header
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis quas, minima rerum architecto consequuntur nobis ducimus temporibus ipsam. Iusto dolorum nihil saepe odio vero libero quam placeat praesentium aspernatur et?
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quisquam deserunt ipsam ut alias aperiam. Nostrum esse quas tenetur rem unde praesentium, aut accusantium fugit neque vero libero, repudiandae ratione.
+
+    .columns.large-3
+      .promotion-counter-container
+        p.title До кінця акції залишилось:
+        #counter
+          span.days
+          span
+            | :
+          span.hours
+          span
+            | :
+          span.minutes
+      p.regular-bold Поділитись
+      .social-container
+        a.social.dib title="Поділіться з іншими у соцмережах" = inline_svg "svg/social/facebook.svg"
+        a.social.dib title="Поділіться з іншими у соцмережах" = inline_svg "svg/social/vk.svg"
+        a.social.dib title="Поділіться з іншими у соцмережах" = inline_svg "svg/social/twitter.svg"
+
+    / .columns
+      .clearfix.partner-navigation
+        - if @prev
+          a.floated.prev-button href=@prev.url
+            .dib.icon = inline_svg "svg/key-arrow-left.svg"
+            p.larger.dib
+              = @prev.name
+        - if @next
+          a.floated-right.next-button href=@next.url
+            p.larger.dib
+              = @next.name
+            .dib.icon = inline_svg "svg/key-arrow-right.svg"

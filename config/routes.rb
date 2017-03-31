@@ -46,7 +46,9 @@ Rails.application.routes.draw do
   scope :partnership, controller: :partnership do
     root action: :index, as: :partnership
     get ":id", action: :show, as: :partnership_case
+
   end
+  get "promotion" => "partnership#promotion", as: :one_promotion
 
   scope :projects, controller: :projects do
     root action: :index, as: :projects
@@ -63,7 +65,7 @@ Rails.application.routes.draw do
     get ":id", action: :vacancy, as: :vacancy
     post ":id", action: :vacancy_request, as: :vacancy_request
   end
-
+  
   controller :pages do
     get "contacts", action: "contacts"
   end

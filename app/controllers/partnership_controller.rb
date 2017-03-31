@@ -22,6 +22,10 @@ class PartnershipController < ApplicationController
     @partnership_roles = PartnershipArticle.roles
   end
 
+  def promotion
+    
+  end
+
   private
   def add_partnership_breadcrumb
     add_breadcrumb(:partnership, partnership_path)

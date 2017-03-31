@@ -56,3 +56,4 @@
 #= require filter-promotions
 #= require sticky-menu
 #= require input-file-add
+#= require countdown_counter

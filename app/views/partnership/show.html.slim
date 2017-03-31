@@ -49,14 +49,14 @@
           p.promotion-filter-field
             | показувати тільки діючі акції
           .promotion-container.clearfix
-            .promotion-block.floated.past
+            a.promotion-block.floated.past href=one_promotion_path
               .img-container
                 .img-background style="background-image: url(#{@article.avatar.url(:article)})"
               p.title Cвяткові знижки
               p.label
                 | залишилось&nbsp;
                 span 20 днів
-            .promotion-block.floated
+            a.promotion-block.floated href=one_promotion_path
               .img-container
                 .img-background style="background-image: url(#{@article.avatar.url(:article)})"
               p.title Cвяткові знижки
