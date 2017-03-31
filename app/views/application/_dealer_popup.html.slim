@@ -5,7 +5,7 @@
   
   form.validate method="post" action=partnership_request_path
     .input.input-select
-      select#partnership_request_role.dib
+      select#partnership_request_role.dib name="partnership_request[role]"
         - @partnership_roles.each do |role|
           option value=role[1] selected="selected"
             = role[0]

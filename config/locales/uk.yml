@@ -43,4 +43,6 @@ uk:
       title: "Запит з форми на сторінці контакти"
     vacancy_request:
       title: "Відповідь на вакансію"
+    partnership_request:
+      title: "Запит на партнерство"
 
