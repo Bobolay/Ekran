@@ -74,9 +74,7 @@
     .row
       .columns.request-buttons-container
         .social-container.dib.animate
-          a.social.dib = inline_svg "svg/social/facebook.svg"
-          a.social.dib = inline_svg "svg/social/vk.svg"
-          a.social.dib = inline_svg "svg/social/twitter.svg"
+          = render "social_links"
 
         .request-button.design-request-button.dib.animate
           = inline_svg "svg/menu-contact-icon-1.svg"

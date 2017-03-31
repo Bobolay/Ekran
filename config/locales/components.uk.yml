@@ -9,9 +9,14 @@ uk:
       services: "Сервісні послуги"
       delivery: "Доставка"
       warranty: "Гарантія"
+    social-links:
+      html_title:
+        facebook: "Наша сторінка на фейсбуці"
+        vk: "Наша сторінка вконтакті"
+        twitter: "Наша сторінка на твіттері"
     sharing_block:
       html_title:
-        facebook: "Поділиися на Фейсбуці"
+        facebook: "Поділитися на Фейсбуці"
         vk: "Поділитися ВКонтакті"
         twitter: "Поділитися в Твіттері"
     tags:

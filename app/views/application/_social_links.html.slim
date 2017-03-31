@@ -1,0 +1,3 @@
+- social_links.each do |k, social_link|
+  a.social.dib href=social_link[:url] target="_blank" title=t("components.social-links.html_title.#{k}")
+    = embedded_svg_from_assets(social_link[:icon])
