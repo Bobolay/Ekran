@@ -49,7 +49,7 @@ class Promotion < ActiveRecord::Base
   def days_remaining
     return :infinite if infinite?
 
-    self.end_date.mjd - self.start_date.mjd
+    self.end_date.to_date.mjd - self.start_date.to_date.mjd
   end
 
   def self.get(url_fragment)
