@@ -20,7 +20,7 @@ class FormsController < ApplicationController
   end
 
   def basic_request(request_class)
-    request_params = params.require(request_class.name.underscore.to_sym).permit(:name, :phone, :email, :address, :comment)
+    request_params = params.require(request_class.name.underscore.to_sym).permit(:role, :name, :phone, :email, :address, :comment)
     r = request_class.new(request_params)
     r.referer = request.referer
     r.session_id = session.id

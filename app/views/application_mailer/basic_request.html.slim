@@ -17,6 +17,8 @@ h4
     - if v.is_a?(Paperclip::Attachment)
       a href=(@host+v.url)
         = label_text
+    - if k == :role
+      = (role_name = @request.role_name).present? ? role_name : "-"
     - else
       = v
 
