@@ -21,11 +21,13 @@
             a.link href=article.url
               = article.name
 
+      = render "promotions"
+
     .columns.large-4
       .img-container.article-img style="background-image: url(#{@article.avatar.url(:article)})"
       .contact-block
         - if @article.phones.any?
-          .info-block.dib
+          .info-block
             p.small телефон
             - @article.phones.each do |phone|
               p
@@ -45,7 +47,7 @@
       .article-content
         = raw @article.content
 
-      = render "promotions"
+      / = render "promotions"
 
     .columns
       .clearfix.partner-navigation
