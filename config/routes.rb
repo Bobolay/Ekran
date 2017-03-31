@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   controller "forms" do
     post "call_request"
     post "consultation_request"
+    post "partnership_request"
     post "meter_request"
     post "contacts_request"
   end

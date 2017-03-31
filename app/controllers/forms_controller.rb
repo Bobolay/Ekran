@@ -3,6 +3,10 @@ class FormsController < ApplicationController
     basic_request(ConsultationRequest)
   end
 
+  def partnership_request
+    basic_request(PartnershipRequest)
+  end
+
   def call_request
     basic_request(CallRequest)
   end

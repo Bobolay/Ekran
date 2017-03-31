@@ -695,7 +695,7 @@ module RailsAdminDynamicConfig
         # end
 
 
-        form_configs = [FormConfigs::CallRequest, FormConfigs::ConsultationRequest, FormConfigs::PartnershipRequest, FormConfigs::MeterRequest, FormConfigs::ContactsRequest, FormConfigs::VacancyRequest]
+        form_configs = [FormConfigs::CallRequest, FormConfigs::ConsultationRequest, FormConfigs::PartnershipRequest, FormConfigs::MeterRequest, FormConfigs::ContactsRequest, FormConfigs::VacancyRequest, FormConfigs::PartnershipRequest]
 
         config.include_models *form_configs
         form_configs.each do |m|
@@ -718,7 +718,6 @@ module RailsAdminDynamicConfig
             field :created_at
             field :referer
             field :session_id
-
           end
         end
 
@@ -752,6 +751,7 @@ module RailsAdminDynamicConfig
           field :session_id
         end
 
+        config.include_models PartnershipRequest
         config.model PartnershipRequest do
           field :role
           field :name
