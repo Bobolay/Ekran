@@ -65,13 +65,14 @@ $document.on "ready", ->
 
 
 
-  $("input[type=tel]").each ()->
-    $(".input-tel:not(.mask-initialized)").each(
-      ()->
-        $input_wrap = $(this)
-        $input_wrap.addClass("mask-initialized")
-        $input_wrap.find("input").mask("+99 (999) 999 99 99")
-    )
+
+
+
+  $(".input-tel:not(.mask-initialized) input").mask("+00 (000) 000 00 00")
+  $(".input-tel:not(.mask-initialized)").addClass("mask-initialized")
+
+
+
 
   $("form.validate").each ->
 
