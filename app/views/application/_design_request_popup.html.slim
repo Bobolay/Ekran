@@ -1,7 +1,7 @@
 .popup-container.design-request-popup
   .close-popup = inline_svg "svg/cross.svg"
   p.title заявка на замір
-  p.small Пропонуємо скористатися безкоштовною послугою виклику майстра по замірах, що професійно здійснить замір, дасть поради і консультації щодо вибору оптимального для вас варіанту по ціні та якості.
+  p.small Наш фахівець безкоштовно зробить замір Ваших вікон і допоможе зробити оптимальний вибір за ціною та якістю
   
   form.validate method="post" action=meter_request_path
     = input(:meter_request, :name, required: true)
@@ -19,4 +19,4 @@
       p перетелефонувати мені
     .request-button.chat-online-button.floated-right
       = inline_svg "svg/menu-contact-icon-3.svg"
-      p онлайн консультація
+      p консультація
