@@ -1,4 +1,4 @@
-uk:
+ррuk:
   genitive_month_names:
     - Січня
     - Лютого
@@ -26,6 +26,7 @@ uk:
 
     meter_request:
       comment: "Додаткова інформація" 
+      address: "Адреса об'єкту скління"
     call_request:
       comment: "Коментар"
     consultation_request:
