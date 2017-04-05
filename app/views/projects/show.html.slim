@@ -51,7 +51,7 @@
 
   .project-photo-collage.wrapper-inner-indent
     - if @gallery_images.any?
-      p.wrapper-small-title Фотографії з проекту
+      p.wrapper-small-title Фотографії проекту
       .collage.clearfix#animated-thumbnails-project
         - @gallery_images.in_groups_of(6, false).each do |group|
           - group.each_with_index do |image, i|

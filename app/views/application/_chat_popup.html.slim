@@ -1,7 +1,7 @@
 .popup-container.chat-popup
   .close-popup = inline_svg "svg/cross.svg"
   p.title консультація
-  p.small Задайте нам питання і наш консультант дасть відповідь у найкоротші терміни.
+  p.small Запитайте нашого консультанта і отримайте відповідь у найкоротший термін
   
   form.validate method="post" action=consultation_request_path
     = input(:consultation_request, :name, required: true)
