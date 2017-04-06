@@ -18,7 +18,7 @@
 
       a.button.green href=media_news_path title="Перейти на сторінку всіх новин" Всі новини
 
-    .columns.medium-12.large-7.xxlarge-pull-1.float-left.tab-content
+    .columns.medium-12.large-7.float-left.tab-content
       p.underlined-title Блог
       - @blog_articles.each do |article|
         a.blog-block title="Перейти на сторінку блогу" href=article.url
@@ -35,7 +35,7 @@
 
 
     - if @featured_video
-      .columns.medium-12.large-7.xxlarge-pull-1.float-left.tab-content.media-wrapper.video-wrapper
+      .columns.medium-12.large-7.float-left.tab-content.media-wrapper.video-wrapper
         p.underlined-title Відео
         .img-container
           = youtube_video_iframe(@featured_video.youtube_video_id)
