@@ -24,7 +24,7 @@ class Brand < ActiveRecord::Base
   has_seo_tags
   has_sitemap_record
   has_cache do
-    pages :brands, self, Brand.published
+    pages :home, :brands, self, Brand.published
   end
 
   def url(locale = I18n.locale)
