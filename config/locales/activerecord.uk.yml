@@ -1,0 +1,4 @@
+uk:
+  activerecord:
+    attributes:
+      urban_type_settlement: "Село міського типу"
