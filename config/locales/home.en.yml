@@ -1,9 +1,9 @@
-uk:
+en:
   home:
     about:
       header: |
         <p class="wrapper-small-title">
-          Хто ми?
+          Who we are?
         </p>
       part-1: |
         <p class="bold-underlined">
@@ -30,7 +30,7 @@ uk:
 
     services: |
       <p class="wrapper-small-title">
-        Сервіс
+        Services
       </p>
       <div class="row">
         <div class="columns medium-3 medium-push-2">
@@ -57,7 +57,7 @@ uk:
     partnership:
       first-block: |
         <p class="smaller">
-          Нашим партнерам
+          Let's collaborate
         </p>
         <p class="bold-title">
           працюємо командою&nbsp;—<br>заробляємо<br>разом

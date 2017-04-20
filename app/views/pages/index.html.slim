@@ -8,15 +8,7 @@
 .partnership-wrapper.wrapper-inner-indent
   .clearfix
     .partner-block.floated.description
-      p.smaller Нашим партнерам
-      p.bold-title
-        | працюємо командою&nbsp;&mdash;
-        br
-        | заробляємо
-        br
-        | разом
-      p.main-text Запрошуємо до співпраці дилерів, архітекторів, будівельні організації та зацікавлених в навчанні осіб.
-      .button.request-button.dealer-popup-button Стати партнером
+      = raw t("home.partnership.first-block")
 
     - @partnership_articles.select(&:featured).each do |article|
       a.partner-block.floated href=article.url
