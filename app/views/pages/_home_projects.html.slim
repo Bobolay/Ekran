@@ -16,5 +16,7 @@
             | Подивитись проект
             = inline_svg "svg/key-arrow-right.svg"
   - if @show_all_projects_button
-    .btn-wrap
-      a.button.green href=projects_path title="Перейти на сторінку всіх проектів" Всі проекти
+    .row
+      .columns
+        .btn-wrap
+          a.button.green href=projects_path title="Перейти на сторінку всіх проектів" Всі проекти
