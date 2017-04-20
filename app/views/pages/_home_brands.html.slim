@@ -9,7 +9,7 @@
   ul.brands-slider
     - @featured_brands.each do |brand|
       li
-        p.wrapper-small-title Наші бренди
+        = raw t("home.brands.header")
         p.brand-header
           = brand.home_slide_name
         .row
@@ -23,8 +23,8 @@
               .line
               = raw brand.short_description
             - if brand.brand_url.present?
-              a.text-link title="Перейти на веб-сторінку партнера" href=brand.url
-                | Дізнатись більше
+              a.text-link title=t("home.brands.brand-link.html-title") href=brand.url
+                = t("home.brands.brand-link.text")
                 = inline_svg "svg/ext-link.svg"
 
 

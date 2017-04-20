@@ -1,5 +1,10 @@
 uk:
   home:
+    slider:
+      contact-us-popup-link:
+        html-title: "Зв'яжіться з нами"
+        text: "Зв'язатись з нами"
+
     about:
       header: |
         <p class="wrapper-small-title">
@@ -27,7 +32,26 @@ uk:
         <p class="bold-title">
           ми розпочали з того, що стали першими
         </p>
-
+    brands:
+      header: |
+        <p class="wrapper-small-title">
+          Наші бренди
+        </p>
+      brand-link:
+        html-title: "Перейти на веб-сторінку партнера"
+        text: "Дізнатись більше"
+    projects:
+      header: |
+        <p class="wrapper-small-title">
+          Наші проекти
+        </p>
+      project-link:
+        text: "Подивитись проект"
+      view-all:
+        html-title: "Перейти на сторінку всіх проектів"
+        text: "Всі проекти"
+      project-block:
+        html-title: "Перейти на сторінку з даним проектом"
     services: |
       <p class="wrapper-small-title">
         Сервіс
@@ -68,3 +92,33 @@ uk:
         <div class="button request-button dealer-popup-button">
           Стати партнером
         </div>
+    media:
+      header: "Медіа"
+    blog:
+      header: "блог"
+      view-all:
+        html-title: "Перейти на сторінку всіх публікацій"
+        text: "Всі публікації"
+    news:
+      header: "новини"
+      view-all:
+        html-title: "Перейти на сторінку всіх новин"
+        text: "Всі новини"
+
+    video:
+      header: "відео"
+      view-all:
+        html-title: "Перейти на сторінку всіх відео"
+        text: "Всі відео"
+    contacts:
+      header: "Як нас знайти"
+      main-office: "головний офіс"
+      address: "вул. Сколівська 7/б, м. Стрий,<br/>Львівська обл., Україна, 82400"
+      labels:
+        phone: "телефон"
+        fax: "факс"
+        email: "електронна скринька"
+        address: "наша адреса"
+      contact-us-button:
+        text: "Зв'язатись"
+        html-title: "Зв'язатись з нами"

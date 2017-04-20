@@ -1,13 +1,18 @@
 .media-wrapper.wrapper-inner-indent
-  p.wrapper-small-title Медіа
+  p.wrapper-small-title
+    = t("home.media.header")
   .tab-buttons
-    .tab-button.active новини
-    .tab-button блог
-    .tab-button відео
+    .tab-button.active
+      = t("home.news.header")
+    .tab-button
+      = t("home.blog.header")
+    .tab-button
+      = t("home.video.header")
 
   .row.tab-content-wrapper
     .columns.medium-12.large-4.float-right.tab-content.active
-      p.underlined-title Новини
+      p.underlined-title
+        = t("home.video.header")
       - @news.each do |news_article|
         a.new-block title="Перейти на сторінку новини" href=news_article.url
           p.larger
@@ -16,10 +21,12 @@
             = news_article.formatted_release_date
           .hover-arrow = inline_svg "svg/key-arrow-right.svg"
 
-      a.button.green href=media_news_path title="Перейти на сторінку всіх новин" Всі новини
+      a.button.green href=media_news_path title=t("home.news.view-all.html-title")
+        = t("home.news.view-all.text")
 
     .columns.medium-12.large-7.float-left.tab-content
-      p.underlined-title Блог
+      p.underlined-title
+        = t("home.blog.header")
       - @blog_articles.each do |article|
         a.blog-block title="Перейти на сторінку блогу" href=article.url
           .img
@@ -31,12 +38,15 @@
               = article.name
             p.date
               = article.formatted_release_date
-      a.button.green.button-top-indent href=media_blog_path title="Перейти на сторінку всіх публікацій" Всі публікації
+      a.button.green.button-top-indent href=media_blog_path title=t("home.blog.view-all.html-title")
+        = t("home.blog.view-all.text")
 
 
     - if @featured_video
       .columns.medium-12.large-7.float-left.tab-content.media-wrapper.video-wrapper
-        p.underlined-title Відео
+        p.underlined-title
+          = t("home.video.header")
         .img-container
           = youtube_video_iframe(@featured_video.youtube_video_id)
-        a.button.green.button-top-indent href=media_video_path title="Перейти на сторінку всіх відео" Всі відео
+        a.button.green.button-top-indent href=media_video_path title=t("home.video.view-all.html-title")
+          = t("home.video.view-all.text")

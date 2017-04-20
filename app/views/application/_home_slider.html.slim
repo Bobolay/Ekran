@@ -13,6 +13,7 @@
       .columns
         = render "slider_controls"
         .go-down = inline_svg "svg/key-arrow-down.svg"
-        .contact-us.request-button.call-me-back-button title="Зв'яжіться з нами"
+        .contact-us.request-button.call-me-back-button title=t("home.slider.contact-us-popup-link.html-title")
           .icon.dib = inline_svg "svg/phone.svg"
-          p.smaller.dib Зв'язатись з нами
+          p.smaller.dib
+            = t("home.slider.contact-us-popup-link.text")

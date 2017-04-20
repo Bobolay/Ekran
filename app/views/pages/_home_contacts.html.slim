@@ -1,0 +1,29 @@
+.contact-wrapper.wrapper-inner-indent
+  p.wrapper-small-title
+    = t("home.contacts.header")
+  .clearfix
+    .contact-block.float-right
+      p.bold-title
+        = t("home.contacts.main-office")
+      .line
+      a.info-block.dib href="tel:+380324539114"
+        p.small
+          = t("home.contacts.labels.phone")
+        p.larger +38 (032) 453 91 14
+      a.info-block.dib href="tel:+380324539113"
+        p.small
+          = t("home.contacts.labels.fax")
+        p.larger +38 (032) 453 91 13
+      a.info-block href="mailto:info@ekran.ua"
+        p.small
+          = t("home.contacts.labels.email")
+        p.larger info@ekran.ua
+      a.info-block
+        p.small
+          = t("home.contacts.labels.address")
+        p.larger
+          = raw t("home.contacts.address")
+      .button.grey.request-button.call-me-back-button title=t("home.contacts.contact-us-button.html-title")
+        = t("home.contacts.contact-us-button.text")
+    .contact-block
+      #googleMap

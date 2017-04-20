@@ -18,27 +18,4 @@
             = article.list_item_title
 
 = render "home_media"
-.contact-wrapper.wrapper-inner-indent
-  p.wrapper-small-title Як нас знайти
-  .clearfix
-    .contact-block.float-right
-      p.bold-title головний офіс
-      .line
-      a.info-block.dib href="tel:+380324539114"
-        p.small телефон
-        p.larger +38 (032) 453 91 14
-      a.info-block.dib href="tel:+380324539113"
-        p.small факс
-        p.larger +38 (032) 453 91 13
-      a.info-block href="mailto:info@ekran.ua"
-        p.small електронна скринька
-        p.larger info@ekran.ua
-      a.info-block
-        p.small наша адреса
-        p.larger
-          | вул. Сколівська 7/б, м. Стрий,
-          br
-          | Львівська обл., Україна, 82400
-      .button.grey.request-button.call-me-back-button title="Зв'язатись з нами" Зв'язатись
-    .contact-block
-      #googleMap
+= render "home_contacts"

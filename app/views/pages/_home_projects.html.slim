@@ -1,8 +1,8 @@
 .projects-wrapper.wrapper-inner-indent
-  p.wrapper-small-title Наші проекти
+  = raw t("home.projects.header")
   .clearfix.projects
     - @home_projects.each do |project|
-      a.project-block.floated href=project.url title="Перейти на сторінку з даним проектом"
+      a.project-block.floated href=project.url title=t("home.projects.project-block.html-title")
         .img-background style="background-image: url(#{project.image.url(:large)})"
         .text-block
           p.project-performer
@@ -13,10 +13,11 @@
           p.main-text
             = raw project.short_description
           .text-link
-            | Подивитись проект
+            = t("home.projects.project-link.text")
             = inline_svg "svg/key-arrow-right.svg"
   - if @show_all_projects_button
     .row
       .columns
         .btn-wrap
-          a.button.green href=projects_path title="Перейти на сторінку всіх проектів" Всі проекти
+          a.button.green href=projects_path title=t("home.projects.view-all.html-title")
+            = t("home.projects.view-all.text")

@@ -59,7 +59,7 @@ class Office < ActiveRecord::Base
 
   def formatted_city(locale = I18n.locale)
     prefix = city.present? ? "м. " : "смт. "
-    prefix + city_or_urban_type_settlement
+    prefix + city_or_urban_type_settlement.to_s
   end
 
   def phones=(val)

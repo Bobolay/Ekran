@@ -27,6 +27,16 @@ en:
         <p class="bold-title">
           ми розпочали з того, що стали першими
         </p>
+    brands:
+      header: |
+        <p class="wrapper-small-title">
+          Our brands
+        </p>
+    projects:
+      header: |
+        <p class="wrapper-small-title">
+          Our projects
+        </p>
 
     services: |
       <p class="wrapper-small-title">

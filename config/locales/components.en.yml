@@ -1,8 +1,8 @@
-uk:
+en:
   components:
     locales-bar:
       locale-html-title:
-        en: "Відкрити цю сторінку англійською мовою"
+        uk: "Open this page in Ukrainian"
     media_links:
       news: "Новини"
       blog: "Блог"
