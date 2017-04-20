@@ -22,7 +22,7 @@ class BlogArticle < ActiveRecord::Base
   end
 
   def url(locale = I18n.locale)
-    "/media/blog/#{translations_by_locale[locale].url_fragment}"
+    "/#{locale}/media/blog/#{translations_by_locale[locale].try(:url_fragment)}"
   end
 
   has_tags

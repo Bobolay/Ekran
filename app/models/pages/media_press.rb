@@ -1,5 +1,5 @@
 class Pages::MediaPress < Cms::Page
-  def url(*args)
-    "/media/press"
+  def url(locale = I18n.locale)
+    "/#{locale}/media/press"
   end
 end

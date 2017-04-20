@@ -3,6 +3,7 @@ class PartnershipController < ApplicationController
 
   def index
     set_page_metadata(:partnership)
+    initialize_locale_links
     @partnership_text = PartnershipText.first.try(:content)
     @articles = PartnershipArticle.published
   end
@@ -14,6 +15,7 @@ class PartnershipController < ApplicationController
     end
 
     set_page_metadata(@article)
+    initialize_locale_links
     add_breadcrumb(@article.name, @article.url, nil, true, "components.breadcrumbs", "-")
     @articles = PartnershipArticle.published
     @prev = @article.prev(@articles)
@@ -35,6 +37,7 @@ class PartnershipController < ApplicationController
     return render_not_found if @promotion.blank?
 
     set_page_metadata(@promotion)
+    initialize_locale_links
     add_breadcrumb(@partnership_article.name, @partnership_article.url)
     add_breadcrumb(@promotion.name, @promotion.url)
 

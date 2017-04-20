@@ -1,5 +1,5 @@
 class Pages::AboutUs < Cms::Page
-  def url(*args)
-    "/about_us"
+  def url(locale = I18n.locale)
+    "/#{locale}/about_us"
   end
 end

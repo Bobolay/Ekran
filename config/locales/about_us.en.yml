@@ -1,4 +1,4 @@
-uk:
+en:
   about-us:
     about-menu:
       mission: "наша місія"
@@ -6,13 +6,14 @@ uk:
       stuff: "колектив"
       vacancies: "вакансії"
       certificates: "сертифікати"
+
   vacancy:
     contract_type:
       short_values:
-        part_time: "Неповна"
-        full_time: "Повна"
-        remote: "Віддалено"
+        part_time: "Part-time"
+        full_time: "Full-time"
+        remote: "Remote"
       full_values:
-        part_time: "Неповна зайнятість"
-        full_time: "Повна зайнятість"
-        remote: "Віддалено"
+        part_time: "Part-time"
+        full_time: "Full-time"
+        remote: "Remote"

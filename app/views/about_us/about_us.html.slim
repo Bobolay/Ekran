@@ -22,16 +22,11 @@
   .row
     .columns.large-2.side-menu
       ul
-        li
-          a href="#mission" наша місія
-        li
-          a href="#history" історія
-        li
-          a href="#stuff" колектив
-        li
-          a href="#vacancies" вакансії
-        li
-          a href="#certificates" сертифікати
+        - %w(mission history stuff vacancies certificates).each do |key|
+          li
+            a href="##{key}"
+              = t("about-us.about-menu.#{key}")
+
 
   .row#mission
     = raw @about_intro

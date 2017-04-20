@@ -23,7 +23,7 @@ class Vacancy < ActiveRecord::Base
   end
 
   def url(locale = I18n.locale)
-    "/about_us/#{translations_by_locale[locale].url_fragment}"
+    "/#{locale}/about_us/#{translations_by_locale[locale].try(:url_fragment)}"
   end
 
   def self.get(url_fragment)

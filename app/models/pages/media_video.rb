@@ -1,5 +1,5 @@
 class Pages::MediaVideo < Cms::Page
-  def url(*args)
-    "/media/video"
+  def url(locale = I18n.locale)
+    "/#{locale}/media/video"
   end
 end

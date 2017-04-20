@@ -22,7 +22,7 @@ class Service < ActiveRecord::Base
   end
 
   def url(locale = I18n.locale)
-    "/services/#{translations_by_locale[locale].url_fragment}"
+    "/#{locale}/services/#{translations_by_locale[locale].try(:url_fragment)}"
   end
 
   def self.get(url_fragment)

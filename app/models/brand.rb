@@ -28,7 +28,7 @@ class Brand < ActiveRecord::Base
   end
 
   def url(locale = I18n.locale)
-    "/brands/#{translations_by_locale[locale].url_fragment}"
+    "/#{locale}/brands/#{translations_by_locale[locale].try(:url_fragment)}"
   end
 
   def self.get(url_fragment)

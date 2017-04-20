@@ -1,6 +1,18 @@
 .menu-wrapper
   .row
     .columns
+      - if @_locale_links.try(:any?)
+        .choose-language locale-links=@_locale_links.inspect
+          p.language
+            = Cms.config.locale_names[I18n.locale.to_sym]
+            span = inline_svg "icons/arrow-down.svg"
+          .expand
+            - @_locale_links.each do |locale, url|
+              - active = locale == I18n.locale.to_sym
+              - if !active
+                p
+                  a href=url
+                    = Cms.config.locale_names[locale]
 
       .menu-link-container
         - main_menu.each do |item|
