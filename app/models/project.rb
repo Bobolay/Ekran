@@ -22,7 +22,7 @@ class Project < ActiveRecord::Base
   has_sitemap_record
 
   has_cache do
-    pages :projects, Project.published, self
+    pages :home, :projects, Project.published, self
   end
 
   before_save :initialize_date

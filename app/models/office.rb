@@ -2,7 +2,7 @@ class Office < ActiveRecord::Base
   attr_accessible *attribute_names
   include Cms::TextFields
 
-  globalize :name, :city, :region, :address, :working_hours, :google_map_url
+  globalize :name, :city, :urban_type_settlement, :region, :address, :working_hours, :google_map_url
 
   boolean_scope :published
   scope :order_by_sorting_position, -> { order("sorting_position asc") }
@@ -21,7 +21,14 @@ class Office < ActiveRecord::Base
   has_tags
 
   def custom_name
-    "#{name} - #{city}"
+    "#{name} - #{city_or_urban_type_settlement}"
+  end
+
+  def city_or_urban_type_settlement
+    s = city
+    s = urban_type_settlement if s.blank?
+
+    s
   end
 
   def tags
@@ -51,7 +58,8 @@ class Office < ActiveRecord::Base
   end
 
   def formatted_city(locale = I18n.locale)
-    "м. #{city}"
+    prefix = city.present? ? "м. " : "смт. "
+    prefix + city_or_urban_type_settlement
   end
 
   def phones=(val)

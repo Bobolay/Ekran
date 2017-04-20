@@ -426,7 +426,7 @@ module RailsAdminDynamicConfig
           list do
             field :published
             field :region
-            field :city
+            field :city_or_urban_type_settlement
             field :name
             field :tags
             field :address
@@ -453,6 +453,7 @@ module RailsAdminDynamicConfig
           field :name
           field :region
           field :city
+          field :urban_type_settlement
           field :address
           field :working_hours do
             help "Пишіть як ключ-значення, розділяючи двокрапкою. Кожна пара з нового рядка. Наприклад: Пн-Пт: 16:00 &mdash; 18:00"

@@ -83,7 +83,7 @@
           - @vacancies.each do |vacancy|
             a.vacancie-block href=vacancy.url
               p.city
-                = vacancy.office.city
+                = vacancy.office.city_or_urban_type_settlement
               p.job-position
                 = vacancy.position
               p.smaller

@@ -7,7 +7,7 @@
         p.banner-title
           = @vacancy.position
         p.regular
-          = @vacancy.office.city
+          = @vacancy.office.city_or_urban_type_settlement
 
 .vacancy-one-wrapper.inner-indent.grey-bg.article-content
   
@@ -23,7 +23,7 @@
           = @vacancy.salary
         p.small місто
         p.regular
-          = @vacancy.office.city
+          = @vacancy.office.city_or_urban_type_settlement
         p.small зайнятість
         p.regular
           = t("vacancy.contract_type.short_values.#{@vacancy.contract_type}")
