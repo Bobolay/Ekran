@@ -22,6 +22,12 @@ class ApplicationController < ActionController::Base
   before_action :initialize_breadcrumbs, if: :breadcrumbs_enabled?
   before_action :initialize_menu_resources
 
+  before_action :set_locale#, unless: :admin_panel?
+
+  def set_locale
+    I18n.locale = params[:locale]
+  end
+
   def render_not_found
     @render_footer = false
     render template: "errors/not_found.html.slim"

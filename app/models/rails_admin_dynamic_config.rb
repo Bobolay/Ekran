@@ -660,7 +660,7 @@ module RailsAdminDynamicConfig
         config.model_translation Project do
           field :locale, :hidden
           field :name
-          field :multiline_name
+          #field :multiline_name
           field :url_fragment
           field :short_description
           field :content, :ck_editor

@@ -1,5 +1,13 @@
 .header-container
-  a.logo title="Перейти на головну сторінку" href=root_path = inline_svg "svg/header-logo.svg"
+  .logo-and-locales-bar
+    a.logo title="Перейти на головну сторінку" href=root_path = inline_svg "svg/header-logo.svg"
+    - if @_locale_links.try(:any?)
+      .locales-bar
+        - @_locale_links.each do |locale, url|
+          - active = locale == I18n.locale.to_sym
+          - if !active
+            a href=url
+              = Cms.config.locale_names[locale]
   .right-part
     a.dib title="Зв'язатись з нами" href="tel:0800502214"
       .dib.icon = inline_svg "svg/headphones.svg"

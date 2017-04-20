@@ -1,18 +1,7 @@
 .menu-wrapper
   .row
     .columns
-      - if @_locale_links.try(:any?)
-        .choose-language locale-links=@_locale_links.inspect
-          p.language
-            = Cms.config.locale_names[I18n.locale.to_sym]
-            span = inline_svg "icons/arrow-down.svg"
-          .expand
-            - @_locale_links.each do |locale, url|
-              - active = locale == I18n.locale.to_sym
-              - if !active
-                p
-                  a href=url
-                    = Cms.config.locale_names[locale]
+
 
       .menu-link-container
         - main_menu.each do |item|
@@ -35,7 +24,7 @@
           a.social.dib = inline_svg "svg/social/twitter.svg"
 
   .menu-brands-container
-    .svg-text = inline_svg "svg/brands-text.svg"
+    .svg-text = inline_svg "svg/brands-text-#{I18n.locale}.svg"
 
     - brand_urls = @featured_brand_urls
     a.menu-brand href=brand_urls[0]
