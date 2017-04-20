@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_page_instance, except: [:index]
+  before_action :initialize_locale_links, except: [:index]
   caches_page :index, :contacts
 
   def index
@@ -12,6 +13,7 @@ class PagesController < ApplicationController
     @home_projects = Project.published.featured.limit(3)
     @show_all_projects_button = Project.published.count > @home_projects.count
     set_page_metadata(:home)
+    initialize_locale_links
 
     @partnership_roles = PartnershipArticle.roles
 

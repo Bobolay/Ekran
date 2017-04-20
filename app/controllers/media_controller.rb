@@ -7,12 +7,14 @@ class MediaController < ApplicationController
   def index
     @render_footer = false
     set_page_metadata(:media)
+    initialize_locale_links
   end
 
   def blog_index
     @category = "blog"
     init_articles(BlogArticle)
     set_page_metadata(:media_blog)
+    initialize_locale_links
   end
 
   def blog_show
@@ -25,6 +27,7 @@ class MediaController < ApplicationController
 
     @shareable_resource = @article
     set_page_metadata(@article)
+    initialize_locale_links
     add_breadcrumb(@article.name, @article.url, nil, true, "components.breadcrumbs", "-")
 
     @prev = @article.prev(blog_articles_collection)
@@ -35,6 +38,7 @@ class MediaController < ApplicationController
     @category = "news"
     init_articles(NewsArticle)
     set_page_metadata(:media_news)
+    initialize_locale_links
   end
 
   def news_show
@@ -45,6 +49,7 @@ class MediaController < ApplicationController
 
     @shareable_resource = @article
     set_page_metadata(@article)
+    initialize_locale_links
     add_breadcrumb(@article.name, @article.url, nil, true, "components.breadcrumbs", "-")
 
     @prev = @article.prev(news_articles_collection, count: 2)
@@ -55,6 +60,7 @@ class MediaController < ApplicationController
   def video_index
     @category = "video"
     set_page_metadata(:media_video)
+    initialize_locale_links
     add_breadcrumb(:media_video, media_video_path)
     @videos = MediaVideo.published
     @items_per_page = 10
@@ -70,6 +76,7 @@ class MediaController < ApplicationController
     @category = "press"
     add_breadcrumb(:media_press, media_press_path)
     set_page_metadata(:media_press)
+    initialize_locale_links
 
     @press_entries = MediaPressEntry.published
     @items_per_page = 10

@@ -2,6 +2,7 @@
   .row
     .columns
 
+
       .menu-link-container
         - main_menu.each do |item|
           - if item[:children].blank?
@@ -23,7 +24,7 @@
           a.social.dib = inline_svg "svg/social/twitter.svg"
 
   .menu-brands-container
-    .svg-text = inline_svg "svg/brands-text.svg"
+    .svg-text = inline_svg "svg/brands-text-#{I18n.locale}.svg"
 
     - brand_urls = @featured_brand_urls
     a.menu-brand href=brand_urls[0]

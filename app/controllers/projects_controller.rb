@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 
   def index
     set_page_metadata(:projects)
+    initialize_locale_links
     projects_collection
     @projects_groups = @projects.group_by(&:year)
     @brands = Brand.published.joins(:projects, :translations).where(projects: { published: 't' }).uniq.map{|b| {name: b.name, id: b.id} }
@@ -24,6 +25,7 @@ class ProjectsController < ApplicationController
     @shareable_resource = @project
 
     set_page_metadata(@project)
+    initialize_locale_links
     add_breadcrumb(@project.name, @project.url, nil, true, "components.breadcrumbs", "-")
 
     @prev = @project.prev(projects_collection)

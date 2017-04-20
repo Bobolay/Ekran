@@ -1,5 +1,5 @@
 class Pages::MediaBlog < Cms::Page
-  def url(*args)
-    "/media/blog"
+  def url(locale = I18n.locale)
+    "/#{locale}/media/blog"
   end
 end

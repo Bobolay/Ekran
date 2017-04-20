@@ -16,11 +16,13 @@ class AboutUsController < ApplicationController
     @certificates = AboutCertificate.published
     @vacancies = Vacancy.published
     set_page_metadata(:about_us)
+    initialize_locale_links
   end
 
   def vacancy
     set_page_metadata(@vacancy)
     add_breadcrumb("Вакансії &mdash; #{@vacancy.position}", @vacancy.url)
+    initialize_locale_links
   end
 
   def vacancy_request

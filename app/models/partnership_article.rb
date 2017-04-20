@@ -22,7 +22,7 @@ class PartnershipArticle < ActiveRecord::Base
   end
 
   def url(locale = I18n.locale)
-    "/partnership/#{translations_by_locale[locale].url_fragment}"
+    "/#{locale}/partnership/#{translations_by_locale[locale].try(:url_fragment)}"
   end
 
   def self.get(url_fragment)

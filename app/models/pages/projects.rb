@@ -1,5 +1,5 @@
 class Pages::Projects < Cms::Page
-  def url(*args)
-    "/projects"
+  def url(locale = I18n.locale)
+    "/#{locale}/projects"
   end
 end

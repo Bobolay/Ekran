@@ -5,6 +5,7 @@ class ServicesController < ApplicationController
     @render_footer = false
     @services = Service.published
     set_page_metadata(:services)
+    initialize_locale_links
   end
 
   def show
@@ -12,7 +13,8 @@ class ServicesController < ApplicationController
     if @service.nil?
       return render_not_found
     end
-
+    set_page_metadata(@service)
+    initialize_locale_links
     add_breadcrumb(@service.name, @service.url, nil, true, "components.breadcrumbs", "-")
     @services = Service.published
     @prev = @service.prev(@services)
