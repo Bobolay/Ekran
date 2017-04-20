@@ -9,7 +9,8 @@ class PagesController < ApplicationController
     @featured_video = MediaVideo.home_featured.first
     @home_slides = HomeSlide.published
     @featured_partnership_articles = PartnershipArticle.published.featured
-    @home_projects = Project.published.limit(3)
+    @home_projects = Project.published.featured.limit(3)
+    @show_all_projects_button = Project.published.count > @home_projects.count
     set_page_metadata(:home)
 
     @partnership_roles = PartnershipArticle.roles
