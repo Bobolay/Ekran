@@ -331,9 +331,22 @@ module RailsAdminDynamicConfig
         config.model AboutSlide do
           nestable_list({position_field: :sorting_position})
           navigation_label_key(:about_us, 1)
-          field :published
-          field :image
-          field :translations, :globalize_tabs
+          list do
+            sort_by do
+              :sorting_position
+            end
+            sort_reverse? do
+              false
+            end
+
+            field :published
+            field :image
+          end
+          edit do
+            field :published
+            field :image
+            field :translations, :globalize_tabs
+          end
         end
 
         config.model_translation AboutSlide do
