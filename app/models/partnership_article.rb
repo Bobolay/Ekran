@@ -4,8 +4,8 @@ class PartnershipArticle < ActiveRecord::Base
 
   globalize :list_item_title, :role_name, :name, :url_fragment, :banner_title, :content
 
-  image :list_item_image, styles: { large: "275x500#" }, processors: [:thumbnail, :tinify]
-  image :avatar, styles: { article: "400x230#" }, processors: [:thumbnail, :tinify]
+  image :list_item_image, styles: { large: "275x500#" }
+  image :avatar, styles: { article: "400x230#" }
 
   boolean_scope :published
   boolean_scope :featured

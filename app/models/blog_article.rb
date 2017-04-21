@@ -3,8 +3,8 @@ class BlogArticle < ActiveRecord::Base
 
   globalize :name, :url_fragment, :short_description, :content
 
-  image :banner, styles: {media_featured_banner: "1920x540#", thumb: "192x54#", article: "1370x770#"}, processors: [:thumbnail, :tinify]
-  image :avatar, styles: { list: "350x350#", thumb: "100x100#" }, processors: [:thumbnail, :tinify]
+  image :banner, styles: {media_featured_banner: "1920x540#", thumb: "192x54#", article: "1370x770#"}
+  image :avatar, styles: { list: "350x350#", thumb: "100x100#" }
 
   boolean_scope :published
   scope :order_by_release_date, -> { order("release_date desc") }

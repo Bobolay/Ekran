@@ -3,8 +3,8 @@ class Promotion < ActiveRecord::Base
 
   globalize :name, :url_fragment, :content
 
-  image :avatar, styles: { list: "675x380#", thumb: "100x100#" }, processors: [:thumbnail, :tinify]
-  image :banner, styles: { banner: "1370x770#", thumb: "137x77#" }, processors: [:thumbnail, :tinify]
+  image :avatar, styles: { list: "675x380#", thumb: "100x100#" }
+  image :banner, styles: { banner: "1370x770#", thumb: "137x77#" }
 
   boolean_scope :published
   scope :order_by_start_date_time, -> { order("start_date_time desc") }
