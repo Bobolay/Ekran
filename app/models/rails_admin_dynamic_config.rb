@@ -193,25 +193,41 @@ module RailsAdminDynamicConfig
 
         config.model BlogArticle do
           navigation_label_key :media, 2
-          #sort_by do
-          #  :release_date
-          #end
-          field :published
-          field :media_featured
-          field :translations, :globalize_tabs
-          field :avatar
-          field :banner do
-            help do
-              "Необов'язкове. media_featured_banner: 1920x540#; article: 1370x770#"
+          list do
+            sort_by do
+             :release_date
             end
-          end
-          field :release_date do
-            date_format do
-              :default
+
+            field :published
+            field :media_featured
+            field :name do
+              def value
+                @bindings[:object].send(name)
+              end
             end
+            field :avatar
+            field :banner
+            field :release_date
           end
-          field :tags
-          field :seo_tags
+
+          edit do
+            field :published
+            field :media_featured
+            field :translations, :globalize_tabs
+            field :avatar
+            field :banner do
+              help do
+                "Необов'язкове. media_featured_banner: 1920x540#; article: 1370x770#"
+              end
+            end
+            field :release_date do
+              date_format do
+                :default
+              end
+            end
+            field :tags
+            field :seo_tags
+          end
         end
 
         config.model_translation BlogArticle do
