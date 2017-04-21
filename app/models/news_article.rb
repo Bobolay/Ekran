@@ -54,8 +54,8 @@ class NewsArticle < ActiveRecord::Base
     base_url + "/" + tags_part_str
   end
 
-  def self.base_url
-    "/media/news"
+  def self.base_url(locale = I18n.locale)
+    "/#{locale}/media/news"
   end
 
   def formatted_release_date

@@ -27,8 +27,8 @@ class MediaPressEntry < ActiveRecord::Base
     ApplicationHelper.formatted_date(release_date)
   end
 
-  def self.base_url
-    "/media/video"
+  def self.base_url(locale = I18n.locale)
+    "/#{locale}/media/video"
   end
 
 

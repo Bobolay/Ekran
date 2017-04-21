@@ -62,8 +62,8 @@ class BlogArticle < ActiveRecord::Base
     super.limit(1)
   end
 
-  def self.base_url
-    "/media/blog"
+  def self.base_url(locale = I18n.locale)
+    "/#{locale}/media/blog"
   end
 
   def formatted_release_date
