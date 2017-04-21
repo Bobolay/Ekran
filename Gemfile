@@ -138,3 +138,5 @@ gem 'will_paginate', '~> 3.0'
 
 # file_editor
 gem 'ace-rails-ap'
+
+gem 'concise_logging'
