@@ -193,9 +193,9 @@ module RailsAdminDynamicConfig
 
         config.model BlogArticle do
           navigation_label_key :media, 2
-          sort_by do
-            :release_date
-          end
+          #sort_by do
+          #  :release_date
+          #end
           field :published
           field :media_featured
           field :translations, :globalize_tabs
