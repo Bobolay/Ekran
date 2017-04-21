@@ -21,6 +21,7 @@ class AboutUsController < ApplicationController
 
   def vacancy
     set_page_metadata(@vacancy)
+    @head_title = @vacancy.position if @head_title.blank?
     add_breadcrumb("Вакансії &mdash; #{@vacancy.position}", @vacancy.url)
     initialize_locale_links
   end
