@@ -12,7 +12,7 @@
   .row.tab-content-wrapper
     .columns.medium-12.large-4.float-right.tab-content.active
       p.underlined-title
-        = t("home.video.header")
+        = t("home.news.header")
       - @news.each do |news_article|
         a.new-block title="Перейти на сторінку новини" href=news_article.url
           p.larger
