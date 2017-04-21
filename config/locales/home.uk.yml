@@ -95,18 +95,18 @@ uk:
     media:
       header: "Медіа"
     blog:
-      header: "блог"
+      header: "Блог"
       view-all:
         html-title: "Перейти на сторінку всіх публікацій"
         text: "Всі публікації"
     news:
-      header: "новини"
+      header: "Новини"
       view-all:
         html-title: "Перейти на сторінку всіх новин"
         text: "Всі новини"
 
     video:
-      header: "відео"
+      header: "Відео"
       view-all:
         html-title: "Перейти на сторінку всіх відео"
         text: "Всі відео"
