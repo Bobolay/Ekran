@@ -38,7 +38,7 @@ uk:
       title: "Заявка на замір"
     call_request:
       title: "Передзвоніть мені"
-    consulation_request:
+    consultation_request:
       title: "Запит на консультацію"
     contacts_request:
       title: "Запит з форми на сторінці контакти"
