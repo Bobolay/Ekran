@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "sitemap", to: "sitemap#index", as: :sitemap_xml, format: "xml"
+
   mount Cms::Engine => '/'
   mount Ckeditor::Engine => '/ckeditor'
   root as: "root_without_locale", to: "application#root_without_locale"
