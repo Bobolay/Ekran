@@ -19,16 +19,20 @@ def tags_and_pagination_routes(scope = nil, route_prefix = :articles, action= :i
   ajax_tags_and_pagination_routes(ajax_scope, route_prefix, action)
 end
 
-def ajax_tags_and_pagination_routes(scope = "/ajax/articles", route_prefix = :articles, action= :index)
+def ajax_tags_and_pagination_routes(scope = "/ajax/articles", route_prefix = :articles, action= :index, pagination = true)
   scope scope do
-    get "page/:page", action: action, as: :"ajax_#{route_prefix}_page"
     get "tags=:tags", action: action, as: :"ajax_#{route_prefix}_tags"
-    get "tags=:tags/page/:page", action: action, as: :"ajax_#{route_prefix}_tags_page"
+    if pagination
+      get "page/:page", action: action, as: :"ajax_#{route_prefix}_page"
+      get "tags=:tags/page/:page", action: action, as: :"ajax_#{route_prefix}_tags_page"
+    end
   end
 end
 
-def render_tags_and_pagination_routes(route_prefix = :articles, action= :index)
+def render_tags_and_pagination_routes(route_prefix = :articles, action= :index, pagination = true)
   get "tags=:tags", action: action, as: :"#{route_prefix}_tags"
-  get "page/:page", as: :"#{route_prefix}_page", action: action
-  get "tags=:tags/page/:page", action: action, as: :"#{route_prefix}_tags_page"
+  if pagination
+    get "page/:page", as: :"#{route_prefix}_page", action: action
+    get "tags=:tags/page/:page", action: action, as: :"#{route_prefix}_tags_page"
+  end
 end
