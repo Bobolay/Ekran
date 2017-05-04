@@ -687,6 +687,7 @@ module RailsAdminDynamicConfig
               :default
             end
           end
+          field :seo_tags
         end
 
         config.model_translation Project do
