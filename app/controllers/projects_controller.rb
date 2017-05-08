@@ -5,12 +5,11 @@ class ProjectsController < ApplicationController
     set_page_metadata(:projects)
     initialize_locale_links
     projects_collection
-    @filtered_projects = filter_by_tags(@articles)
+    #@filtered_projects = filter_by_tags(@articles)
     @projects_groups = @projects.group_by(&:year)
     @brands = Brand.published.joins(:projects, :translations).where(projects: { published: 't' }).uniq.map{|b| {name: b.name, id: b.id} }
     @years = @projects.map(&:year).uniq.sort{|a, b| b <=> a }
     @featured_project = Project.published.featured.first
-
   end
 
   def show
