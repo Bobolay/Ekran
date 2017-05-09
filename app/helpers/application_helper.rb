@@ -94,4 +94,11 @@ module ApplicationHelper
   def social_links
     Hash[site_data("social_links").map{|k, v| [k, {icon: "svg/social/#{k}.svg", url: v}] }]
   end
+
+  def canonical_link
+    canonical_url = nil
+    if canonical_url
+      content_tag("link", "", rel: "canonical", href: canonical_url)
+    end
+  end
 end

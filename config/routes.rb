@@ -61,6 +61,7 @@ Rails.application.routes.draw do
 
     scope :projects, controller: :projects do
       root action: :index, as: :projects
+      get "brands=:brands", as: :projects_brands, action: :index
       get ":id", action: :show, as: :project
     end
 

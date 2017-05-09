@@ -21,7 +21,7 @@ class BrandsController < ApplicationController
     @articles = Brand.published.featured
     @prev = @article.prev(@articles)
     @next = @article.next(@articles)
-    @recent_projects = @article.projects
+    @related_projects = @article.projects
   end
 
   private

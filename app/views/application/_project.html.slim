@@ -1,0 +1,17 @@
+- if !defined?(show_tags)
+  - show_tags = false
+- if !defined?(invisible)
+  - invisible = false
+.columns.medium-6
+  a.project-block data-tag-ids=(project.brand_id if show_tags) href=project.url class=("hide" if invisible)
+    .img-background style="background-image: url(#{project.image.url(:large)})"
+    .text-block
+      p.project-performer
+        |#{project.brand.short_name.present? ? project.brand.short_name : project.brand.name} | #{project.year}
+      p.bold-title
+        = project.multiline_name.present? ? raw(project.multiline_name) : project.name
+      p.main-text
+        = project.short_description
+      .text-link
+        | Подивитись проект
+        = inline_svg "svg/key-arrow-right.svg"

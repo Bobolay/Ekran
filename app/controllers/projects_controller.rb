@@ -10,6 +10,11 @@ class ProjectsController < ApplicationController
     @brands = Brand.published.joins(:projects, :translations).where(projects: { published: 't' }).uniq.map{|b| {name: b.name, id: b.id} }
     @years = @projects.map(&:year).uniq.sort{|a, b| b <=> a }
     @featured_project = Project.published.featured.first
+
+    brand_url_fragments = (params[:brands] || "").split(",")
+    if brand_url_fragments.count > 0
+      @selected_brand_ids = Brand.joins(:translations).where(brand_translations: { locale: I18n.locale, url_fragment: brand_url_fragments }).pluck(:id)
+    end
   end
 
   def show

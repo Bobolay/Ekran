@@ -83,16 +83,4 @@
     p.wrapper-small-title.text-align-center Інші проекти
     .row.collapse
       - @related_projects.each do |project|
-        .columns.medium-6
-          a.project-block href=project.url
-            .img-background style="background-image: url(#{project.image.url(:large)})"
-            .text-block
-              p.project-performer
-                |#{project.brand.short_name.present? ? project.brand.short_name : project.brand.name} | #{project.year}
-              p.bold-title
-                = project.multiline_name.present? ? raw(project.multiline_name) : project.name
-              p.main-text
-                = raw project.short_description
-              .text-link
-                | Подивитись проект
-                = inline_svg "svg/key-arrow-right.svg"
+        = render "project", project: project
