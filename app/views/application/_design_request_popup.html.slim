@@ -3,7 +3,7 @@
   p.title заявка на замір
   p.small Наш фахівець безкоштовно зробить замір Ваших вікон і допоможе зробити оптимальний вибір за ціною та якістю
   
-  form.validate method="post" data-action=meter_request_path(locale: I18n.locale)
+  form.validate method="post" data-action=meter_request_path(locale: I18n.locale) action="/"
     = input(:meter_request, :name, required: true)
     = input(:meter_request, :phone, required: true)
     = input(:meter_request, :address, required: true)

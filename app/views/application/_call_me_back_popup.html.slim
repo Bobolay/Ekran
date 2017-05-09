@@ -3,7 +3,7 @@
   p.title передзвоніть мені
   p.small Заповніть поля, і наш менеджер зв'яжеться з Вами протягом дня
   
-  form.validate method="post" data-action=call_request_path
+  form.validate method="post" data-action=call_request_path action="/"
     = input(:call_request, :name, required: true)
     = input(:call_request, :phone, required: true)
     = input(:call_request, :comment, type: :text, input_html: { rows: 4 })

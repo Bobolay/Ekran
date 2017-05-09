@@ -46,7 +46,7 @@
           span * &nbsp;
           | обов'язкові поля
 
-        form.validate method="post" data-action=@vacancy.url
+        form.validate method="post" data-action=@vacancy.url action="/"
           = input(:vacancy_request, :name, required: true)
           = input(:vacancy_request, :email, required: true)
           = input(:vacancy_request, :phone, required: true)

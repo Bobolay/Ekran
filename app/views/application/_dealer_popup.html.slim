@@ -3,7 +3,7 @@
   p.title Стати партнером
   p.small Оберіть на яких умовах Ви хочете працювати з нами
   
-  form.validate method="post" data-action=partnership_request_path
+  form.validate method="post" data-action=partnership_request_path action="/"
     .input.input-select
       select#partnership_request_role.dib name="partnership_request[role]"
         - @partnership_roles.each do |role|
