@@ -7,7 +7,7 @@
         span * &nbsp;
         | обов'язкові поля
 
-      form.validate method="post" action=contacts_request_path
+      form.validate method="post" data-action=contacts_request_path
         = input(:contacts_request, :name, required: true)
         = input(:contacts_request, :email, required: true)
         = input(:contacts_request, :phone, required: true)

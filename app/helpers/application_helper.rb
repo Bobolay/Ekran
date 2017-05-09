@@ -95,9 +95,25 @@ module ApplicationHelper
     Hash[site_data("social_links").map{|k, v| [k, {icon: "svg/social/#{k}.svg", url: v}] }]
   end
 
+  def get_canonical_url
+    #param_names =
+    show_canonical =  [params[:brands], params[:tags], params[:page]].any?{|arg| arg.present? }
+    return if !show_canonical
+
+    host = (ENV["#{Rails.env}.host_with_port"] || ENV["#{Rails.env}.host"])
+    page_url = @_breadcrumbs.last ? host + @_breadcrumbs.last[:url] : nil
+    return page_url
+
+    if show_canonical
+      route_name = params[:controller]
+      #url_for(controller: params[:controller], action: :index)
+      send("#{route_name}_path")
+    end
+  end
+
   def canonical_link
-    canonical_url = nil
-    if canonical_url
+    canonical_url = @canonical_url.nil? ? get_canonical_url : nil
+    if canonical_url.present?
       content_tag("link", "", rel: "canonical", href: canonical_url)
     end
   end

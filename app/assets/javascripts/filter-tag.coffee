@@ -22,5 +22,16 @@ $document.on 'click', '.filter-container .filter', ()->
   )
 
   $articles.addClass('hide')
+  $(".year-block").addClass('hide')
 
   $articles_to_show.removeClass('hide')
+
+
+  $(".year-block").each(
+    ()->
+      $year_block = $(this)
+      $projects_container = $year_block.next()
+      has_visible_items = $projects_container.find(".project-block:not(.hide)").length > 0
+      if has_visible_items
+        $year_block.removeClass("hide")
+  )

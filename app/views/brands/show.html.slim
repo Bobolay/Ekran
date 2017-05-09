@@ -69,9 +69,9 @@
       - @related_projects.each_with_index do |project, i|
         - break if i > 1
         = render "project", project: project
-    - if @related_projects.count > 0
-    .row.collapse
-      .columns
-        .btn-wrap
-          a.button.green href=projects_brands_path(brands: @article.url_fragment) title=t("brands.all-brand-projects.html-title")
-            = t("brands.all-brand-projects.text")
+    - if @related_projects.count > 2
+      .row.collapse
+        .columns
+          .btn-wrap
+            a.button.green href=projects_brands_path(brands: @article.url_fragment) title=t("brands.all-brand-projects.html-title")
+              = t("brands.all-brand-projects.text")

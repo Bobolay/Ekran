@@ -3,7 +3,7 @@
   p.title консультація
   p.small Запитайте нашого консультанта і отримайте відповідь у найкоротший термін
   
-  form.validate method="post" action=consultation_request_path
+  form.validate method="post" data-action=consultation_request_path
     = input(:consultation_request, :name, required: true)
     = input(:consultation_request, :email, required: true)
     = input(:consultation_request, :phone, required: false)

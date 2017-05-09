@@ -81,10 +81,11 @@ $document.on "ready", ->
 
       submitHandler: (form, e)->
         e.preventDefault()
+        $form = $(form)
         console.log "args: ", arguments
-        url = $(form).attr("action")
-        data = $(form).serializeArray()
-        method = $(form).attr("method")
-        $(form).ajaxSubmit()
-        $(form)[0].reset()
+        url = $form.attr("data-action") || $form.attr("action")
+        data = $form.serializeArray()
+        method = $form.attr("method")
+        $form.ajaxSubmit({url: url})
+        $form[0].reset()
         return show_alert_success()
