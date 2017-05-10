@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root as: "root_without_locale", to: "application#root_without_locale"
   get "admin(/*admin_path)", to: redirect{|params| "/#{ I18n.default_locale}/admin/#{params[:admin_path]}"}
 
-  scope ":locale", locale: /#{I18n.available_locales.map(&:to_s).join("|")}/ do
+  localized do
     controller "forms" do
       post "call_request"
       post "consultation_request"

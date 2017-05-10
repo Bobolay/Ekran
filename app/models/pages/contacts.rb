@@ -1,5 +1,3 @@
 class Pages::Contacts < Cms::Page
-  def url(locale = I18n.locale)
-    "/#{locale}/contacts"
-  end
+  include LocalizedRoutes::UrlHelper::ActiveRecordExtension
 end

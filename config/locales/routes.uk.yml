@@ -1,0 +1,25 @@
+uk:
+  routes:
+    #  media
+    media:
+    blog:
+    news:
+    video:
+
+    # brands
+    brands:
+
+    # partnership
+    partnership:
+
+    # projects
+    projects:
+
+    # services
+    services:
+
+    # about_us
+    about_us: "pro-nas"
+
+    # contacts
+    contacts:

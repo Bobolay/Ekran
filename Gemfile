@@ -140,3 +140,5 @@ gem 'will_paginate', '~> 3.0'
 gem 'ace-rails-ap'
 
 gem 'concise_logging'
+
+gem 'route_translator'

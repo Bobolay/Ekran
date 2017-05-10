@@ -1,5 +1,3 @@
 class Pages::Brands < Cms::Page
-  def url(locale = I18n.locale)
-    "/#{locale}/brands"
-  end
+  include LocalizedRoutes::UrlHelper::ActiveRecordExtension
 end
