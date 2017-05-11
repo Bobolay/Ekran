@@ -72,7 +72,7 @@ class ApplicationController < ActionController::Base
     locale_links = {}
     Cms.config.provided_locales.each do |locale|
       #url = @page_instance.try{|p| v = p.url(locale); v = p.try(:default_url) if v.blank?; if !v.start_with?("/") then v = "/#{v}" end;   ("/#{locale}/#{v}" ) }
-      url = @page_instance.try{ |p| v = p.url(locale); v = p.try(:default_url, locale) if v.blank?; if !v.start_with?("/") then v = "/#{v}" end;  v }
+      url = @page_instance.try{ |p| v = p.url(locale); v = p.try(:default_url, locale) if v.blank?; return nil if v.blank?; if !v.start_with?("/") then v = "/#{v}" end;  v }
 
       locale_links[locale.to_sym] = url
     end
