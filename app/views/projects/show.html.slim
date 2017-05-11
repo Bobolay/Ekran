@@ -4,7 +4,7 @@
     .columns
       .text
         = render_breadcrumbs
-        p.banner-title
+        h1.banner-title
           = @project.multiline_name.present? ? raw(@project.multiline_name) : @project.name
 
 .main-slider-wrapper
