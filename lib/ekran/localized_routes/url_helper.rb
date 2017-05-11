@@ -10,6 +10,9 @@ module LocalizedRoutes
       def url(locale = I18n.locale)
         url_fragment = translations_by_locale[locale].try(:url_fragment)
         resource_key = self.class.name.underscore
+        if url_fragment.blank?
+          return nil
+        end
         url_helpers.send("#{resource_key}_#{locale}_path", id: url_fragment)
       end
     end
