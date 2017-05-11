@@ -28,7 +28,7 @@ class MediaPressEntry < ActiveRecord::Base
   end
 
   def self.base_url(locale = I18n.locale)
-    "/#{locale}/media/video"
+    Cms.url_helpers.send("media_press_#{locale}_path")
   end
 
 

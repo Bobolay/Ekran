@@ -17,9 +17,7 @@ class NewsArticle < ActiveRecord::Base
     pages :home, :media_news, self, NewsArticle.published
   end
 
-  def url(locale = I18n.locale)
-    "/#{locale}/media/news/#{translations_by_locale[locale].try(:url_fragment)}"
-  end
+  include LocalizedRoutes::UrlHelper::ResourceUrl
 
   has_tags
 
@@ -55,7 +53,11 @@ class NewsArticle < ActiveRecord::Base
   end
 
   def self.base_url(locale = I18n.locale)
-    "/#{locale}/media/news"
+    Cms.url_helpers.send("media_news_#{locale}_path")
+  end
+
+  def url(locale = I18n.locale)
+    self.class.base_url + "/" + self.translations_by_locale[locale].try(:url_fragment)
   end
 
   def formatted_release_date

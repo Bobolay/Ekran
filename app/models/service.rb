@@ -21,9 +21,7 @@ class Service < ActiveRecord::Base
     pages :home, :media_blog, self, BlogArticle.published
   end
 
-  def url(locale = I18n.locale)
-    "/#{locale}/services/#{translations_by_locale[locale].try(:url_fragment)}"
-  end
+  include LocalizedRoutes::UrlHelper::ResourceUrl
 
   def self.get(url_fragment)
     self.published.joins(:translations).where(service_translations: { url_fragment: url_fragment, locale: I18n.locale }).first

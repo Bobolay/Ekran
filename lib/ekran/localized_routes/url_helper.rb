@@ -5,6 +5,14 @@ module LocalizedRoutes
         url_helpers.send("#{route_name}_#{locale}_path")
       end
     end
+
+    module ResourceUrl
+      def url(locale = I18n.locale)
+        url_fragment = translations_by_locale[locale].try(:url_fragment)
+        resource_key = self.class.name.underscore
+        url_helpers.send("#{resource_key}_#{locale}_path", id: url_fragment)
+      end
+    end
   end
 end
 

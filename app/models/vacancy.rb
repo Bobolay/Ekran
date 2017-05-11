@@ -22,9 +22,7 @@ class Vacancy < ActiveRecord::Base
     pages :about_us, self
   end
 
-  def url(locale = I18n.locale)
-    "/#{locale}/about_us/#{translations_by_locale[locale].try(:url_fragment)}"
-  end
+  include LocalizedRoutes::UrlHelper::ResourceUrl
 
   def self.get(url_fragment)
     self.published.joins(:translations).where(vacancy_translations: { url_fragment: url_fragment, locale: I18n.locale }).first

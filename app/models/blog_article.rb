@@ -21,10 +21,6 @@ class BlogArticle < ActiveRecord::Base
     pages :home, :media_blog, self, BlogArticle.published
   end
 
-  def url(locale = I18n.locale)
-    "/#{locale}/media/blog/#{translations_by_locale[locale].try(:url_fragment)}"
-  end
-
   has_tags
 
   before_save :initialize_release_date
@@ -63,7 +59,11 @@ class BlogArticle < ActiveRecord::Base
   end
 
   def self.base_url(locale = I18n.locale)
-    "/#{locale}/media/blog"
+    Cms.url_helpers.send("media_blog_#{locale}_path")
+  end
+
+  def url(locale = I18n.locale)
+    self.class.base_url + "/" + self.translations_by_locale[locale].try(:url_fragment)
   end
 
   def formatted_release_date

@@ -38,4 +38,6 @@ class Project < ActiveRecord::Base
   def self.get(url_fragment)
     self.published.joins(:translations).where(project_translations: { url_fragment: url_fragment, locale: I18n.locale }).first
   end
+
+
 end

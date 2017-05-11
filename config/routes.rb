@@ -56,7 +56,7 @@ Rails.application.routes.draw do
       scope ":partnership_article_id" do
         get ":id", action: :promotion, as: :promotion
       end
-      get ":id", action: :show, as: :partnership_case
+      get ":id", action: :show, as: :partnership_article
     end
 
     scope :projects, controller: :projects do

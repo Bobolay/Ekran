@@ -21,9 +21,7 @@ class PartnershipArticle < ActiveRecord::Base
     pages :partnership, self, PartnershipArticle.published
   end
 
-  def url(locale = I18n.locale)
-    "/#{locale}/partnership/#{translations_by_locale[locale].try(:url_fragment)}"
-  end
+  include LocalizedRoutes::UrlHelper::ResourceUrl
 
   def self.get(url_fragment)
     self.published.joins(:translations).where(partnership_article_translations: { url_fragment: url_fragment, locale: I18n.locale }).first
