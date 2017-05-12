@@ -24,7 +24,8 @@ class Brand < ActiveRecord::Base
   has_seo_tags
   has_sitemap_record
   has_cache do
-    pages :home, :brands, self, Brand.published
+    #pages Pages.all_instances, self, Brand.published, BlogArticle.published, NewsArticle.published, Service.published, Project.published, Promotion.published, PartnershipArticle.published, Vacancy.published
+    pages :all
   end
 
   include LocalizedRoutes::UrlHelper::ResourceUrl
