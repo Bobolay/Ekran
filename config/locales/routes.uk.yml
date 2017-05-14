@@ -3,23 +3,24 @@ uk:
     #  media
     media:
     blog:
-    news:
+    news: "novyny"
     video:
+    press: "pressa"
 
     # brands
-    brands:
+    brands_index: "vikonni-systemy"
 
     # partnership
-    partnership:
+    partnership: "partnerstvo"
 
     # projects
-    projects:
+    projects: "proekty-viknosvit"
 
     # services
-    services:
+    services: "servis"
 
     # about_us
-    about_us: "pro-nas"
+    about_us: "vyrobnyk-vikon"
 
     # contacts
-    contacts:
+    contacts: "kontakty"
