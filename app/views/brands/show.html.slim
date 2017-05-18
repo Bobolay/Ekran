@@ -47,6 +47,19 @@
         a.brand-link href=@article.brand_url target="_blank"
           = @article.brand_url
           = inline_svg "svg/ext-link.svg"
+        - if @article.downloads.any?
+          .downloads
+            - @article.downloads.each do |asset|
+              .download
+                p.brand-link-title
+                  = raw asset.data_alt
+                .download-info-and-button
+                  .size.dib
+                    = formatted_file_type_and_size(asset.data)
+                  a.button.green href=asset.url
+                    |Завантажити
+
+
 
     .columns
       .clearfix.partner-navigation

@@ -30,6 +30,8 @@ class Brand < ActiveRecord::Base
 
   include LocalizedRoutes::UrlHelper::ResourceUrl
 
+  has_attachments :downloads
+
   def self.get(url_fragment)
     self.published.featured.joins(:translations).where(brand_translations: { url_fragment: url_fragment, locale: I18n.locale }).first
   end

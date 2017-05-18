@@ -619,6 +619,7 @@ module RailsAdminDynamicConfig
             field :bg_svg_icon
             field :article_image
             field :translations, :globalize_tabs
+            field :downloads
             field :seo_tags
           end
         end

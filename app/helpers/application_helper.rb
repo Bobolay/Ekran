@@ -117,4 +117,12 @@ module ApplicationHelper
       content_tag("link", "", rel: "canonical", href: canonical_url)
     end
   end
+
+  def formatted_file_type_and_size(attachment)
+    file_type = attachment.path.split("/").last.split(".").last
+    file_size_in_mb = (attachment.size.to_f / 1024 / 1024).round(2)
+    formatted_file_size = "#{file_size_in_mb} MB"
+
+    "<span>#{file_type}&nbsp;</span>(#{formatted_file_size})".html_safe
+  end
 end
