@@ -7,9 +7,11 @@
       .bg-color class=("visible" if i == 0) class=("bg-color-#{brand.code_name}" if brand.code_name.present?)
 
   ul.brands-slider
-    - @featured_brands.each do |brand|
+    - @featured_brands.each_with_index do |brand, i|
       li
-        = raw t("home.brands.header")
+        - header_tag = i == 0 ? :h2 : :p
+        = content_tag(header_tag, t("home.brands.header-text"), class: "wrapper-small-title")
+
         p.brand-header
           = brand.home_slide_name
         .row

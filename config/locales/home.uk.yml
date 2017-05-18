@@ -33,18 +33,15 @@ uk:
           ми розпочали з того, що стали першими
         </p>
     brands:
-      header: |
-        <p class="wrapper-small-title">
-          Наші бренди
-        </p>
+      header-text: "Наші бренди"
       brand-link:
         html-title: "Перейти на веб-сторінку партнера"
         text: "Дізнатись більше"
     projects:
       header: |
-        <p class="wrapper-small-title">
+        <h2 class="wrapper-small-title">
           Наші проекти
-        </p>
+        </h2>
       project-link:
         text: "Подивитись проект"
       view-all:
@@ -53,9 +50,9 @@ uk:
       project-block:
         html-title: "Перейти на сторінку з даним проектом"
     services: |
-      <p class="wrapper-small-title">
+      <h2 class="wrapper-small-title">
         Сервіс
-      </p>
+      </h2>
       <div class="row">
         <div class="columns medium-3 medium-push-2">
           <p class="bold-underlined">
@@ -80,9 +77,9 @@ uk:
 
     partnership:
       first-block: |
-        <p class="smaller">
+        <h2 class="smaller">
           Нашим партнерам
-        </p>
+        </h2>
         <p class="bold-title">
           працюємо командою&nbsp;—<br>заробляємо<br>разом
         </p>
@@ -111,8 +108,8 @@ uk:
         html-title: "Перейти на сторінку всіх відео"
         text: "Всі відео"
     contacts:
-      header: "Як нас знайти"
-      main-office: "головний офіс"
+      header: "Адреса виробництва вікон"
+      main-office: "Головний офіс"
       address: "вул. Сколівська 7/б, м. Стрий,<br/>Львівська обл., Україна, 82400"
       labels:
         phone: "телефон"

@@ -28,20 +28,18 @@ en:
           ми розпочали з того, що стали першими
         </p>
     brands:
-      header: |
-        <p class="wrapper-small-title">
-          Our brands
-        </p>
+      header-text: "Our brands"
+
     projects:
       header: |
-        <p class="wrapper-small-title">
+        <h2 class="wrapper-small-title">
           Our projects
-        </p>
+        </h2>
 
     services: |
-      <p class="wrapper-small-title">
+      <h2 class="wrapper-small-title">
         Services
-      </p>
+      </h2>
       <div class="row">
         <div class="columns medium-3 medium-push-2">
           <p class="bold-underlined">

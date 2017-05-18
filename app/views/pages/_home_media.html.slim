@@ -1,5 +1,5 @@
 .media-wrapper.wrapper-inner-indent
-  p.wrapper-small-title
+  h2.wrapper-small-title
     = t("home.media.header")
   .tab-buttons
     .tab-button.active
@@ -11,21 +11,22 @@
 
   .row.tab-content-wrapper
     .columns.medium-12.large-4.float-right.tab-content.active
-      p.underlined-title
+      h3.underlined-title
         = t("home.news.header")
       - @news.each do |news_article|
-        a.new-block title="Перейти на сторінку новини" href=news_article.url
-          p.larger
-            = news_article.name
-          p.date
-            = news_article.formatted_release_date
-          .hover-arrow = inline_svg "svg/key-arrow-right.svg"
+        h4
+          a.new-block title="Перейти на сторінку новини" href=news_article.url
+            p.larger
+              = news_article.name
+            p.date
+              = news_article.formatted_release_date
+            .hover-arrow = inline_svg "svg/key-arrow-right.svg"
 
       a.button.green href=media_news_path title=t("home.news.view-all.html-title")
         = t("home.news.view-all.text")
 
     .columns.medium-12.large-7.float-left.tab-content
-      p.underlined-title
+      h3.underlined-title
         = t("home.blog.header")
       - @blog_articles.each do |article|
         a.blog-block title="Перейти на сторінку блогу" href=article.url
@@ -44,7 +45,7 @@
 
     - if @featured_video
       .columns.medium-12.large-7.float-left.tab-content.media-wrapper.video-wrapper
-        p.underlined-title
+        h3.underlined-title
           = t("home.video.header")
         .img-container
           = youtube_video_iframe(@featured_video.youtube_video_id)
