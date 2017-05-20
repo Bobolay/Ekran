@@ -68,7 +68,7 @@ Rails.application.routes.draw do
       get ":id", action: :show, as: :project
     end
 
-    get "services_index", to: "services", as: :services
+    get "services_index", to: "services#index", as: :services
     get "services/:id", to: "services#show", as: :service
 
     scope :about_us, controller: :about_us do
