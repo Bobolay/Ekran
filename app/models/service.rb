@@ -18,7 +18,7 @@ class Service < ActiveRecord::Base
   has_seo_tags
   has_sitemap_record
   has_cache do
-    pages :home, :media_blog, self, BlogArticle.published
+    pages :home, :services, self, Service.published
   end
 
   include LocalizedRoutes::UrlHelper::ResourceUrl
