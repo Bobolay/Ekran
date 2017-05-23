@@ -141,7 +141,6 @@ module RailsAdminDynamicConfig
         config.model Cms::SitemapElement do
           visible false
 
-          field :display_on_sitemap
           field :changefreq
           field :priority
         end
