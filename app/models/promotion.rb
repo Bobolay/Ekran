@@ -20,8 +20,10 @@ class Promotion < ActiveRecord::Base
   end
 
   def url(locale = I18n.locale)
+    url_fragment = translations_by_locale[locale].try(:url_fragment)
+    return nil if url_fragment.blank?
     promotions_root = PartnershipArticle.promotions.url
-    promotions_root + "#{translations_by_locale[locale].try(:url_fragment)}"
+    promotions_root + "/#{url_fragment}"
   end
 
   def start_date
