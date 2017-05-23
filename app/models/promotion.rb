@@ -21,7 +21,7 @@ class Promotion < ActiveRecord::Base
   end
 
   has_cache do
-    pages "/partnership/promotions", self, Promotion.published
+    pages PartnershipArticle.promotions, self, Promotion.published
   end
 
   def url(locale = I18n.locale)
