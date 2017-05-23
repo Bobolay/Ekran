@@ -316,6 +316,7 @@ module RailsAdminDynamicConfig
           field :large_image
           field :avatar
           field :seo_tags
+          field :sitemap_record
         end
 
         config.model_translation Service do
@@ -518,6 +519,7 @@ module RailsAdminDynamicConfig
           field :emails
           field :phones
           field :seo_tags
+          field :sitemap_record
         end
 
         config.model_translation PartnershipArticle do

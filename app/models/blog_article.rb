@@ -17,6 +17,11 @@ class BlogArticle < ActiveRecord::Base
 
   has_seo_tags
   has_sitemap_record
+
+  def self.default_priority
+    0.7
+  end
+
   has_cache do
     pages :home, :media_blog, self, BlogArticle.published
   end

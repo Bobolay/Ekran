@@ -4,6 +4,14 @@ Cms.config.provided_locales do
   [:uk, :en]
 end
 
+Cms.config.default_sitemap_priority do
+  0.9
+end
+
+Cms.config.default_sitemap_change_freq do
+  :monthly
+end
+
 Cms.config.use_translations true
 
 def tags_and_pagination_routes(scope = nil, route_prefix = :articles, action= :index, include_ajax = true)

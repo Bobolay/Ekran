@@ -21,6 +21,14 @@ class Project < ActiveRecord::Base
   has_seo_tags
   has_sitemap_record
 
+  def self.default_priority
+    0.7
+  end
+
+  def self.default_change_freq
+    :yearly
+  end
+
   has_cache do
     pages :home, :projects, Project.published, self
   end
