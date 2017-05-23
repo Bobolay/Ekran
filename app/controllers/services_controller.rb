@@ -1,5 +1,6 @@
 class ServicesController < ApplicationController
   before_action :add_services_breadcrumb
+  caches_page :index, :show
 
   def index
     @render_footer = false

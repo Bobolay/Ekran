@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :add_projects_breadcrumb
+  caches_page :index, :show
 
   def index
     set_page_metadata(:projects)

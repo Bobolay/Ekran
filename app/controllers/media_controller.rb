@@ -4,6 +4,8 @@ class MediaController < ApplicationController
   before_action :add_blog_breadcrumb, only: [:blog_index, :blog_show]
   before_action :add_news_breadcrumb, only: [:news_index, :news_show]
   before_action :set_featured_articles, only: [:blog_index, :news_index, :video_index, :press_index]
+  caches_page :index, :blog_index, :blog_show, :news_index, :news_show, :video_index, :press_index
+
   def index
     @render_footer = false
     set_page_metadata(:media)

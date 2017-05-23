@@ -1,5 +1,6 @@
 class BrandsController < ApplicationController
   before_action :add_brands_breadcrumb, only: :show
+  caches_page :index, :show
 
   def index
     set_page_metadata(:brands)

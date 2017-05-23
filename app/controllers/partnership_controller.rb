@@ -1,5 +1,6 @@
 class PartnershipController < ApplicationController
   before_action :add_partnership_breadcrumb
+  caches_page :index, :show, :promotion
 
   def index
     set_page_metadata(:partnership)
