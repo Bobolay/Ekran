@@ -15,6 +15,15 @@ class Promotion < ActiveRecord::Base
 
   has_seo_tags
   has_sitemap_record
+
+  def self.default_priority
+    0.7
+  end
+
+  def self.default_change_freq
+    :monthly
+  end
+
   has_cache do
     pages "/partnership/promotions", self, Promotion.published
   end
