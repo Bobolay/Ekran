@@ -79,4 +79,10 @@ class ApplicationController < ActionController::Base
     @_locale_links = locale_links
   end
 
+  caches_page :robots_txt
+
+  def robots_txt
+
+  end
+
 end
