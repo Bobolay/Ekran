@@ -4,7 +4,7 @@
     .columns
       .text
         = render_breadcrumbs
-        p.banner-title
+        h1.banner-title
           | партнерство
         p.main-text Компанія «Екран-Вікносвіт» відкрита до співпраці з магазинами, салонами та підприємствами, що здійснюють монтаж і обслуговування віконно-дверних конструкцій.
 
@@ -18,7 +18,7 @@
           a.partner-block.floated href=article.url
             .img-background style="background-image: url(#{article.list_item_image.url(:large)})"
             .person-type
-              p.larger
+              h2.larger
                 = article.list_item_title
 
       = raw @partnership_text

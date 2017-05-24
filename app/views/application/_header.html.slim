@@ -1,7 +1,7 @@
 .header-container
   - if @show_header_h1
     h1.header-h1
-      = t("brands.header")
+      = @header_h1
   .logo-and-locales-bar
     a.logo title="Перейти на головну сторінку" href=root_path = inline_svg "svg/header-logo.svg"
     - if @_locale_links.try(:any?)

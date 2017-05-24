@@ -7,6 +7,9 @@ class ServicesController < ApplicationController
     @services = Service.published
     set_page_metadata(:services)
     initialize_locale_links
+
+    @header_h1 = I18n.t("services.header")
+    @show_header_h1 = true
   end
 
   def show

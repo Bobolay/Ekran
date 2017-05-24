@@ -7,6 +7,7 @@ class BrandsController < ApplicationController
     initialize_locale_links
     @featured_brands = Brand.published.featured
     @other_brands = Brand.published.unfeatured
+    @header_h1 = I18n.t("brands.header")
     @show_header_h1 = true
   end
 

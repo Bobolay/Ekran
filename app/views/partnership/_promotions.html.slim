@@ -7,7 +7,7 @@
         a.promotion-block.floated class=("past" if promotion.expired?) href=promotion.url
           .img-container
             .img-background style="background-image: url(#{promotion.avatar.url(:list)})"
-          p.title
+          h2.title
             = promotion.name
           p.label
             - if promotion.expired?
