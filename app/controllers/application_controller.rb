@@ -82,7 +82,7 @@ class ApplicationController < ActionController::Base
   caches_page :robots_txt
 
   def robots_txt
-    render layout: false
+    render layout: false, template: "robots.txt"
   end
 
 end
