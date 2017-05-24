@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "robots", to: "applications#robots_txt", as: :robots_txt, format: "txt"
+  get "robots", to: "application#robots_txt", as: :robots_txt, format: "txt"
   get "sitemap", to: "sitemap#index", as: :sitemap_xml, format: "xml"
 
   mount Cms::Engine => '/'
