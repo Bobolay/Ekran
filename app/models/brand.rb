@@ -23,6 +23,11 @@ class Brand < ActiveRecord::Base
 
   has_seo_tags
   has_sitemap_record
+
+  def show_on_sitemap
+    featured?
+  end
+
   has_cache do
     #pages Pages.all_instances, self, Brand.published, BlogArticle.published, NewsArticle.published, Service.published, Project.published, Promotion.published, PartnershipArticle.published, Vacancy.published
     pages :all
