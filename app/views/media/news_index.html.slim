@@ -8,7 +8,7 @@
       
       .row
         - @paginated_entries.each do |entry|
-          = render "news_article", article: entry
+          = render "news_article", article: entry, title_tag: :h2
 
       
       = render "media_pager", collection: @paginated_entries

@@ -1,7 +1,8 @@
+- if !defined?(title_tag)
+  - title_tag = :p
 .columns.medium-6
   a.new-block href=article.url
-    p.title
-      = article.name
+    = content_tag(title_tag, article.name, class: "title")
     .main-text
       = raw article.short_description
     p.date
