@@ -10,6 +10,9 @@ class MediaController < ApplicationController
     @render_footer = false
     set_page_metadata(:media)
     initialize_locale_links
+
+    @header_h1 = I18n.t("media.header")
+    @show_header_h1 = true
   end
 
   def blog_index
