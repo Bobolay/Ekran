@@ -1,5 +1,7 @@
 - align_left = !defined?(align) || align.to_sym == :left
 - align_right = !align_left
+- if !defined?(title_tag)
+  - title_tag = :p
 a.blog-block href=article.url class=("text-align-right" if align_right)
   - if align_left
     .img
@@ -7,8 +9,7 @@ a.blog-block href=article.url class=("text-align-right" if align_right)
   .text
     p.small
       = article.tags.map(&:name).join(", ")
-    p.blog-title
-      = article.name
+    = content_tag(title_tag, article.name, class: "blog-title")
     - if !defined?(short_description) || short_description == true
       .main-text
         = raw article.short_description

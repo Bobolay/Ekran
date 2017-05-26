@@ -9,6 +9,6 @@
       = render "tags"
 
       - @paginated_articles.each do |article|
-        = render "blog_article", article: article
+        = render "blog_article", article: article, title_tag: :h2
 
       = render "media_pager", collection: @paginated_entries
