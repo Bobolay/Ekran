@@ -16,6 +16,8 @@ class ProjectsController < ApplicationController
     if brand_url_fragments.count > 0
       @selected_brand_ids = Brand.joins(:translations).where(brand_translations: { locale: I18n.locale, url_fragment: brand_url_fragments }).pluck(:id)
     end
+    @header_h1 = I18n.t("projects.header")
+    @show_header_h1 = true
   end
 
   def show
