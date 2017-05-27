@@ -18,7 +18,8 @@ class PartnershipArticle < ActiveRecord::Base
   has_seo_tags
   has_sitemap_record
   has_cache do
-    pages :home, :partnership, self, PartnershipArticle.published
+    #pages :home, :partnership, self, PartnershipArticle.published
+    pages :all
   end
 
   include LocalizedRoutes::UrlHelper::ResourceUrl
