@@ -10,7 +10,8 @@
     - @featured_brands.each_with_index do |brand, i|
       li
         - header_tag = i == 0 ? :h2 : :p
-        = content_tag(header_tag, t("home.brands.header-text"), class: "wrapper-small-title")
+        - header_tag_content = i == 0 ? link_to(t("home.brands.header-text"), Pages.brands.url) : t("home.brands.header-text")
+        = content_tag(header_tag, header_tag_content, class: "wrapper-small-title")
 
         p.brand-header
           = brand.home_slide_name
