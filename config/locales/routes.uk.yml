@@ -9,6 +9,7 @@ uk:
 
     # brands
     brands_index: "vikonni-systemy"
+    brands: "vikonni-systemy"
 
     # partnership
     partnership: "partnerstvo"
@@ -18,7 +19,7 @@ uk:
 
     # services
     services_index: "servis"
-    services:
+    services: "servis"
 
     # about_us
     about_us: "vyrobnyk-vikon"
