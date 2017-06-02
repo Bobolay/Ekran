@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 
   def render_not_found
     @render_footer = false
-    render template: "errors/not_found.html.slim"
+    render template: "errors/not_found.html.slim", status: 404
   end
 
   def admin_panel?
