@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get "robots", to: "application#robots_txt", as: :robots_txt, format: "txt"
   get "sitemap", to: "sitemap#index", as: :sitemap_xml, format: "xml"
 
+  post "push", to: "media#push", as: :push
+
   mount Cms::Engine => '/'
   mount Ckeditor::Engine => '/ckeditor'
   root as: "root_without_locale", to: "application#root_without_locale"

@@ -1,0 +1,1 @@
+DECODED_VAPID_PUBLIC_KEY = ENV['VAPID_PUBLIC_KEY'].try{|s| Base64.urlsafe_decode64(s).bytes }

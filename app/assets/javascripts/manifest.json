@@ -1,0 +1,13 @@
+{
+    "name": "EkranVK",
+    "gcm_sender_id": "1006629465533",
+    "short_name": "ekranvk",
+    "start_url": "/",
+    "icons": [
+    {
+        "src": "/assets/favicon/favicon-196x196-0e9f66403794f8e6c787653de8afd761889779839dc114911a909e7662b12ed7.png",
+        "sizes": "196x196",
+        "type": "image/png"
+    }
+]
+}

@@ -9,6 +9,8 @@ html
     = stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
+    link rel="manifest" href="/manifest.json"
+
     link rel="icon" type="image/png" href=asset_path("favicon/favicon-16x16.png") sizes="16x16"
     link rel="icon" type="image/png" href=asset_path("favicon/favicon-32x32.png") sizes="32x32"
     link rel="icon" type="image/png" href=asset_path("favicon/favicon-76x76.png") sizes="76x76"

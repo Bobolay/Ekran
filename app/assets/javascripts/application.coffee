@@ -3,6 +3,7 @@
 #= require jquery_ujs
 
 #= require global
+#= require keys.js.erb
 
 # require turbolinks
 # require ga-turbolinks
@@ -58,3 +59,4 @@
 #= require sticky-menu
 #= require input-file-add
 #= require countdown_counter
+#= require register_service_worker
