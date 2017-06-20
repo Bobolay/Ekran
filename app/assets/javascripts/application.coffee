@@ -3,7 +3,7 @@
 #= require jquery_ujs
 
 #= require global
-#= require keys.js.erb
+#= require keys.js
 
 # require turbolinks
 # require ga-turbolinks
