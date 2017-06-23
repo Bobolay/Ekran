@@ -1,6 +1,6 @@
 .media-wrapper.wrapper-inner-indent
   h2.wrapper-small-title
-    = t("home.media.header")
+    = I18n.t("home.media.header")
   .tab-buttons
     .tab-button.active
       = t("home.news.header")
@@ -22,7 +22,7 @@
               = news_article.formatted_release_date
             .hover-arrow = inline_svg "svg/key-arrow-right.svg"
 
-      a.button.green href=media_news_path title=t("home.news.view-all.html-title")
+      a.button.green href=media_news_path title=I18n.t("home.news.view-all.html-title")
         = t("home.news.view-all.text")
 
     .columns.medium-12.large-7.float-left.tab-content
