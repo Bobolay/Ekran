@@ -9,6 +9,22 @@ I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+module I18n
+  class MyExceptionHandler
+    def self.call(exception, locale, key, options)
+      case exception
+        when MissingTranslation
+          #exception.message
+          key.split(".").last
+        when Exception
+          raise exception
+        else
+          throw :exception, exception
+      end
+    end
+  end
+end
+
 module Ekran
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -36,6 +52,12 @@ module Ekran
 
     # file_editor
     config.assets.precompile += %w(fonts/octicons/octicons.woff cms/file_editor.css cms/file_editor.js)
+
+    #config.i18n.config.missing_interpolation_argument_handler = Proc.new do |key|
+    #  "#{key} is missing"
+    #end
+
+    I18n.config.exception_handler = I18n::MyExceptionHandler
 
   end
 end
