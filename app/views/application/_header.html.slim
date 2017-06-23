@@ -9,7 +9,7 @@
         - @_locale_links.each do |locale, url|
           - active = locale == I18n.locale.to_sym
           - if !active
-            a href=url title=t("components.locales-bar.locale-html-title.#{locale}")
+            a href=url title=(t("components.locales-bar.locale-html-title.#{locale}", raise: true) rescue locale.to_s)
               = Cms.config.locale_names[locale]
   .right-part
     a.dib title="Зв'язатись з нами" href="tel:0800502214"
