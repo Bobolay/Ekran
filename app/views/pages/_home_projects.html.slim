@@ -2,7 +2,7 @@
   = raw t("home.projects.header")
   .clearfix.projects
     - @home_projects.each do |project|
-      a.project-block.floated href=project.url title=t("home.projects.project-block.html-title")
+      a.project-block.floated href=project.url title=I18n.t("home.projects.project-block.html-title")
         .img-background style="background-image: url(#{project.image.url(:large)})"
         .text-block
           p.project-performer
@@ -19,5 +19,5 @@
     .row
       .columns
         .btn-wrap
-          a.button.green href=projects_path title=t("home.projects.view-all.html-title")
+          a.button.green href=projects_path title=I18n.t("home.projects.view-all.html-title")
             = t("home.projects.view-all.text")
