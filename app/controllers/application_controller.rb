@@ -55,7 +55,7 @@ class ApplicationController < ActionController::Base
 
   def initialize_menu_resources
     @partnership_articles = PartnershipArticle.published
-    @menu_featured_brands = Brand.published.featured.joins(:translations).where("brand_translations.brand_url IS NOT NULL AND brand_translations.brand_url <> ''")
+    @menu_featured_brands = Brand.published.featured.joins(:translations).where("brand_translations.brand_url IS NOT NULL AND brand_translations.brand_url <> ''").uniq
   
     @featured_brand_urls = Brand.published.featured.joins(:translations).uniq.map{|b| b.url }
   end
