@@ -8,7 +8,6 @@ uk:
     press: "pressa"
 
     # brands
-    brands_index: "vikonni-systemy"
     brands: "vikonni-systemy"
 
     # partnership
@@ -18,7 +17,6 @@ uk:
     projects: "proekty-viknosvit"
 
     # services
-    services_index: "servis"
     services: "servis"
 
     # about_us

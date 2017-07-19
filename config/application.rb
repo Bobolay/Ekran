@@ -2,9 +2,28 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+require "i18n/backend/fallbacks"
+I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+
+module I18n
+  class MyExceptionHandler
+    def self.call(exception, locale, key, options)
+      case exception
+        when MissingTranslation
+          #exception.message
+          key.split(".").last
+        when Exception
+          raise exception
+        else
+          throw :exception, exception
+      end
+    end
+  end
+end
 
 module Ekran
   class Application < Rails::Application
@@ -21,6 +40,7 @@ module Ekran
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.available_locales = [:uk, :ru, :en]
     config.i18n.default_locale = :uk
+    config.i18n.fallbacks = [:en]
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
@@ -32,6 +52,12 @@ module Ekran
 
     # file_editor
     config.assets.precompile += %w(fonts/octicons/octicons.woff cms/file_editor.css cms/file_editor.js)
+
+    #config.i18n.config.missing_interpolation_argument_handler = Proc.new do |key|
+    #  "#{key} is missing"
+    #end
+
+    I18n.config.exception_handler = I18n::MyExceptionHandler
 
   end
 end

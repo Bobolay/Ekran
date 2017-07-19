@@ -27,10 +27,7 @@ Rails.application.routes.draw do
 
     root to: "pages#index"
 
-    controller :brands do
-      get "brands_index", as: :brands, action: :index
-      get "brands/:id", as: :brand, action: :show
-    end
+    resources :brands, only: [:index, :show]
 
     controller :media do
       tags_and_pagination_routes("media/blog", :media_blog, :blog_index)
@@ -71,8 +68,7 @@ Rails.application.routes.draw do
       get ":id", action: :show, as: :project
     end
 
-    get "services_index", to: "services#index", as: :services
-    get "services/:id", to: "services#show", as: :service
+    resources :services, only: [:index, :show]
 
     scope :about_us, controller: :about_us do
       root action: :about_us, as: :about_us

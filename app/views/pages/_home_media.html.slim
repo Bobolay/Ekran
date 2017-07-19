@@ -21,8 +21,7 @@
             p.date
               = news_article.formatted_release_date
             .hover-arrow = inline_svg "svg/key-arrow-right.svg"
-
-      a.button.green href=media_news_path title=t("home.news.view-all.html-title")
+      a.button.green href=media_news_path title=I18n.t("home.news.view-all.html-title")
         = t("home.news.view-all.text")
 
     .columns.medium-12.large-7.float-left.tab-content
@@ -39,7 +38,7 @@
               = article.name
             p.date
               = article.formatted_release_date
-      a.button.green.button-top-indent href=media_blog_path title=t("home.blog.view-all.html-title")
+      a.button.green.button-top-indent href=media_blog_path title=I18n.t("home.blog.view-all.html-title")
         = t("home.blog.view-all.text")
 
 
@@ -49,5 +48,5 @@
           = t("home.video.header")
         .img-container
           = youtube_video_iframe(@featured_video.youtube_video_id)
-        a.button.green.button-top-indent href=media_video_path title=t("home.video.view-all.html-title")
+        a.button.green.button-top-indent href=media_video_path title=I18n.t("home.video.view-all.html-title")
           = t("home.video.view-all.text")

@@ -26,7 +26,7 @@
               .line
               = raw brand.short_description
             - if brand.brand_url.present?
-              a.text-link title=t("home.brands.brand-link.html-title") href=brand.url
+              a.text-link title=I18n.t("home.brands.brand-link.html-title") href=brand.url
                 = t("home.brands.brand-link.text")
                 = inline_svg "svg/ext-link.svg"
 

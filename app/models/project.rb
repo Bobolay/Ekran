@@ -33,6 +33,8 @@ class Project < ActiveRecord::Base
     pages :home, :projects, Project.published, self
   end
 
+  include LocalizedRoutes::UrlHelper::ResourceUrl
+
   before_save :initialize_date
 
   def initialize_date

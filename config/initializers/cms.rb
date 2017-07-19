@@ -4,6 +4,10 @@ Cms.config.provided_locales do
   [:uk, :en]
 end
 
+Cms.config.clear_cache_for_locales do
+  Cms.config.provided_locales
+end
+
 Cms.config.default_sitemap_priority do
   0.9
 end
