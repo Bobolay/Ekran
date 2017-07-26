@@ -1,7 +1,7 @@
 .popup-container.design-request-popup
   .close-popup = inline_svg "svg/cross.svg"
-  p.title заявка на замір
-  p.small Наш фахівець безкоштовно зробить замір Ваших вікон і допоможе зробити оптимальний вибір за ціною та якістю
+  p.title = t("design_popup.title")
+  p.small = t("design_popup.description")
   
   form.validate method="post" data-action=meter_request_path(locale: I18n.locale) action="/"
     = input(:meter_request, :name, required: true)
@@ -11,12 +11,12 @@
     = input(:meter_request, :comment, type: :text, input_html: {rows: 4})
 
 
-    button.button.green type="submit" value="Submit" Надіслати
+    button.button.green type="submit" value="Submit" = t("popups_general.send_btn")
 
   .bottom.clearfix
     .request-button.call-me-back-button.floated
       = inline_svg "svg/menu-contact-icon-2.svg"
-      p перетелефонувати мені
+      = t("components.call_request")
     .request-button.chat-online-button.floated-right
       = inline_svg "svg/menu-contact-icon-3.svg"
-      p консультація
+      = t("components.chat_request")

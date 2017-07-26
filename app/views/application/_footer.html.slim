@@ -1,28 +1,25 @@
 .footer-menu
   .row
     .columns.large-9
-      a.footer-menu-link.dib href=about_us_path title="Дізнайтесь більше про нас" Про нас
-      a.footer-menu-link.dib href=projects_path title="Перегляньте наше портфоліо" Проекти
-      a.footer-menu-link.dib href=brands_path title="Ознайомтесь з нашими брендами" Бренди
-      a.footer-menu-link.dib href=partnership_path title="Оцініть переваги від співпраці з нами" Партнерам
-      a.footer-menu-link.dib href=services_path title="Ознайомтесь з послугами, які ми надаєм" Сервіс
-      a.footer-menu-link.dib href=media_path title="Відкрийте для себе багато цікавого в даній сфері" Медіа
-      a.footer-menu-link.dib href=contacts_path title="Наша контактна інформація" Контакти
+      a.footer-menu-link.dib href=about_us_path title="Дізнайтесь більше про нас" = raw t("menu.about_us")
+      a.footer-menu-link.dib href=projects_path title="Перегляньте наше портфоліо" = raw t("menu.projects")
+      a.footer-menu-link.dib href=brands_path title="Ознайомтесь з нашими брендами" = raw t("menu.brands")
+      a.footer-menu-link.dib href=partnership_path title="Оцініть переваги від співпраці з нами" = raw t("menu.partnership")
+      a.footer-menu-link.dib href=services_path title="Ознайомтесь з послугами, які ми надаєм" = raw t("menu.services")
+      a.footer-menu-link.dib href=media_path title="Відкрийте для себе багато цікавого в даній сфері" = raw t("menu.media")
+      a.footer-menu-link.dib href=contacts_path title="Наша контактна інформація" = raw t("menu.contacts")
 
     .columns.medium-12.large-3.infoline
       a.dib.icon = inline_svg "svg/headphones.svg"
       a.dib title="Зв'язатись з нами" href="tel:0800502214"
         p.larger 0 800 50 22 14
-        p.small Інфолінія
+        p.small = raw t("components.infoline")
 
 .footer
   .center-part
     .logo = inline_svg "svg/footer-logo.svg"
-    p.larger
-      | компанія
-      br
-      | «екран-вікносвіт»
-    p.smaller Бездоганна якість та відмінний сервіс &mdash; кожному клієнту!
+    = raw t("footer.title")
+    p.smaller = t("footer.subtitle")
     .partner-link-container
       - @menu_featured_brands.each do |b|
         a.partner-link.dib title="Перейти на веб-сторінку партнера" href=b.url
@@ -34,8 +31,8 @@
         = render "social_links"
       .clearfix
         .floated
-          p.small © Екран &mdash; віконні конструкції 2009–2017. Всi права захищенi.
+          p.small = raw t("footer.reserved_rights")
         .floated-right
           a.studio-icon.dib href="http://voroninstudio.eu/uk" target="_blank" title="Перейти на сайт студії-розробника" = inline_svg "svg/studio-logo.svg"
-          p.small.dib Розроблено в&nbsp;
-          a.small.dib href="http://voroninstudio.eu/uk" target="_blank" title="Перейти на сайт студії-розробника" студії М. Вороніна
+          p.small.dib = raw t("footer.designed_text")
+          a.small.dib href="http://voroninstudio.eu/uk" target="_blank" title=I18n.t("footer.designed_link_html_title") = raw t("footer.designed_link")

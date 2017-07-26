@@ -1,5 +1,11 @@
 en:
   home:
+
+    slider:
+      contact-us-popup-link:
+        html-title: "Contact us"
+        text: "Contact us"
+
     about:
       header: |
         <p class="wrapper-small-title">

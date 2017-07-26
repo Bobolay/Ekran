@@ -33,12 +33,9 @@
       .brand-img style="background-image: url(#{asset_path('photo/brand-img-1.png')})"
       .text
         .brand-icon = inline_svg "svg/brand-bg-logo-1.svg"
-        p.brand-name
-          | карпатські
-          br
-          | вікна
+        = raw t("menu.brand_1")
         .text-link
-          | Дізнатись більше
+          = raw t("menu.learn_more")
 
     a.menu-brand href=brand_urls[1]
       .bg-color style="background: #A65630"
@@ -46,12 +43,9 @@
       .brand-img style="background-image: url(#{asset_path('photo/brand-img-2.png')})"
       .text
         .brand-icon = inline_svg "svg/brand-bg-logo-2.svg"
-        p.brand-name
-          | вікна
-          br
-          | salamander
+        = raw t("menu.brand_2")
         .text-link
-          | Дізнатись більше
+          = raw t("menu.learn_more")
 
     a.menu-brand href=brand_urls[2]
       .bg-color style="background: #3F517A"
@@ -59,14 +53,9 @@
       .brand-img style="background-image: url(#{asset_path('photo/brand-img-3.png')})"
       .text
         .brand-icon = inline_svg "svg/brand-bg-logo-3.svg"
-        p.brand-name
-          | алюмінієві
-          br
-          | фасади
-          br
-          | alfabud
+        = raw t("menu.brand_3")
         .text-link
-          | Дізнатись більше
+          = raw t("menu.learn_more")
 
   .bottom-part
     .row
@@ -76,12 +65,12 @@
 
         .request-button.design-request-button.dib.animate
           = inline_svg "svg/menu-contact-icon-1.svg"
-          p Заявка на замір
+          p = t("components.design_request")
         .line.dib.animate
         .request-button.call-me-back-button.dib.animate
           = inline_svg "svg/menu-contact-icon-2.svg"
-          p Перетелефонувати мені
+          p = t("components.call_request")
         .line.dib.animate
         .request-button.chat-online-button.dib.animate
           = inline_svg "svg/menu-contact-icon-3.svg"
-          p Консультація
+          p = t("components.chat_request")

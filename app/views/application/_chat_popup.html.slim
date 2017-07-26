@@ -1,7 +1,7 @@
 .popup-container.chat-popup
   .close-popup = inline_svg "svg/cross.svg"
-  p.title консультація
-  p.small Запитайте нашого консультанта і отримайте відповідь у найкоротший термін
+  p.title = t("chat_popup.title")
+  p.small = t("chat_popup.description")
   
   form.validate method="post" data-action=consultation_request_path action="/"
     = input(:consultation_request, :name, required: true)
@@ -9,12 +9,12 @@
     = input(:consultation_request, :phone, required: false)
     = input(:consultation_request, :comment, type: :text, input_html: {rows: 4})
 
-    button.button.green type="submit" value="Submit" Надіслати
+    button.button.green type="submit" value="Submit" = t("popups_general.send_btn")
 
   .bottom.clearfix
     .request-button.design-request-button.floated
       = inline_svg "svg/menu-contact-icon-1.svg"
-      p заявка на замір
+      = t("components.design_request")
     .request-button.call-me-back-button.floated-right
       = inline_svg "svg/menu-contact-icon-2.svg"
-      p перетелефонувати мені
+      = t("components.call_request")

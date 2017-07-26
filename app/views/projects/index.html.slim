@@ -14,7 +14,8 @@
             p.year.dib
               = @featured_project.year
           br
-          a.button.green href=@featured_project.url Подивитись проект
+          a.button.green href=@featured_project.url
+            = t("projects.watch_project")
 
 .projects-wrapper.top-inner-indent.grey-bg
 
@@ -23,14 +24,14 @@
 
       - if @brands.count > 1
         .filter-container.filter-brands.dib
-          p.small бренди:
+          p.small = t("projects.filter_brand")
           - arr = @brands
           = raw arr.map { |tag| content_tag(:div, tag[:name], class: "filter dib #{"active" if @selected_brand_ids && @selected_brand_ids.include?(tag[:id])}", :"data-tag-id" => tag[:id]) }.join("")
 
       
       - if @years.count > 1
         .filter-container.filter-years.float-right
-          p.small рік проекту:
+          p.small = t("projects.filter_year")
           select#selectize-field.dib data-prop-name="data-prop-name"
             option value="all" Всі роки
             - @years.each do |year|
@@ -48,5 +49,4 @@
         .row.collapse.columns-left
           - group.each_with_index do |project, i|
             - invisible_project = @selected_brand_ids.present? && !@selected_brand_ids.include?(project.brand.id)
-            /- next if @selected_brand_ids.blank? || !@selected_brand_ids.include?(project.brand.id)
             = render "project", project: project, show_tags: true, invisible: invisible_project

@@ -1,3 +1,23 @@
 en:
   contacts:
     title: "Contact us"
+    subtitle: "Adress of producing capabilities and the main office of SE «Ekran-Viknosvit»"
+    phone: "phone number"
+    fax: "fax"
+    email: "e-mail address"
+    address: "our address"
+    socials: "we are in social network sites"
+    offices:
+      title: "Adresses of the brandshops "
+      main_text: |
+        <p class="main-text">
+          VIKNOSVIT - is the chain of brandshops, which sell metal-plastic, aluminium and wooden window and door constructions of the company-manufacturer SE “Ekran-Viknosvit” and covers the entire west Ukraine.
+        </p>
+        <p class="main-text">
+          We dynamically develop and professionally grow. Everyday more and more clients has an opportunity to order, look and try our production and get qualified and proper consultation from managers of our brandshops  VIKNOSVIT or authorized dealers SE “Ekran-Viknosvit” in your city.
+        </p>
+    form:
+      title: "Do you have any questions?"
+      main_text: "If you would like to put questions and you will need consultation with professional we would like tto help you!"
+      required: "Obligatory fields to fill in"
+      btn: "Send"

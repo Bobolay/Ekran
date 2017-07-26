@@ -21,8 +21,7 @@
                 .size.dib
                   = formatted_file_type_and_size(entry.data)
                 a.button.green href=entry.data.url
-                  |Завантажити
-
+                  = t("media.download_btn")  
 
 
       = render "media_pager", collection: @paginated_entries

@@ -1,3 +1,13 @@
 uk:
   projects:
     header: "Проекти"
+    watch_project: "Подивитись проект"
+    filter_brand: "Бренди"
+    filter_year: "Рік проекту"
+
+    project_details: "Особливості проекту"
+    location: "Розташування:"
+    brand: "Бренд:"
+    year: "Рік:"
+    photo: "Фотографії проекту"
+    another: "Інші проекти"

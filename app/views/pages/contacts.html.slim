@@ -9,39 +9,39 @@
       .request-buttons-container
         .request-button.design-request-button.dib.animate
           = inline_svg "svg/menu-contact-icon-1.svg"
-          p Заявка на замір
+          p = t("components.design_request")
         .line.dib.animate
         .request-button.call-me-back-button.dib.animate
           = inline_svg "svg/menu-contact-icon-2.svg"
-          p Перетелефонувати мені
+          p = t("components.call_request")
         .line.dib.animate
         .request-button.chat-online-button.dib.animate
           = inline_svg "svg/menu-contact-icon-3.svg"
-          p Консультація
+          p = t("components.chat_request")
 
 .contact-wrapper.grey-bg.inner-indent
 
   .row.main-office-info
     .columns.medium-5.xlarge-4
-      p.bold-underlined Адреса виробничих потужностей та головного офісу ДП «Екран-Вікносвіт»
+      p.bold-underlined = t("contacts.subtitle")
       a.info-block.dib href="tel:+380324539114"
-        p.small телефон
+        p.small = t("contacts.phone")
         p.larger +38 (032) 453 91 14
       a.info-block.dib href="tel:+380324539113"
-        p.small факс
+        p.small = t("contacts.fax")
         p.larger +38 (032) 453 91 13
       a.info-block href="mailto:info@ekran.ua"
-        p.small електронна скринька
+        p.small = t("contacts.email")
         p.larger info@ekran.ua
       a.info-block
-        p.small наша адреса
+        p.small = t("contacts.address")
         p.larger
           | вул. Сколівська 7/б, м. Стрий,
           br
           | Львівська обл., Україна, 82400
       
       .info-block.social-container
-        p.small ми в соціальних мережах
+        p.small = t("contacts.socials")
         = render "social_links"
     .columns.medium-7.xlarge-7
       .map-container
@@ -49,9 +49,8 @@
 
   .row.top-inner-indent
     .columns.medium-10.large-8
-      p.title Адреси салонів
-      p.main-text ВІКНОСВІТ — мережа салонів продажу віконно-дверних конструкцій з металопластику, алюмінію та дерева від фірми-виробника ДП “Екран-Вікносвіт”, що охоплює всю Західну Україну.
-      p.main-text Ми динамічно розвиваємося та якісно зростаємо. З кожним днем все більше клієнтів мають змогу замовити, побачити чи власноруч випробувати нашу продукцію та отримати кваліфіковану вичерпну консультацію менеджерів наших салонів ВІКНОСВІТ або авторизованих дилерів ДП "Екран-Вікносвіт" у своєму місті.
+      p.title = t("contacts.offices.title")
+      p.main-text = raw t("contacts.offices.main_text")
     .columns.office-container
       - @office_groups.each do |region, offices|
         p.region-title
