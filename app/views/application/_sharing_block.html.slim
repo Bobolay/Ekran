@@ -5,7 +5,7 @@
   - horizontal = !vertical
   .sharing-block
     p.regular-bold.social-title class=("dib" if horizontal)
-      |Поділитись:
+      = t("components.share_title")
     .social-container.dib
       - Cms::Helpers::SocialHelper.get_share_links(nil, @shareable_resource.url, @shareable_resource.name).each_pair do |key, value|
         a.social.dib.share-link href=value target="_blank" window-width="700" window-height="700" window-title=I18n.t("components.sharing_block.html_title.#{key}") title=I18n.t("components.sharing_block.html_title.#{key}")

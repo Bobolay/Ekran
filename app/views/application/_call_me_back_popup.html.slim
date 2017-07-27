@@ -1,19 +1,19 @@
 .popup-container.call-me-back-popup
   .close-popup = inline_svg "svg/cross.svg"
-  p.title передзвоніть мені
-  p.small Заповніть поля, і наш менеджер зв'яжеться з Вами протягом дня
+  p.title = t("call_popup.title")
+  p.small = t("call_popup.description")
   
   form.validate method="post" data-action=call_request_path action="/"
     = input(:call_request, :name, required: true)
     = input(:call_request, :phone, required: true)
     = input(:call_request, :comment, type: :text, input_html: { rows: 4 })
       
-    button.button.green type="submit" value="Submit" Надіслати
+    button.button.green type="submit" value="Submit" = t("popups_general.send_btn")
 
   .bottom.clearfix
     .request-button.design-request-button.floated
       = inline_svg "svg/menu-contact-icon-1.svg"
-      p заявка на замір
+      = t("components.design_request")
     .request-button.chat-online-button.floated-right
       = inline_svg "svg/menu-contact-icon-3.svg"
-      p консультація
+      = t("components.chat_request")

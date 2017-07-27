@@ -1,3 +1,5 @@
 uk:
   media:
     header: "Медіа"
+    read_btn: "Прочитати"
+    download_btn: "Завантажити"

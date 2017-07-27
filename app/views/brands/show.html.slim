@@ -10,7 +10,7 @@
         .brand-icon
           = embedded_svg_from_absolute_path(@article.svg_icon.path)
 
-        p.brand-link-title Відвідайте:
+        p.brand-link-title = t("brands.visit_also")
         a.brand-link href=@article.brand_url target="_blank"
           = @article.brand_url
           = inline_svg "svg/ext-link.svg"
@@ -43,7 +43,7 @@
     .columns.large-8
       .article-content
         = raw @article.content
-        p.brand-link-title Відвідайте:
+        p.brand-link-title = t("brands.visit_also")
         a.brand-link href=@article.brand_url target="_blank"
           = @article.brand_url
           = inline_svg "svg/ext-link.svg"
@@ -57,9 +57,7 @@
                   .size.dib
                     = formatted_file_type_and_size(asset.data)
                   a.button.green href=asset.url
-                    |Завантажити
-
-
+                    = t("brands.download_btn")
 
     .columns
       .clearfix.partner-navigation

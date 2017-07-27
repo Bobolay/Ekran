@@ -22,6 +22,7 @@ uk:
         facebook: "Поділитися на Фейсбуці"
         vk: "Поділитися ВКонтакті"
         twitter: "Поділитися в Твіттері"
+    share_title: "Поділитись"
     tags:
       all: "Всі"
     breadcrumbs:
@@ -37,6 +38,10 @@ uk:
       projects: "Проекти"
       contacts: "Контакти"
       brands: "Бренди"
+    infoline: "Інфолінія"
+    design_request: "Заявка на замір"
+    call_request: "Перетелефонувати мені"
+    chat_request: "Консультація"
   menu:
     about_us: "Про нас"
     projects: "Проекти"
@@ -49,3 +54,28 @@ uk:
     media_video: "Відео"
     media_press: "Преса"
     contacts: "Контакти"
+
+    learn_more: "Дізнатись більше"
+
+    brand_1: |
+      <p class="brand-name">
+        карпатські
+          <br>
+        вікна
+      </p>
+    brand_2: |
+      <p class="brand-name">
+        вікна
+          <br>
+        salamander
+      </p>
+    brand_3: |
+      <p class="brand-name">
+        алюмінієві
+          <br>
+        фасади
+          <br>
+        alfabud
+      </p>
+
+  footer:

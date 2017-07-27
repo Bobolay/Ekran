@@ -12,7 +12,7 @@
           = raw brand.name
         - if brand.url.present?
           p.text-link href=brand.url
-            | Дізнатись більше
+            = t("brands.see_more")
             = inline_svg "svg/ext-link.svg"
 
 .another-brands-wrapper.wrapper-inner-indent

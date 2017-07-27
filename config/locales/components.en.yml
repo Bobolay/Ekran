@@ -4,13 +4,18 @@ en:
       locale-html-title:
         uk: "Open this page in Ukrainian"
     media_links:
+#<<<<<<< HEAD
       news: "All news"
+#=======
+      news: "News"
+#>>>>>>> d0476273b61aceec8ecd3206a6b3afd605572799
       blog: "Blog"
       video: "Video"
       press: "Press"
     service_links:
       services: "Services"
       delivery: "Delivery"
+#<<<<<<< HEAD
       warranty: "Warranty"
     social-links:
       html_title:
@@ -26,6 +31,24 @@ en:
       all: "All"
     breadcrumbs:
       home: "Main Page"
+#=======
+      warranty: "Guarrantie"
+    social-links:
+      html_title:
+        facebook: "Our page on facebook"
+        youtube: "Out Youtube channel"
+        twitter: "Our page on twitter"
+    sharing_block:
+      html_title:
+        facebook: "Share on Facebook"
+        vk: "Share on VK"
+        twitter: "Share on Twitter"
+    share_title: "Share"
+    tags:
+      all: "All"
+    breadcrumbs:
+      home: "Main"
+#>>>>>>> d0476273b61aceec8ecd3206a6b3afd605572799
       media: "Media"
       media_blog: "Blog"
       media_news: "News"
@@ -37,6 +60,10 @@ en:
       projects: "Projects"
       contacts: "Contacts"
       brands: "Brands"
+    infoline: "Infoline"
+    design_request: "Measurement application"
+    call_request: "Call me"
+    chat_request: "Consultancy"
   menu:
     about_us: "About us"
     projects: "Projects"
@@ -49,3 +76,29 @@ en:
     media_video: "Video"
     media_press: "Press"
     contacts: "Contacts"
+
+    learn_more: "Learn more"
+
+    brand_1: |
+      <p class="brand-name">
+        carpathian
+          <br>
+        windows
+      </p>
+    brand_2: |
+      <p class="brand-name">
+        windows
+          <br>
+        salamander
+      </p>
+    brand_3: |
+      <p class="brand-name">
+        aluminum
+          <br>
+        facades
+          <br>
+        alfabud
+      </p>
+
+  footer:
+

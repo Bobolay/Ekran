@@ -3,15 +3,15 @@ uk:
     header: "Віконні системи і фасади"
     other-brands-intro: |
       <p class="wrapper-small-title">
-        Наші партнери
+        Our partners
       </p>
       <p class="main-text">
         Компанія «Екран-Вікносвіт» контролює якість матеріалів та комплектуючих і співпрацює тільки з надійними партнерами. Наші постачальники стабільно, протягом багатьох років впевнено підтверджують свій високий професійний рівень.
       </p>
     all-brand-projects:
       html-title: "Переглянути всі проекти цього бренду"
-      text: "Всі проекти бренду"
-    recent-brand-projects: "Останні проекти бренду"
-    see_more: "Дізнатись більше"
-    visit_also: "Відвідайте:"
-    download_btn: "Завантажити"
+      text: "All projects of brand"
+    recent-brand-projects: "The last projects of brand"
+    see_more: "See more"
+    visit_also: "Visit also:"
+    download_btn: "Download"

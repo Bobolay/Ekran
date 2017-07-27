@@ -23,24 +23,23 @@
     .row
       .columns.large-8
 
-        p.project-one-title особливості проекту
+        p.project-one-title = t("projects.project_details")
         .article-content.project-content
           = raw @project.content
       .columns.large-3.large-push-1.end
         .summary-info
           - if @project.client.present?
-            /p.small клієнт
             p.regular
               = raw @project.client
           - if @project.address.present?
-            p.small розташування
+            p.small = t("projects.location")
             p.regular
               = raw @project.address
           - if @project.brand
-            p.small бренд
+            p.small = t("projects.brand")
             p.regular
               = @project.brand.name
-          p.small рік
+          p.small = t("projects.year")
           p.regular
             = @project.year
 
@@ -51,7 +50,7 @@
 
   .project-photo-collage.wrapper-inner-indent
     - if @gallery_images.any?
-      p.wrapper-small-title Фотографії проекту
+      p.wrapper-small-title = t("projects.photo")
       .collage.clearfix#animated-thumbnails-project
         - @gallery_images.in_groups_of(6, false).each do |group|
           - group.each_with_index do |image, i|
@@ -62,9 +61,6 @@
             a.floated href=image.url(:width100) class=style
               .img-background style="background-image: url(#{image.url(style)})"
               img alt=(image.data_alt if image.data_alt.present?) src=image.url(style)
-
-
-
 
     .row
       .columns
@@ -80,7 +76,7 @@
 - if @related_projects.try(:any?)
   .more-projects
 
-    p.wrapper-small-title.text-align-center Інші проекти
+    p.wrapper-small-title.text-align-center = t("projects.another")
     .row.collapse
       - @related_projects.each do |project|
         = render "project", project: project

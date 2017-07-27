@@ -28,27 +28,25 @@
       .contact-block
         - if @article.phones.any?
           .info-block
-            p.small телефон
+            p.small = t("partnership.one.phone")
             - @article.phones.each do |phone|
               p
                 a.larger href=phone_url(phone)
                   = phone
         - if @article.emails.any?
           .info-block
-            p.small електронна скринька
+            p.small = t("partnership.one.email")
             - @article.emails.each do |email|
               p
                 a.larger href=email_url(email)
                   = email
         .button.green.button.request-button.dealer-popup-button
-          | Напишіть нам
+          = t("partnership.one.contact_us_btn")
             
     .columns.large-8
       .article-content
         = raw @article.content
-
-      / = render "promotions"
-
+        
     .columns
       .clearfix.partner-navigation
         - if @prev

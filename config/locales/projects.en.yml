@@ -1,3 +1,13 @@
 en:
   projects:
     header: "Projects"
+    watch_project: "Find out more"
+    filter_brand: "Brands"
+    filter_year: "Project year"
+
+    project_details: "THE PECULIARITIES OF THE PROJECT"
+    location: "Location:"
+    brand: "Brand:"
+    year: "Year:"
+    photo: "Photos of the project"
+    another: "Other projects"

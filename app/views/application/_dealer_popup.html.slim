@@ -1,7 +1,7 @@
 .popup-container.dealer-popup
   .close-popup = inline_svg "svg/cross.svg"
-  p.title Стати партнером
-  p.small Оберіть на яких умовах Ви хочете працювати з нами
+  p.title = t("dealer_popup.title")
+  p.small = t("dealer_popup.description")
   
   form.validate method="post" data-action=partnership_request_path action="/"
     .input.input-select
@@ -14,4 +14,4 @@
     = input(:partnership_request, :phone, required: true)
     = input(:partnership_request, :comment, type: :text, input_html: {rows: 4})
 
-    button.button.green type="submit" value="Submit" Надіслати
+    button.button.green type="submit" value="Submit" = t("popups_general.send_btn")

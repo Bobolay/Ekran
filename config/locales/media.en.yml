@@ -1,3 +1,5 @@
 en:
   media:
     header: "Media"
+    read_btn: "Read"
+    download_btn: "Download"
