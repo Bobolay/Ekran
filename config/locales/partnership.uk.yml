@@ -6,3 +6,11 @@ uk:
       phone: "Телефон"
       email: "Електронна скринька"
       contact_us_btn: "Напишіть нам"
+    promotions:
+      filter: "показувати тільки діючі акції"
+      status_ended: "Акція завершена"
+      remain: "залишилось "
+      days: "днів"
+      unlimited_terms: "Термін необмежений"
+    promotion_one:
+      remain: "До кінця акції залишилось:"

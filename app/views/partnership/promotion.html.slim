@@ -25,9 +25,9 @@
       .promotion-counter-container class=("expired" if @promotion.expired?) class=("infinite" if @promotion.infinite?)
         - if @promotion.expired?
           p.title
-            |Акція завершена
+            = t("partnership.promotions.status_ended")
         - elsif @promotion.has_end?
-          p.title До кінця акції залишилось:
+          p.title = t("partnership.promotion_one.remain")
           #counter data-end-date-time=@promotion.end_date_time
             span.days
             span
@@ -38,5 +38,5 @@
             span.minutes
         - else
           p.title
-            |Термін необмежений
+            = t("partnership.promotions.unlimited_terms")
       = render "sharing_block"

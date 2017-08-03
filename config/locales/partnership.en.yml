@@ -6,3 +6,11 @@ uk:
       phone: "Phone number"
       email: "E-mail address"
       contact_us_btn: "Write us"
+    promotions:
+      filter: "show only existing promotions"
+      status_ended: "Promotion ended"
+      remain: "remained "
+      days: "days"
+      unlimited_terms: "Unlimited term"
+    promotion_one:
+      remain: "Time left:"

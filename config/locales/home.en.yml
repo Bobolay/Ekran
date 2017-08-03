@@ -36,20 +36,20 @@ en:
     brands:
       header-text: "Our brands"
       brand-link:
-        html-title: "Перейти на веб-сторінку партнера"
-        text: "Дізнатись більше"
+        html-title: "Go the the webpage of partner"
+        text: "Learn more"
     projects:
       header: |
         <h2 class="wrapper-small-title">
           Our projects
         </h2>
       project-link:
-        text: "Подивитись проект"
+        text: "Look into project"
       view-all:
-        html-title: "Перейти на сторінку всіх проектів"
-        text: "Всі проекти"
+        html-title: "Go to the projects page"
+        text: "All projects"
       project-block:
-        html-title: "Перейти на сторінку з даним проектом"
+        html-title: "Go to the page of current project"
     services: |
       <h2 class="wrapper-small-title">
         Services
@@ -82,7 +82,7 @@ en:
           Let's collaborate
         </p>
         <p class="bold-title">
-          працюємо командою&nbsp;—<br>заробляємо<br>разом
+          We work as a team&nbsp;—<br>we earn<br>together
         </p>
         <p class="main-text">
           We invite to cooperation dealers, architects, building companies and the people who are interested in learning.
@@ -95,28 +95,28 @@ en:
     blog:
       header: "Blog"
       view-all:
-        html-title: "Перейти на сторінку всіх публікацій"
+        html-title: "Go to the page of all publications"
         text: "All publications"
     news:
       header: "News"
       view-all:
-        html-title: "Перейти на сторінку всіх новин"
+        html-title: "Go to the page of all news"
         text: "All news"
 
     video:
       header: "Video"
       view-all:
-        html-title: "Перейти на сторінку всіх відео"
+        html-title: "Go to the page of all videos"
         text: "All videos"
     contacts:
-      header: "Адреса виробництва вікон"
-      main-office: "Головний офіс"
-      address: "вул. Сколівська 7/б, м. Стрий,<br/>Львівська обл., Україна, 82400"
+      header: "Windows manufacturer address"
+      main-office: "Head office"
+      address: "Skolivska str. 7/b, Stryy city,<br/>Lviv region, Ukraine, 82400"
       labels:
-        phone: "телефон"
-        fax: "факс"
-        email: "електронна скринька"
-        address: "наша адреса"
+        phone: "phone"
+        fax: "Fax"
+        email: "email address"
+        address: "our address"
       contact-us-button:
-        text: "Зв'язатись"
-        html-title: "Зв'язатись з нами"
+        text: "Contact"
+        html-title: "Contact us"

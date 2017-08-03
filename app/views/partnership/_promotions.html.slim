@@ -1,7 +1,7 @@
 - if @promotions
   .promotion-wrapper
     p.promotion-filter-field
-      | показувати тільки діючі акції
+      = t("partnership.promotions.filter")
     .promotion-container.clearfix
       - @promotions.each do |promotion|
         a.promotion-block.floated class=("past" if promotion.expired?) href=promotion.url
@@ -11,9 +11,9 @@
             = promotion.name
           p.label
             - if promotion.expired?
-              |Акція завершена
+              = t("partnership.promotions.status_ended")
             - elsif promotion.has_end?
-              | залишилось&nbsp;
-              span #{promotion.days_remaining} днів
+              = t("partnership.promotions.remain")
+              span #{promotion.days_remaining} = t("partnership.promotions.days")
             - else
-              |Термін необмежений
+              = t("partnership.promotions.unlimited_terms")
