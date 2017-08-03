@@ -13,25 +13,25 @@ en:
         </p>
       part-1: |
         <p class="bold-underlined">
-          Дочірнє підприємство «Екран-Вікносвіт» — cучасна та авторитетна українська компанія у галузі виробництва світлопрозорих конструкцій.
+          The subsidiary company “Ekran-Viknosvit” is a modern and respectful Ukrainian company in the field of producing translucent enclosing structures.
         </p>
       part-2: |
         <p class="main-text">
-          У 1999 році ми виготовили перше в Україні вікно з профілю SALAMANDER. Це був якісний старт для подальшої успішної роботи та стрімкого розвитку. Сьогодні виробнича потужність нашого підприємства — 700 одиниць віконно-дверних конструкцій за день. За 18 років ми виготовили понад 1 мільйон вікон! 
+          In 1999 we were the first in Ukraine to produce a window using SALAMANDER profile. It was a professional beginning for the future successful work and our rapid development. Today the producing capacity of our company equals 700 windows and doors constructions units per day. During 18 years we have created more than 1million of windows!
         </p>
         <p class="main-text">
-         Ми прагнемо задовольняти запити наших клієнтів і випереджати їхні очікування. Виробляємо три різновиди віконно-дверних конструкцій: з ПВХ-профілю, дерев'яного брусу та алюмінію.
+         We are willing to satisfy the wishes of all of our clients and even be ahead of their expectations. We produce three kinds of windows and door constructions: of PVC-type, timber and aluminum.
         </p>
       part-3: |
         <p class="main-text">
-          В цьому наша унікальність, сила та гнучкість.  І, найголовніше, — можливість гарантувати бездоганну якість наших виробів, повноцінний вибір та відмінний сервіс.
+          That is the secret of our unicity, power and flexibility. And most importantly we guarantee excellent quality, huge variety of our products and of cource perfect service.
         </p>
         <p class="main-text">
-          Завдяки нашій праці тисячі наших клієнтів мешкають у комфортних оселях, насолоджуються домашнім затишком і теплом, реалізовують свої мрії та радіють життю.  Усвідомлення, що ми допомагаємо людям бути щасливими, надихає нас на нові звершення.
+          Due to our work thousands of our clients live in comfortable appartments and enjoy home cosiness and warmth, they make their dreams come true and are happy. The understanding that we help people inspire us for new challenges.
         </p>
       part-4-text: |
         <p class="bold-title">
-          ми розпочали з того, що стали першими
+          WE WERE THE FIRST TO START
         </p>
     brands:
       header-text: "Our brands"
@@ -49,21 +49,21 @@ en:
       <div class="row">
         <div class="columns medium-3 medium-push-2">
           <p class="bold-underlined">
-            Ми надаємо широкий спектр<br>сервісних послуг
+            We provide huge variety of service
           </p>
         </div>
         <div class="columns medium-5">
           <p class="main-text">
-            Зателефонуйте до нас, напишіть листа або ж завітайте у найближчий фірмовий салон мережі «ВІКНОСВІТ». Ми з радістю відповімо на усі запитання, запропонуємо оглянути зразки нашої продукції. Ваша покупка буде легкою і приємною, а наш сервіс  триватиме, доки Ви матимете в ньому потребу!
+            Call us, write a letter or visit the closest brand shop of the chain “Viknosvit”. We wil gladly answer all of your questions, we will propose to look through all samples of our production. Your purchase will be easy and pleasant; and our service will last as long as you will need it!
           </p>
           <a class="smaller" href="/services/dostavka">
-            доставка
+            DELIVERY 
           </a>
           <a class="smaller" href="/services/garantiya">
-            гарантія
+            GUARANTEE
           </a>
           <a class="smaller" href="/services/servisni-poslugi">
-            обслуговування
+            SERVICE
           </a>
         </div>
       </div>
@@ -77,8 +77,8 @@ en:
           працюємо командою&nbsp;—<br>заробляємо<br>разом
         </p>
         <p class="main-text">
-          Запрошуємо до співпраці дилерів, архітекторів, будівельні організації та зацікавлених в навчанні осіб.
+          We invite to cooperation dealers, architects, building companies and the people who are interested in learning.
         </p>
         <div class="button request-button dealer-popup-button">
-          Стати партнером
+          To become a partner
         </div>

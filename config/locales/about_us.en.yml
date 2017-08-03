@@ -2,11 +2,11 @@ en:
   about-us:
     title: "About us"
     about-menu:
-      mission: "наша місія"
-      history: "історія"
-      stuff: "колектив"
-      vacancies: "вакансії"
-      certificates: "сертифікати"
+      mission: "Our aim"
+      history: "History"
+      stuff: "Team"
+      vacancies: "Vacancies"
+      certificates: "Certificates"
 
   vacancy:
     contract_type:
