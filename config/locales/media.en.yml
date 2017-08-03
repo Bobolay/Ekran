@@ -2,4 +2,14 @@ en:
   media:
     header: "Media"
     read_btn: "Read"
+    view_btn: "Review"
     download_btn: "Download"
+    categories:
+      name_1: "News"
+      description_1: "Latest news in life «Ekran-Viknosvit»"
+      name_2: "Blog"
+      description_2: "Useful articles and publications"
+      name_3: "Video"
+      description_3: "Everything you should know about us in HD mode"
+      name_4: "Press"
+      description_4: "Useful materials for the press and partners "

@@ -2,4 +2,14 @@ uk:
   media:
     header: "Медіа"
     read_btn: "Прочитати"
+    view_btn: "Переглянути"
     download_btn: "Завантажити"
+    categories:
+      name_1: "Новини"
+      description_1: "Свіжі новини в житті «ЕкранВК»"
+      name_2: "Блог"
+      description_2: "Корисні статті та публікації"
+      name_3: "Відео"
+      description_3: "Все, що варто знати про нас в режимі HD"
+      name_4: "Для преси"
+      description_4: "Корисні матеріали для преси та партнерів"

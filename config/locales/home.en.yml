@@ -35,13 +35,21 @@ en:
         </p>
     brands:
       header-text: "Our brands"
-
+      brand-link:
+        html-title: "Перейти на веб-сторінку партнера"
+        text: "Дізнатись більше"
     projects:
       header: |
         <h2 class="wrapper-small-title">
           Our projects
         </h2>
-
+      project-link:
+        text: "Подивитись проект"
+      view-all:
+        html-title: "Перейти на сторінку всіх проектів"
+        text: "Всі проекти"
+      project-block:
+        html-title: "Перейти на сторінку з даним проектом"
     services: |
       <h2 class="wrapper-small-title">
         Services
@@ -82,3 +90,33 @@ en:
         <div class="button request-button dealer-popup-button">
           To become a partner
         </div>
+    media:
+      header: "Media"
+    blog:
+      header: "Blog"
+      view-all:
+        html-title: "Перейти на сторінку всіх публікацій"
+        text: "All publications"
+    news:
+      header: "News"
+      view-all:
+        html-title: "Перейти на сторінку всіх новин"
+        text: "All news"
+
+    video:
+      header: "Video"
+      view-all:
+        html-title: "Перейти на сторінку всіх відео"
+        text: "All videos"
+    contacts:
+      header: "Адреса виробництва вікон"
+      main-office: "Головний офіс"
+      address: "вул. Сколівська 7/б, м. Стрий,<br/>Львівська обл., Україна, 82400"
+      labels:
+        phone: "телефон"
+        fax: "факс"
+        email: "електронна скринька"
+        address: "наша адреса"
+      contact-us-button:
+        text: "Зв'язатись"
+        html-title: "Зв'язатись з нами"

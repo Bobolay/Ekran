@@ -25,10 +25,9 @@
         = t("home.news.view-all.text")
 
     .columns.medium-12.large-7.float-left.tab-content
-      h3.underlined-title
-        = t("home.blog.header")
+      h3.underlined-title = t("home.blog.header")
       - @blog_articles.each do |article|
-        a.blog-block title="Перейти на сторінку блогу" href=article.url
+        a.blog-block href=(article.url rescue nil)
           .img
             .img-background style="background-image: url(#{article.avatar.url(:list)})"
           .text

@@ -3,39 +3,39 @@
     .img-background style="background-image: url(#{asset_path('photo/Ekran-media-all-v1-1.jpg')})"
     .text
       h2.media-banner-title
-        | новини
+        = t("media.categories.name_1")
       p.media-subtitle
-        | Свіжі новини в житті «ЕкранВК»
+        = t("media.categories.description_1")
       p.text-link
-        | Переглянути
+        = t("media.view_btn")
         = inline_svg "svg/key-arrow-right.svg"
   a.media href=media_blog_path
     .img-background style="background-image: url(#{asset_path('photo/Ekran-media-all-v1-2.jpg')})"
     .text
       h2.media-banner-title
-        | блог
+        = t("media.categories.name_2")
       p.media-subtitle
-        | Корисні статті та публікації
+        = t("media.categories.description_2")
       p.text-link
-        | Переглянути
+        = t("media.view_btn")
         = inline_svg "svg/key-arrow-right.svg"
   a.media href=media_video_path
     .img-background style="background-image: url(#{asset_path('photo/Ekran-media-all-v1-3.jpg')})"
     .text
       h2.media-banner-title
-        | відео
+        = t("media.categories.name_3")
       p.media-subtitle
-        | Все, що варто знати про нас в режимі HD
+        = t("media.categories.description_3")
       p.text-link
-        | Переглянути
+        = t("media.view_btn")
         = inline_svg "svg/key-arrow-right.svg"
   a.media href=media_press_path
     .img-background style="background-image: url(#{asset_path('photo/Ekran-media-all-v1-4.jpg')})"
     .text
       h2.media-banner-title
-        | для преси
+        = t("media.categories.name_4")
       p.media-subtitle
-        | Корисні матеріали для преси та партнерів
+        = t("media.categories.description_4")
       p.text-link
-        | Переглянути
+        = t("media.view_btn")
         = inline_svg "svg/key-arrow-right.svg"
