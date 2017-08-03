@@ -54,9 +54,7 @@ uk:
     media_video: "Відео"
     media_press: "Преса"
     contacts: "Контакти"
-
     learn_more: "Дізнатись більше"
-
     brand_1: |
       <p class="brand-name">
         карпатські
@@ -77,5 +75,14 @@ uk:
           <br>
         alfabud
       </p>
-
-  footer:
+  not_found:
+    main_text:
+      error: "помилка"
+      number: "404"
+      text_1: "УПС! Це явно не те вікно, що Ви шукали ;)"
+      text_2: "Але не переживайте, ми даєм вам ще один шанс &mdash; бо ми добрі."
+      btn: "На головну"
+    brands:
+      brand_1: "саламандер"
+      brand_2: "карпатські вікна"
+      brand_3: "альфабуд"

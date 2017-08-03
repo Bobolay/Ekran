@@ -3,12 +3,12 @@
   .row
     .columns
       .text
-        p.larger помилка
-        p.title 404
-        p.subtitle УПС! Це явно не те вікно, що Ви шукали ;)
-        p.smaller Але не переживайте, ми даєм вам ще один шанс &mdash; бо ми добрі.
-        a.button.grey href=root_path(locale: I18n.locale) На головну
+        p.larger = t("not_found.main_text.error")
+        p.title = t("not_found.main_text.number")
+        p.subtitle = t("not_found.main_text.text_1")
+        p.smaller = t("not_found.main_text.text_2")
+        a.button.grey href=root_path(locale: I18n.locale) = t("not_found.main_text.btn")
   .brand-links
-    a.brand-link.dib саламандер
-    a.brand-link.dib карпатські вікна
-    a.brand-link.dib альфабуд
+    a.brand-link.dib = t("not_found.brands.brand_1")
+    a.brand-link.dib = t("not_found.brands.brand_2")
+    a.brand-link.dib = t("not_found.brands.brand_3")

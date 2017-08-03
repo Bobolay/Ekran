@@ -54,9 +54,7 @@ en:
     media_video: "Video"
     media_press: "Press"
     contacts: "Contacts"
-
     learn_more: "Learn more"
-
     brand_1: |
       <p class="brand-name">
         carpathian
@@ -77,5 +75,14 @@ en:
           <br>
         alfabud
       </p>
-
-  footer:
+  not_found:
+    main_text:
+      error: "error"
+      number: "404"
+      text_1: "OOPS! It's not what You are looking for ;)"
+      text_2: "But don't worry, we are giving You another chance &mdash; cause we are kind."
+      btn: "To main page"
+    brands:
+      brand_1: "salamander"
+      brand_2: "carpathians windows"
+      brand_3: "alfabud"
