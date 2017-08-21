@@ -68,7 +68,9 @@ class BlogArticle < ActiveRecord::Base
   end
 
   def url(locale = I18n.locale)
-    self.class.base_url + "/" + self.translations_by_locale[locale].try(:url_fragment)
+    url_fragment = self.translations_by_locale[locale].try(:url_fragment)
+    return nil if url_fragment.blank?
+    self.class.base_url(locale) + "/" + url_fragment
   end
 
   def formatted_release_date
