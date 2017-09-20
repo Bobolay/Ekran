@@ -1,3 +1,13 @@
+track_popup_open = (key)->
+  return if !key || !key.length
+  console.log "track_popup_open: ", key
+  logEvent("popup", "open", key)
+
+track_popup_form_submit = (key)->
+  return if !key || !key.length
+  console.log "track_popup_form_submit: ", key
+  logEvent("popup", "submit_form", key)
+
 $document.on "ready", ->
 
 #     d e c l a r e     g e n e r a l s     v a r i a b l e s
@@ -27,21 +37,29 @@ $document.on "ready", ->
     popup.removeClass('visible')
     $('.mask').addClass('visible ')
     design_request_popup.addClass('visible')
+    popup_key = design_request_popup.attr("data-popup-key")
+    track_popup_open(popup_key)
 
   call_me_button.on 'click', ->
     popup.removeClass('visible')
     $('.mask').addClass('visible ')
     call_me_back_popup.addClass('visible')
+    popup_key = call_me_back_popup.attr("data-popup-key")
+    track_popup_open(popup_key)
 
   chat_button.on 'click', ->
     popup.removeClass('visible')
     $('.mask').addClass('visible ')
     chat_popup.addClass('visible')
+    popup_key = chat_popup.attr("data-popup-key")
+    track_popup_open(popup_key)
 
   dealer_button.on 'click', ->
     popup.removeClass('visible')
     $('.mask').addClass('visible ')
     dealer_popup.addClass('visible')
+    popup_key = dealer_popup.attr("data-popup-key")
+    track_popup_open(popup_key)
 
 
 #     c l i c k     o u t s i d e
@@ -88,4 +106,6 @@ $document.on "ready", ->
         method = $form.attr("method")
         $form.ajaxSubmit({url: url})
         $form[0].reset()
+        popup_key = $form.closest(".popup-container").attr("data-popup-key")
+        track_popup_form_submit(popup_key)
         return show_alert_success()

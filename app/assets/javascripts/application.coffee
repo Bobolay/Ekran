@@ -4,6 +4,7 @@
 
 #= require global
 #= require keys.js
+#= require log_event
 
 # require turbolinks
 # require ga-turbolinks
