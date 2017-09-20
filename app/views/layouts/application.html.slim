@@ -18,8 +18,9 @@ html
     link rel="icon" type="image/png" href=asset_path("favicon/favicon-180x180.png") sizes="180x180"
     link rel="icon" type="image/png" href=asset_path("favicon/favicon-196x196.png") sizes="196x196"
     link rel="icon" type="image/png" href=asset_path("icons/favicon-228x228.png") sizes="228x228"
-
+    = render "cms/gtm_script"
   body
+    = render "cms/gtm_noscript"
     .mask
     = render "menu"
     = render "design_request_popup"
@@ -36,4 +37,5 @@ html
       = render "footer"
     script src="//maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}"
     = javascript_include_tag "application", 'data-turbolinks-track' => true
-    = render "cms/gtm"
+    /= render "cms/gtm"
+
