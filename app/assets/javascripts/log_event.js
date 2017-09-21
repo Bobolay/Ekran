@@ -1,4 +1,4 @@
-function logEvent(category, action, label, value)
+function logGAObject(type, object)
 {
     if(typeof ga === 'function')
     {
@@ -9,13 +9,21 @@ function logEvent(category, action, label, value)
 
         command += 'send';
 
-        ga(command, 'event', {
-            'eventCategory': category,
-            'eventAction': action,
-            'eventLabel': label,
-            'eventValue': typeof value === 'undefined' ? 1 : value
-        });
+        ga(command, type, object);
     }
     else
         console.log('ga() not defined');
+}
+
+function logEvent(category, action, label, value){
+    logGAObject("event", {
+        'eventCategory': category,
+        'eventAction': action,
+        'eventLabel': label,
+        'eventValue': typeof value === 'undefined' ? 1 : value
+    })
+}
+
+function logPageView(name_or_url){
+    logGAObject("pageview", name_or_url)
 }
