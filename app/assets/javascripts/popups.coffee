@@ -5,7 +5,7 @@ track_popup_open = (key)->
   page_url = window.location.pathname
   if !page_url.endsWith("/")
     page_url += "/"
-  page_url += "/open-#{key}-popup"
+  page_url += "open-#{key}-popup"
   logPageView(page_url)
 
 track_popup_form_submit = (key)->
@@ -15,7 +15,7 @@ track_popup_form_submit = (key)->
   page_url = window.location.pathname
   if !page_url.endsWith("/")
     page_url += "/"
-  page_url += "/popup-#{key}-submit-form"
+  page_url += "popup-#{key}-submit-form"
   logPageView(page_url)
 
 $document.on "ready", ->
