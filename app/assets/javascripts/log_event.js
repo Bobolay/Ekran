@@ -22,6 +22,14 @@ function logEvent(category, action, label, value){
         'eventLabel': label,
         'eventValue': typeof value === 'undefined' ? 1 : value
     })
+
+    if (typeof dataLayer != 'undefined'){
+        var event_name = category + "__" + action + "__" + label
+        if ( value && value.length){
+            event_name += "__" + value
+        }
+        dataLayer.push({'event': event_name });
+    }
 }
 
 function logPageView(name_or_url){
