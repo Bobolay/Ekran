@@ -16,19 +16,21 @@ function logGAObject(type, object)
 }
 
 function logEvent(category, action, label, value){
-    logGAObject("event", {
+    var event_data = {
         'eventCategory': category,
         'eventAction': action,
         'eventLabel': label,
         'eventValue': typeof value === 'undefined' ? 1 : value
-    })
+    }
 
-    if (typeof dataLayer != 'undefined'){
-        var event_name = category + "__" + action + "__" + label
-        if ( value && value.length){
-            event_name += "__" + value
-        }
-        dataLayer.push({'event': event_name });
+    logGAObject("event", event_data)
+
+    if (typeof dataLayer !== 'undefined'){
+        event_data.event = category
+        dataLayer.push(event_data);
+    }
+    else {
+        console.log("dataLayer not defined")
     }
 }
 
