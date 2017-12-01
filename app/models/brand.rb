@@ -30,7 +30,9 @@ class Brand < ActiveRecord::Base
 
   has_cache do
     #pages Pages.all_instances, self, Brand.published, BlogArticle.published, NewsArticle.published, Service.published, Project.published, Promotion.published, PartnershipArticle.published, Vacancy.published
-    pages :all
+    #pages :all
+    pages RouteTranslator.config.available_locales.map{|k| ["/#{k}/**/*", "/#{k}.*"] }
+
   end
 
   include LocalizedRoutes::UrlHelper::ResourceUrl
