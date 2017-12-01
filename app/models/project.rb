@@ -30,7 +30,7 @@ class Project < ActiveRecord::Base
   end
 
   has_cache do
-    pages :home, :projects, Project.published, self
+    pages :home, :projects, Project.published, self, Brand.published, brand
   end
 
   include LocalizedRoutes::UrlHelper::ResourceUrl
