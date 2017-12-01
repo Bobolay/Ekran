@@ -55,7 +55,7 @@ Rails.application.routes.draw do
 
     scope :partnership, controller: :partnership do
       root action: :index, as: :partnership
-      get "brands=:brands", as: :filtered_projects, action: :index_filtered
+      get "brands=:brands", as: :filtered_projects, action: :index
       scope ":partnership_article_id" do
         get ":id", action: :promotion, as: :promotion
       end

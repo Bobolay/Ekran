@@ -20,11 +20,6 @@ class ProjectsController < ApplicationController
     @show_header_h1 = true
   end
 
-  def index_filtered
-    index
-    render "index"
-  end
-
   def show
     @project = Project.get(params[:id])
     if @project.nil?
