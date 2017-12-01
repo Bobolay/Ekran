@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :add_projects_breadcrumb
-  caches_page :index, :show
+  caches_page :index, :show, if: ->{ @selected_brand_ids.blank? }
 
   def index
     set_page_metadata(:projects)
